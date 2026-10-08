@@ -36,7 +36,7 @@ $$
   about $\alpha$ or $\beta$ and the encoded state survives.
 
 ```
-     (encode)        (syndrome measurement)
+     (encode)        
 q_0: ──■────■─────■───────────────────────
      ┌─┴─┐  │     │
 q_1: ┤ X ├──┼─────┼────■────■─────────────
