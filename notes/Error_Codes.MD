@@ -79,29 +79,7 @@ $$
 - Trade-off: this code catches phase flips but **not** bit flips. $X|\pm\rangle = \pm|\pm\rangle$, so an
   $X$ error now acts like an undetectable phase error. (Verified: an $X$ on $q_0$ gives syndrome `00`.)
 
-There are two equivalent ways to measure the syndrome.
-
-**Option A:** rotate the data qubits back with $H$, run the bit-flip parity checks, then apply $H$ again
-to return to the $\pm$ basis.
-
-```
-     (encode)                   (syndrome measurement)
-               ┌───┐ ┌───┐     ┌───┐
-q_0: ──■────■──┤ H ├─┤ H ├──■──┤ H ├────────────────────
-     ┌─┴─┐  │  ├───┤ ├───┤  │  └───┘     ┌───┐
-q_1: ┤ X ├──┼──┤ H ├─┤ H ├──┼────■────■──┤ H ├──────────
-     └───┘┌─┴─┐├───┤ ├───┤  │    │    │  └───┘     ┌───┐
-q_2: ─────┤ X ├┤ H ├─┤ H ├──┼────┼────┼─────────■──┤ H ├
-          └───┘└───┘ └───┘┌─┴─┐┌─┴─┐  │   ┌─┐   │  └───┘
-a_0: ─────────────────────┤ X ├┤ X ├──┼───┤M├───┼───────
-                          └───┘└───┘┌─┴─┐ └╥┘ ┌─┴─┐ ┌─┐
-a_1: ───────────────────────────────┤ X ├──╫──┤ X ├─┤M├─
-                                    └───┘  ║  └───┘ └╥┘
-s: 2/══════════════════════════════════════╩═════════╩══
-                                           0         1
-```
-
-**Option B:** put the ancillas in $|+\rangle$, use them as the CNOT **controls** with the data qubits as
+To measure this, put the ancillas in $|+\rangle$, use them as the CNOT **controls** with the data qubits as
 targets (phase kickback), then apply $H$ to the ancillas and measure.
 
 ```
@@ -121,7 +99,6 @@ s: 2/═════════════════════════
                                                     0       1
 ```
 
-**Syndrome table** (same pattern as the bit-flip code):
 
 | Error           | State after error                                       | $a_0$ | $a_1$ |
 |-----------------|---------------------------------------------------------|-------|-------|
@@ -132,8 +109,3 @@ s: 2/═════════════════════════
 
 - **Correction:** apply a $Z$ gate to the qubit with the error, since $Z \cdot Z = I$.
 
-## Next Step
-
-- Each 3-qubit code protects against only one kind of error. **Shor's 9-qubit code** combines them by
-  using the phase-flip code on the outside and a bit-flip code inside each of its 3 qubits. It can
-  correct any single-qubit error ($X$, $Z$, or $Y = iXZ$).
