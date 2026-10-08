@@ -16,14 +16,6 @@ $$
 P_{\text{error}} = \underbrace{3p^2(1-p)}_{\text{2 flips}} + \underbrace{p^3}_{\text{3 flips}} = 3p^2 - 2p^3
 $$
 
-| $p$  | Unencoded error ($p$) | Encoded error ($3p^2 - 2p^3$) |
-|------|-----------------------|-------------------------------|
-| 0.01 | 0.01                  | ≈ 0.0003                      |
-| 0.10 | 0.10                  | 0.028                         |
-| 0.30 | 0.30                  | 0.216                         |
-| 0.50 | 0.50                  | 0.50                          |
-| 0.60 | 0.60                  | 0.648                         |
-
 - The two curves cross at $p = 0.5$. The code only helps when $p < 0.5$. When $p > 0.5$ it makes
   the error rate **worse**.
 
