@@ -51,8 +51,6 @@ s: 2/═════════════════════════
                                 0       1
 ```
 
-**Syndrome table** (the error happens between encoding and syndrome measurement):
-
 | Error           | State after error                            | $a_0$ | $a_1$ |
 |-----------------|----------------------------------------------|-------|-------|
 | none            | $\alpha\|000\rangle + \beta\|111\rangle$     | 0     | 0     |
@@ -60,8 +58,7 @@ s: 2/═════════════════════════
 | $X$ on $q_1$    | $\alpha\|010\rangle + \beta\|101\rangle$     | 1     | 1     |
 | $X$ on $q_2$    | $\alpha\|100\rangle + \beta\|011\rangle$     | 0     | 1     |
 
-- Each single-qubit flip gives a different syndrome, so we know which qubit to fix.
-- **Correction:** apply another $X$ gate to the qubit that flipped, since $X \cdot X = I$.
+
 
 ## Quantum Phase-Flip Errors
 
