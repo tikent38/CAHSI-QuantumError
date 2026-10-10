@@ -73,6 +73,7 @@ CAHSI-QuantumError/
 │   │   ├── phase_flip_code.py
 │   │   └── error_test.py
 │   └── noisy/                    # the codes on a noisy simulator vs. unencoded circuits
+│       ├── bit_flip_encoded.py
 │       ├── noisy_bit_flip.py
 │       └── qec_runner.py
 └── README.md
@@ -156,6 +157,14 @@ Choose which code to test by commenting or uncommenting `test_bit_flip()` and `t
 ## `src/noisy/`
 
 The codes on a noisy Aer simulator, compared with running the same circuit unencoded.
+
+### `bit_flip_encoded.py`
+
+`bit_flip_encoded(circuit, measure=True)` takes any one-qubit circuit and returns its bit-flip-code version: encode into $a|000\rangle + b|111\rangle$, apply the circuit’s gates to the encoded qubit, measure the syndrome with the two ancillas, and apply an X to the flipped qubit. With `measure=True` it also decodes and measures the result into an `out` register. Run the returned circuit on any (noisy) `AerSimulator`.
+
+```bash
+python src/noisy/bit_flip_encoded.py   # prints an example encoded circuit
+```
 
 ### `noisy_bit_flip.py`
 
