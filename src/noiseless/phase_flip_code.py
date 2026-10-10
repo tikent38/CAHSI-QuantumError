@@ -1,7 +1,7 @@
 # phase_flip_code.py
 # 3-qubit phase-flip code: protects one qubit from a single Z (phase-flip) error.
 # Encodes in the |+>/|-> basis, where a phase flip acts like a bit flip.
-# See notes/Error_Codes.MD for the theory and syndrome table.
+# See notes/error_codes.md for the theory and syndrome table.
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 
 

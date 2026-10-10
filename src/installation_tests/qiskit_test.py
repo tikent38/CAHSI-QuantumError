@@ -1,4 +1,4 @@
-# test_qiskit.py
+# qiskit_test.py
 import qiskit
 from qiskit import QuantumCircuit
 
