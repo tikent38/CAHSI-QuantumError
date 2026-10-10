@@ -53,7 +53,7 @@ def print_result(syndromes, p1):
 
 def test_bit_flip():
     print("=" * 60)
-    print("  BIT FLIP CODE   (input: H|0>)")
+    print("  BIT FLIP CODE   (input: |0>)")
     print("=" * 60)
     for error in [None, 0, 1, 2]:
         label = "no error" if error is None else f"X on q{error}"
@@ -66,7 +66,7 @@ def test_bit_flip():
 
 def test_phase_flip():
     print("=" * 60)
-    print("  PHASE FLIP CODE   (input: H|0>)")
+    print("  PHASE FLIP CODE   (input: |0>)")
     print("=" * 60)
     for error in [None, 0, 1, 2]:
         label = "no error" if error is None else f"Z on q{error}"
