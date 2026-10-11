@@ -73,8 +73,9 @@ CAHSI-QuantumError/
 │   │   ├── bit_flip_code.py
 │   │   ├── phase_flip_code.py
 │   │   └── error_test.py
-│   └── noisy/                    # the bit-flip code on IBM Fez noise vs. unencoded circuits
+│   └── noisy/                    # the codes on IBM Fez noise vs. unencoded circuits
 │       ├── bit_flip_encoded.py
+│       ├── phase_flip_encoded.py
 │       └── compare_fez.py
 ├── .gitignore
 └── README.md
@@ -161,7 +162,7 @@ Choose which code to test by commenting or uncommenting `test_bit_flip()` and `t
 
 ## `src/noisy/`
 
-The bit-flip code on a noisy Aer simulator, compared with running the same circuit unencoded.
+The bit-flip and phase-flip codes on a noisy Aer simulator, compared with running the same circuit unencoded.
 
 ### `bit_flip_encoded.py`
 
@@ -170,25 +171,47 @@ The bit-flip code on a noisy Aer simulator, compared with running the same circu
 How the circuit’s gates are applied to the encoded qubit:
 
 - **X, Y, Z, `id`** are applied to all three data qubits, so the qubit stays protected.
-- **H, S, T and other gates** are applied by decoding (2 CNOTs), running the gate on `q_0`, and re-encoding (2 CNOTs). The qubit is not protected during that gate, and each one adds 4 CNOTs.
+- **S, T, Sdg, Tdg, P, Rz** (gates that only add a phase to `1`) are applied to `q_0` only. That adds the phase to the $|111\rangle$ term once, which is exactly the encoded gate, so the qubit stays protected. Applying them to all three qubits would add the phase three times (S on all three acts like Sdg).
+- **H and any other gate** is applied by decoding (2 CNOTs), running the gate on `q_0`, and re-encoding (2 CNOTs). The qubit is not protected during that gate, and each one adds 4 CNOTs. H has no protected version in the bit-flip code.
 
 There is a single syndrome check at the end, so it can correct at most one bit flip over the whole circuit.
 
-```bash
-python src/noisy/bit_flip_encoded.py   # prints an example encoded circuit
+This file and `phase_flip_encoded.py` only define functions; running them directly prints nothing. To see an encoded circuit, run this from `src/noisy/`:
+
+```python
+from qiskit import QuantumCircuit
+from bit_flip_encoded import bit_flip_encoded
+
+example = QuantumCircuit(1)
+example.x(0)
+example.s(0)
+print(bit_flip_encoded(example).draw(fold=-1))
 ```
+
+### `phase_flip_encoded.py`
+
+`phase_flip_encoded(circuit, measure=True)` is the bit-flip code done in the $|\pm\rangle$ basis instead of the $|0\rangle, |1\rangle$ basis, following the structure of the IBM course [Foundations of Quantum Error Correction: Repetition codes](https://quantum.cloud.ibm.com/learning/en/courses/foundations-of-quantum-error-correction/correcting-quantum-errors/repetition-codes) (also Nielsen & Chuang §10.1.2):
+
+- **Encode:** encode exactly as for the bit-flip code, then H on every qubit: $a|0\rangle + b|1\rangle \to a|{+}{+}{+}\rangle + b|{-}{-}{-}\rangle$.
+- **Gates:** each gate the bit-flip code applies, conjugated by H. Logical X is ZZZ, logical Z is XXX, logical Y is YYY; S, T, Sdg, Tdg, P and Rz are applied to `q_0` as H, gate, H (no decoding). H still has no encoded version, so it is applied by decoding and re-encoding.
+- **Detect:** the course’s simplified phase-flip check: the two ancillas start in $|+\rangle$ (H), act as CNOT controls onto the data qubits so each qubit’s sign kicks back onto them (phase kickback), then H and measure. This measures $X_1X_2$ and $X_2X_3$, i.e. whether neighbouring qubits have the same sign. It gives the same result as putting H on the data qubits around the bit-flip check, with fewer gates.
+- **Recover:** the bit-flip X correction conjugated by H, which is a Z on the qubit the syndrome points to.
+
+This code does not detect X errors. In this encoding a single X on any qubit acts as a logical phase flip, which doesn’t change a `0`/`1` measurement unless the circuit later rotates the qubit (e.g. with H).
 
 ### `compare_fez.py`
 
-Builds a random one-qubit circuit and runs it three ways: on a noiseless `AerSimulator`, on `AerSimulator` with IBM Fez noise, and on `AerSimulator` with Fez noise after `bit_flip_encoded`. It prints the counts for each, how far each is from the exact answer, and the size of each circuit after transpiling for Fez.
+Builds a random one-qubit circuit and runs it four ways: on a noiseless `AerSimulator`, and on `AerSimulator` with IBM Fez noise with no correction, with `bit_flip_encoded`, and with `phase_flip_encoded`. It prints the counts for each, how far each is from the exact answer, and the size of each circuit after transpiling for Fez.
+
+Circuits must not contain H gates; `compare()` raises a `ValueError` if they do. H has no protected version in either code, so both would have to decode around it.
 
 Set the experiment in the settings block at the bottom of the file, then run it:
 
 ```python
-NUM_GATES = 100    # how many random gates in the circuit
+NUM_GATES = 1000   # how many random gates in the circuit
 SHOTS = 1000       # how many times each version of the circuit is run
-SEED = None        # a number (e.g. 3) gives the same circuit every time; None picks a new random one
-GATE_SET = "all"   # "all" = X, Y, Z, H, S, T, id     "xz" = only X and Z
+SEED = 3           # a number (e.g. 3) gives the same circuit every time; None picks a new random one
+GATE_SET = "all"   # "all" = X, Y, Z, S, T, id     "xz" = only X and Z
 MIRROR = False     # True adds the circuit's inverse, so the exact answer is always 0
 ```
 
@@ -196,8 +219,15 @@ MIRROR = False     # True adds the circuit's inverse, so the exact answer is alw
 python src/noisy/compare_fez.py
 ```
 
-From your own code, call `compare(num_gates, shots, seed, gate_set, mirror)`, or build circuits with `random_all_gates(num_gates, seed)` (X, Y, Z, H, S, T, id) or `random_xz_gates(num_gates, seed)` (X and Z only).
+From your own code, call `compare(num_gates, shots, seed, gate_set, mirror)`, or build circuits with `random_all_gates(num_gates, seed)` (X, Y, Z, S, T, id) or `random_xz_gates(num_gates, seed)` (X and Z only).
 
-The seed used is printed, so any run can be repeated exactly. Both noisy runs are transpiled with `optimization_level=0` so the transpiler doesn’t merge the random gates away.
+The seed used is printed, so any run can be repeated exactly. All noisy runs are transpiled with `optimization_level=0` so the transpiler doesn’t merge the random gates away.
 
-Results so far (seed 3, 100 gates, 1000 shots): on Fez noise the bit-flip code makes the result **worse** than no correction. With all gates it is 0.39 off from the exact answer versus 0.03 without correction, mostly from the CNOTs added around H/S/T gates. With only X and Z gates the gap shrinks (0.08 versus 0.02); the remaining cost comes from the encoding, the syndrome-check CNOTs, the SWAPs Fez’s qubit wiring needs, and measurement errors on the ancillas.
+Results so far (seed 3, 100 gates, mirrored, 1000 shots), error rate on Fez noise:
+
+| Gate set | No correction | Bit-flip code | Phase-flip code |
+|---|---|---|---|
+| all gates (X, Y, Z, S, T, id) | 0.034 | 0.076 | 0.067 |
+| X and Z only | 0.035 | 0.076 | 0.066 |
+
+Both codes make the result **worse** than no correction on Fez noise at this circuit length. Neither code decodes for any of these gates, so the remaining cost comes from the encoding, the syndrome-check CNOTs, the SWAPs Fez’s qubit wiring needs, and measurement errors on the ancillas. The phase-flip code’s encoded circuit is larger with all gates (1157 vs 647 gates on Fez) because of the extra H gates around S and T.

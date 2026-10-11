@@ -9,6 +9,13 @@ from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 # (e.g. XXX turns a|000> + b|111> into a|111> + b|000>)
 LOGICAL_GATES = {"id", "x", "y", "z"}
 
+# Gates that only add a phase to |1> (S, T, their inverses, and other phase rotations).
+# Applying one to q_0 only puts the phase on the |111> term once:
+#   a|000> + b|111>  ->  a|000> + e^(i*phase) b|111>
+# which is the encoded version of the gate, so the qubit stays encoded and protected.
+# (Applying it to all 3 qubits would add the phase 3 times, e.g. S on all 3 acts like Sdg)
+PHASE_GATES = {"s", "sdg", "t", "tdg", "p", "rz"}
+
 
 def encode(qc, data):
     # a|0> + b|1> on q_0  ->  a|000> + b|111>
@@ -51,8 +58,11 @@ def bit_flip_encoded(circuit, measure=True):
             # Apply the gate to all 3 data qubits
             for q in data:
                 qc.append(gate, [q])
+        elif gate.name in PHASE_GATES:
+            # Apply the gate to q_0 only (see PHASE_GATES above)
+            qc.append(gate, [data[0]])
         else:
-            # Gates like H, S, T have no simple encoded version: decode, apply to q_0, re-encode.
+            # Gates like H have no encoded version in this code: decode, apply to q_0, re-encode.
             # The qubit is NOT protected while this gate runs
             decode(qc, data)
             qc.append(gate, [data[0]])
@@ -86,11 +96,3 @@ def bit_flip_encoded(circuit, measure=True):
 
     return qc
 
-
-if __name__ == "__main__":
-    # Example: H then 2 idle steps
-    example = QuantumCircuit(1)
-    example.h(0)
-    example.id(0)
-    example.id(0)
-    print(bit_flip_encoded(example).draw(fold=-1))
