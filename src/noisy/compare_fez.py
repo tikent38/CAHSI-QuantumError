@@ -1,10 +1,12 @@
 # compare_fez.py
-# Build a random 1-qubit circuit (no H gates) and run it four ways:
+# Build a 1-qubit circuit (no H gates) and run it six ways:
 #   1. on a noiseless AerSimulator (the exact answer)
 #   2. on AerSimulator with IBM Fez's noise, no error correction
-#   3. on AerSimulator with IBM Fez's noise, after passing it through bit_flip_encoded
-#   4. on AerSimulator with IBM Fez's noise, after passing it through phase_flip_encoded
-# then print the results so no correction, bit-flip correction and phase-flip correction can be compared.
+#   3-6. on AerSimulator with IBM Fez's noise, after passing it through each code in ENCODERS:
+#        bit-flip and phase-flip, each corrected two ways:
+#          if blocks: measure the ancillas, then apply X or Z with qc.switch   (bit_flip_encoded, phase_flip_encoded)
+#          Toffoli:   decode, then a Toffoli flips q_0 back, no measurement     (bit_flip_toffoli, phase_flip_toffoli)
+# then print the results so no correction and each kind of correction can be compared.
 #
 # Change the settings at the bottom of this file (under __main__), then run:
 #   python src/noisy/compare_fez.py
@@ -16,10 +18,13 @@ from qiskit_aer import AerSimulator
 from qiskit_ibm_runtime.fake_provider import FakeFez
 
 from bit_flip_encoded import bit_flip_encoded
+from bit_flip_toffoli import bit_flip_toffoli
 from phase_flip_encoded import phase_flip_encoded
+from phase_flip_toffoli import phase_flip_toffoli
 
 ALL_GATES = ("x", "y", "z", "s", "t", "id")
 XZ_GATES = ("x", "z")
+REPEAT_GATES = ("x", "y", "z", "s", "t")
 
 
 def random_circuit(num_gates=100, seed=None, gate_set=ALL_GATES):
@@ -43,12 +48,26 @@ def random_xz_gates(num_gates=100, seed=None):
     return random_circuit(num_gates, seed, XZ_GATES)
 
 
+def repeated_gates(num_gates=100, seed=None):
+    # Not random: X, Y, Z, S, T, X, Y, Z, S, T, ... until there are num_gates gates.
+    # seed is ignored here (the circuit is always the same) but still sets the transpiler and simulator seeds
+    qc = QuantumCircuit(1)
+    for i in range(num_gates):
+        getattr(qc, REPEAT_GATES[i % len(REPEAT_GATES)])(0)
+    return qc
+
+
 # Which function builds the circuit for each gate_set option
-CIRCUIT_FUNCTIONS = {"all": random_all_gates, "xz": random_xz_gates}
-GATE_NAMES = {"all": ALL_GATES, "xz": XZ_GATES}
+CIRCUIT_FUNCTIONS = {"all": random_all_gates, "xz": random_xz_gates, "repeat": repeated_gates}
+GATE_NAMES = {"all": ALL_GATES, "xz": XZ_GATES, "repeat": REPEAT_GATES}
 
 # The error-correction codes to compare, and the label printed for each
-ENCODERS = {"bit-flip code": bit_flip_encoded, "phase-flip code": phase_flip_encoded}
+ENCODERS = {
+    "bit-flip, if blocks": bit_flip_encoded,
+    "bit-flip, Toffoli": bit_flip_toffoli,
+    "phase-flip, if blocks": phase_flip_encoded,
+    "phase-flip, Toffoli": phase_flip_toffoli,
+}
 
 
 def mirrored(circuit):
@@ -70,8 +89,9 @@ def prob_one(counts, register_index=0):
     return ones, sum(counts.values()) - ones
 
 
-def compare(num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False):
-    # gate_set: "all" uses random_all_gates, "xz" uses random_xz_gates
+def compare(num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False, encoders=ENCODERS):
+    # gate_set: "all" uses random_all_gates, "xz" uses random_xz_gates, "repeat" uses repeated_gates
+    # encoders: {label: function} of the codes to run (all 4 in ENCODERS by default)
     if seed is None:
         seed = random.randrange(10**6)
     circuit = CIRCUIT_FUNCTIONS[gate_set](num_gates, seed)
@@ -93,32 +113,47 @@ def compare(num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False)
     # Convert every circuit to Fez's gates (cz, rz, sx, x) and fit it onto Fez's qubits.
     # optimization_level=0 keeps every gate: otherwise the transpiler would merge the random
     # gates into one or two, and the comparison would hide the noise from the extra gates
-    options = dict(optimization_level=0, layout_method="sabre", routing_method="sabre", seed_transpiler=seed)
+    options = dict(optimization_level=0, routing_method="sabre", seed_transpiler=seed)
+    encoded = {name: encoder(circuit) for name, encoder in encoders.items()}
+
+    # Pick Fez's physical qubits once, for the encoded circuit with the most qubits, and start every
+    # run on those same qubits. Otherwise each circuit is placed separately and can land on better or
+    # worse qubits, which shows up as a difference between the codes. Qubit order is q_0, q_1, q_2, then
+    # the ancillas, so the 3-qubit codes get the same data qubits and no correction gets q_0's qubit.
+    # (Routing can still add different SWAPs to each circuit, which moves qubits around after the start)
+    largest = max(encoded.values(), key=lambda qc: qc.num_qubits)
+    layout = transpile(largest, noisy_sim, layout_method="sabre", **options).layout.initial_index_layout(filter_ancillas=True)
+
     # build a dict with the fez circuits
-    fez_circuits = {"no correction": transpile(plain, noisy_sim, **options)}
-    for name, encoder in ENCODERS.items():
-        fez_circuits[name] = transpile(encoder(circuit), noisy_sim, **options)
+    fez_circuits = {"no correction": transpile(plain, noisy_sim, initial_layout=layout[:1], **options)}
+    for name, qc in encoded.items():
+        fez_circuits[name] = transpile(qc, noisy_sim, initial_layout=layout[:qc.num_qubits], **options)
     #run the circuits
     runs = [("no noise", ideal_sim.run(plain, shots=shots).result().get_counts())]
     for name, fez_circuit in fez_circuits.items():
         counts = noisy_sim.run(fez_circuit, shots=shots, seed_simulator=seed).result().get_counts()
         runs.append((f"Fez noise, {name}", counts))
     #print the results
-    print(f"Random circuit: {num_gates} gates from {', '.join(GATE_NAMES[gate_set])}  (seed {seed}"
+    kind = "Repeating circuit" if gate_set == "repeat" else "Random circuit"
+    print(f"{kind}: {num_gates} gates from {', '.join(GATE_NAMES[gate_set])}  (seed {seed}"
           f"{', mirrored' if mirror else ''})")
     print(f"Shots per run: {shots}")
+    print(f"Fez qubits:    q_0, q_1, q_2 = {layout[:3]}   ancillas = {layout[3:]}")
     print(f"Exact answer:  P(0) = {1 - exact_p1:.4f}   P(1) = {exact_p1:.4f}\n")
 
-    print(f"{'run':<28}{'0':>7}{'1':>7}{'P(1)':>10}{'off from exact':>17}")
-    print("-" * 69)
+    # Column widths grow to fit the longest run name
+    run_width = max(28, max(len(name) for name, _ in runs) + 2)
+    print(f"{'run':<{run_width}}{'0':>7}{'1':>7}{'P(1)':>10}{'off from exact':>17}")
+    print("-" * (run_width + 41))
     for name, counts in runs:
         ones, zeros = prob_one(counts)
         p1 = ones / shots
-        print(f"{name:<28}{zeros:>7}{ones:>7}{p1:>10.4f}{abs(p1 - exact_p1):>17.4f}")
+        print(f"{name:<{run_width}}{zeros:>7}{ones:>7}{p1:>10.4f}{abs(p1 - exact_p1):>17.4f}")
 
     print("\nCircuit size on Fez:")
+    size_width = max(18, max(len(name) for name in fez_circuits) + 2)
     for name, fez_circuit in fez_circuits.items():
-        print(f"  {name:<18}{fez_circuit.size():>7} gates, depth {fez_circuit.depth()}")
+        print(f"  {name:<{size_width}}{fez_circuit.size():>7} gates, depth {fez_circuit.depth()}")
     if 0.35 < exact_p1 < 0.65:
         print("\nNote: the exact answer is close to 50/50, and noise tends to push results toward 50/50,")
         print("so noise is hard to see here. Try another SEED or set MIRROR = True (exact answer is then always 0).")
@@ -126,10 +161,10 @@ def compare(num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False)
 
 if __name__ == "__main__":
     # ---- Settings: change these to run a different experiment ----
-    NUM_GATES = 300    # how many random gates in the circuit
+    NUM_GATES = 3000    # how many random gates in the circuit
     SHOTS = 1000       # how many times each version of the circuit is run
     SEED = 3        # a number (e.g. 3) gives the same circuit every time; None picks a new random one
-    GATE_SET = "all"   # "all" = X, Y, Z, S, T, id     "xz" = only X and Z
+    GATE_SET = "repeat"  # "all" = X, Y, Z, S, T, id     "xz" = only X and Z     "repeat" = X, Y, Z, S, T in order, over and over
     MIRROR = False     # True adds the circuit's inverse, so the exact answer is always 0
 
     compare(num_gates=NUM_GATES, shots=SHOTS, seed=SEED, gate_set=GATE_SET, mirror=MIRROR)

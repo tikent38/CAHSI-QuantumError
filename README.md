@@ -76,6 +76,8 @@ CAHSI-QuantumError/
 │   └── noisy/                    # the codes on IBM Fez noise vs. unencoded circuits
 │       ├── bit_flip_encoded.py
 │       ├── phase_flip_encoded.py
+│       ├── bit_flip_toffoli.py
+│       ├── phase_flip_toffoli.py
 │       └── compare_fez.py
 ├── .gitignore
 └── README.md
@@ -199,35 +201,78 @@ print(bit_flip_encoded(example).draw(fold=-1))
 
 This code does not detect X errors. In this encoding a single X on any qubit acts as a logical phase flip, which doesn’t change a `0`/`1` measurement unless the circuit later rotates the qubit (e.g. with H).
 
+### `bit_flip_toffoli.py` and `phase_flip_toffoli.py`
+
+`bit_flip_toffoli(circuit, measure=True)` and `phase_flip_toffoli(circuit, measure=True)` are the same two codes, with the same encoding and the same handling of each gate, but they correct the error the way [Reed et al. (2012)](https://doi.org/10.1038/nature10786) do: with a Toffoli (CCNOT) gate inside the circuit instead of measuring ancillas and using if blocks.
+
+- **No ancillas:** the circuit uses only the 3 data qubits.
+- **Decode first:** after decoding, `q_1` and `q_2` hold the syndrome. A flip on `q_1` or `q_2` stays on that qubit and doesn’t reach `q_0`. A flip on `q_0` sets both `q_1` and `q_2` to 1.
+- **Correct:** a Toffoli controlled by `q_1` and `q_2` flips `q_0` back. Nothing is measured until the final result.
+
+For the phase-flip code, decoding undoes the H gates, which turns a sign flip back into a bit flip, so the same Toffoli fixes it.
+
+With `measure=False` the corrected qubit is left decoded on `q_0` and the syndrome stays on `q_1` and `q_2`. Unlike the if-block versions, these qubits would need to be reset before another round of correction.
+
 ### `compare_fez.py`
 
-Builds a random one-qubit circuit and runs it four ways: on a noiseless `AerSimulator`, and on `AerSimulator` with IBM Fez noise with no correction, with `bit_flip_encoded`, and with `phase_flip_encoded`. It prints the counts for each, how far each is from the exact answer, and the size of each circuit after transpiling for Fez.
+Builds a one-qubit circuit and runs it six ways: on a noiseless `AerSimulator`, and on `AerSimulator` with IBM Fez noise with no correction and with each of the four encoders:
+
+| Label | Function | How the error is corrected |
+|---|---|---|
+| bit-flip, if blocks | `bit_flip_encoded` | measure the ancillas, then X with `qc.switch` |
+| bit-flip, Toffoli | `bit_flip_toffoli` | decode, then a Toffoli flips `q_0` back |
+| phase-flip, if blocks | `phase_flip_encoded` | measure the ancillas, then Z with `qc.switch` |
+| phase-flip, Toffoli | `phase_flip_toffoli` | decode, then a Toffoli flips `q_0` back |
+
+It prints the counts for each, how far each is from the exact answer, and the size of each circuit after transpiling for Fez.
 
 Circuits must not contain H gates; `compare()` raises a `ValueError` if they do. H has no protected version in either code, so both would have to decode around it.
 
 Set the experiment in the settings block at the bottom of the file, then run it:
 
 ```python
-NUM_GATES = 1000   # how many random gates in the circuit
-SHOTS = 1000       # how many times each version of the circuit is run
-SEED = 3           # a number (e.g. 3) gives the same circuit every time; None picks a new random one
-GATE_SET = "all"   # "all" = X, Y, Z, S, T, id     "xz" = only X and Z
-MIRROR = False     # True adds the circuit's inverse, so the exact answer is always 0
+NUM_GATES = 300      # how many random gates in the circuit
+SHOTS = 1000         # how many times each version of the circuit is run
+SEED = 3             # a number (e.g. 3) gives the same circuit every time; None picks a new random one
+GATE_SET = "repeat"  # "all" = X, Y, Z, S, T, id     "xz" = only X and Z     "repeat" = X, Y, Z, S, T in order, over and over
+MIRROR = False       # True adds the circuit's inverse, so the exact answer is always 0
 ```
 
 ```bash
 python src/noisy/compare_fez.py
 ```
 
-From your own code, call `compare(num_gates, shots, seed, gate_set, mirror)`, or build circuits with `random_all_gates(num_gates, seed)` (X, Y, Z, S, T, id) or `random_xz_gates(num_gates, seed)` (X and Z only).
+From your own code, call `compare(num_gates, shots, seed, gate_set, mirror, encoders)`, where `encoders` is a `{label: function}` dict of the codes to run (all four above by default), or build circuits with `random_all_gates(num_gates, seed)` (X, Y, Z, S, T, id), `random_xz_gates(num_gates, seed)` (X and Z only), or `repeated_gates(num_gates)` (X, Y, Z, S, T repeated in order, not random). With `"repeat"` the seed doesn’t change the circuit, but it still sets the transpiler’s qubit placement and the simulator’s randomness.
 
 The seed used is printed, so any run can be repeated exactly. All noisy runs are transpiled with `optimization_level=0` so the transpiler doesn’t merge the random gates away.
 
-Results so far (seed 3, 100 gates, mirrored, 1000 shots), error rate on Fez noise:
+Every run starts on the same physical qubits of Fez, which are printed as `Fez qubits`. The transpiler picks them once for the largest encoded circuit (the 5-qubit if-block version), and each run reuses them: the 3-qubit codes get the same data qubits, and no correction gets `q_0`’s qubit. Without this, each circuit would be placed separately and could land on better or worse qubits, which would look like a difference between the codes. Routing can still add different SWAPs to each circuit, so qubits can move after the start.
 
-| Gate set | No correction | Bit-flip code | Phase-flip code |
-|---|---|---|---|
-| all gates (X, Y, Z, S, T, id) | 0.034 | 0.076 | 0.067 |
-| X and Z only | 0.035 | 0.076 | 0.066 |
+Results so far (100 gates, mirrored, 4000 shots), error rate on Fez noise:
 
-Both codes make the result **worse** than no correction on Fez noise at this circuit length. Neither code decodes for any of these gates, so the remaining cost comes from the encoding, the syndrome-check CNOTs, the SWAPs Fez’s qubit wiring needs, and measurement errors on the ancillas. The phase-flip code’s encoded circuit is larger with all gates (1157 vs 647 gates on Fez) because of the extra H gates around S and T.
+| Gate set | Seed | Fez qubits (`q_0`, `q_1`, `q_2`) | No correction | Bit-flip, if blocks | Bit-flip, Toffoli | Phase-flip, if blocks | Phase-flip, Toffoli |
+|---|---|---|---|---|---|---|---|
+| all gates | 1 | 37, 25, 45 | 0.029 | 0.041 | 0.022 | 0.044 | 0.025 |
+| all gates | 2 | 85, 77, 86 | 0.018 | 0.026 | 0.026 | 0.044 | 0.032 |
+| all gates | 3 | 85, 86, 65 | 0.023 | 0.051 | 0.031 | 0.076 | 0.037 |
+| all gates | 4 | 111, 98, 109 | 0.017 | 0.051 | 0.033 | 0.059 | 0.034 |
+| all gates | 5 | 29, 30, 49 | 0.021 | 0.066 | 0.028 | 0.074 | 0.029 |
+| X and Z only | 1 | 37, 25, 45 | 0.028 | 0.040 | 0.024 | 0.045 | 0.022 |
+| X and Z only | 2 | 85, 77, 86 | 0.019 | 0.029 | 0.026 | 0.043 | 0.025 |
+| X and Z only | 3 | 85, 86, 65 | 0.024 | 0.050 | 0.029 | 0.074 | 0.035 |
+| X and Z only | 4 | 111, 98, 109 | 0.018 | 0.051 | 0.035 | 0.048 | 0.033 |
+| X and Z only | 5 | 29, 30, 49 | 0.021 | 0.072 | 0.028 | 0.070 | 0.028 |
+| repeat | 1 | 37, 25, 45 | 0.025 | 0.041 | 0.022 | 0.044 | 0.028 |
+| repeat | 2 | 85, 77, 86 | 0.018 | 0.025 | 0.024 | 0.041 | 0.027 |
+| repeat | 3 | 85, 86, 65 | 0.022 | 0.050 | 0.029 | 0.074 | 0.034 |
+| repeat | 4 | 111, 98, 109 | 0.017 | 0.052 | 0.035 | 0.057 | 0.033 |
+| repeat | 5 | 29, 30, 49 | 0.019 | 0.069 | 0.028 | 0.074 | 0.029 |
+
+No correction gives the lowest error in every run except seed 1, where no correction itself has a higher error (0.025–0.029) and the Toffoli versions come out ahead. The if-block versions are always **worse** than no correction. Neither code decodes for any of these gates, so the cost comes from the encoding, the syndrome-check CNOTs, the SWAPs Fez’s qubit wiring needs, and measurement errors on the ancillas. The phase-flip code’s encoded circuit is larger (1704 vs 954 gates on Fez for the default 300-gate repeating circuit) because of the extra H gates around S and T.
+
+The Toffoli versions have lower error than the if-block versions in every run except one tie. This is mostly not because the Toffoli corrects more errors. It is because the if-block versions add errors of their own:
+
+- **One wrong ancilla bit flips `q_0`.** A flip on `q_0` gives syndrome `01`, where only one ancilla is set. Any single error that sets `a_0` by mistake gives the same syndrome, so the if blocks apply an X to a `q_0` that was fine: a readout error, a bad syndrome CNOT, or a flip on the ancilla itself. The Toffoli only flips `q_0` when `q_1` and `q_2` are both 1, so a false correction needs two errors at once.
+- **More measurements.** The if-block versions measure both ancillas as well as the output, and readout is one of the largest error sources on Fez. The Toffoli versions measure only `q_0`.
+
+The Toffoli itself becomes about 6 two-qubit gates plus SWAPs on Fez, since three qubits can’t all be connected to each other on Fez’s qubit wiring. That can add about as much error as it removes.
