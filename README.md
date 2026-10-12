@@ -2,7 +2,7 @@
 
 A repository for the CAHSI project: **Reproducible Benchmarking of Small Quantum Error-Correction Circuits for Quantum Software Reliability**.
 
-The project studies the three-qubit bit-flip and phase-flip codes in Qiskit: first on a noiseless simulator to check that they work, then on noisy simulators to see when error correction actually lowers the error rate compared with running a circuit unencoded.
+The project studies the three-qubit bit-flip and phase-flip codes and the nine-qubit Shor code in Qiskit: first on a noiseless simulator to check that they work, then on noisy simulators to see when error correction actually lowers the error rate compared with running a circuit unencoded.
 
 ## Getting started
 
@@ -69,15 +69,17 @@ CAHSI-QuantumError/
 │   │   ├── qiskit_test.py
 │   │   ├── aer_test.py
 │   │   └── aer_noise_test.py
-│   ├── noiseless/                # the 3-qubit codes with hand-placed errors, no noise
+│   ├── noiseless/                # the codes with hand-placed errors, no noise
 │   │   ├── bit_flip_code.py
 │   │   ├── phase_flip_code.py
+│   │   ├── shor_code.py
 │   │   └── error_test.py
 │   └── noisy/                    # the codes on IBM Fez noise vs. unencoded circuits
 │       ├── bit_flip_encoded.py
 │       ├── phase_flip_encoded.py
 │       ├── bit_flip_toffoli.py
 │       ├── phase_flip_toffoli.py
+│       ├── shor_encoded.py
 │       └── compare_fez.py
 ├── .gitignore
 └── README.md
@@ -127,7 +129,7 @@ python src/installation_tests/aer_noise_test.py
 
 ## `src/noiseless/`
 
-The three-qubit codes with no noise. Errors are added by hand at a chosen point so you can check that each one is detected.
+The codes with no noise. Errors are added by hand at a chosen point so you can check that each one is detected.
 
 ### `bit_flip_code.py`
 
@@ -137,19 +139,30 @@ The three-qubit codes with no noise. Errors are added by hand at a chosen point 
 
 `phase_flip_code(state_prep, error_qubits=None)` is the same idea for phase flips: it encodes into $a|{+}{+}{+}\rangle + b|{-}{-}{-}\rangle$, applies Z errors, and measures the syndrome using phase kickback. `print_correction(syndrome)` prints which Z gate would fix the error.
 
+### `shor_code.py`
+
+`shor_code(state_prep, x_errors=None, z_errors=None)` builds the 9-qubit Shor code circuit, following the IBM course [Foundations of Quantum Error Correction: The 9-qubit Shor code](https://quantum.cloud.ibm.com/learning/en/courses/foundations-of-quantum-error-correction/correcting-quantum-errors/shor-code) (also Nielsen & Chuang §10.2). It is the phase-flip code with each of its three qubits encoded again with the bit-flip code, giving three blocks: `q_0`–`q_2`, `q_3`–`q_5`, `q_6`–`q_8`.
+
+- **Encode:** the phase-flip code on `q_0`, `q_3`, `q_6`, then the bit-flip code inside each block, giving $|0\rangle \to (|000\rangle + |111\rangle)^{\otimes 3}/2\sqrt{2}$ and $|1\rangle \to (|000\rangle - |111\rangle)^{\otimes 3}/2\sqrt{2}$.
+- **Errors:** an X on each qubit in `x_errors` and a Z on each qubit in `z_errors`. Putting the same qubit in both is a Y error.
+- **Bit-flip check:** the bit-flip code’s two parity checks inside each block (ancillas `a_0`–`a_5`), measured into `b0`, `b1`, `b2`.
+- **Phase-flip check:** two ancillas (`a_6`, `a_7`) measure X on all six qubits of blocks 0 and 1, and of blocks 1 and 2, using the same phase kickback as `phase_flip_code.py`, measured into `p`. This tells which block had its sign flipped, not which qubit. The course instead decodes each block, runs the phase-flip check on `q_0`, `q_3`, `q_6`, and re-encodes; both measure the same thing, and this version uses fewer gates.
+
+The circuit does not apply the correction itself; `print_correction(bit_syndromes, phase_syndrome)` prints which X gate and which block’s Z gate would fix the error. It can fix one X and one Z error at once, on the same qubit or on different ones.
+
 ### `error_test.py`
 
-Runs a code on input $|0\rangle$ with no error and with an error on each qubit (4,000 shots each), then prints the circuit, the syndrome, the probability of measuring `1`, and the needed correction for each case. Because the circuits don’t correct themselves, it fixes the measured result in Python (`correct_bit_flip`).
+Runs a code on input $|0\rangle$ with no error and with an error on each qubit (4,000 shots each), then prints the circuit, the syndrome, the probability of measuring `1`, and the needed correction for each case. For the Shor code it tests X, Z, and Y errors on qubits in each block, plus an X and a Z on different qubits. Because the circuits don’t correct themselves, it fixes the measured result in Python (`correct_bit_flip`, `correct_shor`).
 
 ```bash
 python src/noiseless/error_test.py
 ```
 
-Choose which code to test by commenting or uncommenting `test_bit_flip()` and `test_phase_flip()` at the bottom of the file (currently only `test_phase_flip()` runs).
+Choose which code to test by commenting or uncommenting `test_bit_flip()`, `test_phase_flip()`, and `test_shor()` at the bottom of the file (currently only `test_phase_flip()` runs).
 
 ## `src/noisy/`
 
-The bit-flip and phase-flip codes on a noisy Aer simulator, compared with running the same circuit unencoded.
+The bit-flip, phase-flip, and Shor codes on a noisy Aer simulator, compared with running the same circuit unencoded.
 
 ### `bit_flip_encoded.py`
 
@@ -163,7 +176,7 @@ How the circuit’s gates are applied to the encoded qubit:
 
 There is a single syndrome check at the end, so it can correct at most one bit flip over the whole circuit.
 
-This file and `phase_flip_encoded.py` only define functions; running them directly prints nothing. To see an encoded circuit, run this from `src/noisy/`:
+This file, `phase_flip_encoded.py`, and `shor_encoded.py` only define functions; running them directly prints nothing. To see an encoded circuit, run this from `src/noisy/`:
 
 ```python
 from qiskit import QuantumCircuit
@@ -204,9 +217,21 @@ How the two ways of correcting differ:
 - **Measurements.** The if-block versions measure both ancillas as well as the output. The Toffoli versions measure only `q_0`.
 - **Cost of the Toffoli.** On Fez the Toffoli becomes about 6 two-qubit gates plus SWAPs, since three qubits can’t all be connected to each other on Fez’s qubit wiring.
 
+### `shor_encoded.py`
+
+`shor_encoded(circuit, measure=True)` is the Shor code from `noiseless/shor_code.py` (same encoding and checks) built the same way as `bit_flip_encoded`: it applies the circuit’s gates to the encoded qubit, measures the syndromes, and corrects with if blocks (`qc.switch`). It uses 9 data qubits and 8 ancillas.
+
+How the circuit’s gates are applied to the encoded qubit:
+
+- **X** is Z on one qubit of each block (`q_0`, `q_3`, `q_6`), **Z** is X on every qubit of one block (`q_0`, `q_1`, `q_2`), **Y** is both, and **`id`** goes on all nine qubits. The qubit stays protected.
+- **S, T, Sdg, Tdg, P, Rz** are applied by decoding block 0 only (2 CNOTs), applying H, the gate, H to `q_0` as in `phase_flip_encoded`, and re-encoding block 0 (2 CNOTs). Blocks 1 and 2 stay encoded, but block 0 is not fully protected during the gate.
+- **H and any other gate** is applied by fully decoding (8 CNOTs), running the gate on `q_0`, and re-encoding (8 CNOTs). The qubit is not protected during that gate.
+
+After the gates, it runs the bit-flip check and applies an X to the flipped qubit in each block, then runs the phase-flip check and applies a Z to the first qubit of the flagged block. As with the other codes, there is a single round of checks at the end.
+
 ### `compare_fez.py`
 
-Builds a one-qubit circuit and runs it six ways: on a noiseless `AerSimulator`, and on `AerSimulator` with IBM Fez noise with no correction and with each of the four encoders:
+Builds a one-qubit circuit and runs it seven ways: on a noiseless `AerSimulator`, and on `AerSimulator` with IBM Fez noise with no correction and with each of the five encoders:
 
 | Label | Function | How the error is corrected |
 |---|---|---|
@@ -214,10 +239,11 @@ Builds a one-qubit circuit and runs it six ways: on a noiseless `AerSimulator`, 
 | bit-flip, Toffoli | `bit_flip_toffoli` | decode, then a Toffoli flips `q_0` back |
 | phase-flip, if blocks | `phase_flip_encoded` | measure the ancillas, then Z with `qc.switch` |
 | phase-flip, Toffoli | `phase_flip_toffoli` | decode, then a Toffoli flips `q_0` back |
+| Shor, if blocks | `shor_encoded` | measure the ancillas, then X in each block and Z on one block with `qc.switch` |
 
 It prints the counts for each, how far each is from the exact answer, and the size of each circuit after transpiling for Fez.
 
-Circuits must not contain H gates; `compare()` raises a `ValueError` if they do. H has no protected version in either code, so both would have to decode around it.
+Circuits must not contain H gates; `compare()` raises a `ValueError` if they do. H has no protected version in any of the codes, so all of them would have to decode around it.
 
 Set the experiment in the settings block at the bottom of the file, then run it:
 
@@ -233,8 +259,12 @@ MIRROR = False       # True adds the circuit's inverse, so the exact answer is a
 python src/noisy/compare_fez.py
 ```
 
-From your own code, call `compare(num_gates, shots, seed, gate_set, mirror, encoders)`, where `encoders` is a `{label: function}` dict of the codes to run (all four above by default), or build circuits with `random_all_gates(num_gates, seed)` (X, Y, Z, S, T, id), `random_xz_gates(num_gates, seed)` (X and Z only), or `repeated_gates(num_gates)` (X, Y, Z, S, T repeated in order, not random). With `"repeat"` the seed doesn’t change the circuit, but it still sets the transpiler’s qubit placement and the simulator’s randomness.
+From your own code, call `compare(num_gates, shots, seed, gate_set, mirror, encoders)`, where `encoders` is a `{label: function}` dict of the codes to run (all five above by default), or build circuits with `random_all_gates(num_gates, seed)` (X, Y, Z, S, T, id), `random_xz_gates(num_gates, seed)` (X and Z only), or `repeated_gates(num_gates)` (X, Y, Z, S, T repeated in order, not random). With `"repeat"` the seed doesn’t change the circuit, but it still sets the transpiler’s qubit placement and the simulator’s randomness.
 
 The seed used is printed, so any run can be repeated exactly. All noisy runs are transpiled with `optimization_level=0` so the transpiler doesn’t merge the random gates away.
 
-Every run starts on the same physical qubits of Fez, which are printed as `Fez qubits`. The transpiler picks them once for the largest encoded circuit (the 5-qubit if-block version), and each run reuses them: the 3-qubit codes get the same data qubits, and no correction gets `q_0`’s qubit. Without this, each circuit would be placed separately and could land on better or worse qubits, which would look like a difference between the codes. Routing can still add different SWAPs to each circuit, so qubits can move after the start.
+Every run starts on the same physical qubits of Fez, which are printed as `Fez qubits`. The transpiler picks them once for the largest encoded circuit (the 17-qubit Shor code), and each run reuses them. Every code puts its data qubits first, so all codes share `q_0`–`q_2`’s qubits and no correction gets `q_0`’s qubit; the 3-qubit codes’ ancillas land on the Shor code’s `q_3` and `q_4`. Without this, each circuit would be placed separately and could land on better or worse qubits, which would look like a difference between the codes. Routing can still add different SWAPs to each circuit, so qubits can move after the start.
+
+A few of Fez’s CZ connections have an error rate of 1.0, so a gate sent through one of them always fails. The transpiler doesn’t look at error rates when it places and routes circuits, so `compare()` transpiles with Fez’s wiring minus those connections (`working_coupling_map`). Otherwise a circuit routed through one of them would come out close to 50/50. The noise from all of Fez’s other gates and qubits is still applied when the circuits run.
+
+The Shor code’s circuit is much larger than the others (17 qubits and many more gates), so it takes most of the run time. Simulation time grows with `NUM_GATES` × `SHOTS`; to compare only some of the codes, pass `encoders` to `compare()`.

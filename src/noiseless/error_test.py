@@ -1,17 +1,16 @@
 from qiskit import QuantumCircuit
 from qiskit_aer import AerSimulator
-import matplotlib
+
 
 from bit_flip_code import bit_flip_code
 from bit_flip_code import print_correction as print_bit_flip_correction
 from phase_flip_code import phase_flip_code
 from phase_flip_code import print_correction as print_phase_flip_correction
+from shor_code import shor_code
+from shor_code import print_correction as print_shor_correction
 
 SHOTS = 4000
 simulator = AerSimulator()
-
-#Example of generating a circuit to run the error codes test on
-
 
 
 def correct_bit_flip(counts):
@@ -26,6 +25,20 @@ def correct_bit_flip(counts):
         corrected[new_key] = corrected.get(new_key, 0) + n
     return corrected
 
+
+"""
+def correct_shor(counts):
+    # shor_code doesn't correct inside the circuit either. After decoding, only a sign flip in
+    # block 0 (phase syndrome 01) changes the output, so flip the out bit for those
+    corrected = {}
+    for key, n in counts.items(): # key is of form "out p b2 b1 b0" and n is shot count
+        out, p, *bits = key.split() # out is the measured qbit, p the phase syndrome, bits the bit syndromes
+        if p == "01": #if the phase syndrome says block 0 flipped sign then flip out back
+            out = "1" if out == "0" else "0"
+        new_key = " ".join([out, p, *bits]) #rebuild the dict with a new corrected out
+        corrected[new_key] = corrected.get(new_key, 0) + n
+    return corrected
+"""
 
 def run(error_qubit=None, code=bit_flip_code):
 
@@ -76,7 +89,38 @@ def test_phase_flip():
         for s in sorted(syndromes):
             print_phase_flip_correction(s)
 
+"""
+def run_shor(x_errors=None, z_errors=None):
+    qc = shor_code(QuantumCircuit(1), x_errors, z_errors)
+    #comment out the line below to stop the circuit diagram printing to the terminal
+    print(qc.draw(fold=-1))
+
+    counts = correct_shor(simulator.run(qc, shots=SHOTS).result().get_counts())
+
+    # Count keys look like "out p b2 b1 b0", e.g. "0 11 00 00 00" -> out=0, phase syndrome a_7 a_6 = 11
+    syndromes = {tuple(key.split()[1:]) for key in counts}
+    ones = sum(n for key, n in counts.items() if key.split()[0] == "1")
+    return syndromes, ones / SHOTS
+"""
+"""
+def test_shor():
+    print("=" * 60)
+    print("  SHOR CODE   (input: |0>)")
+    print("=" * 60)
+    # (label, x_errors, z_errors). X and Z on the same qubit is a Y error
+    cases = [("no error", None, None)]
+    cases += [(f"X on q{q}", [q], None) for q in (0, 4, 8)]
+    cases += [(f"Z on q{q}", None, [q]) for q in (0, 4, 8)]
+    cases += [("Y on q4", [4], [4]), ("X on q2 and Z on q7", [2], [7])]
+    for label, x_errors, z_errors in cases:
+        print(f"\n--- {label} ---\n")
+        syndromes, p1 = run_shor(x_errors, z_errors)
+        print(f"\n  {'P(out=1):':20} {p1:.3f}\n")
+        for p, b2, b1, b0 in sorted(syndromes):
+            print_shor_correction([b0, b1, b2], p)
+"""
 
 if __name__ == "__main__":
-    #test_bit_flip() #run bit_flip_code 
+    test_bit_flip() #run bit_flip_code
     test_phase_flip() #run phase_flip_code
+    #test_shor() #run shor_code
