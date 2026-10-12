@@ -2,9 +2,24 @@
 # 9-qubit Shor code: protects one qubit from any single-qubit error (X, Z, or Y = both at once).
 # It is the phase-flip code with each of its 3 qubits encoded again with the bit-flip code,
 # giving 3 blocks of 3 qubits: q_0-q_2, q_3-q_5, q_6-q_8
-# (IBM Foundations of Quantum Error Correction, "The 9-qubit Shor code"; Nielsen & Chuang 10.2).
-# See notes/error_codes.md for the bit-flip and phase-flip codes it is built from.
+
+# Follows the course's steps: check each block for bit flips, then check for phase flips with the
+# course's simplified Z error detection. 
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
+
+BLOCKS = (0, 3, 6) # first qubit of each block
+
+
+def encode_block(qc, data, first):
+    # Bit-flip code inside one block:  |+> -> |000> + |111>,  |-> -> |000> - |111>
+    qc.cx(data[first], data[first + 1])
+    qc.cx(data[first], data[first + 2])
+
+
+def decode_block(qc, data, first):
+    # Undo encode_block
+    qc.cx(data[first], data[first + 2])
+    qc.cx(data[first], data[first + 1])
 
 
 def shor_code(state_prep, x_errors=None, z_errors=None):
@@ -27,11 +42,12 @@ def shor_code(state_prep, x_errors=None, z_errors=None):
     #    a|0> + b|1>  ->  a|+++> + b|--->
     qc.cx(data[0], data[3])
     qc.cx(data[0], data[6])
-    qc.h([data[0], data[3], data[6]])
-    #    then the bit-flip code inside each block:  |+> -> |000> + |111>,  |-> -> |000> - |111>
-    for first in (0, 3, 6):
-        qc.cx(data[first], data[first + 1])
-        qc.cx(data[first], data[first + 2])
+
+    qc.h([data[first] for first in BLOCKS])
+    qc.barrier()
+    #    then the bit-flip code inside each block
+    for first in BLOCKS:
+        encode_block(qc, data, first)
     qc.barrier()
 
     # Optional apply error X and Z gates to qubits (X and Z on the same qubit is a Y error)
@@ -43,21 +59,17 @@ def shor_code(state_prep, x_errors=None, z_errors=None):
         qc.barrier()
 
     # 3. Bit-flip check: the bit-flip code's pairwise parities, done separately in each block
-    for block in range(3):
-        first = 3 * block
+    for block, first in enumerate(BLOCKS):
         a0, a1 = anc[2 * block], anc[2 * block + 1]
         qc.cx(data[first], a0)
         qc.cx(data[first + 1], a0)
         qc.cx(data[first + 1], a1)
         qc.cx(data[first + 2], a1)
-    qc.barrier()
+        qc.measure([a0, a1], bit_syndromes[block])
+        qc.barrier()
+    
 
-    # 4. Phase-flip check: compare the signs of neighbouring blocks.
-    #    a_6 measures X on all of blocks 0 and 1 (q_0-q_5), a_7 measures X on all of blocks 1 and 2 (q_3-q_8).
-    #    Same phase kickback as phase_flip_code.py: the ancillas start in |+> and control CNOTs onto
-    #    the data qubits, so a sign flip anywhere in a block kicks back onto the ancilla. H then turns |+>/|-> into 0/1.
-    #    This gives the same result as the course's version (decode each block, run the phase-flip
-    #    check on q_0, q_3, q_6, re-encode) with fewer gates
+    # 4. Phase-flip check, the course's simplified version
     qc.h([anc[6], anc[7]])
     for q in range(0, 6):
         qc.cx(anc[6], data[q])
@@ -65,25 +77,20 @@ def shor_code(state_prep, x_errors=None, z_errors=None):
         qc.cx(anc[7], data[q])
     qc.h([anc[6], anc[7]])
     qc.barrier()
-
-    for block in range(3):
-        qc.measure([anc[2 * block], anc[2 * block + 1]], bit_syndromes[block])
     qc.measure([anc[6], anc[7]], phase_syndrome)
+    qc.barrier()
 
-    # 5. No correction gate in the circuit. The syndromes are only known after the circuit
+    # 5. No correction gates in the circuit. The syndromes are only known after the circuit
     # runs, so print_correction() below reports which X and Z gates would fix the error, and the
     # measured out bit gets fixed afterwards in Python (see error_test.py)
 
     # 6. Decode back to q_0 (undo step 2 in reverse order) and measure it.
-    # After decoding, only a sign flip in block 0 (phase syndrome 01) changes the output;
-    # bit flips and sign flips in the other blocks don't reach q_0
     out = ClassicalRegister(1, "out")
     qc.add_register(out)
     qc.barrier()
-    for first in (0, 3, 6):
-        qc.cx(data[first], data[first + 2])
-        qc.cx(data[first], data[first + 1])
-    qc.h([data[0], data[3], data[6]])
+    for first in BLOCKS:
+        decode_block(qc, data, first)
+    qc.h([data[first] for first in BLOCKS])
     qc.cx(data[0], data[6])
     qc.cx(data[0], data[3])
     qc.measure(data[0], out[0])

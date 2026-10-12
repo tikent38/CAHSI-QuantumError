@@ -49,6 +49,7 @@ CAHSI-QuantumError/
         ├── phase_flip_encoded.py
         ├── phase_flip_toffoli.py
         ├── shor_encoded.py
+        ├── shor_toffoli.py
         └── compare_fez.py        # runs a circuit unencoded and with each code
 ```
 

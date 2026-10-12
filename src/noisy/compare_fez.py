@@ -1,16 +1,3 @@
-# compare_fez.py
-# Build a 1-qubit circuit (no H gates) and run it seven ways:
-#   1. on a noiseless AerSimulator (the exact answer)
-#   2. on AerSimulator with IBM Fez's noise, no error correction
-#   3-7. on AerSimulator with IBM Fez's noise, after passing it through each code in ENCODERS:
-#        bit-flip and phase-flip, each corrected two ways:
-#          if blocks: measure the ancillas, then apply X or Z with qc.switch   (bit_flip_encoded, phase_flip_encoded)
-#          Toffoli:   decode, then a Toffoli flips q_0 back, no measurement     (bit_flip_toffoli, phase_flip_toffoli)
-#        and the 9-qubit Shor code, corrected with if blocks                    (shor_encoded)
-# then print the results so no correction and each kind of correction can be compared.
-#
-# Change the settings at the bottom of this file (under __main__), then run:
-#   python src/noisy/compare_fez.py
 import random
 
 from qiskit import QuantumCircuit, transpile
@@ -24,10 +11,11 @@ from bit_flip_toffoli import bit_flip_toffoli
 from phase_flip_encoded import phase_flip_encoded
 from phase_flip_toffoli import phase_flip_toffoli
 from shor_encoded import shor_encoded
+from shor_toffoli import shor_toffoli
 
 ALL_GATES = ("x", "y", "z", "s", "t", "id")
 XZ_GATES = ("x", "z")
-REPEAT_GATES = ("x", "y", "z", "s", "t")
+REPEAT_GATES = ("x", "y", "z")
 
 
 def random_circuit(num_gates=100, seed=None, gate_set=ALL_GATES):
@@ -41,19 +29,16 @@ def random_circuit(num_gates=100, seed=None, gate_set=ALL_GATES):
 
 def random_all_gates(num_gates=100, seed=None):
     # Random circuit using every gate in ALL_GATES (X, Y, Z, S, T, id).
-    # The bit-flip and phase-flip codes apply all of these without decoding, so no extra CNOTs.
-    # The Shor code decodes block 0 around S and T (4 extra CNOTs each)
     return random_circuit(num_gates, seed, ALL_GATES)
 
 
 def random_xz_gates(num_gates=100, seed=None):
     # Random circuit using only X and Z. Every code applies these without decoding,
-    # so no extra CNOTs. The exact answer is always 0 or 1, never in between
     return random_circuit(num_gates, seed, XZ_GATES)
 
 
 def repeated_gates(num_gates=100, seed=None):
-    # Not random: X, Y, Z, S, T, X, Y, Z, S, T, ... until there are num_gates gates.
+    # Not random: X, Y, Z, X, Y, Z, ... until there are num_gates gates.
     # seed is ignored here (the circuit is always the same) but still sets the transpiler and simulator seeds
     qc = QuantumCircuit(1)
     for i in range(num_gates):
@@ -72,6 +57,7 @@ ENCODERS = {
     "phase-flip, if blocks": phase_flip_encoded,
     "phase-flip, Toffoli": phase_flip_toffoli,
     "Shor, if blocks": shor_encoded,
+    "Shor, Toffoli": shor_toffoli,
 }
 
 
@@ -88,9 +74,7 @@ def check_no_h(circuit):
 
 
 def working_coupling_map(backend, max_error=0.5):
-    # Fez's qubit wiring without the broken connections. A few of Fez's CZ connections have an error
-    # rate of 1.0 (the gate fails every time), and the transpiler doesn't look at error rates when it
-    # places and routes a circuit, so it can send CNOTs through them and make the result random
+    # Fez's qubit wiring without the broken connections.
     edges = [pair for pair, props in backend.target["cz"].items()
              if props is None or props.error is None or props.error < max_error]
     return CouplingMap(edges)
@@ -105,7 +89,7 @@ def prob_one(counts, register_index=0):
 
 def compare(num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False, encoders=ENCODERS):
     # gate_set: "all" uses random_all_gates, "xz" uses random_xz_gates, "repeat" uses repeated_gates
-    # encoders: {label: function} of the codes to run (all 5 in ENCODERS by default)
+
     if seed is None:
         seed = random.randrange(10**6)
     circuit = CIRCUIT_FUNCTIONS[gate_set](num_gates, seed)
@@ -126,20 +110,29 @@ def compare(num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False,
 
     # Convert every circuit to Fez's gates (cz, rz, sx, x) and fit it onto Fez's qubits.
     # optimization_level=0 keeps every gate: otherwise the transpiler would merge the random
-    # gates into one or two, and the comparison would hide the noise from the extra gates
+    # gates into one or two
     # Fez's gates and wiring are passed in directly, instead of the backend, so the wiring can leave out
-    # Fez's broken connections (see working_coupling_map). The noise still comes from noisy_sim when the circuits run
+    # Fez's broken connections (see working_coupling_map). The noise comes from noisy_sim when the circuits run
     options = dict(optimization_level=0, routing_method="sabre", seed_transpiler=seed,
                    basis_gates=list(backend.target.operation_names), coupling_map=working_coupling_map(backend))
-    encoded = {name: encoder(circuit) for name, encoder in encoders.items()}
+    # A code that can't run this circuit raises ValueError (the Shor codes only allow Pauli gates,
+    # so they are skipped for gate_set="all"); leave it out of the comparison and print why
+    encoded, skipped = {}, {}
+    for name, encoder in encoders.items():
+        try:
+            encoded[name] = encoder(circuit)
+        except ValueError as err:
+            skipped[name] = err
 
     # Pick Fez's physical qubits once, for the encoded circuit with the most qubits, and start every
     # run on those same qubits. Otherwise each circuit is placed separately and can land on better or
     # worse qubits, which shows up as a difference between the codes. Every code puts its data qubits first
     # (q_0, q_1, q_2, ...) and its ancillas after, so all codes share q_0-q_2's qubits and no correction
-    # gets q_0's qubit. With the Shor code included, the largest circuit is the 17-qubit Shor code, so the
+    # gets q_0's qubit. 
+    # With the Shor code included, the largest circuit is the 17-qubit Shor code, so the
     # bit-flip and phase-flip ancillas land on Shor's q_3 and q_4.
-    # (Routing can still add different SWAPs to each circuit, which moves qubits around after the start)
+
+    # generate the qubit layout so its shared between all runs
     largest = max(encoded.values(), key=lambda qc: qc.num_qubits)
     layout = transpile(largest, layout_method="sabre", **options).layout.initial_index_layout(filter_ancillas=True)
 
@@ -158,7 +151,10 @@ def compare(num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False,
           f"{', mirrored' if mirror else ''})")
     print(f"Shots per run: {shots}")
     print(f"Fez qubits:    {layout}  (in order q_0, q_1, q_2, ... of the largest circuit)")
-    print(f"Exact answer:  P(0) = {1 - exact_p1:.4f}   P(1) = {exact_p1:.4f}\n")
+    print(f"Exact answer:  P(0) = {1 - exact_p1:.4f}   P(1) = {exact_p1:.4f}")
+    for name, err in skipped.items():
+        print(f"Skipped {name}: {err}")
+    print()
 
     # Column widths grow to fit the longest run name
     run_width = max(28, max(len(name) for name, _ in runs) + 2)
@@ -180,10 +176,10 @@ def compare(num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False,
 
 if __name__ == "__main__":
     # ---- Settings: change these to run a different experiment ----
-    NUM_GATES = 3000    # how many random gates in the circuit
+    NUM_GATES = 300    # how many random gates in the circuit
     SHOTS = 1000       # how many times each version of the circuit is run
     SEED = 3        # a number (e.g. 3) gives the same circuit every time; None picks a new random one
-    GATE_SET = "repeat"  # "all" = X, Y, Z, S, T, id     "xz" = only X and Z     "repeat" = X, Y, Z, S, T in order, over and over
+    GATE_SET = "repeat"  # "all" = X, Y, Z, S, T, id     "xz" = only X and Z     "repeat" = X, Y, Z in order, over and over
     MIRROR = False     # True adds the circuit's inverse, so the exact answer is always 0
 
     compare(num_gates=NUM_GATES, shots=SHOTS, seed=SEED, gate_set=GATE_SET, mirror=MIRROR)
