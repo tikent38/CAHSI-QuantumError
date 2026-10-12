@@ -139,16 +139,6 @@ The codes with no noise. Errors are added by hand at a chosen point so you can c
 
 `phase_flip_code(state_prep, error_qubits=None)` is the same idea for phase flips: it encodes into $a|{+}{+}{+}\rangle + b|{-}{-}{-}\rangle$, applies Z errors, and measures the syndrome using phase kickback. `print_correction(syndrome)` prints which Z gate would fix the error.
 
-### `shor_code.py`
-
-`shor_code(state_prep, x_errors=None, z_errors=None)` builds the 9-qubit Shor code circuit, following the IBM course [Foundations of Quantum Error Correction: The 9-qubit Shor code](https://quantum.cloud.ibm.com/learning/en/courses/foundations-of-quantum-error-correction/correcting-quantum-errors/shor-code) (also Nielsen & Chuang §10.2). It is the phase-flip code with each of its three qubits encoded again with the bit-flip code, giving three blocks: `q_0`–`q_2`, `q_3`–`q_5`, `q_6`–`q_8`.
-
-- **Encode:** the phase-flip code on `q_0`, `q_3`, `q_6`, then the bit-flip code inside each block, giving $|0\rangle \to (|000\rangle + |111\rangle)^{\otimes 3}/2\sqrt{2}$ and $|1\rangle \to (|000\rangle - |111\rangle)^{\otimes 3}/2\sqrt{2}$.
-- **Errors:** an X on each qubit in `x_errors` and a Z on each qubit in `z_errors`. Putting the same qubit in both is a Y error.
-- **Bit-flip check:** the bit-flip code’s two parity checks inside each block (ancillas `a_0`–`a_5`), measured into `b0`, `b1`, `b2`.
-- **Phase-flip check:** two ancillas (`a_6`, `a_7`) measure X on all six qubits of blocks 0 and 1, and of blocks 1 and 2, using the same phase kickback as `phase_flip_code.py`, measured into `p`. This tells which block had its sign flipped, not which qubit. The course instead decodes each block, runs the phase-flip check on `q_0`, `q_3`, `q_6`, and re-encodes; both measure the same thing, and this version uses fewer gates.
-
-The circuit does not apply the correction itself; `print_correction(bit_syndromes, phase_syndrome)` prints which X gate and which block’s Z gate would fix the error. It can fix one X and one Z error at once, on the same qubit or on different ones.
 
 ### `error_test.py`
 
