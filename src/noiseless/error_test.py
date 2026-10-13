@@ -120,10 +120,10 @@ def test_shor():
         print(f"\n  {'P(out=1):':20} {p1:.3f}\n")
         for p, b2, b1, b0 in sorted(syndromes):
             print_shor_correction([b0, b1, b2], p)
-    plt.show() #open every circuit diagram once all the cases have run
+    #plt.show() #open every circuit diagram once all the cases have run
 
 
 if __name__ == "__main__":
-    #test_bit_flip() #run bit_flip_code
+    test_bit_flip() #run bit_flip_code
     #test_phase_flip() #run phase_flip_code
-    test_shor() #run shor_code
+    #test_shor() #run shor_code
