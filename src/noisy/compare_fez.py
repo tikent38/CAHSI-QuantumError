@@ -10,8 +10,8 @@ from bit_flip_encoded import bit_flip_encoded
 from bit_flip_toffoli import bit_flip_toffoli
 from phase_flip_encoded import phase_flip_encoded
 from phase_flip_toffoli import phase_flip_toffoli
-from shor_encoded import shor_encoded
-from shor_toffoli import shor_toffoli
+# from shor_encoded import shor_encoded
+# from shor_toffoli import shor_toffoli
 
 ALL_GATES = ("x", "y", "z", "s", "t", "id")
 XZ_GATES = ("x", "z")
@@ -46,9 +46,18 @@ def repeated_gates(num_gates=100, seed=None):
     return qc
 
 
+def x_gates(num_gates=100, seed=None):
+    # Not random: num_gates X gates in a row. The exact answer is 1 if num_gates is odd, 0 if even.
+    # seed is ignored here (the circuit is always the same) but still sets the transpiler and simulator seeds
+    qc = QuantumCircuit(1)
+    for _ in range(num_gates):
+        qc.x(0)
+    return qc
+
+
 # Which function builds the circuit for each gate_set option
-CIRCUIT_FUNCTIONS = {"all": random_all_gates, "xz": random_xz_gates, "repeat": repeated_gates}
-GATE_NAMES = {"all": ALL_GATES, "xz": XZ_GATES, "repeat": REPEAT_GATES}
+CIRCUIT_FUNCTIONS = {"all": random_all_gates, "xz": random_xz_gates, "repeat": repeated_gates, "x": x_gates}
+GATE_NAMES = {"all": ALL_GATES, "xz": XZ_GATES, "repeat": REPEAT_GATES, "x": ("x",)}
 
 # The error-correction codes to compare, and the label printed for each
 ENCODERS = {
@@ -56,8 +65,8 @@ ENCODERS = {
     "bit-flip, Toffoli": bit_flip_toffoli,
     "phase-flip, if blocks": phase_flip_encoded,
     "phase-flip, Toffoli": phase_flip_toffoli,
-    "Shor, if blocks": shor_encoded,
-    "Shor, Toffoli": shor_toffoli,
+    # "Shor, if blocks": shor_encoded,
+    # "Shor, Toffoli": shor_toffoli,
 }
 
 
@@ -146,7 +155,7 @@ def compare(num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False,
         counts = noisy_sim.run(fez_circuit, shots=shots, seed_simulator=seed).result().get_counts()
         runs.append((f"Fez noise, {name}", counts))
     #print the results
-    kind = "Repeating circuit" if gate_set == "repeat" else "Random circuit"
+    kind = "Repeating circuit" if gate_set in ("repeat", "x") else "Random circuit"
     print(f"{kind}: {num_gates} gates from {', '.join(GATE_NAMES[gate_set])}  (seed {seed}"
           f"{', mirrored' if mirror else ''})")
     print(f"Shots per run: {shots}")
@@ -176,10 +185,11 @@ def compare(num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False,
 
 if __name__ == "__main__":
     # ---- Settings: change these to run a different experiment ----
-    NUM_GATES = 300    # how many random gates in the circuit
+    NUM_GATES = 30    # how many random gates in the circuit
     SHOTS = 1000       # how many times each version of the circuit is run
     SEED = 3        # a number (e.g. 3) gives the same circuit every time; None picks a new random one
-    GATE_SET = "repeat"  # "all" = X, Y, Z, S, T, id     "xz" = only X and Z     "repeat" = X, Y, Z in order, over and over
+    GATE_SET = "x"     # "all" = X, Y, Z, S, T, id     "xz" = only X and Z     "repeat" = X, Y, Z in order, over and over
+                       # "x" = only X gates, NUM_GATES of them
     MIRROR = False     # True adds the circuit's inverse, so the exact answer is always 0
 
     compare(num_gates=NUM_GATES, shots=SHOTS, seed=SEED, gate_set=GATE_SET, mirror=MIRROR)
