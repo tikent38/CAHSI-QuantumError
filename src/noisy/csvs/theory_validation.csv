@@ -1,0 +1,79 @@
+code,error,case,states,p,shots,failures,simulated,theory,formula,difference
+no correction,X,unprotected,"|0>,|1>",0,20000,0,0.0,0,p,0.0
+no correction,X,unprotected,"|0>,|1>",0.01,20000,191,0.00955,0.01,p,-0.00045
+no correction,X,unprotected,"|0>,|1>",0.02,20000,385,0.01925,0.02,p,-0.00075
+no correction,X,unprotected,"|0>,|1>",0.05,20000,1059,0.05295,0.05,p,0.00295
+no correction,X,unprotected,"|0>,|1>",0.1,20000,2029,0.10145,0.1,p,0.00145
+no correction,X,unprotected,"|0>,|1>",0.15,20000,2902,0.1451,0.15,p,-0.0049
+no correction,X,unprotected,"|0>,|1>",0.2,20000,4097,0.20485,0.2,p,0.00485
+no correction,X,unprotected,"|0>,|1>",0.25,20000,5063,0.25315,0.25,p,0.00315
+no correction,X,unprotected,"|0>,|1>",0.3,20000,5919,0.29595,0.3,p,-0.00405
+no correction,X,unprotected,"|0>,|1>",0.35,20000,7019,0.35095,0.35,p,0.00095
+no correction,X,unprotected,"|0>,|1>",0.4,20000,7847,0.39235,0.4,p,-0.00765
+no correction,X,unprotected,"|0>,|1>",0.45,20000,9029,0.45145,0.45,p,0.00145
+no correction,X,unprotected,"|0>,|1>",0.5,20000,10134,0.5067,0.5,p,0.0067
+"bit-flip, Toffoli",X,corrected,"|0>,|1>",0,20000,0,0.0,0,3p^2 - 2p^3,0.0
+"bit-flip, Toffoli",X,corrected,"|0>,|1>",0.01,20000,4,0.0002,0.000298,3p^2 - 2p^3,-9.8e-05
+"bit-flip, Toffoli",X,corrected,"|0>,|1>",0.02,20000,27,0.00135,0.001184,3p^2 - 2p^3,0.000166
+"bit-flip, Toffoli",X,corrected,"|0>,|1>",0.05,20000,135,0.00675,0.00725,3p^2 - 2p^3,-0.0005
+"bit-flip, Toffoli",X,corrected,"|0>,|1>",0.1,20000,535,0.02675,0.028,3p^2 - 2p^3,-0.00125
+"bit-flip, Toffoli",X,corrected,"|0>,|1>",0.15,20000,1139,0.05695,0.06075,3p^2 - 2p^3,-0.0038
+"bit-flip, Toffoli",X,corrected,"|0>,|1>",0.2,20000,2144,0.1072,0.104,3p^2 - 2p^3,0.0032
+"bit-flip, Toffoli",X,corrected,"|0>,|1>",0.25,20000,3057,0.15285,0.15625,3p^2 - 2p^3,-0.0034
+"bit-flip, Toffoli",X,corrected,"|0>,|1>",0.3,20000,4322,0.2161,0.216,3p^2 - 2p^3,0.0001
+"bit-flip, Toffoli",X,corrected,"|0>,|1>",0.35,20000,5644,0.2822,0.28175,3p^2 - 2p^3,0.00045
+"bit-flip, Toffoli",X,corrected,"|0>,|1>",0.4,20000,7079,0.35395,0.352,3p^2 - 2p^3,0.00195
+"bit-flip, Toffoli",X,corrected,"|0>,|1>",0.45,20000,8411,0.42055,0.42525,3p^2 - 2p^3,-0.0047
+"bit-flip, Toffoli",X,corrected,"|0>,|1>",0.5,20000,9906,0.4953,0.5,3p^2 - 2p^3,-0.0047
+"phase-flip, Toffoli",X,not corrected,"|+>,|->",0,20000,0,0.0,0,3p(1-p)^2 + p^3,0.0
+"phase-flip, Toffoli",X,not corrected,"|+>,|->",0.01,20000,600,0.03,0.029404,3p(1-p)^2 + p^3,0.000596
+"phase-flip, Toffoli",X,not corrected,"|+>,|->",0.02,20000,1194,0.0597,0.057632,3p(1-p)^2 + p^3,0.002068
+"phase-flip, Toffoli",X,not corrected,"|+>,|->",0.05,20000,2751,0.13755,0.1355,3p(1-p)^2 + p^3,0.00205
+"phase-flip, Toffoli",X,not corrected,"|+>,|->",0.1,20000,4852,0.2426,0.244,3p(1-p)^2 + p^3,-0.0014
+"phase-flip, Toffoli",X,not corrected,"|+>,|->",0.15,20000,6691,0.33455,0.3285,3p(1-p)^2 + p^3,0.00605
+"phase-flip, Toffoli",X,not corrected,"|+>,|->",0.2,20000,7711,0.38555,0.392,3p(1-p)^2 + p^3,-0.00645
+"phase-flip, Toffoli",X,not corrected,"|+>,|->",0.25,20000,8639,0.43195,0.4375,3p(1-p)^2 + p^3,-0.00555
+"phase-flip, Toffoli",X,not corrected,"|+>,|->",0.3,20000,9421,0.47105,0.468,3p(1-p)^2 + p^3,0.00305
+"phase-flip, Toffoli",X,not corrected,"|+>,|->",0.35,20000,9734,0.4867,0.4865,3p(1-p)^2 + p^3,0.0002
+"phase-flip, Toffoli",X,not corrected,"|+>,|->",0.4,20000,9801,0.49005,0.496,3p(1-p)^2 + p^3,-0.00595
+"phase-flip, Toffoli",X,not corrected,"|+>,|->",0.45,20000,10009,0.50045,0.4995,3p(1-p)^2 + p^3,0.00095
+"phase-flip, Toffoli",X,not corrected,"|+>,|->",0.5,20000,9985,0.49925,0.5,3p(1-p)^2 + p^3,-0.00075
+no correction,Z,unprotected,"|+>,|->",0,20000,0,0.0,0,p,0.0
+no correction,Z,unprotected,"|+>,|->",0.01,20000,219,0.01095,0.01,p,0.00095
+no correction,Z,unprotected,"|+>,|->",0.02,20000,400,0.02,0.02,p,0.0
+no correction,Z,unprotected,"|+>,|->",0.05,20000,1003,0.05015,0.05,p,0.00015
+no correction,Z,unprotected,"|+>,|->",0.1,20000,1986,0.0993,0.1,p,-0.0007
+no correction,Z,unprotected,"|+>,|->",0.15,20000,3121,0.15605,0.15,p,0.00605
+no correction,Z,unprotected,"|+>,|->",0.2,20000,4045,0.20225,0.2,p,0.00225
+no correction,Z,unprotected,"|+>,|->",0.25,20000,5033,0.25165,0.25,p,0.00165
+no correction,Z,unprotected,"|+>,|->",0.3,20000,6027,0.30135,0.3,p,0.00135
+no correction,Z,unprotected,"|+>,|->",0.35,20000,7030,0.3515,0.35,p,0.0015
+no correction,Z,unprotected,"|+>,|->",0.4,20000,8016,0.4008,0.4,p,0.0008
+no correction,Z,unprotected,"|+>,|->",0.45,20000,9006,0.4503,0.45,p,0.0003
+no correction,Z,unprotected,"|+>,|->",0.5,20000,10039,0.50195,0.5,p,0.00195
+"bit-flip, Toffoli",Z,not corrected,"|+>,|->",0,20000,0,0.0,0,3p(1-p)^2 + p^3,0.0
+"bit-flip, Toffoli",Z,not corrected,"|+>,|->",0.01,20000,572,0.0286,0.029404,3p(1-p)^2 + p^3,-0.000804
+"bit-flip, Toffoli",Z,not corrected,"|+>,|->",0.02,20000,1152,0.0576,0.057632,3p(1-p)^2 + p^3,-3.2e-05
+"bit-flip, Toffoli",Z,not corrected,"|+>,|->",0.05,20000,2685,0.13425,0.1355,3p(1-p)^2 + p^3,-0.00125
+"bit-flip, Toffoli",Z,not corrected,"|+>,|->",0.1,20000,4918,0.2459,0.244,3p(1-p)^2 + p^3,0.0019
+"bit-flip, Toffoli",Z,not corrected,"|+>,|->",0.15,20000,6571,0.32855,0.3285,3p(1-p)^2 + p^3,5e-05
+"bit-flip, Toffoli",Z,not corrected,"|+>,|->",0.2,20000,7895,0.39475,0.392,3p(1-p)^2 + p^3,0.00275
+"bit-flip, Toffoli",Z,not corrected,"|+>,|->",0.25,20000,8551,0.42755,0.4375,3p(1-p)^2 + p^3,-0.00995
+"bit-flip, Toffoli",Z,not corrected,"|+>,|->",0.3,20000,9318,0.4659,0.468,3p(1-p)^2 + p^3,-0.0021
+"bit-flip, Toffoli",Z,not corrected,"|+>,|->",0.35,20000,9625,0.48125,0.4865,3p(1-p)^2 + p^3,-0.00525
+"bit-flip, Toffoli",Z,not corrected,"|+>,|->",0.4,20000,10013,0.50065,0.496,3p(1-p)^2 + p^3,0.00465
+"bit-flip, Toffoli",Z,not corrected,"|+>,|->",0.45,20000,10031,0.50155,0.4995,3p(1-p)^2 + p^3,0.00205
+"bit-flip, Toffoli",Z,not corrected,"|+>,|->",0.5,20000,10046,0.5023,0.5,3p(1-p)^2 + p^3,0.0023
+"phase-flip, Toffoli",Z,corrected,"|0>,|1>",0,20000,0,0.0,0,3p^2 - 2p^3,0.0
+"phase-flip, Toffoli",Z,corrected,"|0>,|1>",0.01,20000,8,0.0004,0.000298,3p^2 - 2p^3,0.000102
+"phase-flip, Toffoli",Z,corrected,"|0>,|1>",0.02,20000,27,0.00135,0.001184,3p^2 - 2p^3,0.000166
+"phase-flip, Toffoli",Z,corrected,"|0>,|1>",0.05,20000,139,0.00695,0.00725,3p^2 - 2p^3,-0.0003
+"phase-flip, Toffoli",Z,corrected,"|0>,|1>",0.1,20000,554,0.0277,0.028,3p^2 - 2p^3,-0.0003
+"phase-flip, Toffoli",Z,corrected,"|0>,|1>",0.15,20000,1191,0.05955,0.06075,3p^2 - 2p^3,-0.0012
+"phase-flip, Toffoli",Z,corrected,"|0>,|1>",0.2,20000,2077,0.10385,0.104,3p^2 - 2p^3,-0.00015
+"phase-flip, Toffoli",Z,corrected,"|0>,|1>",0.25,20000,3047,0.15235,0.15625,3p^2 - 2p^3,-0.0039
+"phase-flip, Toffoli",Z,corrected,"|0>,|1>",0.3,20000,4282,0.2141,0.216,3p^2 - 2p^3,-0.0019
+"phase-flip, Toffoli",Z,corrected,"|0>,|1>",0.35,20000,5573,0.27865,0.28175,3p^2 - 2p^3,-0.0031
+"phase-flip, Toffoli",Z,corrected,"|0>,|1>",0.4,20000,7082,0.3541,0.352,3p^2 - 2p^3,0.0021
+"phase-flip, Toffoli",Z,corrected,"|0>,|1>",0.45,20000,8382,0.4191,0.42525,3p^2 - 2p^3,-0.00615
+"phase-flip, Toffoli",Z,corrected,"|0>,|1>",0.5,20000,9836,0.4918,0.5,3p^2 - 2p^3,-0.0082
