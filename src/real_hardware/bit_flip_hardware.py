@@ -1,11 +1,4 @@
 # bit_flip_hardware.py
-# Run NUM_GATES Y gates on a real IBM quantum computer, with no correction and protected by the bit-flip code
-# (Toffoli version, src/noisy/bit_flip_toffoli.py), and compare how often each gives the wrong answer.
-# See hardware_common.py for how the qubits are picked and how the results are read.
-#
-# Before the first run: put your IBM Quantum API key and instance CRN (from https://quantum.cloud.ibm.com) in the
-# .env file in the repository's main folder (copy .env.example to .env if it isn't there). .env is in .gitignore,
-# so the key is never committed. Test with BACKEND_NAME = "fake_fez" first: it runs locally and uses no hardware time.
 import os
 import sys
 
