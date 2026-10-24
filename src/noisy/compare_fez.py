@@ -65,17 +65,14 @@ ENCODERS = {
     "bit-flip, Toffoli": bit_flip_toffoli,
     "phase-flip, if blocks": phase_flip_encoded,
     "phase-flip, Toffoli": phase_flip_toffoli,
-    "Shor, if blocks": shor_encoded,
-    "Shor, Toffoli": shor_toffoli,
+    #"Shor, if blocks": shor_encoded,
+    #"Shor, Toffoli": shor_toffoli,
 }
 
-# Default Fez qubits for each role: the ones breakeven_y.py's choose_layout() picked (seed 3, 100 tries).
-# The bit-flip and phase-flip codes start on the first 3 of Shor's 9 data qubits, so every code and
-# no correction share q_0 (Fez 87). breakeven_y.py only ran the Toffoli codes, which have no ancillas, so
-# the bit-flip and phase-flip ancillas are the next two qubits in its layout, and Shor's ancillas are
-# the 8 working qubits closest to its 9 data qubits
-DEFAULT_DATA_QUBITS = (87, 88, 85)
+# Default Fez qubits for each role
+DEFAULT_DATA_QUBITS = (87, 88, 86)   # 87 is wired to both 88 and 86, so encoding/decoding need no SWAPs
 DEFAULT_ANCILLA_QUBITS = (97, 108)
+
 DEFAULT_SHOR_DATA_QUBITS = (87, 88, 85, 97, 108, 107, 86, 77, 84)
 DEFAULT_SHOR_ANCILLA_QUBITS = (89, 109, 65, 83, 78, 90, 110, 118)
 
