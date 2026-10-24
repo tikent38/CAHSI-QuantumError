@@ -10,8 +10,8 @@ from bit_flip_encoded import bit_flip_encoded
 from bit_flip_toffoli import bit_flip_toffoli
 from phase_flip_encoded import phase_flip_encoded
 from phase_flip_toffoli import phase_flip_toffoli
-# from shor_encoded import shor_encoded
-# from shor_toffoli import shor_toffoli
+from shor_encoded import shor_encoded
+from shor_toffoli import shor_toffoli
 
 ALL_GATES = ("x", "y", "z", "s", "t", "id")
 XZ_GATES = ("x", "z")
@@ -65,9 +65,19 @@ ENCODERS = {
     "bit-flip, Toffoli": bit_flip_toffoli,
     "phase-flip, if blocks": phase_flip_encoded,
     "phase-flip, Toffoli": phase_flip_toffoli,
-    # "Shor, if blocks": shor_encoded,
-    # "Shor, Toffoli": shor_toffoli,
+    "Shor, if blocks": shor_encoded,
+    "Shor, Toffoli": shor_toffoli,
 }
+
+# Default Fez qubits for each role: the ones breakeven_y.py's choose_layout() picked (seed 3, 100 tries).
+# The bit-flip and phase-flip codes start on the first 3 of Shor's 9 data qubits, so every code and
+# no correction share q_0 (Fez 87). breakeven_y.py only ran the Toffoli codes, which have no ancillas, so
+# the bit-flip and phase-flip ancillas are the next two qubits in its layout, and Shor's ancillas are
+# the 8 working qubits closest to its 9 data qubits
+DEFAULT_DATA_QUBITS = (87, 88, 85)
+DEFAULT_ANCILLA_QUBITS = (97, 108)
+DEFAULT_SHOR_DATA_QUBITS = (87, 88, 85, 97, 108, 107, 86, 77, 84)
+DEFAULT_SHOR_ANCILLA_QUBITS = (89, 109, 65, 83, 78, 90, 110, 118)
 
 
 def mirrored(circuit):
@@ -89,6 +99,33 @@ def working_coupling_map(backend, max_error=0.5):
     return CouplingMap(edges)
 
 
+def code_layout(backend, data, ancillas, num_data, num_ancillas, code):
+    # One code's layout, data + ancillas, after checking it has the right number of qubits,
+    # uses each Fez qubit once, and only uses qubits Fez has
+    layout = list(data) + list(ancillas)
+    if len(data) != num_data or len(ancillas) != num_ancillas:
+        raise ValueError(f"{code} codes need {num_data} data qubits and {num_ancillas} ancillas, "
+                         f"got {len(data)} and {len(ancillas)}")
+    if len(set(layout)) != len(layout):
+        raise ValueError(f"{code} codes can only use each Fez qubit once, got {layout}")
+    bad = [q for q in layout if not 0 <= q < backend.num_qubits]
+    if bad:
+        raise ValueError(f"Fez only has qubits 0-{backend.num_qubits - 1}, got {bad}")
+    return layout
+
+
+def set_layout(backend, data=DEFAULT_DATA_QUBITS, ancillas=DEFAULT_ANCILLA_QUBITS,
+               shor_data=DEFAULT_SHOR_DATA_QUBITS, shor_ancillas=DEFAULT_SHOR_ANCILLA_QUBITS):
+    # Pick by hand which of Fez's physical qubits each circuit qubit runs on (breakeven_y.py's by default).
+    # data = (Fez qubit for q_0, q_1, q_2), ancillas = (Fez qubit for a_0, a_1) of the bit-flip and phase-flip codes.
+    # shor_data = (Fez qubit for q_0, ..., q_8), shor_ancillas = (Fez qubit for a_0, ..., a_7) of the Shor codes.
+    # Every code puts its data qubits first and its ancillas after, so each layout is data + ancillas:
+    # the Toffoli codes use only the data qubits, and no correction runs on data[0].
+    # The two layouts can share Fez qubits, since every code runs on its own
+    return {"bit/phase-flip": code_layout(backend, data, ancillas, 3, 2, "bit-flip and phase-flip"),
+            "Shor": code_layout(backend, shor_data, shor_ancillas, 9, 8, "Shor")}
+
+
 def prob_one(counts, register_index=0):
     # Fraction of shots where the measured result was 1.
     # For the encoded circuit the keys look like "out s" and "out" is the first group
@@ -96,8 +133,12 @@ def prob_one(counts, register_index=0):
     return ones, sum(counts.values()) - ones
 
 
-def compare(num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False, encoders=ENCODERS):
+def compare(num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False, encoders=ENCODERS,
+            data_qubits=DEFAULT_DATA_QUBITS, ancilla_qubits=DEFAULT_ANCILLA_QUBITS,
+            shor_data_qubits=DEFAULT_SHOR_DATA_QUBITS, shor_ancilla_qubits=DEFAULT_SHOR_ANCILLA_QUBITS):
     # gate_set: "all" uses random_all_gates, "xz" uses random_xz_gates, "repeat" uses repeated_gates
+    # data_qubits / ancilla_qubits: Fez qubits for the bit-flip and phase-flip codes' q_0-q_2 / a_0-a_1
+    # shor_data_qubits / shor_ancilla_qubits: Fez qubits for the Shor codes' q_0-q_8 / a_0-a_7 (see set_layout)
 
     if seed is None:
         seed = random.randrange(10**6)
@@ -133,21 +174,17 @@ def compare(num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False,
         except ValueError as err:
             skipped[name] = err
 
-    # Pick Fez's physical qubits once, for the encoded circuit with the most qubits, and start every
-    # run on those same qubits. Otherwise each circuit is placed separately and can land on better or
-    # worse qubits, which shows up as a difference between the codes. Every code puts its data qubits first
-    # (q_0, q_1, q_2, ...) and its ancillas after, so all codes share q_0-q_2's qubits and no correction
-    # gets q_0's qubit. 
-    # With the Shor code included, the largest circuit is the 17-qubit Shor code, so the
-    # bit-flip and phase-flip ancillas land on Shor's q_3 and q_4.
-
-    # generate the qubit layout so its shared between all runs
-    largest = max(encoded.values(), key=lambda qc: qc.num_qubits)
-    layout = transpile(largest, layout_method="sabre", **options).layout.initial_index_layout(filter_ancillas=True)
+    # Start every run on the same Fez qubits. Otherwise each circuit is placed separately and can land on
+    # better or worse qubits, which shows up as a difference between the codes. Every code puts its data
+    # qubits first (q_0, q_1, q_2) and its ancillas after, so all codes share q_0-q_2's qubits and
+    # no correction gets q_0's qubit.
+    # The Shor codes get their own layout, since they have 9 data qubits and 8 ancillas
+    layouts = set_layout(backend, data_qubits, ancilla_qubits, shor_data_qubits, shor_ancilla_qubits)
 
     # build a dict with the fez circuits
-    fez_circuits = {"no correction": transpile(plain, initial_layout=layout[:1], **options)}
+    fez_circuits = {"no correction": transpile(plain, initial_layout=layouts["bit/phase-flip"][:1], **options)}
     for name, qc in encoded.items():
+        layout = layouts["Shor" if name.startswith("Shor") else "bit/phase-flip"]
         fez_circuits[name] = transpile(qc, initial_layout=layout[:qc.num_qubits], **options)
     #run the circuits
     runs = [("no noise", ideal_sim.run(plain, shots=shots).result().get_counts())]
@@ -159,7 +196,9 @@ def compare(num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False,
     print(f"{kind}: {num_gates} gates from {', '.join(GATE_NAMES[gate_set])}  (seed {seed}"
           f"{', mirrored' if mirror else ''})")
     print(f"Shots per run: {shots}")
-    print(f"Fez qubits:    {layout}  (in order q_0, q_1, q_2, ... of the largest circuit)")
+    small, shor = layouts["bit/phase-flip"], layouts["Shor"]
+    print(f"Fez qubits:    bit/phase-flip data {small[:3]}, ancillas {small[3:]}  (no correction runs on {small[0]})")
+    print(f"               Shor data {shor[:9]}, ancillas {shor[9:]}")
     print(f"Exact answer:  P(0) = {1 - exact_p1:.4f}   P(1) = {exact_p1:.4f}")
     for name, err in skipped.items():
         print(f"Skipped {name}: {err}")
@@ -185,11 +224,19 @@ def compare(num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False,
 
 if __name__ == "__main__":
     # ---- Settings: change these to run a different experiment ----
-    NUM_GATES = 30    # how many random gates in the circuit
+    NUM_GATES = 100    # how many random gates in the circuit
     SHOTS = 1000       # how many times each version of the circuit is run
-    SEED = 3        # a number (e.g. 3) gives the same circuit every time; None picks a new random one
+    SEED = None      # a number (e.g. 3) gives the same circuit every time; None picks a new random one
     GATE_SET = "x"     # "all" = X, Y, Z, S, T, id     "xz" = only X and Z     "repeat" = X, Y, Z in order, over and over
                        # "x" = only X gates, NUM_GATES of them
     MIRROR = False     # True adds the circuit's inverse, so the exact answer is always 0
 
-    compare(num_gates=NUM_GATES, shots=SHOTS, seed=SEED, gate_set=GATE_SET, mirror=MIRROR)
+    # Which Fez qubits to run on (compare passes these to set_layout). The defaults are breakeven_y.py's qubits
+    DATA_QUBITS = DEFAULT_DATA_QUBITS                  # bit/phase-flip data q_0, q_1, q_2 (q_0 is also the no-correction qubit)
+    ANCILLA_QUBITS = DEFAULT_ANCILLA_QUBITS            # bit/phase-flip ancilla a_0, a_1 (only the if-block codes use these)
+    SHOR_DATA_QUBITS = DEFAULT_SHOR_DATA_QUBITS        # Shor data q_0, ..., q_8
+    SHOR_ANCILLA_QUBITS = DEFAULT_SHOR_ANCILLA_QUBITS  # Shor ancilla a_0, ..., a_7 (only "Shor, if blocks" uses these)
+
+    compare(num_gates=NUM_GATES, shots=SHOTS, seed=SEED, gate_set=GATE_SET, mirror=MIRROR,
+            data_qubits=DATA_QUBITS, ancilla_qubits=ANCILLA_QUBITS,
+            shor_data_qubits=SHOR_DATA_QUBITS, shor_ancilla_qubits=SHOR_ANCILLA_QUBITS)
