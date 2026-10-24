@@ -1,5 +1,3 @@
-# hardware_common.py
-
 import csv
 import json
 import os
@@ -19,8 +17,7 @@ from qiskit_ibm_runtime.executor_sampler import Sampler
 # The error-correction codes and helpers live in src/noisy
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "noisy"))
-from compare_fez import prob_one                              
-from breakeven_y import no_error_chance, physical_qubits     
+from compare_fez import DEFAULT_DATA_QUBITS, prob_one
 
 CSV_DIR = os.path.join(HERE, "csvs")
 IMAGE_DIR = os.path.join(HERE, "images")
@@ -88,6 +85,8 @@ def working_target(backend, max_error=0.5):
 def y_circuit(bit, num_gates):
     # Prepare |bit>, then num_gates Y gates in a row
     qc = QuantumCircuit(1)
+    if bit:
+        qc.x(0)
     for _ in range(num_gates):
         qc.y(0)
     return qc
@@ -98,26 +97,23 @@ def to_isa(circuit, options, **extra):
     return generate_preset_pass_manager(**options, **extra).run(circuit)
 
 
-def choose_layout(code, options, target, tries):
-    # Starting qubits for the code: try `tries` placements (one per transpiler seed) and keep the one where
-    # the code (with 0 Y gates) has the best chance of running with no error at all
-    circuit = code(y_circuit(0, 0))
-    best, best_chance = None, -1
-    for seed in range(tries):
-        tried = {**options, "seed_transpiler": seed}
-        layout = to_isa(circuit, tried, layout_method="sabre").layout.initial_index_layout(filter_ancillas=True)
-        chance = no_error_chance(to_isa(circuit, tried, initial_layout=layout[:circuit.num_qubits]), target)
-        if chance > best_chance:
-            best, best_chance = layout, chance
-    return best[:circuit.num_qubits]
+def physical_qubits(circuit):
+    # The machine's qubits a transpiled circuit actually uses (in case swaps are needed)
+    touched = sorted({circuit.find_bit(q).index for inst in circuit.data if inst.operation.name != "barrier"
+                      for q in inst.qubits})
+    measured = [circuit.find_bit(inst.qubits[0]).index for inst in circuit.data if inst.operation.name == "measure"
+                and circuit.find_bit(inst.clbits[0]).registers[0][0].name in ("out", "meas")]
+    return touched, measured[0]
 
 
-def build_jobs(code_name, code, num_gates, backend, seed, layout, layout_tries, start_states=(0,)):
+def build_jobs(code_name, code, num_gates, backend, seed, layout, start_states=(0,)):
     # The transpiled circuits to run (no correction, then the code, for each starting state), in order,
-    # with what is needed to read their results
+    # with what is needed to read their results.
+    # layout = starting qubits for q_0, q_1, q_2; None uses compare_fez.py's DEFAULT_DATA_QUBITS, so the
+    # hardware runs on the same qubits as the simulations there
     options = dict(optimization_level=0, routing_method="sabre", seed_transpiler=seed, target=working_target(backend))
     if layout is None:
-        layout = choose_layout(code, options, backend.target, layout_tries)
+        layout = list(DEFAULT_DATA_QUBITS)
 
     runs = []
     code_circuits = {bit: to_isa(code(y_circuit(bit, num_gates)), options, initial_layout=layout)
@@ -136,6 +132,19 @@ def build_jobs(code_name, code, num_gates, backend, seed, layout, layout_tries, 
     return runs, layout
 
 
+def circuit_stats(circuit, target):
+    # Size of a transpiled circuit, to see the overhead the code adds: gates (barriers left out, measurements
+    # counted), two-qubit gates, depth, and how long it takes to run on the machine (rz gates take no time)
+    ops = circuit.count_ops()
+    try:
+        duration_us = round(circuit.estimate_duration(target, unit="s") * 1e6, 3)
+    except Exception:
+        duration_us = ""   # the target has no gate durations (e.g. some fake backends)
+    return {"gates": circuit.size(), "two_qubit_gates": circuit.num_nonlocal_gates(), "depth": circuit.depth(),
+            "duration_us": duration_us,
+            "gate_counts": " ".join(f"{name}:{n}" for name, n in ops.items() if name != "barrier")}
+
+
 def wrong_answers(counts, start, num_gates):
     # How many shots gave the wrong answer, and P(1)
     ones, zeros = prob_one(counts)
@@ -144,7 +153,7 @@ def wrong_answers(counts, start, num_gates):
 
 
 def run_experiment(code_name, code, num_gates=100, shots=4000, backend_name="ibm_fez", account=None, seed=3,
-                   layout=None, layout_tries=100, compare_with_simulator=True, resume=False, csv_file=None,
+                   layout=None, compare_with_simulator=True, resume=False, csv_file=None,
                    image_file=None, start_states=(0,)):
     # start_states: which states every run starts in, (0,) for |0> only or (0, 1) for both
     start_states = tuple(start_states)
@@ -152,7 +161,7 @@ def run_experiment(code_name, code, num_gates=100, shots=4000, backend_name="ibm
     
     print(f"Connecting to {backend_name}...")
     backend, service = get_backend(backend_name, account)
-    runs, layout = build_jobs(code_name, code, num_gates, backend, seed, layout, layout_tries, start_states)
+    runs, layout = build_jobs(code_name, code, num_gates, backend, seed, layout, start_states)
     code_run = next(r for r in runs if r["run"] == code_name)
 
     print(f"Backend: {backend.name}")
@@ -160,10 +169,12 @@ def run_experiment(code_name, code, num_gates=100, shots=4000, backend_name="ibm
           + " and ".join(f"|{b}>" for b in start_states))
     print(f"Code starts on qubits {layout}, uses {code_run['qubits_used']}, measured on {code_run['measured_on']}")
     print(f"No correction runs on qubit {runs[0]['measured_on']} (the qubit the code is measured on)")
+    print("Transpiled circuits:")
     for r in runs:
-        ops = r["circuit"].count_ops()
-        print(f"  {r['run']:<22} start |{r['start']}>: {r['circuit'].size()} gates, depth {r['circuit'].depth()}, "
-              f"{ops.get('cz', 0) + ops.get('ecr', 0)} two-qubit gates")
+        r["stats"] = s = circuit_stats(r["circuit"], backend.target)
+        duration = f", about {s['duration_us']} us" if s["duration_us"] != "" else ""
+        print(f"  {r['run']:<22} start |{r['start']}>: {s['gates']} gates, {s['two_qubit_gates']} two-qubit, "
+              f"depth {s['depth']}{duration}  ({s['gate_counts']})")
 
     sampler = Sampler(mode=backend)
     sampler.options.default_shots = shots
@@ -234,17 +245,61 @@ def run_experiment(code_name, code, num_gates=100, shots=4000, backend_name="ibm
         with open(csv_file, "w", newline="") as f:
             writer = csv.writer(f)
             writer.writerow(["source", "backend", "job_id", "run", "start_state", "y_gates", "shots", "exact_answer",
-                             "p1", "failure_rate", "qubits_used", "measured_on", "seed", "software"])
+                             "p1", "failure_rate", "qubits_used", "measured_on", "gates", "two_qubit_gates", "depth",
+                             "duration_us", "gate_counts", "seed", "software"])
             for row in rows:
                 r = info[row["run"] + str(row["start"])]
+                s = r["stats"]
                 writer.writerow([row["source"], backend.name, job.job_id(), row["run"], row["start"], num_gates, shots,
                                  (row["start"] + num_gates) % 2, round(row["p1"], 6), round(row["wrong"] / shots, 6),
-                                 " ".join(map(str, r["qubits_used"])), r["measured_on"], seed, versions])
+                                 " ".join(map(str, r["qubits_used"])), r["measured_on"], s["gates"],
+                                 s["two_qubit_gates"], s["depth"], s["duration_us"], s["gate_counts"], seed, versions])
         print(f"\nWrote results to {csv_file}")
         if image_file:
             plot_results(csv_file, image_file)
 
 COLORS = ["#2a78d6", "#eb6834"]
+
+
+def plot_circuit_table(ax, rows, runs, ink, muted, grid):
+    # Table of the transpiled circuits' sizes (no correction, the code, and how many times bigger the code is),
+    # taken from the first starting state of each run
+    columns = [("gates", "gates"), ("two_qubit_gates", "2-qubit gates"), ("depth", "depth"),
+               ("duration_us", "time (µs, est.)"), ("qubits_used", "qubits")]
+    first = {run: next(r for r in rows if r["run"] == run) for run in runs}
+
+    def value(row, key):
+        return len(row[key].split()) if key == "qubits_used" else row[key]
+
+    def overhead(key):
+        plain, coded = (value(first[run], key) for run in runs)
+        if plain == "" or coded == "":
+            return "-"
+        plain, coded = float(plain), float(coded)
+        return f"+{coded:g}" if plain == 0 else f"{coded / plain:.2f}x"
+
+    # The row names go in the first column (rather than rowLabels) so they stay inside the figure
+    cells = [[run, *(str(value(first[run], key)) or "-" for key, _ in columns)] for run in runs]
+    cells.append(["overhead (code / none)", *(overhead(key) for key, _ in columns)])
+
+    ax.axis("off")
+    table = ax.table(cellText=cells, colLabels=["", *(name for _, name in columns)], cellLoc="center",
+                     colWidths=[0.3] + [0.14] * len(columns), bbox=(0, 0.3, 1, 0.7))
+    table.auto_set_font_size(False)
+    table.set_fontsize(9)
+    for (i, j), cell in table.get_celld().items():
+        cell.set_edgecolor(grid)
+        cell.get_text().set_color(muted if i == 0 else ink)
+        if j == 0:
+            cell.get_text().set_horizontalalignment("left")
+            cell.PAD = 0.03
+            if 1 <= i <= len(runs):
+                cell.get_text().set_color(COLORS[(i - 1) % len(COLORS)])
+        if i == len(cells):
+            cell.get_text().set_fontweight("bold")
+    ax.set_title("transpiled circuits (what actually ran on the machine)", color=ink, fontsize=10, loc="left")
+    ax.text(0, 0.22, "\n".join(f"{run}: {first[run]['gate_counts']}" for run in runs), transform=ax.transAxes,
+            ha="left", va="top", color=muted, fontsize=8)
 
 
 def plot_results(csv_file, image_file):
@@ -261,8 +316,13 @@ def plot_results(csv_file, image_file):
     runs = list(dict.fromkeys(r["run"] for r in rows))
     code_row = next(r for r in rows if r["run"] != "no correction")
 
+    # CSVs from before the circuit sizes were saved have no "gates" column; those get the bar chart only
+    has_stats = bool(code_row.get("gates"))
     width = 0.36
-    fig, ax = plt.subplots(figsize=(10, 5.5))
+    if has_stats:
+        fig, (ax, table_ax) = plt.subplots(2, 1, figsize=(10, 8), gridspec_kw={"height_ratios": [3, 1.3]})
+    else:
+        fig, ax = plt.subplots(figsize=(10, 5.5))
     for j, run in enumerate(runs):
         for i, source in enumerate(sources):
             mine = [r for r in rows if r["source"] == source and r["run"] == run]
@@ -295,6 +355,8 @@ def plot_results(csv_file, image_file):
     ax.tick_params(colors=muted)
     for side in ("top", "right"):
         ax.spines[side].set_visible(False)
+    if has_stats:
+        plot_circuit_table(table_ax, rows, runs, ink, muted, grid)
     fig.tight_layout(rect=(0, 0.03, 1, 1))
     image_file = image_file.format(gates=code_row["y_gates"])
     os.makedirs(os.path.dirname(image_file) or ".", exist_ok=True)

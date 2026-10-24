@@ -1,0 +1,17 @@
+{
+  "job_id": "dbeh4onpc3tc739lmfj0",
+  "backend": "ibm_fez",
+  "account": null,
+  "submitted": "2026-10-24T20:17:39+00:00",
+  "num_gates": 100,
+  "shots": 10000,
+  "seed": 3,
+  "layout": [
+    87,
+    88,
+    86
+  ],
+  "start_states": [
+    0
+  ]
+}
