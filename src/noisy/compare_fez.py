@@ -113,7 +113,7 @@ def code_layout(backend, data, ancillas, num_data, num_ancillas, code):
 
 def set_layout(backend, data=DEFAULT_DATA_QUBITS, ancillas=DEFAULT_ANCILLA_QUBITS,
                shor_data=DEFAULT_SHOR_DATA_QUBITS, shor_ancillas=DEFAULT_SHOR_ANCILLA_QUBITS):
-    # Pick by hand which of Fez's physical qubits each circuit qubit runs on (breakeven_y.py's by default).
+    # Pick by hand which of Fez's physical qubits each circuit qubit runs on (the DEFAULT_ qubits above by default).
     # data = (Fez qubit for q_0, q_1, q_2), ancillas = (Fez qubit for a_0, a_1) of the bit-flip and phase-flip codes.
     # shor_data = (Fez qubit for q_0, ..., q_8), shor_ancillas = (Fez qubit for a_0, ..., a_7) of the Shor codes.
     # Every code puts its data qubits first and its ancillas after, so each layout is data + ancillas:
@@ -228,7 +228,7 @@ if __name__ == "__main__":
                        # "x" = only X gates, NUM_GATES of them
     MIRROR = False     # True adds the circuit's inverse, so the exact answer is always 0
 
-    # Which Fez qubits to run on (compare passes these to set_layout). The defaults are breakeven_y.py's qubits
+    # Which Fez qubits to run on (compare passes these to set_layout). The defaults are the DEFAULT_ qubits at the top
     DATA_QUBITS = DEFAULT_DATA_QUBITS                  # bit/phase-flip data q_0, q_1, q_2 (q_0 is also the no-correction qubit)
     ANCILLA_QUBITS = DEFAULT_ANCILLA_QUBITS            # bit/phase-flip ancilla a_0, a_1 (only the if-block codes use these)
     SHOR_DATA_QUBITS = DEFAULT_SHOR_DATA_QUBITS        # Shor data q_0, ..., q_8
