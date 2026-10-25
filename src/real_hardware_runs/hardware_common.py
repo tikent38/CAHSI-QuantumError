@@ -8,7 +8,6 @@ from datetime import datetime, timezone
 import qiskit
 import qiskit_aer
 import qiskit_ibm_runtime
-from qiskit import QuantumCircuit
 from qiskit.transpiler import Target, generate_preset_pass_manager
 from qiskit_aer import AerSimulator
 from qiskit_ibm_runtime import QiskitRuntimeService
@@ -17,7 +16,7 @@ from qiskit_ibm_runtime.executor_sampler import Sampler
 # The error-correction codes and helpers live in src/noisy
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "noisy"))
-from compare_fez import DEFAULT_DATA_QUBITS, prob_one
+from compare_fez import DEFAULT_DATA_QUBITS, prob_one, y_circuit
 
 CSV_DIR = os.path.join(HERE, "csvs")
 IMAGE_DIR = os.path.join(HERE, "images")
@@ -106,16 +105,6 @@ def working_target(backend, max_error=0.5):
                      if len(qargs) < 2 or p is None or p.error is None or p.error < max_error}
         kept.add_instruction(target.operation_from_name(name), props, name=name)
     return kept
-
-
-def y_circuit(bit, num_gates):
-    # Prepare |bit>, then num_gates Y gates in a row
-    qc = QuantumCircuit(1)
-    if bit:
-        qc.x(0)
-    for _ in range(num_gates):
-        qc.y(0)
-    return qc
 
 
 def to_isa(circuit, options, **extra):
