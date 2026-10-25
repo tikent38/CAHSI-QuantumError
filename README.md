@@ -34,23 +34,47 @@ python src/installation_tests/aer_noise_test.py
 ```text
 CAHSI-QuantumError/
 ├── notes/
-│   ├── error_codes.md            # theory notes on repetition, bit-flip and phase-flip codes
-│   └── research_papers.md        # links to related papers
+│   ├── error_codes.md                # theory notes on repetition, bit-flip and phase-flip codes
+│   └── research_papers.md            # links to related papers
 └── src/
-    ├── installation_tests/       # check that Qiskit, Aer and the fake backends work
-    ├── noiseless/                # the codes with hand-placed errors, no noise
+    ├── installation_tests/           # check that Qiskit, Aer and the fake backends work
+    ├── noiseless/                    # the codes with hand-placed errors, no noise
     │   ├── bit_flip_code.py
     │   ├── phase_flip_code.py
     │   ├── shor_code.py
-    │   └── error_test.py         # runs a code with an error on each qubit
-    └── noisy/                    # the codes on IBM Fez noise vs. unencoded circuits
-        ├── bit_flip_encoded.py   # bit-flip code, corrected with if blocks
-        ├── bit_flip_toffoli.py   # bit-flip code, corrected with a Toffoli (Reed et al. 2012)
-        ├── phase_flip_encoded.py
-        ├── phase_flip_toffoli.py
-        ├── shor_encoded.py
-        ├── shor_toffoli.py
-        └── compare_fez.py        # runs a circuit unencoded and with each code
+    │   └── error_test.py             # runs a code with an error on each qubit
+    ├── noisy/                        # the codes on IBM Fez noise vs. unencoded circuits
+    │   ├── bit_flip_encoded.py       # bit-flip code, corrected with if blocks
+    │   ├── bit_flip_toffoli.py       # bit-flip code, corrected with a Toffoli (Reed et al. 2012)
+    │   ├── phase_flip_encoded.py
+    │   ├── phase_flip_toffoli.py
+    │   ├── shor_encoded.py
+    │   ├── shor_toffoli.py
+    │   ├── compare_fez.py            # runs a circuit unencoded and with each code
+    │   ├── theory_validation.py      # the codes' failure rates vs. the theory formulas
+    │   ├── csvs/
+    │   └── images/
+    ├── real_hardware_runs/           # the bit-flip and phase-flip codes on the real ibm_fez
+    │   ├── hardware_common.py        # shared code: connecting to IBM, running the jobs, plots
+    │   ├── bit_flip_hardware.py      # one bit-flip run
+    │   ├── phase_flip_hardware.py    # one phase-flip run
+    │   ├── y_sweep_hardware.py       # both codes at several numbers of Y gates
+    │   ├── csvs/                     # results and job IDs (single_runs/ and sweep/)
+    │   └── images/
+    ├── simulator_noise_sources/      # Fez simulator only: each qubit's error split into its noise sources
+    │   ├── y_gate_noise_sources.py
+    │   ├── csvs/
+    │   └── images/
+    └── hardware_vs_simulator/        # how well the Fez simulator matches a real ibm_fez calibration
+        ├── noise_common.py           # shared code: reading the calibration file, CSVs and plots
+        ├── model_check.py            # the simulator's noise numbers vs. the calibration, per qubit
+        ├── y_gate_test.py            # Y gate circuit error: runs the three below and compares them
+        ├── simulator_predicted.py    # calculated from the simulator's noise model
+        ├── simulator_measured.py     # from running the circuit on the simulator
+        ├── calibration_predicted.py  # calculated from the calibration file
+        ├── csvs/                     # results, and the ibm_fez calibration file
+        ├── images/
+        └── reports/                  # good_qubits.md: qubits where the simulator matches the real machine
 ```
 
 ## Noiseless tests

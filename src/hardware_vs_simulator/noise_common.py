@@ -13,10 +13,10 @@ import sys
 
 from qiskit import transpile
 
-# The Y gate circuit lives in src/noisy (shared with src/real_hardware_runs and src/physical_qubit_comparison)
+# The Y gate circuit lives in src/noisy (shared with src/real_hardware_runs and src/simulator_noise_sources)
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "noisy"))
-from compare_fez import y_circuit   # noqa: E402
+from compare_fez import y_circuit   
 
 # Output folders next to this file, so the results land in the same place from any working directory
 CSV_DIR = os.path.join(HERE, "csvs")

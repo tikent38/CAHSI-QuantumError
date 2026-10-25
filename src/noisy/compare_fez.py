@@ -56,7 +56,7 @@ def x_gates(num_gates=100, seed=None):
 
 
 def y_circuit(bit, num_gates):
-    # Prepare |bit>, then num_gates Y gates in a row. Used by src/real_hardware_runs, src/physical_qubit_comparison
+    # Prepare |bit>, then num_gates Y gates in a row. Used by src/real_hardware_runs, src/simulator_noise_sources
     # and src/hardware_vs_simulator
     qc = QuantumCircuit(1)
     if bit:
