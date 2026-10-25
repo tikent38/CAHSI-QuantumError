@@ -22,37 +22,6 @@ LOGICAL_Z_QUBITS = range(9)
 BLOCKS = (0, 3, 6) # first qubit of each block
 
 
-def encode_block(qc, data, first):
-    # Bit-flip code inside one block:  |+> -> |000> + |111>,  |-> -> |000> - |111>
-    qc.cx(data[first], data[first + 1])
-    qc.cx(data[first], data[first + 2])
-
-
-def decode_block(qc, data, first):
-    # Undo encode_block
-    qc.cx(data[first], data[first + 2])
-    qc.cx(data[first], data[first + 1])
-
-
-def encode(qc, data):
-    # Outer code first: the phase-flip code on q_0, q_3, q_6:  a|0> + b|1>  ->  a|+++> + b|--->
-    qc.cx(data[0], data[3])
-    qc.cx(data[0], data[6])
-    qc.h([data[first] for first in BLOCKS])
-    # Then the bit-flip code inside each block
-    for first in BLOCKS:
-        encode_block(qc, data, first)
-
-
-def decode(qc, data):
-    # Undo encode in reverse order:  encoded state  ->  a|0> + b|1> on q_0
-    for first in BLOCKS:
-        decode_block(qc, data, first)
-    qc.h([data[first] for first in BLOCKS])
-    qc.cx(data[0], data[6])
-    qc.cx(data[0], data[3])
-
-
 def shor_encoded(circuit, measure=True):
     # Returns the Shor-code version of a 1-qubit circuit (no measurements in it, Pauli gates only).
     # measure=True also decodes and measures the result into the "out" register;
@@ -146,3 +115,34 @@ def shor_encoded(circuit, measure=True):
         qc.measure(data[0], out[0])
 
     return qc
+
+
+def encode(qc, data):
+    # Outer code first: the phase-flip code on q_0, q_3, q_6:  a|0> + b|1>  ->  a|+++> + b|--->
+    qc.cx(data[0], data[3])
+    qc.cx(data[0], data[6])
+    qc.h([data[first] for first in BLOCKS])
+    # Then the bit-flip code inside each block
+    for first in BLOCKS:
+        encode_block(qc, data, first)
+
+
+def decode(qc, data):
+    # Undo encode in reverse order:  encoded state  ->  a|0> + b|1> on q_0
+    for first in BLOCKS:
+        decode_block(qc, data, first)
+    qc.h([data[first] for first in BLOCKS])
+    qc.cx(data[0], data[6])
+    qc.cx(data[0], data[3])
+
+
+def encode_block(qc, data, first):
+    # Bit-flip code inside one block:  |+> -> |000> + |111>,  |-> -> |000> - |111>
+    qc.cx(data[first], data[first + 1])
+    qc.cx(data[first], data[first + 2])
+
+
+def decode_block(qc, data, first):
+    # Undo encode_block
+    qc.cx(data[first], data[first + 2])
+    qc.cx(data[first], data[first + 1])

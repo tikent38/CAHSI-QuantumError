@@ -22,21 +22,6 @@ H_SWAPPED = {"x": ZGate(), "z": XGate()}
 PHASE_GATES = {"s", "sdg", "t", "tdg", "p", "rz"}
 
 
-def encode(qc, data):
-    # Step 1: encode exactly as for the bit-flip code:  a|0> + b|1>  ->  a|000> + b|111>
-    # Step 2: H on every qubit to move to the +/- basis:  ->  a|+++> + b|--->
-    qc.cx(data[0], data[1])
-    qc.cx(data[0], data[2])
-    qc.h(data)
-
-
-def decode(qc, data):
-    # Undo encode:  a|+++> + b|--->  ->  a|0> + b|1> on q_0
-    qc.h(data)
-    qc.cx(data[0], data[2])
-    qc.cx(data[0], data[1])
-
-
 def phase_flip_encoded(circuit, measure=True):
     # Returns the phase-flip-code version of a 1-qubit circuit (no measurements in it).
     # measure=True also decodes and measures the result into the "out" register;
@@ -113,3 +98,17 @@ def phase_flip_encoded(circuit, measure=True):
 
     return qc
 
+
+def encode(qc, data):
+    # Step 1: encode exactly as for the bit-flip code:  a|0> + b|1>  ->  a|000> + b|111>
+    # Step 2: H on every qubit to move to the +/- basis:  ->  a|+++> + b|--->
+    qc.cx(data[0], data[1])
+    qc.cx(data[0], data[2])
+    qc.h(data)
+
+
+def decode(qc, data):
+    # Undo encode:  a|+++> + b|--->  ->  a|0> + b|1> on q_0
+    qc.h(data)
+    qc.cx(data[0], data[2])
+    qc.cx(data[0], data[1])

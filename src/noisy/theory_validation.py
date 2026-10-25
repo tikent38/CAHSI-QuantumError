@@ -51,21 +51,7 @@ FORMULAS = {
     "corrected": ("3p^2 - 2p^3", lambda p: 3 * p**2 - 2 * p**3),
     "not corrected": ("3p(1-p)^2 + p^3", lambda p: 3 * p * (1 - p) ** 2 + p**3),
 }
-def prob_one(counts, register_index=0):
-    # Fraction of shots where the measured result was 1.
-    # For the encoded circuit the keys look like "out s" and "out" is the first group
-    ones = sum(n for key, n in counts.items() if key.split()[register_index] == "1")
-    return ones, sum(counts.values()) - ones
 
-
-def failure(sim, circuits, shots, rng):
-    # Fraction of shots where the measured result was wrong
-    wrong = 0
-    for bit, circuit in circuits.items():
-        counts = sim.run(circuit, shots=shots, seed_simulator=rng.randrange(2**31)).result().get_counts()
-        ones, zeros = prob_one(counts)
-        wrong += zeros if bit else ones
-    return wrong / (shots * len(circuits))
 
 def case(name, error):
     # Which formula applies, and whether to use |+>/|-> (True) or |0>/|1> (False)
@@ -75,20 +61,6 @@ def case(name, error):
     if corrects == error:
         return "corrected", False
     return "not corrected", True
-
-
-def logical_circuit(bit, plus_minus):
-    # Prepare |bit> (or |+>/|-> if plus_minus), then one id gate: the place where the injected error happens.
-    # With plus_minus, H at the end turns |+>/|-> back into 0/1 for the measurement
-    qc = QuantumCircuit(1)
-    if bit:
-        qc.x(0)
-    if plus_minus:
-        qc.h(0)
-    qc.id(0)
-    if plus_minus:
-        qc.h(0)
-    return qc
 
 
 def build_circuits(name, plus_minus):
@@ -112,6 +84,35 @@ def error_noise(error, p):
     return noise
 
 
+def failure(sim, circuits, shots, rng):
+    # Fraction of shots where the measured result was wrong
+    wrong = 0
+    for bit, circuit in circuits.items():
+        counts = sim.run(circuit, shots=shots, seed_simulator=rng.randrange(2**31)).result().get_counts()
+        ones, zeros = prob_one(counts)
+        wrong += zeros if bit else ones
+    return wrong / (shots * len(circuits))
+
+
+def logical_circuit(bit, plus_minus):
+    # Prepare |bit> (or |+>/|-> if plus_minus), then one id gate: the place where the injected error happens.
+    # With plus_minus, H at the end turns |+>/|-> back into 0/1 for the measurement
+    qc = QuantumCircuit(1)
+    if bit:
+        qc.x(0)
+    if plus_minus:
+        qc.h(0)
+    qc.id(0)
+    if plus_minus:
+        qc.h(0)
+    return qc
+
+
+def prob_one(counts, register_index=0):
+    # Fraction of shots where the measured result was 1.
+    # For the encoded circuit the keys look like "out s" and "out" is the first group
+    ones = sum(n for key, n in counts.items() if key.split()[register_index] == "1")
+    return ones, sum(counts.values()) - ones
 
 
 def load_csv(csv_file):
@@ -256,5 +257,6 @@ if __name__ == "__main__":
     PLOT_FILE = os.path.join(IMAGE_DIR, "theory_validation.png")  # where to save the plot (images/); None skips it
    
     run(P_VALUES, errors=ERRORS, shots=SHOTS, seed=SEED, csv_file=CSV_FILE, plot_file=PLOT_FILE)
+
   
     

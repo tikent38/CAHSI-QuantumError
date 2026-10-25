@@ -10,18 +10,6 @@ from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 BLOCKS = (0, 3, 6) # first qubit of each block
 
 
-def encode_block(qc, data, first):
-    # Bit-flip code inside one block:  |+> -> |000> + |111>,  |-> -> |000> - |111>
-    qc.cx(data[first], data[first + 1])
-    qc.cx(data[first], data[first + 2])
-
-
-def decode_block(qc, data, first):
-    # Undo encode_block
-    qc.cx(data[first], data[first + 2])
-    qc.cx(data[first], data[first + 1])
-
-
 def shor_code(state_prep, x_errors=None, z_errors=None):
 
     if state_prep.num_qubits != 1:
@@ -98,8 +86,21 @@ def shor_code(state_prep, x_errors=None, z_errors=None):
     return qc
 
 
+def encode_block(qc, data, first):
+    # Bit-flip code inside one block:  |+> -> |000> + |111>,  |-> -> |000> - |111>
+    qc.cx(data[first], data[first + 1])
+    qc.cx(data[first], data[first + 2])
+
+
+def decode_block(qc, data, first):
+    # Undo encode_block
+    qc.cx(data[first], data[first + 2])
+    qc.cx(data[first], data[first + 1])
+
+
 # Which qubit in a block each bit-flip syndrome (a_1 a_0 of that block) says flipped
 BIT_SYNDROME_TO_QUBIT = {"00": None, "01": 0, "11": 1, "10": 2}
+
 
 # Which block each phase-flip syndrome (a_7 a_6) says had its sign flipped
 PHASE_SYNDROME_TO_BLOCK = {"00": None, "01": 0, "11": 1, "10": 2}

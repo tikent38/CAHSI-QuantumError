@@ -17,18 +17,6 @@ LOGICAL_GATES = {"id", "x", "y", "z"}
 PHASE_GATES = {"s", "sdg", "t", "tdg", "p", "rz"}
 
 
-def encode(qc, data):
-    # a|0> + b|1> on q_0  ->  a|000> + b|111>
-    qc.cx(data[0], data[1])
-    qc.cx(data[0], data[2])
-
-
-def decode(qc, data):
-    # a|000> + b|111>  ->  a|0> + b|1> on q_0
-    qc.cx(data[0], data[2])
-    qc.cx(data[0], data[1])
-
-
 def bit_flip_encoded(circuit, measure=True):
     # Returns the bit-flip-code version of a 1-qubit circuit (no measurements in it).
     # measure=True also decodes and measures the result into the "out" register;
@@ -96,3 +84,14 @@ def bit_flip_encoded(circuit, measure=True):
 
     return qc
 
+
+def encode(qc, data):
+    # a|0> + b|1> on q_0  ->  a|000> + b|111>
+    qc.cx(data[0], data[1])
+    qc.cx(data[0], data[2])
+
+
+def decode(qc, data):
+    # a|000> + b|111>  ->  a|0> + b|1> on q_0
+    qc.cx(data[0], data[2])
+    qc.cx(data[0], data[1])
