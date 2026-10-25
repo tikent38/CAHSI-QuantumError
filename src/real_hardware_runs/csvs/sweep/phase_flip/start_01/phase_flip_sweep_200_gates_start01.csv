@@ -1,0 +1,9 @@
+source,backend,job_id,run,start_state,y_gates,shots,exact_answer,p1,failure_rate,qubits_used,measured_on,gates,two_qubit_gates,depth,duration_us,gate_counts,seed,software
+ibm_fez,ibm_fez,dbehj97gdj9s73flqdkg,no correction,0,200,10000,0,0.0625,0.0625,86,86,401,0,401,6.46,rz:200 x:200 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"
+ibm_fez,ibm_fez,dbehj97gdj9s73flqdkg,no correction,1,200,10000,1,0.9423,0.0577,86,86,402,0,402,6.484,x:201 rz:200 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"
+ibm_fez,ibm_fez,dbehj97gdj9s73flqdkg,"phase-flip, Toffoli",0,200,10000,0,0.0324,0.0324,86 87 88,86,1311,13,476,7.848,rz:663 x:600 sx:34 cz:13 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"
+ibm_fez,ibm_fez,dbehj97gdj9s73flqdkg,"phase-flip, Toffoli",1,200,10000,1,0.9448,0.0552,86 87 88,86,1314,13,477,7.848,rz:666 x:600 sx:34 cz:13 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"
+simulator (ibm_fez noise model),ibm_fez,dbehj97gdj9s73flqdkg,no correction,0,200,10000,0,0.0586,0.0586,86,86,401,0,401,6.46,rz:200 x:200 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"
+simulator (ibm_fez noise model),ibm_fez,dbehj97gdj9s73flqdkg,no correction,1,200,10000,1,0.9408,0.0592,86,86,402,0,402,6.484,x:201 rz:200 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"
+simulator (ibm_fez noise model),ibm_fez,dbehj97gdj9s73flqdkg,"phase-flip, Toffoli",0,200,10000,0,0.0419,0.0419,86 87 88,86,1311,13,476,7.848,rz:663 x:600 sx:34 cz:13 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"
+simulator (ibm_fez noise model),ibm_fez,dbehj97gdj9s73flqdkg,"phase-flip, Toffoli",1,200,10000,1,0.9555,0.0445,86 87 88,86,1314,13,477,7.848,rz:666 x:600 sx:34 cz:13 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"
