@@ -1,5 +1,0 @@
-source,backend,job_id,run,start_state,y_gates,shots,exact_answer,p1,failure_rate,layout,qubits_used,measured_on,gates,two_qubit_gates,depth,duration_us,gate_counts,seed,software
-ibm_fez,ibm_fez,dbehe7nsstms73fc3520,no correction,1,200,10000,1,0.9366,0.0634,86,86,86,402,0,402,6.484,x:201 rz:200 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"
-ibm_fez,ibm_fez,dbehe7nsstms73fc3520,"phase-flip, Toffoli",1,200,10000,1,0.9426,0.0574,87 88 86,86 87 88,86,1314,13,477,7.848,rz:666 x:600 sx:34 cz:13 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"
-simulator (ibm_fez noise model),ibm_fez,dbehe7nsstms73fc3520,no correction,1,200,10000,1,0.945,0.055,86,86,86,402,0,402,6.484,x:201 rz:200 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"
-simulator (ibm_fez noise model),ibm_fez,dbehe7nsstms73fc3520,"phase-flip, Toffoli",1,200,10000,1,0.9488,0.0512,87 88 86,86 87 88,86,1314,13,477,7.848,rz:666 x:600 sx:34 cz:13 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"

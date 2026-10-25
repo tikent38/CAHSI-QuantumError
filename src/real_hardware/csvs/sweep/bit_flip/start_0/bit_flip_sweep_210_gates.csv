@@ -1,5 +1,0 @@
-source,backend,job_id,run,start_state,y_gates,shots,exact_answer,p1,failure_rate,qubits_used,measured_on,gates,two_qubit_gates,depth,duration_us,gate_counts,seed,software
-ibm_fez,ibm_fez,dbeh1svpc3tc739lm8qg,no correction,0,210,10000,0,0.0674,0.0674,86,86,421,0,421,6.7,rz:210 x:210 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"
-ibm_fez,ibm_fez,dbeh1svpc3tc739lm8qg,"bit-flip, Toffoli",0,210,10000,0,0.0328,0.0328,86 87 88,86,1353,13,490,8.04,rz:681 x:630 sx:28 cz:13 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"
-simulator (ibm_fez noise model),ibm_fez,dbeh1svpc3tc739lm8qg,no correction,0,210,10000,0,0.0612,0.0612,86,86,421,0,421,6.7,rz:210 x:210 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"
-simulator (ibm_fez noise model),ibm_fez,dbeh1svpc3tc739lm8qg,"bit-flip, Toffoli",0,210,10000,0,0.0495,0.0495,86 87 88,86,1353,13,490,8.04,rz:681 x:630 sx:28 cz:13 measure:1,3,"qiskit 2.5.2, qiskit-aer 0.17.2, qiskit-ibm-runtime 0.50.0"
