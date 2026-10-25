@@ -55,6 +55,17 @@ def x_gates(num_gates=100, seed=None):
     return qc
 
 
+def y_circuit(bit, num_gates):
+    # Prepare |bit>, then num_gates Y gates in a row. Used by src/real_hardware_runs, src/physical_qubit_comparison
+    # and src/hardware_vs_simulator
+    qc = QuantumCircuit(1)
+    if bit:
+        qc.x(0)
+    for _ in range(num_gates):
+        qc.y(0)
+    return qc
+
+
 # Which function builds the circuit for each gate_set option
 CIRCUIT_FUNCTIONS = {"all": random_all_gates, "xz": random_xz_gates, "repeat": repeated_gates, "x": x_gates}
 GATE_NAMES = {"all": ALL_GATES, "xz": XZ_GATES, "repeat": REPEAT_GATES, "x": ("x",)}
