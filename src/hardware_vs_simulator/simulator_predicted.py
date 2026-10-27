@@ -14,8 +14,9 @@ from noise_common import fez_ops, ideal_result
 def simulator_predicted(backend, qubits, num_gates, start_bit):
     # {qubit: error} for every qubit, from the simulator's noise model
     ops = fez_ops(num_gates, start_bit)
+    ideal_bit = ideal_result(num_gates, start_bit)
     gates, readout = aer_noise(backend)
-    return {q: predicted_error(ops, gates[q], readout[q], ideal_result(num_gates, start_bit)) for q in qubits}
+    return {q: predicted_error(ops, gates[q], readout[q], ideal_bit) for q in qubits}
 
 
 def aer_noise(backend):

@@ -6,12 +6,15 @@ from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 
 
 def phase_flip_code(state_prep, error_qubits=None):
+    # The phase-flip code protecting the 1-qubit state that state_prep makes, with a Z error on each qubit in
+    # error_qubits (e.g. [0]), then the syndrome measured and the qubit decoded and measured into "out"
+    if state_prep.num_qubits != 1:
+        raise ValueError(f"expected a 1-qubit circuit, got {state_prep.num_qubits} qubits")
 
-  
-    data = QuantumRegister(3, "q") # our 3 qubits representing the 1 we are protecting
+    data = QuantumRegister(3, "q")         # the 3 qubits that together hold the 1 qubit being protected
     anc = QuantumRegister(2, "a")
-    syndrome = ClassicalRegister(2, "s") #used to calculate what (if any) qbits need to be flipped
-    qc = QuantumCircuit(data, anc, syndrome) #make the QuantumCircuit
+    syndrome = ClassicalRegister(2, "s")   # which qubit (if any) had its sign flipped
+    qc = QuantumCircuit(data, anc, syndrome)
 
     # 1. Prepare the state we want to protect on q_0
     for inst in state_prep.data:
@@ -23,7 +26,7 @@ def phase_flip_code(state_prep, error_qubits=None):
     qc.h(data)
     qc.barrier()
 
-    # Optional apply error Z gates to qubits
+    # Optional: apply Z errors to the chosen qubits
     if error_qubits is not None:
         for qbit in error_qubits:
             qc.z(data[qbit])

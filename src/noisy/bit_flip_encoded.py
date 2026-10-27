@@ -24,9 +24,9 @@ def bit_flip_encoded(circuit, measure=True):
     if circuit.num_qubits != 1:
         raise ValueError(f"expected a 1-qubit circuit, got {circuit.num_qubits} qubits")
 
-    data = QuantumRegister(3, "q") # our 3 qubits representing the 1 we are protecting
+    data = QuantumRegister(3, "q")         # the 3 qubits that together hold the 1 qubit being protected
     anc = QuantumRegister(2, "a")
-    syndrome = ClassicalRegister(2, "s") #used to calculate what (if any) qbits need to be flipped
+    syndrome = ClassicalRegister(2, "s")   # which qubit (if any) needs to be flipped back
     qc = QuantumCircuit(data, anc, syndrome)
 
     # 1. Create a|000> + b|111>. All qubits start at |0>, so this is |000> (a=1, b=0);
@@ -35,26 +35,7 @@ def bit_flip_encoded(circuit, measure=True):
     qc.barrier()
 
     # 2. Apply every gate from the passed in circuit to the encoded qubit
-    for inst in circuit.data:
-        gate = inst.operation
-        if gate.name == "barrier":
-            continue
-        if gate.name == "measure":
-            raise ValueError("leave measurements out of the circuit; use measure=True instead")
-
-        if gate.name in LOGICAL_GATES:
-            # Apply the gate to all 3 data qubits
-            for q in data:
-                qc.append(gate, [q])
-        elif gate.name in PHASE_GATES:
-            # Apply the gate to q_0 only (see PHASE_GATES above)
-            qc.append(gate, [data[0]])
-        else:
-            # Gates like H have no encoded version in this code: decode, apply to q_0, re-encode.
-            # The qubit is NOT protected while this gate runs
-            decode(qc, data)
-            qc.append(gate, [data[0]])
-            encode(qc, data)
+    apply_gates(qc, data, circuit)
     qc.barrier()
 
     # 3. Measure the pairwise parities into the ancillas to find which (if any) qubit flipped
@@ -83,6 +64,31 @@ def bit_flip_encoded(circuit, measure=True):
         qc.measure(data[0], out[0])
 
     return qc
+
+
+def apply_gates(qc, data, circuit):
+    # Step 2: every gate from circuit (a 1-qubit circuit with no measurements), applied to the encoded qubit on data.
+    # bit_flip_toffoli.py uses this too, so the two versions of the code only differ in how they correct
+    for inst in circuit.data:
+        gate = inst.operation
+        if gate.name == "barrier":
+            continue
+        if gate.name == "measure":
+            raise ValueError("leave measurements out of the circuit; use measure=True instead")
+
+        if gate.name in LOGICAL_GATES:
+            # Apply the gate to all 3 data qubits
+            for q in data:
+                qc.append(gate, [q])
+        elif gate.name in PHASE_GATES:
+            # Apply the gate to q_0 only (see PHASE_GATES above)
+            qc.append(gate, [data[0]])
+        else:
+            # Gates like H have no encoded version in this code: decode, apply to q_0, re-encode.
+            # The qubit is NOT protected while this gate runs
+            decode(qc, data)
+            qc.append(gate, [data[0]])
+            encode(qc, data)
 
 
 def encode(qc, data):

@@ -29,8 +29,8 @@ def shor_encoded(circuit, measure=True):
     if circuit.num_qubits != 1:
         raise ValueError(f"expected a 1-qubit circuit, got {circuit.num_qubits} qubits")
 
-    data = QuantumRegister(9, "q") # our 9 qubits representing the 1 we are protecting
-    anc = QuantumRegister(8, "a") # a_0-a_5: bit-flip checks (2 per block), a_6-a_7: phase-flip checks
+    data = QuantumRegister(9, "q")   # the 9 qubits that together hold the 1 qubit being protected
+    anc = QuantumRegister(8, "a")    # a_0-a_5: bit-flip checks (2 per block), a_6-a_7: phase-flip checks
     # one 2-bit bit-flip syndrome per block, and one 2-bit phase-flip syndrome
     bit_syndromes = [ClassicalRegister(2, f"b{block}") for block in range(3)]
     phase_syndrome = ClassicalRegister(2, "p")
@@ -42,26 +42,7 @@ def shor_encoded(circuit, measure=True):
     qc.barrier()
 
     # 2. Apply every gate from the passed in circuit to the encoded qubit
-    for inst in circuit.data:
-        gate = inst.operation
-        if gate.name == "barrier":
-            continue
-        if gate.name == "measure":
-            raise ValueError("leave measurements out of the circuit; use measure=True instead")
-        if gate.name not in LOGICAL_GATES:
-            raise ValueError(f"the Shor code only supports Pauli gates ({', '.join(sorted(LOGICAL_GATES))}), "
-                             f"got '{gate.name}' (see LOGICAL_GATES)")
-
-        # Apply the logical version (see LOGICAL_GATES above)
-        if gate.name == "id":
-            for q in data:
-                qc.id(q)
-        if gate.name in ("x", "y"):
-            for q in LOGICAL_X_QUBITS:
-                qc.z(data[q])
-        if gate.name in ("z", "y"):
-            for q in LOGICAL_Z_QUBITS:
-                qc.x(data[q])
+    apply_gates(qc, data, circuit)
     qc.barrier()
 
     # 3. Bit-flip check: measure the pairwise parities inside each block, the same as bit_flip_encoded
@@ -85,8 +66,7 @@ def shor_encoded(circuit, measure=True):
                 qc.x(data[first + 2])
 
     # 5. Phase-flip check, the course's simplified version (the same as noiseless/shor_code.py):
-    #    compare the signs of neighbouring blocks.
-    #   \
+    #    compare the signs of neighbouring blocks
     qc.h([anc[6], anc[7]])
     for q in range(0, 6):
         qc.cx(anc[6], data[q])
@@ -115,6 +95,31 @@ def shor_encoded(circuit, measure=True):
         qc.measure(data[0], out[0])
 
     return qc
+
+
+def apply_gates(qc, data, circuit):
+    # Step 2: every gate from circuit (a 1-qubit circuit with no measurements, Pauli gates only), applied to the
+    # encoded qubit on data as its logical version (see LOGICAL_GATES above). shor_toffoli.py uses this too, so the
+    # two versions of the code only differ in how they correct
+    for inst in circuit.data:
+        gate = inst.operation
+        if gate.name == "barrier":
+            continue
+        if gate.name == "measure":
+            raise ValueError("leave measurements out of the circuit; use measure=True instead")
+        if gate.name not in LOGICAL_GATES:
+            raise ValueError(f"the Shor code only supports Pauli gates ({', '.join(sorted(LOGICAL_GATES))}), "
+                             f"got '{gate.name}' (see LOGICAL_GATES in shor_encoded.py)")
+
+        if gate.name == "id":
+            for q in data:
+                qc.id(q)
+        if gate.name in ("x", "y"):
+            for q in LOGICAL_X_QUBITS:
+                qc.z(data[q])
+        if gate.name in ("z", "y"):
+            for q in LOGICAL_Z_QUBITS:
+                qc.x(data[q])
 
 
 def encode(qc, data):

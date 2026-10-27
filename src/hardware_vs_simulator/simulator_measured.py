@@ -17,7 +17,6 @@ def simulator_measured(backend, qubits, num_gates, start_bit, shots, seed):
     ops = fez_ops(num_gates, start_bit)
     wrong = str(1 - ideal_result(num_gates, start_bit))
     circuits = [y_test_circuit(backend, q, ops) for q in qubits]
-    # Every qubit's circuit runs in one call, so Aer can run them in parallel
     counts = make_simulator(backend).run(circuits, shots=shots,
                                          seed_simulator=random.Random(seed).randrange(2**31)).result().get_counts()
     results = {}
@@ -39,7 +38,7 @@ def y_test_circuit(backend, qubit, ops):
 def make_simulator(backend):
     # The Fez noise simulator. density_matrix applies every noise channel exactly instead of sampling which error
     # happened, so the only randomness left is from the limited number of shots, as on the hardware.
-    # max_parallel_experiments=0 lets Aer run as many circuits at once as the computer has cores
+    # max_parallel_experiments=0 lets Aer run as many circuits at once as the computer has cores (supposedly)
     return AerSimulator.from_backend(backend, method="density_matrix", max_parallel_experiments=0)
 
 

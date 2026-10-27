@@ -5,13 +5,12 @@
 import math
 import os
 import statistics
-import textwrap
 
 from qiskit_aer.noise.device import basic_device_readout_errors
 from qiskit_ibm_runtime.fake_provider import FakeFez
 
-from noise_common import (COLORS, CSV_DIR, FAIL_COLOR, IMAGE_DIR, load_calibration, ratio, save, style,
-                          write_rows)
+from noise_common import CSV_DIR, FAIL_COLOR, IMAGE_DIR, load_calibration, ratio
+from output_tools import COLORS, INK, MUTED, print_wrapped, pyplot, save_plot, style, write_csv, write_text
 
 # Output folder for good_qubits.md, next to this file
 REPORT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "reports")
@@ -82,10 +81,7 @@ def plot_cz(ax, cz, label_limit):
 
 def plot_model_check(qubits, model, cz, path, label_limit=8):
     # All six plots in one image, in a 2 x 3 grid
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
-
+    plt = pyplot()
     fig, axes = plt.subplots(2, 3, figsize=(18, 11.6))
     plot_p1_given_0(axes[0][0], qubits, model, label_limit)
     plot_p0_given_1(axes[0][1], qubits, model, label_limit)
@@ -94,8 +90,8 @@ def plot_model_check(qubits, model, cz, path, label_limit=8):
     plot_sx_error(axes[1][1], qubits, model, label_limit)
     plot_cz(axes[1][2], cz, label_limit)
     fig.suptitle(f"Model check: Fez simulator (FakeFez) vs real ibm_fez calibration "
-                 f"(the {label_limit} furthest off in each plot are labelled)", color="#0b0b0b")
-    save(fig, path)
+                 f"(the {label_limit} furthest off in each plot are labelled)", color=INK)
+    save_plot(fig, path)
 
 
 # ---- Helpers: drawing a plot ----
@@ -107,7 +103,6 @@ def scatter_panel(ax, title, xlabel, ylabel, series, band=None, label_limit=8):
     # furthest from y = x labelled with their qubit number
     from matplotlib.ticker import NullFormatter
 
-    ink, muted = "#0b0b0b", "#52514e"
     values = []
     for label, color, xs, ys, yerr, *names in series:
         if not xs:
@@ -120,12 +115,12 @@ def scatter_panel(ax, title, xlabel, ylabel, series, band=None, label_limit=8):
         if names and names[0]:
             points = sorted(zip(names[0], xs, ys), key=lambda p: -abs(math.log(p[2] / p[1])))
             for q, x, y in points[:label_limit]:
-                ax.annotate(str(q), (x, y), xytext=(5, 2), textcoords="offset points", color=ink, fontsize=7)
+                ax.annotate(str(q), (x, y), xytext=(5, 2), textcoords="offset points", color=INK, fontsize=7)
     low, high = min(values) / 1.3, max(values) * 1.3
-    ax.plot([low, high], [low, high], "--", color=muted, lw=1, label="y = x")
+    ax.plot([low, high], [low, high], "--", color=MUTED, lw=1, label="y = x")
     if band:
-        ax.plot([low, high], [low * band, high * band], ":", color=muted, lw=1, label=f"{band}x off")
-        ax.plot([low, high], [low / band, high / band], ":", color=muted, lw=1)
+        ax.plot([low, high], [low * band, high * band], ":", color=MUTED, lw=1, label=f"{band}x off")
+        ax.plot([low, high], [low / band, high / band], ":", color=MUTED, lw=1)
     ax.set_xscale("log")
     ax.set_yscale("log")
     # Only label the powers of 10: the in-between labels overlap on short axes
@@ -133,9 +128,9 @@ def scatter_panel(ax, title, xlabel, ylabel, series, band=None, label_limit=8):
     ax.yaxis.set_minor_formatter(NullFormatter())
     ax.set_xlim(low, high)
     ax.set_ylim(low, high)
-    ax.set_title(title, color=ink, fontsize=10)
-    ax.set_xlabel(xlabel, color=muted)
-    ax.set_ylabel(ylabel, color=muted)
+    ax.set_title(title, color=INK, fontsize=10)
+    ax.set_xlabel(xlabel, color=MUTED)
+    ax.set_ylabel(ylabel, color=MUTED)
     # Legend below the plot, so it never covers points
     ax.legend(frameon=False, fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.13), ncol=2)
     style(ax)
@@ -278,11 +273,11 @@ def write_model_csv(qubits, model, real, path):
             s, r, rat = model[q][key]
             row += [s, r, rat, differs(rat)]
         rows.append(row)
-    write_rows(path, header, rows)
+    write_csv(path, header, rows)
 
 
 def write_cz_csv(cz, path):
-    write_rows(path, ["qubit_a", "qubit_b", "simulator_cz_error", "real_cz_error", "real_over_sim", "differs",
+    write_csv(path, ["qubit_a", "qubit_b", "simulator_cz_error", "real_cz_error", "real_over_sim", "differs",
                       "status"],
                [[row["pair"][0], row["pair"][1], row["sim"], row["real"], row["ratio"], differs(row["ratio"]),
                  row["status"]] for row in cz])
@@ -310,10 +305,7 @@ def write_good_qubits(path, lists, qubits, sim_date, calibration_file):
     lines += ["", f"## Four of those five ({len(four_of_five)} qubits)", "",
               "Matches in every area but the one shown. Qubits matching all five are in the list above", ""]
     lines += [f"- {q} (off: {md(AREAS[key])})" for q, key in four_of_five] or ["- none"]
-    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
-    with open(path, "w") as f:
-        f.write("\n".join(lines) + "\n")
-    print(f"Wrote good qubit lists to {path}")
+    write_text(path, "\n".join(lines) + "\n")
 
 
 # ---- Printing ----
@@ -328,18 +320,8 @@ def fmt(value, digits=4):
     return "—" if value is None else f"{value:.{digits}g}"
 
 
-def run(qubits=None, calibration_file=None, model_csv_file=None, cz_csv_file=None, good_qubits_file=None,
-        plot_file=None):
-    backend = FakeFez()
-    if qubits is None:
-        qubits = list(range(backend.num_qubits))
-    sim_date = backend.properties().last_update_date
-    real, real_cz = load_calibration(calibration_file, qubits)
-    model = compare_models(simulator_model(backend, qubits), real, qubits)
-    cz = compare_cz(simulator_cz(backend), real_cz, qubits)
-
-    print(f"Simulator: FakeFez, calibrated {sim_date}")
-    print(f"Real:      {os.path.basename(calibration_file)}\n")
+def print_medians(qubits, model, cz):
+    # For every number: the median simulator and real values, the median ratio, and how many qubits differ
     print(f"Simulator model vs real calibration (differs = more than {DIFFERENCE_FACTOR}x apart)")
     print(f"  {'number':<32}{'median sim':>12}{'median real':>13}{'median real/sim':>17}{'differs':>9}")
     for key, label in MODEL_QUANTITIES.items():
@@ -351,15 +333,20 @@ def run(qubits=None, calibration_file=None, model_csv_file=None, cz_csv_file=Non
     print(f"  {'CZ error (per connection)':<32}{fmt(median(row['sim'] for row in both)):>12}"
           f"{fmt(median(row['real'] for row in both)):>13}{fmt(median(row['ratio'] for row in both), 3):>17}"
           f"{sum(differs(row['ratio']) for row in both):>9}")
+
+
+def print_far_off(qubits, model, cz):
+    # Every qubit (and CZ connection) more than DIFFERENCE_FACTOR off in the plot, furthest first
     print(f"\n  Qubits more than {DIFFERENCE_FACTOR}x off in the plot, furthest first (real / sim):")
     for key in MODEL_PLOT_PANELS:
         rows = biggest_differences(qubits, model, key)
-        print(textwrap.fill(f"{MODEL_QUANTITIES[key]} ({len(rows)}): {far_off_list(rows) or 'none'}", width=118,
-                            initial_indent="  - ", subsequent_indent="      "))
+        print_wrapped(f"{MODEL_QUANTITIES[key]} ({len(rows)}): {far_off_list(rows) or 'none'}", "  - ")
     cz_off = far_off_cz(cz)
-    print(textwrap.fill(f"CZ error ({len(cz_off)} connections): {cz_off_list(cz_off) or 'none'}", width=118,
-                        initial_indent="  - ", subsequent_indent="      "))
-    good_lists = good_qubit_lists(area_matches(qubits, model, cz, real))
+    print_wrapped(f"CZ error ({len(cz_off)} connections): {cz_off_list(cz_off) or 'none'}", "  - ")
+
+
+def print_good_lists(good_lists):
+    # The same three lists as good_qubits.md
     all_six, all_five, four_of_five = good_lists
     print()
     for title, text in ((f"Within {DIFFERENCE_FACTOR}x in all six areas ({len(all_six)} qubits)",
@@ -368,8 +355,26 @@ def run(qubits=None, calibration_file=None, model_csv_file=None, cz_csv_file=Non
                          ", ".join(map(str, all_five))),
                         (f"Within {DIFFERENCE_FACTOR}x in four of those five ({len(four_of_five)} qubits, area off "
                          f"in brackets)", ", ".join(f"{q} ({AREAS[key]})" for q, key in four_of_five))):
-        print(textwrap.fill(f"{title}: {text or 'none'}", width=118, initial_indent="  ", subsequent_indent="    "))
+        print_wrapped(f"{title}: {text or 'none'}", "  ")
     print()
+
+
+def run(qubits=None, calibration_file=None, model_csv_file=None, cz_csv_file=None, good_qubits_file=None,
+        plot_file=None):
+    backend = FakeFez()
+    if qubits is None:
+        qubits = list(range(backend.num_qubits))
+    sim_date = backend.properties().last_update_date
+    real, real_cz = load_calibration(calibration_file, qubits)
+    model = compare_models(simulator_model(backend, qubits), real, qubits)
+    cz = compare_cz(simulator_cz(backend), real_cz, qubits)
+    good_lists = good_qubit_lists(area_matches(qubits, model, cz, real))
+
+    print(f"Simulator: FakeFez, calibrated {sim_date}")
+    print(f"Real:      {os.path.basename(calibration_file)}\n")
+    print_medians(qubits, model, cz)
+    print_far_off(qubits, model, cz)
+    print_good_lists(good_lists)
 
     if model_csv_file:
         write_model_csv(qubits, model, real, model_csv_file)

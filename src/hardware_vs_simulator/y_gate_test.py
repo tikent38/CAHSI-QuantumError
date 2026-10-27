@@ -12,12 +12,12 @@ import statistics
 from qiskit_ibm_runtime.fake_provider import FakeFez
 
 from calibration_predicted import calibration_predicted, check_gate_channel
-from noise_common import COLORS, CSV_DIR, FAIL_COLOR, IMAGE_DIR, ideal_result, ratio, save, style, write_rows
+from noise_common import CSV_DIR, FAIL_COLOR, IMAGE_DIR, ideal_result, ratio
+from output_tools import COLORS, INK, MUTED, pyplot, qubit_axis, save_plot, style, write_csv
 from simulator_measured import simulator_measured
 from simulator_predicted import simulator_predicted
 
 # Simulator measured "agrees" with simulator predicted if it is within this many standard errors (shot noise) of it.
-# With 3, about 1 in 370 qubits still lands outside by chance even when the simulator is working
 TOLERANCE_SIGMAS = 3
 
 
@@ -30,7 +30,7 @@ def agrees(measured, sigma, expected):
 
 
 def write_y_csv(qubits, results, num_gates, start_bit, shots, path):
-    write_rows(path, ["qubit", "y_gates", "start_bit", "no_noise_result", "shots", "simulator_predicted_error",
+    write_csv(path, ["qubit", "y_gates", "start_bit", "no_noise_result", "shots", "simulator_predicted_error",
                       "simulator_measured_error", "shot_noise", "measured_agrees_with_predicted",
                       "calibration_predicted_error", "calibration_over_simulator"],
                [[q, num_gates, start_bit, ideal_result(num_gates, start_bit), shots, results[q]["sim_predicted"],
@@ -42,11 +42,7 @@ def write_y_csv(qubits, results, num_gates, start_bit, shots, path):
 def plot_y_test(qubits, results, num_gates, start_bit, shots, path):
     # Top: simulator predicted vs measured, for every qubit (checks the simulator). Bottom: simulator predicted vs
     # calibration predicted (shows how the real machine differs). Log scale: the errors span a wide range
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
-
-    ink, muted = "#0b0b0b", "#52514e"
+    plt = pyplot()
     fig, (top, bottom) = plt.subplots(2, 1, figsize=(16, 9), sharex=True)
     predicted = [results[q]["sim_predicted"] for q in qubits]
     for ax in (top, bottom):
@@ -55,7 +51,7 @@ def plot_y_test(qubits, results, num_gates, start_bit, shots, path):
     ok = [q for q in qubits if results[q]["agrees"]]
     off = [q for q in qubits if results[q]["agrees"] is False]
     # Agreeing points in dark gray, the rest as bigger red diamonds, so they stand out by shape as well as color
-    for qs, color, marker, size, label in ((ok, muted, "o", 4, "simulator measured (agrees)"),
+    for qs, color, marker, size, label in ((ok, MUTED, "o", 4, "simulator measured (agrees)"),
                                            (off, FAIL_COLOR, "D", 7,
                                             f"simulator measured (off by > {TOLERANCE_SIGMAS}σ)")):
         if qs:
@@ -63,22 +59,20 @@ def plot_y_test(qubits, results, num_gates, start_bit, shots, path):
                          fmt=marker, color=color, ms=size, mec="white", mew=0.6, elinewidth=0.8,
                          label=f"{label} ({len(qs)})", zorder=3)
     top.set_title(f"Simulator check: {num_gates} Y gates starting in |{start_bit}>, predicted vs measured "
-                  f"({shots} shots, bars = ± shot noise)", color=ink, fontsize=10, loc="left")
+                  f"({shots} shots, bars = ± shot noise)", color=INK, fontsize=10, loc="left")
 
     cal = [q for q in qubits if results[q]["cal_predicted"] is not None]
     bottom.plot(cal, [results[q]["cal_predicted"] for q in cal], "o", color=COLORS[2], ms=4, mec="white", mew=0.6,
                 label="calibration predicted (real machine today)")
     bottom.set_title("Real machine check: what the simulator predicts vs what today's calibration predicts",
-                     color=ink, fontsize=10, loc="left")
-    bottom.set_xlabel("Fez qubit", color=muted)
-    bottom.set_xticks(range(0, max(qubits) + 1, 10))
-    bottom.set_xlim(min(qubits) - 1, max(qubits) + 1)
+                     color=INK, fontsize=10, loc="left")
+    qubit_axis(bottom, qubits)
     for ax in (top, bottom):
         ax.set_yscale("log")
-        ax.set_ylabel("error (chance of a wrong result)", color=muted)
+        ax.set_ylabel("error (chance of a wrong result)", color=MUTED)
         ax.legend(frameon=False, fontsize=8, loc="upper left", ncol=3)
         style(ax)
-    save(fig, path)
+    save_plot(fig, path)
 
 
 def run(qubits=None, num_gates=150, start_bit=0, shots=10000, seed=3, calibration_file=None, csv_file=None,

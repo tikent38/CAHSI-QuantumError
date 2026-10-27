@@ -1,26 +1,26 @@
 # shor_code.py
 # 9-qubit Shor code: protects one qubit from any single-qubit error (X, Z, or Y = both at once).
 # It is the phase-flip code with each of its 3 qubits encoded again with the bit-flip code,
-# giving 3 blocks of 3 qubits: q_0-q_2, q_3-q_5, q_6-q_8
-
+# giving 3 blocks of 3 qubits: q_0-q_2, q_3-q_5, q_6-q_8.
 # Follows the course's steps: check each block for bit flips, then check for phase flips with the
-# course's simplified Z error detection. 
+# course's simplified Z error detection.
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 
-BLOCKS = (0, 3, 6) # first qubit of each block
+BLOCKS = (0, 3, 6)   # first qubit of each block
 
 
 def shor_code(state_prep, x_errors=None, z_errors=None):
-
+    # The Shor code protecting the 1-qubit state that state_prep makes, with an X error on each qubit in x_errors and
+    # a Z error on each qubit in z_errors, then the syndromes measured and the qubit decoded and measured into "out"
     if state_prep.num_qubits != 1:
         raise ValueError(f"expected a 1-qubit circuit, got {state_prep.num_qubits} qubits")
 
-    data = QuantumRegister(9, "q") # our 9 qubits representing the 1 we are protecting
-    anc = QuantumRegister(8, "a") # a_0-a_5: bit-flip checks (2 per block), a_6-a_7: phase-flip checks
+    data = QuantumRegister(9, "q")   # the 9 qubits that together hold the 1 qubit being protected
+    anc = QuantumRegister(8, "a")    # a_0-a_5: bit-flip checks (2 per block), a_6-a_7: phase-flip checks
     # one 2-bit bit-flip syndrome per block, and one 2-bit phase-flip syndrome
     bit_syndromes = [ClassicalRegister(2, f"b{block}") for block in range(3)]
     phase_syndrome = ClassicalRegister(2, "p")
-    qc = QuantumCircuit(data, anc, *bit_syndromes, phase_syndrome) #make the QuantumCircuit
+    qc = QuantumCircuit(data, anc, *bit_syndromes, phase_syndrome)
 
     # 1. Prepare the state we want to protect on q_0
     for inst in state_prep.data:
@@ -30,7 +30,6 @@ def shor_code(state_prep, x_errors=None, z_errors=None):
     #    a|0> + b|1>  ->  a|+++> + b|--->
     qc.cx(data[0], data[3])
     qc.cx(data[0], data[6])
-
     qc.h([data[first] for first in BLOCKS])
     qc.barrier()
     #    then the bit-flip code inside each block
@@ -38,7 +37,7 @@ def shor_code(state_prep, x_errors=None, z_errors=None):
         encode_block(qc, data, first)
     qc.barrier()
 
-    # Optional apply error X and Z gates to qubits (X and Z on the same qubit is a Y error)
+    # Optional: apply X and Z errors to the chosen qubits (X and Z on the same qubit is a Y error)
     if x_errors is not None or z_errors is not None:
         for qbit in x_errors or []:
             qc.x(data[qbit])
@@ -55,7 +54,6 @@ def shor_code(state_prep, x_errors=None, z_errors=None):
         qc.cx(data[first + 2], a1)
         qc.measure([a0, a1], bit_syndromes[block])
         qc.barrier()
-    
 
     # 4. Phase-flip check, the course's simplified version
     qc.h([anc[6], anc[7]])
@@ -100,7 +98,6 @@ def decode_block(qc, data, first):
 
 # Which qubit in a block each bit-flip syndrome (a_1 a_0 of that block) says flipped
 BIT_SYNDROME_TO_QUBIT = {"00": None, "01": 0, "11": 1, "10": 2}
-
 
 # Which block each phase-flip syndrome (a_7 a_6) says had its sign flipped
 PHASE_SYNDROME_TO_BLOCK = {"00": None, "01": 0, "11": 1, "10": 2}

@@ -31,7 +31,7 @@ print("-" * 50)
 for name, counts in [("no noise", ideal_counts), (f"{backend.name} noise", noisy_counts)]:
     zeros, ones = counts.get("0", 0), counts.get("1", 0)
     # The right answer is always 0, so every 1 is an error
-    print(f"{name:<20}{zeros:>8}{ones:>8}{ones / (zeros + ones):>13.1%}")
+    print(f"{name:<20}{zeros:>8}{ones:>8}{ones / (zeros + ones):>14.1%}")
 
 # The device's own error rates for the qubit the circuit ran on (from its calibration data)
 x_error = backend.target["x"][(0,)].error

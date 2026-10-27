@@ -4,11 +4,10 @@
 # Only 9 qubits: decoding each block leaves its syndrome on the block's last two qubits, and decoding
 # the outer phase-flip code leaves its syndrome on q_3 and q_6, so no separate ancillas are needed.
 # This is the bit_flip_toffoli.py correction inside each block, then the phase_flip_toffoli.py
-# correction on q_0, q_3, q_6 (the Shor code decoding circuit in Nielsen & Chuang, Fig. 10.6).
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 
-# Reuse the encoding and logical gates from shor_encoded.py so the only difference is the correction
-from shor_encoded import LOGICAL_GATES, LOGICAL_X_QUBITS, LOGICAL_Z_QUBITS, BLOCKS, encode, decode_block
+# Reuse the encoding and the gate handling from shor_encoded.py, so the only difference is the correction
+from shor_encoded import BLOCKS, apply_gates, decode_block, encode
 
 
 def shor_toffoli(circuit, measure=True):
@@ -19,7 +18,7 @@ def shor_toffoli(circuit, measure=True):
     if circuit.num_qubits != 1:
         raise ValueError(f"expected a 1-qubit circuit, got {circuit.num_qubits} qubits")
 
-    data = QuantumRegister(9, "q") # our 9 qubits representing the 1 we are protecting
+    data = QuantumRegister(9, "q")   # the 9 qubits that together hold the 1 qubit being protected
     qc = QuantumCircuit(data)
 
     # 1. Create the encoded |0>. All qubits start at |0>, so this is the encoded |0> (a=1, b=0);
@@ -28,26 +27,7 @@ def shor_toffoli(circuit, measure=True):
     qc.barrier()
 
     # 2. Apply every gate from the passed in circuit to the encoded qubit (same as shor_encoded)
-    for inst in circuit.data:
-        gate = inst.operation
-        if gate.name == "barrier":
-            continue
-        if gate.name == "measure":
-            raise ValueError("leave measurements out of the circuit; use measure=True instead")
-        if gate.name not in LOGICAL_GATES:
-            raise ValueError(f"the Shor code only supports Pauli gates ({', '.join(sorted(LOGICAL_GATES))}), "
-                             f"got '{gate.name}' (see LOGICAL_GATES in shor_encoded.py)")
-
-        # Apply the logical version (see LOGICAL_GATES in shor_encoded.py)
-        if gate.name == "id":
-            for q in data:
-                qc.id(q)
-        if gate.name in ("x", "y"):
-            for q in LOGICAL_X_QUBITS:
-                qc.z(data[q])
-        if gate.name in ("z", "y"):
-            for q in LOGICAL_Z_QUBITS:
-                qc.x(data[q])
+    apply_gates(qc, data, circuit)
     qc.barrier()
 
     # 3. Decode each block and fix its bit flip, the same as bit_flip_toffoli:

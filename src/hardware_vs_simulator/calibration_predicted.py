@@ -17,19 +17,19 @@ from simulator_predicted import aer_noise, predicted_error
 def calibration_predicted(calibration_file, qubits, num_gates, start_bit):
     # {qubit: error}, or None for a qubit with numbers missing from the calibration file
     ops = fez_ops(num_gates, start_bit)
+    ideal_bit = ideal_result(num_gates, start_bit)
     real, _ = load_calibration(calibration_file, qubits)
     errors = {}
     for q in qubits:
         channel, readout = calibration_noise(real.get(q))
-        errors[q] = None if channel is None else predicted_error(ops, channel, readout, ideal_result(num_gates,
-                                                                                                   start_bit))
+        errors[q] = None if channel is None else predicted_error(ops, channel, readout, ideal_bit)
     return errors
 
 
 def gate_channel(t1_us, t2_us, gate_ns, gate_error):
     # The single-qubit gate noise built from a qubit's T1, T2, gate length and gate error, the same way Aer builds
     # the simulator's: T1/T2 relaxation for the length of the gate, plus depolarizing noise for whatever part of the
-    # gate error T1/T2 don't explain (none if T1/T2 alone are already worse). T2 is capped at 2 * T1 as Aer does
+    # gate error T1/T2 don't explain (none if T1/T2 alone are already worse). T2 is capped at 2 * T1 
     t1, t2, time = t1_us * 1e-6, min(t2_us, 2 * t1_us) * 1e-6, gate_ns * 1e-9
     relax = thermal_relaxation_error(t1, t2, time)
     relax_fid = average_gate_fidelity(relax)

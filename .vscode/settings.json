@@ -1,9 +1,10 @@
 {
-    // The scripts in src/real_hardware_runs, src/simulator_noise_sources and src/hardware_vs_simulator import code
-    // from src/noisy (added to sys.path when they run); this tells Pylance to look in these folders too, so it
-    // doesn't mark those imports as unresolved
+    // Scripts import code from other folders of src (src/noisy for the codes and circuits, src/output_tools for
+    // printing, CSV files and plots), added to sys.path when they run; this tells Pylance to look in these folders
+    // too, so it doesn't mark those imports as unresolved
     "python.analysis.extraPaths": [
         "src/noisy",
+        "src/output_tools",
         "src/real_hardware_runs",
         "src/hardware_vs_simulator"
     ]

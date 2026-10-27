@@ -2,20 +2,18 @@
 # 3-qubit bit-flip code: protects one qubit from a single X (bit-flip) error.
 # See notes/error_codes.md for the theory and syndrome table.
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
-from qiskit_aer import AerSimulator
 
 
 def bit_flip_code(state_prep, error_qubits=None):
-
+    # The bit-flip code protecting the 1-qubit state that state_prep makes, with an X error on each qubit in
+    # error_qubits (e.g. [0]), then the syndrome measured and the qubit decoded and measured into "out"
     if state_prep.num_qubits != 1:
         raise ValueError(f"expected a 1-qubit circuit, got {state_prep.num_qubits} qubits")
 
-    data = QuantumRegister(3, "q") # our 3 qubits representing the 1 we are protecting
-    anc = QuantumRegister(2, "a") 
-    syndrome = ClassicalRegister(2, "s") #used to calculate what (if any) qbits need to be flipped
-    qc = QuantumCircuit(data, anc, syndrome) #make the QunatumCircuit
-
-
+    data = QuantumRegister(3, "q")         # the 3 qubits that together hold the 1 qubit being protected
+    anc = QuantumRegister(2, "a")
+    syndrome = ClassicalRegister(2, "s")   # which qubit (if any) needs to be flipped back
+    qc = QuantumCircuit(data, anc, syndrome)
 
     # 1. Prepare the state we want to protect on q_0
     for inst in state_prep.data:
@@ -26,7 +24,7 @@ def bit_flip_code(state_prep, error_qubits=None):
     qc.cx(data[0], data[2])
     qc.barrier()
 
-    # Optional apply error X gates to qubits
+    # Optional: apply X errors to the chosen qubits
     if error_qubits is not None:
         for qbit in error_qubits:
             qc.x(data[qbit])
@@ -67,5 +65,3 @@ def print_correction(syndrome):
         print(f"  syndrome is {syndrome} so no correction is needed")
     else:
         print(f"  syndrome is {syndrome} so apply X gate to qubit q{qbit} to correct error")
-
-

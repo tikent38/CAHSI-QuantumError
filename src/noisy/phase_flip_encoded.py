@@ -2,8 +2,6 @@
 # Turn any 1-qubit circuit into its 3-qubit phase-flip-code version:
 # encode, apply the circuit's gates, measure the syndrome, and correct the phase-flipped qubit.
 # This is the bit-flip code done in the |+>, |-> basis: every step is the bit-flip version with H around it
-# (Nielsen & Chuang 10.1.2; IBM Foundations of Quantum Error Correction, "Repetition codes").
-# See notes/error_codes.md for the theory and syndrome table.
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 from qiskit.circuit.library import XGate, ZGate
 
@@ -29,9 +27,9 @@ def phase_flip_encoded(circuit, measure=True):
     if circuit.num_qubits != 1:
         raise ValueError(f"expected a 1-qubit circuit, got {circuit.num_qubits} qubits")
 
-    data = QuantumRegister(3, "q") # our 3 qubits representing the 1 we are protecting
+    data = QuantumRegister(3, "q")         # the 3 qubits that together hold the 1 qubit being protected
     anc = QuantumRegister(2, "a")
-    syndrome = ClassicalRegister(2, "s") #used to calculate what (if any) qbits had their sign flipped
+    syndrome = ClassicalRegister(2, "s")   # which qubit (if any) had its sign flipped
     qc = QuantumCircuit(data, anc, syndrome)
 
     # 1. Create a|+++> + b|--->. All qubits start at |0>, so this is |+++> (a=1, b=0);
@@ -40,29 +38,7 @@ def phase_flip_encoded(circuit, measure=True):
     qc.barrier()
 
     # 2. Apply every gate from the passed in circuit to the encoded qubit
-    for inst in circuit.data:
-        gate = inst.operation
-        if gate.name == "barrier":
-            continue
-        if gate.name == "measure":
-            raise ValueError("leave measurements out of the circuit; use measure=True instead")
-
-        if gate.name in LOGICAL_GATES:
-            # Apply the H-conjugated gate to all 3 data qubits (e.g. X -> ZZZ)
-            gate = H_SWAPPED.get(gate.name, gate)
-            for q in data:
-                qc.append(gate, [q])
-        elif gate.name in PHASE_GATES:
-            # Apply H, the gate, H to q_0 only (see PHASE_GATES above)
-            qc.h(data[0])
-            qc.append(gate, [data[0]])
-            qc.h(data[0])
-        else:
-            # Gates like H have no encoded version in this code: decode, apply to q_0, re-encode.
-            # The qubit is NOT protected while this gate runs
-            decode(qc, data)
-            qc.append(gate, [data[0]])
-            encode(qc, data)
+    apply_gates(qc, data, circuit)
     qc.barrier()
 
     # 3. Error detection: the simplified phase-flip check (IBM Foundations of QEC, "Repetition codes").
@@ -97,6 +73,34 @@ def phase_flip_encoded(circuit, measure=True):
         qc.measure(data[0], out[0])
 
     return qc
+
+
+def apply_gates(qc, data, circuit):
+    # Step 2: every gate from circuit (a 1-qubit circuit with no measurements), applied to the encoded qubit on data.
+    # phase_flip_toffoli.py uses this too, so the two versions of the code only differ in how they correct
+    for inst in circuit.data:
+        gate = inst.operation
+        if gate.name == "barrier":
+            continue
+        if gate.name == "measure":
+            raise ValueError("leave measurements out of the circuit; use measure=True instead")
+
+        if gate.name in LOGICAL_GATES:
+            # Apply the H-conjugated gate to all 3 data qubits (e.g. X -> ZZZ)
+            gate = H_SWAPPED.get(gate.name, gate)
+            for q in data:
+                qc.append(gate, [q])
+        elif gate.name in PHASE_GATES:
+            # Apply H, the gate, H to q_0 only (see PHASE_GATES above)
+            qc.h(data[0])
+            qc.append(gate, [data[0]])
+            qc.h(data[0])
+        else:
+            # Gates like H have no encoded version in this code: decode, apply to q_0, re-encode.
+            # The qubit is NOT protected while this gate runs
+            decode(qc, data)
+            qc.append(gate, [data[0]])
+            encode(qc, data)
 
 
 def encode(qc, data):

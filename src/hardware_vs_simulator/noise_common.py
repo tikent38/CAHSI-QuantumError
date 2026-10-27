@@ -1,28 +1,30 @@
 # noise_common.py
-# Shared code for comparing the Fez noise simulator (FakeFez) with the real ibm_fez: output folders and colors, the
-# Y gate circuit, reading a calibration file downloaded from IBM Quantum, and writing CSV files and plots.
+# Shared code for comparing the Fez noise simulator (FakeFez) with the real ibm_fez: output folders, the Y gate
+# circuit, and reading a calibration file downloaded from IBM Quantum. The code for printing, CSV files and plots is
+# in src/output_tools, which importing this file also makes available to the scripts below.
 # The scripts that use it:
 #   model_check.py              every number the simulator's noise is built from vs the real calibration, per qubit
 #   y_gate_test.py              a Y gate circuit on every qubit: runs the three below and compares them
 #     simulator_predicted.py      the circuit's error calculated exactly from the simulator's noise model
 #     simulator_measured.py       the circuit's error from actually running it on the simulator
 #     calibration_predicted.py    the circuit's error calculated exactly from the real calibration file
-import csv
 import os
 import sys
 
 from qiskit import transpile
 
-# The Y gate circuit lives in src/noisy (shared with src/real_hardware_runs and src/simulator_noise_sources)
+# The Y gate circuit lives in src/noisy (shared with src/real_hardware_runs and src/simulator_noise_sources), and the
+# code for printing, CSV files and plots in src/output_tools
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "noisy"))
-from compare_fez import y_circuit   
+sys.path.insert(0, os.path.join(HERE, "..", "output_tools"))
+from fez_common import y_circuit
+from output_tools import COLORS, read_csv
 
 # Output folders next to this file, so the results land in the same place from any working directory
 CSV_DIR = os.path.join(HERE, "csvs")
 IMAGE_DIR = os.path.join(HERE, "images")
 
-COLORS = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"]
 FAIL_COLOR = COLORS[7]   # points that don't agree or are far off
 
 
@@ -57,20 +59,19 @@ def load_calibration(path, qubits):
     # A real ibm_fez calibration file downloaded from IBM Quantum, in the same form as model_check.simulator_model,
     # plus each qubit's CZ errors and whether IBM marks it as working
     real, cz = {}, {}
-    with open(path, newline="") as f:
-        for row in csv.DictReader(f):
-            q = int(row["Qubit"])
-            for neighbour, error in pair_values(row["CZ error"]).items():
-                cz[tuple(sorted((q, neighbour)))] = error
-            if q not in qubits:
-                continue
-            real[q] = dict(t1_us=number(row["T1 (us)"]), t2_us=number(row["T2 (us)"]),
-                           p1_given_0=number(row["Prob meas1 prep0"]), p0_given_1=number(row["Prob meas0 prep1"]),
-                           readout_error=number(row["Readout assignment error"]),
-                           sx_error=number(row["√x (sx) error"]), x_error=number(row["Pauli-X error"]),
-                           gate_length_ns=number(row["Single-qubit gate length (ns)"]),
-                           readout_length_ns=number(row["Readout length (ns)"]), init_error=number(row["Init error"]),
-                           operational=row["Operational"] == "Yes")
+    for row in read_csv(path):
+        q = int(row["Qubit"])
+        for neighbour, error in pair_values(row["CZ error"]).items():
+            cz[tuple(sorted((q, neighbour)))] = error
+        if q not in qubits:
+            continue
+        real[q] = dict(t1_us=number(row["T1 (us)"]), t2_us=number(row["T2 (us)"]),
+                       p1_given_0=number(row["Prob meas1 prep0"]), p0_given_1=number(row["Prob meas0 prep1"]),
+                       readout_error=number(row["Readout assignment error"]),
+                       sx_error=number(row["√x (sx) error"]), x_error=number(row["Pauli-X error"]),
+                       gate_length_ns=number(row["Single-qubit gate length (ns)"]),
+                       readout_length_ns=number(row["Readout length (ns)"]), init_error=number(row["Init error"]),
+                       operational=row["Operational"] == "Yes")
     return real, cz
 
 
@@ -81,31 +82,3 @@ def ratio(real, sim):
     if real is None or sim is None or sim == 0:
         return None
     return real / sim
-
-
-# ---- Output files ----
-
-def write_rows(path, header, rows):
-    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
-    with open(path, "w", newline="") as f:
-        writer = csv.writer(f)
-        writer.writerow(header)
-        writer.writerows(rows)
-    print(f"Wrote {path}")
-
-
-# ---- Plots ----
-
-def style(ax, muted="#52514e", grid="#e4e3df"):
-    ax.grid(color=grid, lw=0.8)
-    ax.set_axisbelow(True)
-    ax.tick_params(colors=muted)
-    for side in ("top", "right"):
-        ax.spines[side].set_visible(False)
-
-
-def save(fig, path):
-    fig.tight_layout()
-    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
-    fig.savefig(path, dpi=150)
-    print(f"Saved plot to {path}")
