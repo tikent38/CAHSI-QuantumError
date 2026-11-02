@@ -10,8 +10,11 @@ from qiskit.transpiler import CouplingMap
 # the hardware sweeps)
 DEFAULT_DATA_QUBITS = (87, 88, 86)                                  # q_0, q_1, q_2 of the bit-flip and phase-flip codes
 DEFAULT_ANCILLA_QUBITS = (97, 108)                                  # their a_0, a_1 (only the if-block codes use them)
-DEFAULT_SHOR_DATA_QUBITS = (87, 88, 85, 97, 108, 107, 86, 77, 84)   # q_0, ..., q_8 of the Shor codes
-DEFAULT_SHOR_ANCILLA_QUBITS = (89, 109, 65, 83, 78, 90, 110, 118)   # their a_0, ..., a_7 (only "Shor, if blocks")
+# Chosen for "Shor, Toffoli": its outer phase-flip code (q_0, q_3, q_6) is on the same Fez qubits as the bit-flip and
+# phase-flip codes (87, 86, 88), each block's other two qubits run along Fez's wiring from its first one, and with the
+# transpiler seed set to 3 its result is measured on 86, like the bit-flip and phase-flip Toffoli codes
+DEFAULT_SHOR_DATA_QUBITS = (87, 97, 107, 86, 85, 84, 88, 89, 90)    # q_0, ..., q_8 of the Shor codes
+DEFAULT_SHOR_ANCILLA_QUBITS = (108, 109, 78, 91, 77, 83, 110, 118)  # their a_0, ..., a_7 (only "Shor, if blocks")
 
 
 def y_circuit(bit, num_gates):

@@ -1,0 +1,17 @@
+gate_set,parity,code,compared_with,shots,seed,pays_off_at_gates
+x,even,"bit-flip, Toffoli",no correction (Torino 62),5000,3,118
+x,even,"phase-flip, Toffoli",no correction (Torino 62),5000,3,118
+x,odd,"bit-flip, Toffoli",no correction (Torino 62),5000,3,147
+x,odd,"phase-flip, Toffoli",no correction (Torino 62),5000,3,139
+y,even,"bit-flip, Toffoli",no correction (Torino 62),5000,3,118
+y,even,"phase-flip, Toffoli",no correction (Torino 62),5000,3,116
+y,odd,"bit-flip, Toffoli",no correction (Torino 62),5000,3,147
+y,odd,"phase-flip, Toffoli",no correction (Torino 62),5000,3,149
+repeat,even,"bit-flip, Toffoli",no correction (Torino 62),5000,3,180
+repeat,even,"phase-flip, Toffoli",no correction (Torino 62),5000,3,174
+repeat,odd,"bit-flip, Toffoli",no correction (Torino 62),5000,3,223
+repeat,odd,"phase-flip, Toffoli",no correction (Torino 62),5000,3,229
+id,even,"bit-flip, Toffoli",no correction (Torino 62),5000,3,202
+id,even,"phase-flip, Toffoli",no correction (Torino 62),5000,3,262
+id,odd,"bit-flip, Toffoli",no correction (Torino 62),5000,3,189
+id,odd,"phase-flip, Toffoli",no correction (Torino 62),5000,3,251

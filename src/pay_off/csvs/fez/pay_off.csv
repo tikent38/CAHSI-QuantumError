@@ -1,0 +1,1387 @@
+gate_set,parity,gates,run,shots,seed,error
+x,even,0,no correction (Fez 86),5000,3,0.0048
+x,even,0,"bit-flip, Toffoli",5000,3,0.0156
+x,even,0,"phase-flip, Toffoli",5000,3,0.014
+x,even,2,no correction (Fez 86),5000,3,0.0034
+x,even,2,"bit-flip, Toffoli",5000,3,0.014
+x,even,2,"phase-flip, Toffoli",5000,3,0.014
+x,even,4,no correction (Fez 86),5000,3,0.006
+x,even,4,"bit-flip, Toffoli",5000,3,0.0152
+x,even,4,"phase-flip, Toffoli",5000,3,0.014
+x,even,6,no correction (Fez 86),5000,3,0.007
+x,even,6,"bit-flip, Toffoli",5000,3,0.0156
+x,even,6,"phase-flip, Toffoli",5000,3,0.014
+x,even,8,no correction (Fez 86),5000,3,0.007
+x,even,8,"bit-flip, Toffoli",5000,3,0.0118
+x,even,8,"phase-flip, Toffoli",5000,3,0.014
+x,even,10,no correction (Fez 86),5000,3,0.0078
+x,even,10,"bit-flip, Toffoli",5000,3,0.0132
+x,even,10,"phase-flip, Toffoli",5000,3,0.014
+x,even,12,no correction (Fez 86),5000,3,0.0068
+x,even,12,"bit-flip, Toffoli",5000,3,0.0144
+x,even,12,"phase-flip, Toffoli",5000,3,0.014
+x,even,14,no correction (Fez 86),5000,3,0.0092
+x,even,14,"bit-flip, Toffoli",5000,3,0.0138
+x,even,14,"phase-flip, Toffoli",5000,3,0.014
+x,even,16,no correction (Fez 86),5000,3,0.0078
+x,even,16,"bit-flip, Toffoli",5000,3,0.0136
+x,even,16,"phase-flip, Toffoli",5000,3,0.014
+x,even,18,no correction (Fez 86),5000,3,0.008
+x,even,18,"bit-flip, Toffoli",5000,3,0.0116
+x,even,18,"phase-flip, Toffoli",5000,3,0.014
+x,even,20,no correction (Fez 86),5000,3,0.0084
+x,even,20,"bit-flip, Toffoli",5000,3,0.0134
+x,even,20,"phase-flip, Toffoli",5000,3,0.014
+x,even,22,no correction (Fez 86),5000,3,0.0094
+x,even,22,"bit-flip, Toffoli",5000,3,0.0146
+x,even,22,"phase-flip, Toffoli",5000,3,0.014
+x,even,24,no correction (Fez 86),5000,3,0.0094
+x,even,24,"bit-flip, Toffoli",5000,3,0.0132
+x,even,24,"phase-flip, Toffoli",5000,3,0.014
+x,even,26,no correction (Fez 86),5000,3,0.0112
+x,even,26,"bit-flip, Toffoli",5000,3,0.0132
+x,even,26,"phase-flip, Toffoli",5000,3,0.014
+x,even,28,no correction (Fez 86),5000,3,0.0122
+x,even,28,"bit-flip, Toffoli",5000,3,0.0118
+x,even,28,"phase-flip, Toffoli",5000,3,0.014
+x,even,30,no correction (Fez 86),5000,3,0.0116
+x,even,30,"bit-flip, Toffoli",5000,3,0.0122
+x,even,30,"phase-flip, Toffoli",5000,3,0.014
+x,even,32,no correction (Fez 86),5000,3,0.0126
+x,even,32,"bit-flip, Toffoli",5000,3,0.0146
+x,even,32,"phase-flip, Toffoli",5000,3,0.014
+x,even,34,no correction (Fez 86),5000,3,0.0154
+x,even,34,"bit-flip, Toffoli",5000,3,0.0108
+x,even,34,"phase-flip, Toffoli",5000,3,0.014
+x,even,36,no correction (Fez 86),5000,3,0.0132
+x,even,36,"bit-flip, Toffoli",5000,3,0.015
+x,even,36,"phase-flip, Toffoli",5000,3,0.014
+x,even,38,no correction (Fez 86),5000,3,0.0132
+x,even,38,"bit-flip, Toffoli",5000,3,0.0114
+x,even,38,"phase-flip, Toffoli",5000,3,0.014
+x,even,40,no correction (Fez 86),5000,3,0.0154
+x,even,40,"bit-flip, Toffoli",5000,3,0.0132
+x,even,40,"phase-flip, Toffoli",5000,3,0.014
+x,even,42,no correction (Fez 86),5000,3,0.0142
+x,even,42,"bit-flip, Toffoli",5000,3,0.013
+x,even,42,"phase-flip, Toffoli",5000,3,0.014
+x,even,44,no correction (Fez 86),5000,3,0.0166
+x,even,44,"bit-flip, Toffoli",5000,3,0.0138
+x,even,44,"phase-flip, Toffoli",5000,3,0.014
+x,even,46,no correction (Fez 86),5000,3,0.0158
+x,even,46,"bit-flip, Toffoli",5000,3,0.016
+x,even,46,"phase-flip, Toffoli",5000,3,0.014
+x,even,48,no correction (Fez 86),5000,3,0.0174
+x,even,48,"bit-flip, Toffoli",5000,3,0.0154
+x,even,48,"phase-flip, Toffoli",5000,3,0.014
+x,even,50,no correction (Fez 86),5000,3,0.018
+x,even,50,"bit-flip, Toffoli",5000,3,0.0132
+x,even,50,"phase-flip, Toffoli",5000,3,0.014
+x,even,52,no correction (Fez 86),5000,3,0.0182
+x,even,52,"bit-flip, Toffoli",5000,3,0.0126
+x,even,52,"phase-flip, Toffoli",5000,3,0.014
+x,even,54,no correction (Fez 86),5000,3,0.019
+x,even,54,"bit-flip, Toffoli",5000,3,0.0124
+x,even,54,"phase-flip, Toffoli",5000,3,0.014
+x,even,56,no correction (Fez 86),5000,3,0.0182
+x,even,56,"bit-flip, Toffoli",5000,3,0.0138
+x,even,56,"phase-flip, Toffoli",5000,3,0.014
+x,odd,1,no correction (Fez 86),5000,3,0.003
+x,odd,1,"bit-flip, Toffoli",5000,3,0.0322
+x,odd,1,"phase-flip, Toffoli",5000,3,0.034
+x,odd,3,no correction (Fez 86),5000,3,0.0034
+x,odd,3,"bit-flip, Toffoli",5000,3,0.0332
+x,odd,3,"phase-flip, Toffoli",5000,3,0.034
+x,odd,5,no correction (Fez 86),5000,3,0.0068
+x,odd,5,"bit-flip, Toffoli",5000,3,0.0374
+x,odd,5,"phase-flip, Toffoli",5000,3,0.034
+x,odd,7,no correction (Fez 86),5000,3,0.0084
+x,odd,7,"bit-flip, Toffoli",5000,3,0.034
+x,odd,7,"phase-flip, Toffoli",5000,3,0.034
+x,odd,9,no correction (Fez 86),5000,3,0.007
+x,odd,9,"bit-flip, Toffoli",5000,3,0.0332
+x,odd,9,"phase-flip, Toffoli",5000,3,0.034
+x,odd,11,no correction (Fez 86),5000,3,0.0072
+x,odd,11,"bit-flip, Toffoli",5000,3,0.0354
+x,odd,11,"phase-flip, Toffoli",5000,3,0.034
+x,odd,13,no correction (Fez 86),5000,3,0.008
+x,odd,13,"bit-flip, Toffoli",5000,3,0.0338
+x,odd,13,"phase-flip, Toffoli",5000,3,0.034
+x,odd,15,no correction (Fez 86),5000,3,0.0092
+x,odd,15,"bit-flip, Toffoli",5000,3,0.0346
+x,odd,15,"phase-flip, Toffoli",5000,3,0.034
+x,odd,17,no correction (Fez 86),5000,3,0.0098
+x,odd,17,"bit-flip, Toffoli",5000,3,0.0364
+x,odd,17,"phase-flip, Toffoli",5000,3,0.034
+x,odd,19,no correction (Fez 86),5000,3,0.0092
+x,odd,19,"bit-flip, Toffoli",5000,3,0.0386
+x,odd,19,"phase-flip, Toffoli",5000,3,0.034
+x,odd,21,no correction (Fez 86),5000,3,0.0104
+x,odd,21,"bit-flip, Toffoli",5000,3,0.0338
+x,odd,21,"phase-flip, Toffoli",5000,3,0.034
+x,odd,23,no correction (Fez 86),5000,3,0.0102
+x,odd,23,"bit-flip, Toffoli",5000,3,0.0352
+x,odd,23,"phase-flip, Toffoli",5000,3,0.034
+x,odd,25,no correction (Fez 86),5000,3,0.01
+x,odd,25,"bit-flip, Toffoli",5000,3,0.0368
+x,odd,25,"phase-flip, Toffoli",5000,3,0.034
+x,odd,27,no correction (Fez 86),5000,3,0.0102
+x,odd,27,"bit-flip, Toffoli",5000,3,0.0326
+x,odd,27,"phase-flip, Toffoli",5000,3,0.034
+x,odd,29,no correction (Fez 86),5000,3,0.0108
+x,odd,29,"bit-flip, Toffoli",5000,3,0.0322
+x,odd,29,"phase-flip, Toffoli",5000,3,0.034
+x,odd,31,no correction (Fez 86),5000,3,0.0108
+x,odd,31,"bit-flip, Toffoli",5000,3,0.0336
+x,odd,31,"phase-flip, Toffoli",5000,3,0.034
+x,odd,33,no correction (Fez 86),5000,3,0.0108
+x,odd,33,"bit-flip, Toffoli",5000,3,0.0342
+x,odd,33,"phase-flip, Toffoli",5000,3,0.034
+x,odd,35,no correction (Fez 86),5000,3,0.0122
+x,odd,35,"bit-flip, Toffoli",5000,3,0.031
+x,odd,35,"phase-flip, Toffoli",5000,3,0.034
+x,odd,37,no correction (Fez 86),5000,3,0.0138
+x,odd,37,"bit-flip, Toffoli",5000,3,0.0352
+x,odd,37,"phase-flip, Toffoli",5000,3,0.034
+x,odd,39,no correction (Fez 86),5000,3,0.0128
+x,odd,39,"bit-flip, Toffoli",5000,3,0.0328
+x,odd,39,"phase-flip, Toffoli",5000,3,0.034
+x,odd,41,no correction (Fez 86),5000,3,0.015
+x,odd,41,"bit-flip, Toffoli",5000,3,0.034
+x,odd,41,"phase-flip, Toffoli",5000,3,0.034
+x,odd,43,no correction (Fez 86),5000,3,0.0158
+x,odd,43,"bit-flip, Toffoli",5000,3,0.0348
+x,odd,43,"phase-flip, Toffoli",5000,3,0.034
+x,odd,45,no correction (Fez 86),5000,3,0.015
+x,odd,45,"bit-flip, Toffoli",5000,3,0.0344
+x,odd,45,"phase-flip, Toffoli",5000,3,0.034
+x,odd,47,no correction (Fez 86),5000,3,0.016
+x,odd,47,"bit-flip, Toffoli",5000,3,0.0306
+x,odd,47,"phase-flip, Toffoli",5000,3,0.034
+x,odd,49,no correction (Fez 86),5000,3,0.016
+x,odd,49,"bit-flip, Toffoli",5000,3,0.0386
+x,odd,49,"phase-flip, Toffoli",5000,3,0.034
+x,odd,51,no correction (Fez 86),5000,3,0.0172
+x,odd,51,"bit-flip, Toffoli",5000,3,0.0358
+x,odd,51,"phase-flip, Toffoli",5000,3,0.034
+x,odd,53,no correction (Fez 86),5000,3,0.0176
+x,odd,53,"bit-flip, Toffoli",5000,3,0.032
+x,odd,53,"phase-flip, Toffoli",5000,3,0.034
+x,odd,55,no correction (Fez 86),5000,3,0.0194
+x,odd,55,"bit-flip, Toffoli",5000,3,0.0378
+x,odd,55,"phase-flip, Toffoli",5000,3,0.034
+x,odd,57,no correction (Fez 86),5000,3,0.0176
+x,odd,57,"bit-flip, Toffoli",5000,3,0.0324
+x,odd,57,"phase-flip, Toffoli",5000,3,0.034
+x,odd,59,no correction (Fez 86),5000,3,0.0206
+x,odd,59,"bit-flip, Toffoli",5000,3,0.0298
+x,odd,59,"phase-flip, Toffoli",5000,3,0.034
+x,odd,61,no correction (Fez 86),5000,3,0.0186
+x,odd,61,"bit-flip, Toffoli",5000,3,0.0352
+x,odd,61,"phase-flip, Toffoli",5000,3,0.034
+x,odd,63,no correction (Fez 86),5000,3,0.0178
+x,odd,63,"bit-flip, Toffoli",5000,3,0.034
+x,odd,63,"phase-flip, Toffoli",5000,3,0.034
+x,odd,65,no correction (Fez 86),5000,3,0.021
+x,odd,65,"bit-flip, Toffoli",5000,3,0.032
+x,odd,65,"phase-flip, Toffoli",5000,3,0.034
+x,odd,67,no correction (Fez 86),5000,3,0.0206
+x,odd,67,"bit-flip, Toffoli",5000,3,0.0386
+x,odd,67,"phase-flip, Toffoli",5000,3,0.034
+x,odd,69,no correction (Fez 86),5000,3,0.0204
+x,odd,69,"bit-flip, Toffoli",5000,3,0.0352
+x,odd,69,"phase-flip, Toffoli",5000,3,0.034
+x,odd,71,no correction (Fez 86),5000,3,0.0206
+x,odd,71,"bit-flip, Toffoli",5000,3,0.0336
+x,odd,71,"phase-flip, Toffoli",5000,3,0.034
+x,odd,73,no correction (Fez 86),5000,3,0.0216
+x,odd,73,"bit-flip, Toffoli",5000,3,0.0338
+x,odd,73,"phase-flip, Toffoli",5000,3,0.034
+x,odd,75,no correction (Fez 86),5000,3,0.0214
+x,odd,75,"bit-flip, Toffoli",5000,3,0.0342
+x,odd,75,"phase-flip, Toffoli",5000,3,0.034
+x,odd,77,no correction (Fez 86),5000,3,0.0218
+x,odd,77,"bit-flip, Toffoli",5000,3,0.0356
+x,odd,77,"phase-flip, Toffoli",5000,3,0.034
+x,odd,79,no correction (Fez 86),5000,3,0.0226
+x,odd,79,"bit-flip, Toffoli",5000,3,0.0324
+x,odd,79,"phase-flip, Toffoli",5000,3,0.034
+x,odd,81,no correction (Fez 86),5000,3,0.0246
+x,odd,81,"bit-flip, Toffoli",5000,3,0.0362
+x,odd,81,"phase-flip, Toffoli",5000,3,0.034
+x,odd,83,no correction (Fez 86),5000,3,0.0252
+x,odd,83,"bit-flip, Toffoli",5000,3,0.0336
+x,odd,83,"phase-flip, Toffoli",5000,3,0.034
+x,odd,85,no correction (Fez 86),5000,3,0.0236
+x,odd,85,"bit-flip, Toffoli",5000,3,0.0364
+x,odd,85,"phase-flip, Toffoli",5000,3,0.034
+x,odd,87,no correction (Fez 86),5000,3,0.0284
+x,odd,87,"bit-flip, Toffoli",5000,3,0.0344
+x,odd,87,"phase-flip, Toffoli",5000,3,0.034
+x,odd,89,no correction (Fez 86),5000,3,0.0254
+x,odd,89,"bit-flip, Toffoli",5000,3,0.0372
+x,odd,89,"phase-flip, Toffoli",5000,3,0.034
+x,odd,91,no correction (Fez 86),5000,3,0.026
+x,odd,91,"bit-flip, Toffoli",5000,3,0.0406
+x,odd,91,"phase-flip, Toffoli",5000,3,0.034
+x,odd,93,no correction (Fez 86),5000,3,0.0282
+x,odd,93,"bit-flip, Toffoli",5000,3,0.039
+x,odd,93,"phase-flip, Toffoli",5000,3,0.034
+x,odd,95,no correction (Fez 86),5000,3,0.0268
+x,odd,95,"bit-flip, Toffoli",5000,3,0.0348
+x,odd,95,"phase-flip, Toffoli",5000,3,0.034
+x,odd,97,no correction (Fez 86),5000,3,0.0278
+x,odd,97,"bit-flip, Toffoli",5000,3,0.0402
+x,odd,97,"phase-flip, Toffoli",5000,3,0.034
+x,odd,99,no correction (Fez 86),5000,3,0.027
+x,odd,99,"bit-flip, Toffoli",5000,3,0.0368
+x,odd,99,"phase-flip, Toffoli",5000,3,0.034
+x,odd,101,no correction (Fez 86),5000,3,0.0286
+x,odd,101,"bit-flip, Toffoli",5000,3,0.0388
+x,odd,101,"phase-flip, Toffoli",5000,3,0.034
+x,odd,103,no correction (Fez 86),5000,3,0.0288
+x,odd,103,"bit-flip, Toffoli",5000,3,0.0394
+x,odd,103,"phase-flip, Toffoli",5000,3,0.034
+x,odd,105,no correction (Fez 86),5000,3,0.0296
+x,odd,105,"bit-flip, Toffoli",5000,3,0.0334
+x,odd,105,"phase-flip, Toffoli",5000,3,0.034
+x,odd,107,no correction (Fez 86),5000,3,0.029
+x,odd,107,"bit-flip, Toffoli",5000,3,0.0388
+x,odd,107,"phase-flip, Toffoli",5000,3,0.034
+x,odd,109,no correction (Fez 86),5000,3,0.0296
+x,odd,109,"bit-flip, Toffoli",5000,3,0.0332
+x,odd,109,"phase-flip, Toffoli",5000,3,0.034
+x,odd,111,no correction (Fez 86),5000,3,0.0312
+x,odd,111,"bit-flip, Toffoli",5000,3,0.0434
+x,odd,111,"phase-flip, Toffoli",5000,3,0.034
+x,odd,113,no correction (Fez 86),5000,3,0.03
+x,odd,113,"bit-flip, Toffoli",5000,3,0.0386
+x,odd,113,"phase-flip, Toffoli",5000,3,0.034
+x,odd,115,no correction (Fez 86),5000,3,0.0302
+x,odd,115,"bit-flip, Toffoli",5000,3,0.037
+x,odd,115,"phase-flip, Toffoli",5000,3,0.034
+x,odd,117,no correction (Fez 86),5000,3,0.03
+x,odd,117,"bit-flip, Toffoli",5000,3,0.0382
+x,odd,117,"phase-flip, Toffoli",5000,3,0.034
+x,odd,119,no correction (Fez 86),5000,3,0.0308
+x,odd,119,"bit-flip, Toffoli",5000,3,0.0386
+x,odd,119,"phase-flip, Toffoli",5000,3,0.034
+x,odd,121,no correction (Fez 86),5000,3,0.0302
+x,odd,121,"bit-flip, Toffoli",5000,3,0.0398
+x,odd,121,"phase-flip, Toffoli",5000,3,0.034
+x,odd,123,no correction (Fez 86),5000,3,0.0306
+x,odd,123,"bit-flip, Toffoli",5000,3,0.0408
+x,odd,123,"phase-flip, Toffoli",5000,3,0.034
+x,odd,125,no correction (Fez 86),5000,3,0.0332
+x,odd,125,"bit-flip, Toffoli",5000,3,0.039
+x,odd,125,"phase-flip, Toffoli",5000,3,0.034
+x,odd,127,no correction (Fez 86),5000,3,0.032
+x,odd,127,"bit-flip, Toffoli",5000,3,0.0382
+x,odd,127,"phase-flip, Toffoli",5000,3,0.034
+x,odd,129,no correction (Fez 86),5000,3,0.0322
+x,odd,129,"bit-flip, Toffoli",5000,3,0.0352
+x,odd,129,"phase-flip, Toffoli",5000,3,0.034
+x,odd,131,no correction (Fez 86),5000,3,0.0346
+x,odd,131,"bit-flip, Toffoli",5000,3,0.0314
+x,odd,131,"phase-flip, Toffoli",5000,3,0.034
+x,odd,133,no correction (Fez 86),5000,3,0.0346
+x,odd,133,"bit-flip, Toffoli",5000,3,0.035
+x,odd,133,"phase-flip, Toffoli",5000,3,0.034
+x,odd,135,no correction (Fez 86),5000,3,0.0346
+x,odd,135,"bit-flip, Toffoli",5000,3,0.032
+x,odd,135,"phase-flip, Toffoli",5000,3,0.034
+x,odd,137,no correction (Fez 86),5000,3,0.0338
+x,odd,137,"bit-flip, Toffoli",5000,3,0.0406
+x,odd,137,"phase-flip, Toffoli",5000,3,0.034
+x,odd,139,no correction (Fez 86),5000,3,0.0354
+x,odd,139,"bit-flip, Toffoli",5000,3,0.0364
+x,odd,139,"phase-flip, Toffoli",5000,3,0.034
+x,odd,141,no correction (Fez 86),5000,3,0.0352
+x,odd,141,"bit-flip, Toffoli",5000,3,0.0368
+x,odd,141,"phase-flip, Toffoli",5000,3,0.034
+x,odd,143,no correction (Fez 86),5000,3,0.0356
+x,odd,143,"bit-flip, Toffoli",5000,3,0.0402
+x,odd,143,"phase-flip, Toffoli",5000,3,0.034
+x,odd,145,no correction (Fez 86),5000,3,0.0358
+x,odd,145,"bit-flip, Toffoli",5000,3,0.0396
+x,odd,145,"phase-flip, Toffoli",5000,3,0.034
+x,odd,147,no correction (Fez 86),5000,3,0.0364
+x,odd,147,"bit-flip, Toffoli",5000,3,0.0368
+x,odd,147,"phase-flip, Toffoli",5000,3,0.034
+x,odd,149,no correction (Fez 86),5000,3,0.0392
+x,odd,149,"bit-flip, Toffoli",5000,3,0.0372
+x,odd,149,"phase-flip, Toffoli",5000,3,0.034
+x,odd,151,no correction (Fez 86),5000,3,0.0382
+x,odd,151,"bit-flip, Toffoli",5000,3,0.0376
+x,odd,151,"phase-flip, Toffoli",5000,3,0.034
+x,odd,153,no correction (Fez 86),5000,3,0.0384
+x,odd,153,"bit-flip, Toffoli",5000,3,0.0442
+x,odd,153,"phase-flip, Toffoli",5000,3,0.034
+x,odd,155,no correction (Fez 86),5000,3,0.038
+x,odd,155,"bit-flip, Toffoli",5000,3,0.0366
+x,odd,155,"phase-flip, Toffoli",5000,3,0.034
+x,odd,157,no correction (Fez 86),5000,3,0.0396
+x,odd,157,"bit-flip, Toffoli",5000,3,0.0356
+x,odd,157,"phase-flip, Toffoli",5000,3,0.034
+x,odd,159,no correction (Fez 86),5000,3,0.0396
+x,odd,159,"bit-flip, Toffoli",5000,3,0.0378
+x,odd,159,"phase-flip, Toffoli",5000,3,0.034
+x,odd,161,no correction (Fez 86),5000,3,0.0394
+x,odd,161,"bit-flip, Toffoli",5000,3,0.0384
+x,odd,161,"phase-flip, Toffoli",5000,3,0.034
+x,odd,163,no correction (Fez 86),5000,3,0.0394
+x,odd,163,"bit-flip, Toffoli",5000,3,0.0382
+x,odd,163,"phase-flip, Toffoli",5000,3,0.034
+y,even,0,no correction (Fez 86),5000,3,0.0048
+y,even,0,"bit-flip, Toffoli",5000,3,0.0156
+y,even,0,"phase-flip, Toffoli",5000,3,0.014
+y,even,2,no correction (Fez 86),5000,3,0.0034
+y,even,2,"bit-flip, Toffoli",5000,3,0.014
+y,even,2,"phase-flip, Toffoli",5000,3,0.0152
+y,even,4,no correction (Fez 86),5000,3,0.006
+y,even,4,"bit-flip, Toffoli",5000,3,0.0152
+y,even,4,"phase-flip, Toffoli",5000,3,0.0158
+y,even,6,no correction (Fez 86),5000,3,0.007
+y,even,6,"bit-flip, Toffoli",5000,3,0.0156
+y,even,6,"phase-flip, Toffoli",5000,3,0.0118
+y,even,8,no correction (Fez 86),5000,3,0.007
+y,even,8,"bit-flip, Toffoli",5000,3,0.0118
+y,even,8,"phase-flip, Toffoli",5000,3,0.0134
+y,even,10,no correction (Fez 86),5000,3,0.0078
+y,even,10,"bit-flip, Toffoli",5000,3,0.0132
+y,even,10,"phase-flip, Toffoli",5000,3,0.0146
+y,even,12,no correction (Fez 86),5000,3,0.0068
+y,even,12,"bit-flip, Toffoli",5000,3,0.0144
+y,even,12,"phase-flip, Toffoli",5000,3,0.014
+y,even,14,no correction (Fez 86),5000,3,0.0092
+y,even,14,"bit-flip, Toffoli",5000,3,0.0138
+y,even,14,"phase-flip, Toffoli",5000,3,0.0134
+y,even,16,no correction (Fez 86),5000,3,0.0078
+y,even,16,"bit-flip, Toffoli",5000,3,0.0136
+y,even,16,"phase-flip, Toffoli",5000,3,0.0114
+y,even,18,no correction (Fez 86),5000,3,0.008
+y,even,18,"bit-flip, Toffoli",5000,3,0.0116
+y,even,18,"phase-flip, Toffoli",5000,3,0.0136
+y,even,20,no correction (Fez 86),5000,3,0.0084
+y,even,20,"bit-flip, Toffoli",5000,3,0.0134
+y,even,20,"phase-flip, Toffoli",5000,3,0.0136
+y,even,22,no correction (Fez 86),5000,3,0.0094
+y,even,22,"bit-flip, Toffoli",5000,3,0.0146
+y,even,22,"phase-flip, Toffoli",5000,3,0.0142
+y,even,24,no correction (Fez 86),5000,3,0.0094
+y,even,24,"bit-flip, Toffoli",5000,3,0.0132
+y,even,24,"phase-flip, Toffoli",5000,3,0.013
+y,even,26,no correction (Fez 86),5000,3,0.0112
+y,even,26,"bit-flip, Toffoli",5000,3,0.0132
+y,even,26,"phase-flip, Toffoli",5000,3,0.0118
+y,even,28,no correction (Fez 86),5000,3,0.0122
+y,even,28,"bit-flip, Toffoli",5000,3,0.0118
+y,even,28,"phase-flip, Toffoli",5000,3,0.011
+y,even,30,no correction (Fez 86),5000,3,0.0116
+y,even,30,"bit-flip, Toffoli",5000,3,0.0122
+y,even,30,"phase-flip, Toffoli",5000,3,0.0134
+y,even,32,no correction (Fez 86),5000,3,0.0126
+y,even,32,"bit-flip, Toffoli",5000,3,0.0146
+y,even,32,"phase-flip, Toffoli",5000,3,0.0094
+y,even,34,no correction (Fez 86),5000,3,0.0154
+y,even,34,"bit-flip, Toffoli",5000,3,0.0108
+y,even,34,"phase-flip, Toffoli",5000,3,0.015
+y,even,36,no correction (Fez 86),5000,3,0.0132
+y,even,36,"bit-flip, Toffoli",5000,3,0.015
+y,even,36,"phase-flip, Toffoli",5000,3,0.0102
+y,even,38,no correction (Fez 86),5000,3,0.0132
+y,even,38,"bit-flip, Toffoli",5000,3,0.0114
+y,even,38,"phase-flip, Toffoli",5000,3,0.0122
+y,even,40,no correction (Fez 86),5000,3,0.0154
+y,even,40,"bit-flip, Toffoli",5000,3,0.0132
+y,even,40,"phase-flip, Toffoli",5000,3,0.0124
+y,even,42,no correction (Fez 86),5000,3,0.0142
+y,even,42,"bit-flip, Toffoli",5000,3,0.013
+y,even,42,"phase-flip, Toffoli",5000,3,0.0128
+y,even,44,no correction (Fez 86),5000,3,0.0166
+y,even,44,"bit-flip, Toffoli",5000,3,0.0138
+y,even,44,"phase-flip, Toffoli",5000,3,0.0148
+y,even,46,no correction (Fez 86),5000,3,0.0158
+y,even,46,"bit-flip, Toffoli",5000,3,0.016
+y,even,46,"phase-flip, Toffoli",5000,3,0.015
+y,even,48,no correction (Fez 86),5000,3,0.0174
+y,even,48,"bit-flip, Toffoli",5000,3,0.0154
+y,even,48,"phase-flip, Toffoli",5000,3,0.0128
+y,even,50,no correction (Fez 86),5000,3,0.018
+y,even,50,"bit-flip, Toffoli",5000,3,0.0132
+y,even,50,"phase-flip, Toffoli",5000,3,0.0114
+y,even,52,no correction (Fez 86),5000,3,0.0182
+y,even,52,"bit-flip, Toffoli",5000,3,0.0126
+y,even,52,"phase-flip, Toffoli",5000,3,0.0124
+y,even,54,no correction (Fez 86),5000,3,0.019
+y,even,54,"bit-flip, Toffoli",5000,3,0.0124
+y,even,54,"phase-flip, Toffoli",5000,3,0.013
+y,even,56,no correction (Fez 86),5000,3,0.0182
+y,even,56,"bit-flip, Toffoli",5000,3,0.0138
+y,even,56,"phase-flip, Toffoli",5000,3,0.0146
+y,odd,1,no correction (Fez 86),5000,3,0.003
+y,odd,1,"bit-flip, Toffoli",5000,3,0.0322
+y,odd,1,"phase-flip, Toffoli",5000,3,0.0334
+y,odd,3,no correction (Fez 86),5000,3,0.0034
+y,odd,3,"bit-flip, Toffoli",5000,3,0.0334
+y,odd,3,"phase-flip, Toffoli",5000,3,0.0388
+y,odd,5,no correction (Fez 86),5000,3,0.0068
+y,odd,5,"bit-flip, Toffoli",5000,3,0.0374
+y,odd,5,"phase-flip, Toffoli",5000,3,0.0334
+y,odd,7,no correction (Fez 86),5000,3,0.0084
+y,odd,7,"bit-flip, Toffoli",5000,3,0.034
+y,odd,7,"phase-flip, Toffoli",5000,3,0.0342
+y,odd,9,no correction (Fez 86),5000,3,0.007
+y,odd,9,"bit-flip, Toffoli",5000,3,0.0332
+y,odd,9,"phase-flip, Toffoli",5000,3,0.0346
+y,odd,11,no correction (Fez 86),5000,3,0.0072
+y,odd,11,"bit-flip, Toffoli",5000,3,0.0354
+y,odd,11,"phase-flip, Toffoli",5000,3,0.036
+y,odd,13,no correction (Fez 86),5000,3,0.008
+y,odd,13,"bit-flip, Toffoli",5000,3,0.0338
+y,odd,13,"phase-flip, Toffoli",5000,3,0.0362
+y,odd,15,no correction (Fez 86),5000,3,0.0092
+y,odd,15,"bit-flip, Toffoli",5000,3,0.0346
+y,odd,15,"phase-flip, Toffoli",5000,3,0.0366
+y,odd,17,no correction (Fez 86),5000,3,0.0098
+y,odd,17,"bit-flip, Toffoli",5000,3,0.0364
+y,odd,17,"phase-flip, Toffoli",5000,3,0.0388
+y,odd,19,no correction (Fez 86),5000,3,0.0092
+y,odd,19,"bit-flip, Toffoli",5000,3,0.0386
+y,odd,19,"phase-flip, Toffoli",5000,3,0.0344
+y,odd,21,no correction (Fez 86),5000,3,0.0104
+y,odd,21,"bit-flip, Toffoli",5000,3,0.0338
+y,odd,21,"phase-flip, Toffoli",5000,3,0.037
+y,odd,23,no correction (Fez 86),5000,3,0.0102
+y,odd,23,"bit-flip, Toffoli",5000,3,0.0352
+y,odd,23,"phase-flip, Toffoli",5000,3,0.036
+y,odd,25,no correction (Fez 86),5000,3,0.01
+y,odd,25,"bit-flip, Toffoli",5000,3,0.0368
+y,odd,25,"phase-flip, Toffoli",5000,3,0.0342
+y,odd,27,no correction (Fez 86),5000,3,0.0102
+y,odd,27,"bit-flip, Toffoli",5000,3,0.0326
+y,odd,27,"phase-flip, Toffoli",5000,3,0.033
+y,odd,29,no correction (Fez 86),5000,3,0.0108
+y,odd,29,"bit-flip, Toffoli",5000,3,0.0322
+y,odd,29,"phase-flip, Toffoli",5000,3,0.0328
+y,odd,31,no correction (Fez 86),5000,3,0.0108
+y,odd,31,"bit-flip, Toffoli",5000,3,0.0336
+y,odd,31,"phase-flip, Toffoli",5000,3,0.0326
+y,odd,33,no correction (Fez 86),5000,3,0.0108
+y,odd,33,"bit-flip, Toffoli",5000,3,0.0344
+y,odd,33,"phase-flip, Toffoli",5000,3,0.0318
+y,odd,35,no correction (Fez 86),5000,3,0.0122
+y,odd,35,"bit-flip, Toffoli",5000,3,0.031
+y,odd,35,"phase-flip, Toffoli",5000,3,0.0348
+y,odd,37,no correction (Fez 86),5000,3,0.0138
+y,odd,37,"bit-flip, Toffoli",5000,3,0.0352
+y,odd,37,"phase-flip, Toffoli",5000,3,0.031
+y,odd,39,no correction (Fez 86),5000,3,0.0128
+y,odd,39,"bit-flip, Toffoli",5000,3,0.0328
+y,odd,39,"phase-flip, Toffoli",5000,3,0.0338
+y,odd,41,no correction (Fez 86),5000,3,0.015
+y,odd,41,"bit-flip, Toffoli",5000,3,0.034
+y,odd,41,"phase-flip, Toffoli",5000,3,0.0334
+y,odd,43,no correction (Fez 86),5000,3,0.0158
+y,odd,43,"bit-flip, Toffoli",5000,3,0.0348
+y,odd,43,"phase-flip, Toffoli",5000,3,0.0374
+y,odd,45,no correction (Fez 86),5000,3,0.015
+y,odd,45,"bit-flip, Toffoli",5000,3,0.0344
+y,odd,45,"phase-flip, Toffoli",5000,3,0.0312
+y,odd,47,no correction (Fez 86),5000,3,0.016
+y,odd,47,"bit-flip, Toffoli",5000,3,0.0306
+y,odd,47,"phase-flip, Toffoli",5000,3,0.0376
+y,odd,49,no correction (Fez 86),5000,3,0.016
+y,odd,49,"bit-flip, Toffoli",5000,3,0.0386
+y,odd,49,"phase-flip, Toffoli",5000,3,0.033
+y,odd,51,no correction (Fez 86),5000,3,0.0172
+y,odd,51,"bit-flip, Toffoli",5000,3,0.0358
+y,odd,51,"phase-flip, Toffoli",5000,3,0.0328
+y,odd,53,no correction (Fez 86),5000,3,0.0176
+y,odd,53,"bit-flip, Toffoli",5000,3,0.032
+y,odd,53,"phase-flip, Toffoli",5000,3,0.0384
+y,odd,55,no correction (Fez 86),5000,3,0.0194
+y,odd,55,"bit-flip, Toffoli",5000,3,0.0378
+y,odd,55,"phase-flip, Toffoli",5000,3,0.0294
+y,odd,57,no correction (Fez 86),5000,3,0.0176
+y,odd,57,"bit-flip, Toffoli",5000,3,0.0324
+y,odd,57,"phase-flip, Toffoli",5000,3,0.031
+y,odd,59,no correction (Fez 86),5000,3,0.0206
+y,odd,59,"bit-flip, Toffoli",5000,3,0.0298
+y,odd,59,"phase-flip, Toffoli",5000,3,0.0348
+y,odd,61,no correction (Fez 86),5000,3,0.0186
+y,odd,61,"bit-flip, Toffoli",5000,3,0.0352
+y,odd,61,"phase-flip, Toffoli",5000,3,0.035
+y,odd,63,no correction (Fez 86),5000,3,0.0178
+y,odd,63,"bit-flip, Toffoli",5000,3,0.034
+y,odd,63,"phase-flip, Toffoli",5000,3,0.032
+y,odd,65,no correction (Fez 86),5000,3,0.021
+y,odd,65,"bit-flip, Toffoli",5000,3,0.032
+y,odd,65,"phase-flip, Toffoli",5000,3,0.0366
+y,odd,67,no correction (Fez 86),5000,3,0.0206
+y,odd,67,"bit-flip, Toffoli",5000,3,0.0386
+y,odd,67,"phase-flip, Toffoli",5000,3,0.035
+y,odd,69,no correction (Fez 86),5000,3,0.0204
+y,odd,69,"bit-flip, Toffoli",5000,3,0.0352
+y,odd,69,"phase-flip, Toffoli",5000,3,0.033
+y,odd,71,no correction (Fez 86),5000,3,0.0206
+y,odd,71,"bit-flip, Toffoli",5000,3,0.0336
+y,odd,71,"phase-flip, Toffoli",5000,3,0.033
+y,odd,73,no correction (Fez 86),5000,3,0.0216
+y,odd,73,"bit-flip, Toffoli",5000,3,0.0338
+y,odd,73,"phase-flip, Toffoli",5000,3,0.034
+y,odd,75,no correction (Fez 86),5000,3,0.0214
+y,odd,75,"bit-flip, Toffoli",5000,3,0.0342
+y,odd,75,"phase-flip, Toffoli",5000,3,0.037
+y,odd,77,no correction (Fez 86),5000,3,0.0218
+y,odd,77,"bit-flip, Toffoli",5000,3,0.0356
+y,odd,77,"phase-flip, Toffoli",5000,3,0.0304
+y,odd,79,no correction (Fez 86),5000,3,0.0226
+y,odd,79,"bit-flip, Toffoli",5000,3,0.0324
+y,odd,79,"phase-flip, Toffoli",5000,3,0.0356
+y,odd,81,no correction (Fez 86),5000,3,0.0246
+y,odd,81,"bit-flip, Toffoli",5000,3,0.0362
+y,odd,81,"phase-flip, Toffoli",5000,3,0.031
+y,odd,83,no correction (Fez 86),5000,3,0.0252
+y,odd,83,"bit-flip, Toffoli",5000,3,0.0336
+y,odd,83,"phase-flip, Toffoli",5000,3,0.0358
+y,odd,85,no correction (Fez 86),5000,3,0.0236
+y,odd,85,"bit-flip, Toffoli",5000,3,0.0364
+y,odd,85,"phase-flip, Toffoli",5000,3,0.0336
+y,odd,87,no correction (Fez 86),5000,3,0.0284
+y,odd,87,"bit-flip, Toffoli",5000,3,0.0344
+y,odd,87,"phase-flip, Toffoli",5000,3,0.0366
+y,odd,89,no correction (Fez 86),5000,3,0.0254
+y,odd,89,"bit-flip, Toffoli",5000,3,0.0372
+y,odd,89,"phase-flip, Toffoli",5000,3,0.0388
+y,odd,91,no correction (Fez 86),5000,3,0.026
+y,odd,91,"bit-flip, Toffoli",5000,3,0.0406
+y,odd,91,"phase-flip, Toffoli",5000,3,0.0394
+y,odd,93,no correction (Fez 86),5000,3,0.0282
+y,odd,93,"bit-flip, Toffoli",5000,3,0.0388
+y,odd,93,"phase-flip, Toffoli",5000,3,0.034
+y,odd,95,no correction (Fez 86),5000,3,0.0268
+y,odd,95,"bit-flip, Toffoli",5000,3,0.0348
+y,odd,95,"phase-flip, Toffoli",5000,3,0.0396
+y,odd,97,no correction (Fez 86),5000,3,0.0278
+y,odd,97,"bit-flip, Toffoli",5000,3,0.0402
+y,odd,97,"phase-flip, Toffoli",5000,3,0.038
+y,odd,99,no correction (Fez 86),5000,3,0.027
+y,odd,99,"bit-flip, Toffoli",5000,3,0.0368
+y,odd,99,"phase-flip, Toffoli",5000,3,0.0394
+y,odd,101,no correction (Fez 86),5000,3,0.0286
+y,odd,101,"bit-flip, Toffoli",5000,3,0.0388
+y,odd,101,"phase-flip, Toffoli",5000,3,0.0406
+y,odd,103,no correction (Fez 86),5000,3,0.0288
+y,odd,103,"bit-flip, Toffoli",5000,3,0.0394
+y,odd,103,"phase-flip, Toffoli",5000,3,0.0332
+y,odd,105,no correction (Fez 86),5000,3,0.0296
+y,odd,105,"bit-flip, Toffoli",5000,3,0.0334
+y,odd,105,"phase-flip, Toffoli",5000,3,0.038
+y,odd,107,no correction (Fez 86),5000,3,0.029
+y,odd,107,"bit-flip, Toffoli",5000,3,0.0388
+y,odd,107,"phase-flip, Toffoli",5000,3,0.0332
+y,odd,109,no correction (Fez 86),5000,3,0.0296
+y,odd,109,"bit-flip, Toffoli",5000,3,0.0332
+y,odd,109,"phase-flip, Toffoli",5000,3,0.0418
+y,odd,111,no correction (Fez 86),5000,3,0.0312
+y,odd,111,"bit-flip, Toffoli",5000,3,0.0434
+y,odd,111,"phase-flip, Toffoli",5000,3,0.0368
+y,odd,113,no correction (Fez 86),5000,3,0.03
+y,odd,113,"bit-flip, Toffoli",5000,3,0.0386
+y,odd,113,"phase-flip, Toffoli",5000,3,0.034
+y,odd,115,no correction (Fez 86),5000,3,0.0302
+y,odd,115,"bit-flip, Toffoli",5000,3,0.037
+y,odd,115,"phase-flip, Toffoli",5000,3,0.0374
+y,odd,117,no correction (Fez 86),5000,3,0.03
+y,odd,117,"bit-flip, Toffoli",5000,3,0.0382
+y,odd,117,"phase-flip, Toffoli",5000,3,0.0364
+y,odd,119,no correction (Fez 86),5000,3,0.0308
+y,odd,119,"bit-flip, Toffoli",5000,3,0.0386
+y,odd,119,"phase-flip, Toffoli",5000,3,0.0384
+y,odd,121,no correction (Fez 86),5000,3,0.0302
+y,odd,121,"bit-flip, Toffoli",5000,3,0.0398
+y,odd,121,"phase-flip, Toffoli",5000,3,0.0406
+y,odd,123,no correction (Fez 86),5000,3,0.0306
+y,odd,123,"bit-flip, Toffoli",5000,3,0.0408
+y,odd,123,"phase-flip, Toffoli",5000,3,0.0384
+y,odd,125,no correction (Fez 86),5000,3,0.0332
+y,odd,125,"bit-flip, Toffoli",5000,3,0.039
+y,odd,125,"phase-flip, Toffoli",5000,3,0.0368
+y,odd,127,no correction (Fez 86),5000,3,0.032
+y,odd,127,"bit-flip, Toffoli",5000,3,0.0382
+y,odd,127,"phase-flip, Toffoli",5000,3,0.0342
+y,odd,129,no correction (Fez 86),5000,3,0.0322
+y,odd,129,"bit-flip, Toffoli",5000,3,0.0352
+y,odd,129,"phase-flip, Toffoli",5000,3,0.0288
+y,odd,131,no correction (Fez 86),5000,3,0.0346
+y,odd,131,"bit-flip, Toffoli",5000,3,0.0314
+y,odd,131,"phase-flip, Toffoli",5000,3,0.0352
+y,odd,133,no correction (Fez 86),5000,3,0.0346
+y,odd,133,"bit-flip, Toffoli",5000,3,0.035
+y,odd,133,"phase-flip, Toffoli",5000,3,0.0326
+y,odd,135,no correction (Fez 86),5000,3,0.0346
+y,odd,135,"bit-flip, Toffoli",5000,3,0.032
+y,odd,135,"phase-flip, Toffoli",5000,3,0.0392
+y,odd,137,no correction (Fez 86),5000,3,0.0338
+y,odd,137,"bit-flip, Toffoli",5000,3,0.0406
+y,odd,137,"phase-flip, Toffoli",5000,3,0.0366
+y,odd,139,no correction (Fez 86),5000,3,0.0354
+y,odd,139,"bit-flip, Toffoli",5000,3,0.0362
+y,odd,139,"phase-flip, Toffoli",5000,3,0.035
+y,odd,141,no correction (Fez 86),5000,3,0.0352
+y,odd,141,"bit-flip, Toffoli",5000,3,0.0368
+y,odd,141,"phase-flip, Toffoli",5000,3,0.0402
+y,odd,143,no correction (Fez 86),5000,3,0.0356
+y,odd,143,"bit-flip, Toffoli",5000,3,0.0402
+y,odd,143,"phase-flip, Toffoli",5000,3,0.0386
+y,odd,145,no correction (Fez 86),5000,3,0.0358
+y,odd,145,"bit-flip, Toffoli",5000,3,0.0394
+y,odd,145,"phase-flip, Toffoli",5000,3,0.0364
+y,odd,147,no correction (Fez 86),5000,3,0.0364
+y,odd,147,"bit-flip, Toffoli",5000,3,0.0368
+y,odd,147,"phase-flip, Toffoli",5000,3,0.033
+y,odd,149,no correction (Fez 86),5000,3,0.0392
+y,odd,149,"bit-flip, Toffoli",5000,3,0.0372
+y,odd,149,"phase-flip, Toffoli",5000,3,0.0362
+y,odd,151,no correction (Fez 86),5000,3,0.0382
+y,odd,151,"bit-flip, Toffoli",5000,3,0.0376
+y,odd,151,"phase-flip, Toffoli",5000,3,0.0416
+y,odd,153,no correction (Fez 86),5000,3,0.0384
+y,odd,153,"bit-flip, Toffoli",5000,3,0.0442
+y,odd,153,"phase-flip, Toffoli",5000,3,0.0328
+y,odd,155,no correction (Fez 86),5000,3,0.038
+y,odd,155,"bit-flip, Toffoli",5000,3,0.0366
+y,odd,155,"phase-flip, Toffoli",5000,3,0.0358
+y,odd,157,no correction (Fez 86),5000,3,0.0396
+y,odd,157,"bit-flip, Toffoli",5000,3,0.0356
+y,odd,157,"phase-flip, Toffoli",5000,3,0.0352
+y,odd,159,no correction (Fez 86),5000,3,0.0396
+y,odd,159,"bit-flip, Toffoli",5000,3,0.0378
+y,odd,159,"phase-flip, Toffoli",5000,3,0.037
+y,odd,161,no correction (Fez 86),5000,3,0.0394
+y,odd,161,"bit-flip, Toffoli",5000,3,0.0384
+y,odd,161,"phase-flip, Toffoli",5000,3,0.0376
+y,odd,163,no correction (Fez 86),5000,3,0.0394
+y,odd,163,"bit-flip, Toffoli",5000,3,0.0382
+y,odd,163,"phase-flip, Toffoli",5000,3,0.0396
+repeat,even,0,no correction (Fez 86),5000,3,0.0048
+repeat,even,0,"bit-flip, Toffoli",5000,3,0.0156
+repeat,even,0,"phase-flip, Toffoli",5000,3,0.014
+repeat,even,6,no correction (Fez 86),5000,3,0.006
+repeat,even,6,"bit-flip, Toffoli",5000,3,0.0152
+repeat,even,6,"phase-flip, Toffoli",5000,3,0.0158
+repeat,even,12,no correction (Fez 86),5000,3,0.007
+repeat,even,12,"bit-flip, Toffoli",5000,3,0.0118
+repeat,even,12,"phase-flip, Toffoli",5000,3,0.0134
+repeat,even,18,no correction (Fez 86),5000,3,0.0068
+repeat,even,18,"bit-flip, Toffoli",5000,3,0.0144
+repeat,even,18,"phase-flip, Toffoli",5000,3,0.014
+repeat,even,24,no correction (Fez 86),5000,3,0.0078
+repeat,even,24,"bit-flip, Toffoli",5000,3,0.0136
+repeat,even,24,"phase-flip, Toffoli",5000,3,0.0114
+repeat,even,30,no correction (Fez 86),5000,3,0.0084
+repeat,even,30,"bit-flip, Toffoli",5000,3,0.0134
+repeat,even,30,"phase-flip, Toffoli",5000,3,0.0136
+repeat,even,36,no correction (Fez 86),5000,3,0.0094
+repeat,even,36,"bit-flip, Toffoli",5000,3,0.0132
+repeat,even,36,"phase-flip, Toffoli",5000,3,0.013
+repeat,even,42,no correction (Fez 86),5000,3,0.0122
+repeat,even,42,"bit-flip, Toffoli",5000,3,0.0118
+repeat,even,42,"phase-flip, Toffoli",5000,3,0.011
+repeat,even,48,no correction (Fez 86),5000,3,0.0126
+repeat,even,48,"bit-flip, Toffoli",5000,3,0.0146
+repeat,even,48,"phase-flip, Toffoli",5000,3,0.0094
+repeat,even,54,no correction (Fez 86),5000,3,0.0132
+repeat,even,54,"bit-flip, Toffoli",5000,3,0.015
+repeat,even,54,"phase-flip, Toffoli",5000,3,0.0102
+repeat,even,60,no correction (Fez 86),5000,3,0.0154
+repeat,even,60,"bit-flip, Toffoli",5000,3,0.0132
+repeat,even,60,"phase-flip, Toffoli",5000,3,0.0124
+repeat,even,66,no correction (Fez 86),5000,3,0.0166
+repeat,even,66,"bit-flip, Toffoli",5000,3,0.0138
+repeat,even,66,"phase-flip, Toffoli",5000,3,0.0148
+repeat,even,72,no correction (Fez 86),5000,3,0.0174
+repeat,even,72,"bit-flip, Toffoli",5000,3,0.0154
+repeat,even,72,"phase-flip, Toffoli",5000,3,0.0128
+repeat,even,78,no correction (Fez 86),5000,3,0.0182
+repeat,even,78,"bit-flip, Toffoli",5000,3,0.0126
+repeat,even,78,"phase-flip, Toffoli",5000,3,0.0124
+repeat,even,84,no correction (Fez 86),5000,3,0.0182
+repeat,even,84,"bit-flip, Toffoli",5000,3,0.0138
+repeat,even,84,"phase-flip, Toffoli",5000,3,0.0146
+repeat,odd,1,no correction (Fez 86),5000,3,0.003
+repeat,odd,1,"bit-flip, Toffoli",5000,3,0.0322
+repeat,odd,1,"phase-flip, Toffoli",5000,3,0.034
+repeat,odd,7,no correction (Fez 86),5000,3,0.0068
+repeat,odd,7,"bit-flip, Toffoli",5000,3,0.0374
+repeat,odd,7,"phase-flip, Toffoli",5000,3,0.0384
+repeat,odd,13,no correction (Fez 86),5000,3,0.007
+repeat,odd,13,"bit-flip, Toffoli",5000,3,0.0332
+repeat,odd,13,"phase-flip, Toffoli",5000,3,0.0368
+repeat,odd,19,no correction (Fez 86),5000,3,0.008
+repeat,odd,19,"bit-flip, Toffoli",5000,3,0.0338
+repeat,odd,19,"phase-flip, Toffoli",5000,3,0.032
+repeat,odd,25,no correction (Fez 86),5000,3,0.0098
+repeat,odd,25,"bit-flip, Toffoli",5000,3,0.0364
+repeat,odd,25,"phase-flip, Toffoli",5000,3,0.0366
+repeat,odd,31,no correction (Fez 86),5000,3,0.0104
+repeat,odd,31,"bit-flip, Toffoli",5000,3,0.0338
+repeat,odd,31,"phase-flip, Toffoli",5000,3,0.0328
+repeat,odd,37,no correction (Fez 86),5000,3,0.01
+repeat,odd,37,"bit-flip, Toffoli",5000,3,0.0368
+repeat,odd,37,"phase-flip, Toffoli",5000,3,0.032
+repeat,odd,43,no correction (Fez 86),5000,3,0.0108
+repeat,odd,43,"bit-flip, Toffoli",5000,3,0.0322
+repeat,odd,43,"phase-flip, Toffoli",5000,3,0.0296
+repeat,odd,49,no correction (Fez 86),5000,3,0.0108
+repeat,odd,49,"bit-flip, Toffoli",5000,3,0.0342
+repeat,odd,49,"phase-flip, Toffoli",5000,3,0.0302
+repeat,odd,55,no correction (Fez 86),5000,3,0.0138
+repeat,odd,55,"bit-flip, Toffoli",5000,3,0.0352
+repeat,odd,55,"phase-flip, Toffoli",5000,3,0.0354
+repeat,odd,61,no correction (Fez 86),5000,3,0.015
+repeat,odd,61,"bit-flip, Toffoli",5000,3,0.034
+repeat,odd,61,"phase-flip, Toffoli",5000,3,0.0312
+repeat,odd,67,no correction (Fez 86),5000,3,0.015
+repeat,odd,67,"bit-flip, Toffoli",5000,3,0.0344
+repeat,odd,67,"phase-flip, Toffoli",5000,3,0.0298
+repeat,odd,73,no correction (Fez 86),5000,3,0.016
+repeat,odd,73,"bit-flip, Toffoli",5000,3,0.0386
+repeat,odd,73,"phase-flip, Toffoli",5000,3,0.0398
+repeat,odd,79,no correction (Fez 86),5000,3,0.0176
+repeat,odd,79,"bit-flip, Toffoli",5000,3,0.032
+repeat,odd,79,"phase-flip, Toffoli",5000,3,0.0314
+repeat,odd,85,no correction (Fez 86),5000,3,0.0176
+repeat,odd,85,"bit-flip, Toffoli",5000,3,0.0324
+repeat,odd,85,"phase-flip, Toffoli",5000,3,0.0278
+repeat,odd,91,no correction (Fez 86),5000,3,0.0186
+repeat,odd,91,"bit-flip, Toffoli",5000,3,0.0352
+repeat,odd,91,"phase-flip, Toffoli",5000,3,0.0328
+repeat,odd,97,no correction (Fez 86),5000,3,0.021
+repeat,odd,97,"bit-flip, Toffoli",5000,3,0.032
+repeat,odd,97,"phase-flip, Toffoli",5000,3,0.037
+repeat,odd,103,no correction (Fez 86),5000,3,0.0204
+repeat,odd,103,"bit-flip, Toffoli",5000,3,0.0352
+repeat,odd,103,"phase-flip, Toffoli",5000,3,0.0384
+repeat,odd,109,no correction (Fez 86),5000,3,0.0216
+repeat,odd,109,"bit-flip, Toffoli",5000,3,0.0338
+repeat,odd,109,"phase-flip, Toffoli",5000,3,0.0388
+repeat,odd,115,no correction (Fez 86),5000,3,0.0218
+repeat,odd,115,"bit-flip, Toffoli",5000,3,0.0356
+repeat,odd,115,"phase-flip, Toffoli",5000,3,0.032
+repeat,odd,121,no correction (Fez 86),5000,3,0.0246
+repeat,odd,121,"bit-flip, Toffoli",5000,3,0.0362
+repeat,odd,121,"phase-flip, Toffoli",5000,3,0.0378
+repeat,odd,127,no correction (Fez 86),5000,3,0.0236
+repeat,odd,127,"bit-flip, Toffoli",5000,3,0.0364
+repeat,odd,127,"phase-flip, Toffoli",5000,3,0.0428
+repeat,odd,133,no correction (Fez 86),5000,3,0.0254
+repeat,odd,133,"bit-flip, Toffoli",5000,3,0.0372
+repeat,odd,133,"phase-flip, Toffoli",5000,3,0.035
+repeat,odd,139,no correction (Fez 86),5000,3,0.0282
+repeat,odd,139,"bit-flip, Toffoli",5000,3,0.039
+repeat,odd,139,"phase-flip, Toffoli",5000,3,0.0314
+repeat,odd,145,no correction (Fez 86),5000,3,0.0278
+repeat,odd,145,"bit-flip, Toffoli",5000,3,0.0402
+repeat,odd,145,"phase-flip, Toffoli",5000,3,0.036
+repeat,odd,151,no correction (Fez 86),5000,3,0.0286
+repeat,odd,151,"bit-flip, Toffoli",5000,3,0.0388
+repeat,odd,151,"phase-flip, Toffoli",5000,3,0.0396
+repeat,odd,157,no correction (Fez 86),5000,3,0.0296
+repeat,odd,157,"bit-flip, Toffoli",5000,3,0.0334
+repeat,odd,157,"phase-flip, Toffoli",5000,3,0.037
+repeat,odd,163,no correction (Fez 86),5000,3,0.0296
+repeat,odd,163,"bit-flip, Toffoli",5000,3,0.0332
+repeat,odd,163,"phase-flip, Toffoli",5000,3,0.035
+repeat,odd,169,no correction (Fez 86),5000,3,0.03
+repeat,odd,169,"bit-flip, Toffoli",5000,3,0.0386
+repeat,odd,169,"phase-flip, Toffoli",5000,3,0.0358
+repeat,odd,175,no correction (Fez 86),5000,3,0.03
+repeat,odd,175,"bit-flip, Toffoli",5000,3,0.0382
+repeat,odd,175,"phase-flip, Toffoli",5000,3,0.0372
+repeat,odd,181,no correction (Fez 86),5000,3,0.0302
+repeat,odd,181,"bit-flip, Toffoli",5000,3,0.0398
+repeat,odd,181,"phase-flip, Toffoli",5000,3,0.0398
+repeat,odd,187,no correction (Fez 86),5000,3,0.0332
+repeat,odd,187,"bit-flip, Toffoli",5000,3,0.039
+repeat,odd,187,"phase-flip, Toffoli",5000,3,0.0362
+repeat,odd,193,no correction (Fez 86),5000,3,0.0322
+repeat,odd,193,"bit-flip, Toffoli",5000,3,0.0352
+repeat,odd,193,"phase-flip, Toffoli",5000,3,0.038
+repeat,odd,199,no correction (Fez 86),5000,3,0.0346
+repeat,odd,199,"bit-flip, Toffoli",5000,3,0.035
+repeat,odd,199,"phase-flip, Toffoli",5000,3,0.0356
+repeat,odd,205,no correction (Fez 86),5000,3,0.0338
+repeat,odd,205,"bit-flip, Toffoli",5000,3,0.0406
+repeat,odd,205,"phase-flip, Toffoli",5000,3,0.0368
+repeat,odd,211,no correction (Fez 86),5000,3,0.0352
+repeat,odd,211,"bit-flip, Toffoli",5000,3,0.0368
+repeat,odd,211,"phase-flip, Toffoli",5000,3,0.0402
+repeat,odd,217,no correction (Fez 86),5000,3,0.0358
+repeat,odd,217,"bit-flip, Toffoli",5000,3,0.0396
+repeat,odd,217,"phase-flip, Toffoli",5000,3,0.0418
+repeat,odd,223,no correction (Fez 86),5000,3,0.0392
+repeat,odd,223,"bit-flip, Toffoli",5000,3,0.0372
+repeat,odd,223,"phase-flip, Toffoli",5000,3,0.0354
+repeat,odd,229,no correction (Fez 86),5000,3,0.0384
+repeat,odd,229,"bit-flip, Toffoli",5000,3,0.0442
+repeat,odd,229,"phase-flip, Toffoli",5000,3,0.0364
+repeat,odd,235,no correction (Fez 86),5000,3,0.0396
+repeat,odd,235,"bit-flip, Toffoli",5000,3,0.0356
+repeat,odd,235,"phase-flip, Toffoli",5000,3,0.0378
+repeat,odd,241,no correction (Fez 86),5000,3,0.0394
+repeat,odd,241,"bit-flip, Toffoli",5000,3,0.0384
+repeat,odd,241,"phase-flip, Toffoli",5000,3,0.0344
+repeat,odd,247,no correction (Fez 86),5000,3,0.0418
+repeat,odd,247,"bit-flip, Toffoli",5000,3,0.042
+repeat,odd,247,"phase-flip, Toffoli",5000,3,0.0382
+repeat,odd,253,no correction (Fez 86),5000,3,0.04
+repeat,odd,253,"bit-flip, Toffoli",5000,3,0.0404
+repeat,odd,253,"phase-flip, Toffoli",5000,3,0.0388
+repeat,odd,259,no correction (Fez 86),5000,3,0.0424
+repeat,odd,259,"bit-flip, Toffoli",5000,3,0.0406
+repeat,odd,259,"phase-flip, Toffoli",5000,3,0.0422
+repeat,odd,265,no correction (Fez 86),5000,3,0.0416
+repeat,odd,265,"bit-flip, Toffoli",5000,3,0.0414
+repeat,odd,265,"phase-flip, Toffoli",5000,3,0.0354
+repeat,odd,271,no correction (Fez 86),5000,3,0.045
+repeat,odd,271,"bit-flip, Toffoli",5000,3,0.0454
+repeat,odd,271,"phase-flip, Toffoli",5000,3,0.042
+repeat,odd,277,no correction (Fez 86),5000,3,0.0442
+repeat,odd,277,"bit-flip, Toffoli",5000,3,0.0426
+repeat,odd,277,"phase-flip, Toffoli",5000,3,0.0384
+repeat,odd,283,no correction (Fez 86),5000,3,0.0456
+repeat,odd,283,"bit-flip, Toffoli",5000,3,0.0394
+repeat,odd,283,"phase-flip, Toffoli",5000,3,0.0332
+repeat,odd,289,no correction (Fez 86),5000,3,0.0458
+repeat,odd,289,"bit-flip, Toffoli",5000,3,0.039
+repeat,odd,289,"phase-flip, Toffoli",5000,3,0.0396
+repeat,odd,295,no correction (Fez 86),5000,3,0.0482
+repeat,odd,295,"bit-flip, Toffoli",5000,3,0.0424
+repeat,odd,295,"phase-flip, Toffoli",5000,3,0.0396
+repeat,odd,301,no correction (Fez 86),5000,3,0.0464
+repeat,odd,301,"bit-flip, Toffoli",5000,3,0.044
+repeat,odd,301,"phase-flip, Toffoli",5000,3,0.037
+id,even,0,no correction (Fez 86),5000,3,0.0048
+id,even,0,"bit-flip, Toffoli",5000,3,0.0156
+id,even,0,"phase-flip, Toffoli",5000,3,0.014
+id,even,2,no correction (Fez 86),5000,3,0.0032
+id,even,2,"bit-flip, Toffoli",5000,3,0.014
+id,even,2,"phase-flip, Toffoli",5000,3,0.0152
+id,even,4,no correction (Fez 86),5000,3,0.006
+id,even,4,"bit-flip, Toffoli",5000,3,0.0152
+id,even,4,"phase-flip, Toffoli",5000,3,0.0158
+id,even,6,no correction (Fez 86),5000,3,0.0062
+id,even,6,"bit-flip, Toffoli",5000,3,0.0156
+id,even,6,"phase-flip, Toffoli",5000,3,0.0118
+id,even,8,no correction (Fez 86),5000,3,0.0058
+id,even,8,"bit-flip, Toffoli",5000,3,0.0118
+id,even,8,"phase-flip, Toffoli",5000,3,0.0134
+id,even,10,no correction (Fez 86),5000,3,0.0068
+id,even,10,"bit-flip, Toffoli",5000,3,0.0132
+id,even,10,"phase-flip, Toffoli",5000,3,0.0146
+id,even,12,no correction (Fez 86),5000,3,0.0056
+id,even,12,"bit-flip, Toffoli",5000,3,0.0144
+id,even,12,"phase-flip, Toffoli",5000,3,0.014
+id,even,14,no correction (Fez 86),5000,3,0.0074
+id,even,14,"bit-flip, Toffoli",5000,3,0.0134
+id,even,14,"phase-flip, Toffoli",5000,3,0.0134
+id,even,16,no correction (Fez 86),5000,3,0.0056
+id,even,16,"bit-flip, Toffoli",5000,3,0.0136
+id,even,16,"phase-flip, Toffoli",5000,3,0.0114
+id,even,18,no correction (Fez 86),5000,3,0.0058
+id,even,18,"bit-flip, Toffoli",5000,3,0.0112
+id,even,18,"phase-flip, Toffoli",5000,3,0.0136
+id,even,20,no correction (Fez 86),5000,3,0.006
+id,even,20,"bit-flip, Toffoli",5000,3,0.0132
+id,even,20,"phase-flip, Toffoli",5000,3,0.0136
+id,even,22,no correction (Fez 86),5000,3,0.0062
+id,even,22,"bit-flip, Toffoli",5000,3,0.0144
+id,even,22,"phase-flip, Toffoli",5000,3,0.0142
+id,even,24,no correction (Fez 86),5000,3,0.0062
+id,even,24,"bit-flip, Toffoli",5000,3,0.0132
+id,even,24,"phase-flip, Toffoli",5000,3,0.013
+id,even,26,no correction (Fez 86),5000,3,0.0084
+id,even,26,"bit-flip, Toffoli",5000,3,0.013
+id,even,26,"phase-flip, Toffoli",5000,3,0.0118
+id,even,28,no correction (Fez 86),5000,3,0.0092
+id,even,28,"bit-flip, Toffoli",5000,3,0.0112
+id,even,28,"phase-flip, Toffoli",5000,3,0.011
+id,even,30,no correction (Fez 86),5000,3,0.0082
+id,even,30,"bit-flip, Toffoli",5000,3,0.0106
+id,even,30,"phase-flip, Toffoli",5000,3,0.0134
+id,even,32,no correction (Fez 86),5000,3,0.0094
+id,even,32,"bit-flip, Toffoli",5000,3,0.0136
+id,even,32,"phase-flip, Toffoli",5000,3,0.0094
+id,even,34,no correction (Fez 86),5000,3,0.0118
+id,even,34,"bit-flip, Toffoli",5000,3,0.0098
+id,even,34,"phase-flip, Toffoli",5000,3,0.015
+id,even,36,no correction (Fez 86),5000,3,0.0092
+id,even,36,"bit-flip, Toffoli",5000,3,0.0142
+id,even,36,"phase-flip, Toffoli",5000,3,0.0102
+id,even,38,no correction (Fez 86),5000,3,0.0088
+id,even,38,"bit-flip, Toffoli",5000,3,0.0102
+id,even,38,"phase-flip, Toffoli",5000,3,0.0122
+id,even,40,no correction (Fez 86),5000,3,0.0102
+id,even,40,"bit-flip, Toffoli",5000,3,0.012
+id,even,40,"phase-flip, Toffoli",5000,3,0.0124
+id,even,42,no correction (Fez 86),5000,3,0.009
+id,even,42,"bit-flip, Toffoli",5000,3,0.0116
+id,even,42,"phase-flip, Toffoli",5000,3,0.0128
+id,even,44,no correction (Fez 86),5000,3,0.011
+id,even,44,"bit-flip, Toffoli",5000,3,0.0126
+id,even,44,"phase-flip, Toffoli",5000,3,0.0148
+id,even,46,no correction (Fez 86),5000,3,0.0098
+id,even,46,"bit-flip, Toffoli",5000,3,0.0146
+id,even,46,"phase-flip, Toffoli",5000,3,0.015
+id,even,48,no correction (Fez 86),5000,3,0.011
+id,even,48,"bit-flip, Toffoli",5000,3,0.0148
+id,even,48,"phase-flip, Toffoli",5000,3,0.0128
+id,even,50,no correction (Fez 86),5000,3,0.0108
+id,even,50,"bit-flip, Toffoli",5000,3,0.0126
+id,even,50,"phase-flip, Toffoli",5000,3,0.0114
+id,even,52,no correction (Fez 86),5000,3,0.0104
+id,even,52,"bit-flip, Toffoli",5000,3,0.0116
+id,even,52,"phase-flip, Toffoli",5000,3,0.0124
+id,even,54,no correction (Fez 86),5000,3,0.0112
+id,even,54,"bit-flip, Toffoli",5000,3,0.012
+id,even,54,"phase-flip, Toffoli",5000,3,0.013
+id,even,56,no correction (Fez 86),5000,3,0.0102
+id,even,56,"bit-flip, Toffoli",5000,3,0.0122
+id,even,56,"phase-flip, Toffoli",5000,3,0.0146
+id,even,58,no correction (Fez 86),5000,3,0.011
+id,even,58,"bit-flip, Toffoli",5000,3,0.0138
+id,even,58,"phase-flip, Toffoli",5000,3,0.0136
+id,even,60,no correction (Fez 86),5000,3,0.01
+id,even,60,"bit-flip, Toffoli",5000,3,0.013
+id,even,60,"phase-flip, Toffoli",5000,3,0.013
+id,even,62,no correction (Fez 86),5000,3,0.0108
+id,even,62,"bit-flip, Toffoli",5000,3,0.012
+id,even,62,"phase-flip, Toffoli",5000,3,0.012
+id,even,64,no correction (Fez 86),5000,3,0.0108
+id,even,64,"bit-flip, Toffoli",5000,3,0.0114
+id,even,64,"phase-flip, Toffoli",5000,3,0.0164
+id,even,66,no correction (Fez 86),5000,3,0.01
+id,even,66,"bit-flip, Toffoli",5000,3,0.0158
+id,even,66,"phase-flip, Toffoli",5000,3,0.0146
+id,even,68,no correction (Fez 86),5000,3,0.0126
+id,even,68,"bit-flip, Toffoli",5000,3,0.015
+id,even,68,"phase-flip, Toffoli",5000,3,0.0144
+id,even,70,no correction (Fez 86),5000,3,0.0116
+id,even,70,"bit-flip, Toffoli",5000,3,0.013
+id,even,70,"phase-flip, Toffoli",5000,3,0.0144
+id,even,72,no correction (Fez 86),5000,3,0.0124
+id,even,72,"bit-flip, Toffoli",5000,3,0.0138
+id,even,72,"phase-flip, Toffoli",5000,3,0.012
+id,even,74,no correction (Fez 86),5000,3,0.0118
+id,even,74,"bit-flip, Toffoli",5000,3,0.0114
+id,even,74,"phase-flip, Toffoli",5000,3,0.0132
+id,even,76,no correction (Fez 86),5000,3,0.0122
+id,even,76,"bit-flip, Toffoli",5000,3,0.0128
+id,even,76,"phase-flip, Toffoli",5000,3,0.0126
+id,even,78,no correction (Fez 86),5000,3,0.0118
+id,even,78,"bit-flip, Toffoli",5000,3,0.0118
+id,even,78,"phase-flip, Toffoli",5000,3,0.0136
+id,even,80,no correction (Fez 86),5000,3,0.0134
+id,even,80,"bit-flip, Toffoli",5000,3,0.0124
+id,even,80,"phase-flip, Toffoli",5000,3,0.015
+id,even,82,no correction (Fez 86),5000,3,0.011
+id,even,82,"bit-flip, Toffoli",5000,3,0.0144
+id,even,82,"phase-flip, Toffoli",5000,3,0.0158
+id,even,84,no correction (Fez 86),5000,3,0.0122
+id,even,84,"bit-flip, Toffoli",5000,3,0.0142
+id,even,84,"phase-flip, Toffoli",5000,3,0.0172
+id,even,86,no correction (Fez 86),5000,3,0.0154
+id,even,86,"bit-flip, Toffoli",5000,3,0.017
+id,even,86,"phase-flip, Toffoli",5000,3,0.017
+id,even,88,no correction (Fez 86),5000,3,0.0118
+id,even,88,"bit-flip, Toffoli",5000,3,0.015
+id,even,88,"phase-flip, Toffoli",5000,3,0.016
+id,even,90,no correction (Fez 86),5000,3,0.0132
+id,even,90,"bit-flip, Toffoli",5000,3,0.0148
+id,even,90,"phase-flip, Toffoli",5000,3,0.0152
+id,even,92,no correction (Fez 86),5000,3,0.0134
+id,even,92,"bit-flip, Toffoli",5000,3,0.0142
+id,even,92,"phase-flip, Toffoli",5000,3,0.0144
+id,even,94,no correction (Fez 86),5000,3,0.0132
+id,even,94,"bit-flip, Toffoli",5000,3,0.0134
+id,even,94,"phase-flip, Toffoli",5000,3,0.0146
+id,even,96,no correction (Fez 86),5000,3,0.014
+id,even,96,"bit-flip, Toffoli",5000,3,0.0132
+id,even,96,"phase-flip, Toffoli",5000,3,0.0182
+id,even,98,no correction (Fez 86),5000,3,0.0146
+id,even,98,"bit-flip, Toffoli",5000,3,0.0158
+id,even,98,"phase-flip, Toffoli",5000,3,0.0154
+id,even,100,no correction (Fez 86),5000,3,0.0144
+id,even,100,"bit-flip, Toffoli",5000,3,0.0128
+id,even,100,"phase-flip, Toffoli",5000,3,0.0156
+id,even,102,no correction (Fez 86),5000,3,0.0152
+id,even,102,"bit-flip, Toffoli",5000,3,0.0138
+id,even,102,"phase-flip, Toffoli",5000,3,0.0178
+id,even,104,no correction (Fez 86),5000,3,0.012
+id,even,104,"bit-flip, Toffoli",5000,3,0.0152
+id,even,104,"phase-flip, Toffoli",5000,3,0.018
+id,even,106,no correction (Fez 86),5000,3,0.0148
+id,even,106,"bit-flip, Toffoli",5000,3,0.0152
+id,even,106,"phase-flip, Toffoli",5000,3,0.0164
+id,even,108,no correction (Fez 86),5000,3,0.015
+id,even,108,"bit-flip, Toffoli",5000,3,0.0142
+id,even,108,"phase-flip, Toffoli",5000,3,0.016
+id,even,110,no correction (Fez 86),5000,3,0.0148
+id,even,110,"bit-flip, Toffoli",5000,3,0.0138
+id,even,110,"phase-flip, Toffoli",5000,3,0.0194
+id,even,112,no correction (Fez 86),5000,3,0.015
+id,even,112,"bit-flip, Toffoli",5000,3,0.0178
+id,even,112,"phase-flip, Toffoli",5000,3,0.0158
+id,even,114,no correction (Fez 86),5000,3,0.0142
+id,even,114,"bit-flip, Toffoli",5000,3,0.0144
+id,even,114,"phase-flip, Toffoli",5000,3,0.0156
+id,even,116,no correction (Fez 86),5000,3,0.0142
+id,even,116,"bit-flip, Toffoli",5000,3,0.0128
+id,even,116,"phase-flip, Toffoli",5000,3,0.0146
+id,even,118,no correction (Fez 86),5000,3,0.014
+id,even,118,"bit-flip, Toffoli",5000,3,0.011
+id,even,118,"phase-flip, Toffoli",5000,3,0.0164
+id,even,120,no correction (Fez 86),5000,3,0.0146
+id,even,120,"bit-flip, Toffoli",5000,3,0.014
+id,even,120,"phase-flip, Toffoli",5000,3,0.0156
+id,even,122,no correction (Fez 86),5000,3,0.0144
+id,even,122,"bit-flip, Toffoli",5000,3,0.0126
+id,even,122,"phase-flip, Toffoli",5000,3,0.0188
+id,even,124,no correction (Fez 86),5000,3,0.015
+id,even,124,"bit-flip, Toffoli",5000,3,0.015
+id,even,124,"phase-flip, Toffoli",5000,3,0.0166
+id,even,126,no correction (Fez 86),5000,3,0.0156
+id,even,126,"bit-flip, Toffoli",5000,3,0.0132
+id,even,126,"phase-flip, Toffoli",5000,3,0.0176
+id,even,128,no correction (Fez 86),5000,3,0.0166
+id,even,128,"bit-flip, Toffoli",5000,3,0.0138
+id,even,128,"phase-flip, Toffoli",5000,3,0.0182
+id,even,130,no correction (Fez 86),5000,3,0.0174
+id,even,130,"bit-flip, Toffoli",5000,3,0.0144
+id,even,130,"phase-flip, Toffoli",5000,3,0.014
+id,even,132,no correction (Fez 86),5000,3,0.0174
+id,even,132,"bit-flip, Toffoli",5000,3,0.013
+id,even,132,"phase-flip, Toffoli",5000,3,0.0184
+id,even,134,no correction (Fez 86),5000,3,0.0154
+id,even,134,"bit-flip, Toffoli",5000,3,0.015
+id,even,134,"phase-flip, Toffoli",5000,3,0.0188
+id,even,136,no correction (Fez 86),5000,3,0.0164
+id,even,136,"bit-flip, Toffoli",5000,3,0.0152
+id,even,136,"phase-flip, Toffoli",5000,3,0.0172
+id,even,138,no correction (Fez 86),5000,3,0.0158
+id,even,138,"bit-flip, Toffoli",5000,3,0.0138
+id,even,138,"phase-flip, Toffoli",5000,3,0.0166
+id,even,140,no correction (Fez 86),5000,3,0.0198
+id,even,140,"bit-flip, Toffoli",5000,3,0.0126
+id,even,140,"phase-flip, Toffoli",5000,3,0.018
+id,even,142,no correction (Fez 86),5000,3,0.0178
+id,even,142,"bit-flip, Toffoli",5000,3,0.0146
+id,even,142,"phase-flip, Toffoli",5000,3,0.0148
+id,even,144,no correction (Fez 86),5000,3,0.019
+id,even,144,"bit-flip, Toffoli",5000,3,0.0118
+id,even,144,"phase-flip, Toffoli",5000,3,0.0144
+id,even,146,no correction (Fez 86),5000,3,0.0186
+id,even,146,"bit-flip, Toffoli",5000,3,0.0118
+id,even,146,"phase-flip, Toffoli",5000,3,0.02
+id,even,148,no correction (Fez 86),5000,3,0.0186
+id,even,148,"bit-flip, Toffoli",5000,3,0.0156
+id,even,148,"phase-flip, Toffoli",5000,3,0.0182
+id,even,150,no correction (Fez 86),5000,3,0.0182
+id,even,150,"bit-flip, Toffoli",5000,3,0.0148
+id,even,150,"phase-flip, Toffoli",5000,3,0.016
+id,even,152,no correction (Fez 86),5000,3,0.018
+id,even,152,"bit-flip, Toffoli",5000,3,0.0138
+id,even,152,"phase-flip, Toffoli",5000,3,0.018
+id,even,154,no correction (Fez 86),5000,3,0.0198
+id,even,154,"bit-flip, Toffoli",5000,3,0.013
+id,even,154,"phase-flip, Toffoli",5000,3,0.0194
+id,even,156,no correction (Fez 86),5000,3,0.0198
+id,even,156,"bit-flip, Toffoli",5000,3,0.0146
+id,even,156,"phase-flip, Toffoli",5000,3,0.0164
+id,even,158,no correction (Fez 86),5000,3,0.019
+id,even,158,"bit-flip, Toffoli",5000,3,0.0126
+id,even,158,"phase-flip, Toffoli",5000,3,0.021
+id,even,160,no correction (Fez 86),5000,3,0.0204
+id,even,160,"bit-flip, Toffoli",5000,3,0.0172
+id,even,160,"phase-flip, Toffoli",5000,3,0.0178
+id,even,162,no correction (Fez 86),5000,3,0.0206
+id,even,162,"bit-flip, Toffoli",5000,3,0.014
+id,even,162,"phase-flip, Toffoli",5000,3,0.0182
+id,even,164,no correction (Fez 86),5000,3,0.0212
+id,even,164,"bit-flip, Toffoli",5000,3,0.013
+id,even,164,"phase-flip, Toffoli",5000,3,0.0184
+id,even,166,no correction (Fez 86),5000,3,0.0214
+id,even,166,"bit-flip, Toffoli",5000,3,0.0142
+id,even,166,"phase-flip, Toffoli",5000,3,0.0182
+id,even,168,no correction (Fez 86),5000,3,0.0218
+id,even,168,"bit-flip, Toffoli",5000,3,0.0128
+id,even,168,"phase-flip, Toffoli",5000,3,0.02
+id,odd,1,no correction (Fez 86),5000,3,0.0036
+id,odd,1,"bit-flip, Toffoli",5000,3,0.0156
+id,odd,1,"phase-flip, Toffoli",5000,3,0.0138
+id,odd,3,no correction (Fez 86),5000,3,0.0036
+id,odd,3,"bit-flip, Toffoli",5000,3,0.0134
+id,odd,3,"phase-flip, Toffoli",5000,3,0.01
+id,odd,5,no correction (Fez 86),5000,3,0.0044
+id,odd,5,"bit-flip, Toffoli",5000,3,0.0102
+id,odd,5,"phase-flip, Toffoli",5000,3,0.0118
+id,odd,7,no correction (Fez 86),5000,3,0.0044
+id,odd,7,"bit-flip, Toffoli",5000,3,0.0114
+id,odd,7,"phase-flip, Toffoli",5000,3,0.0102
+id,odd,9,no correction (Fez 86),5000,3,0.0064
+id,odd,9,"bit-flip, Toffoli",5000,3,0.0098
+id,odd,9,"phase-flip, Toffoli",5000,3,0.0156
+id,odd,11,no correction (Fez 86),5000,3,0.0054
+id,odd,11,"bit-flip, Toffoli",5000,3,0.0154
+id,odd,11,"phase-flip, Toffoli",5000,3,0.0132
+id,odd,13,no correction (Fez 86),5000,3,0.0064
+id,odd,13,"bit-flip, Toffoli",5000,3,0.0134
+id,odd,13,"phase-flip, Toffoli",5000,3,0.0164
+id,odd,15,no correction (Fez 86),5000,3,0.0062
+id,odd,15,"bit-flip, Toffoli",5000,3,0.0162
+id,odd,15,"phase-flip, Toffoli",5000,3,0.0126
+id,odd,17,no correction (Fez 86),5000,3,0.0064
+id,odd,17,"bit-flip, Toffoli",5000,3,0.0122
+id,odd,17,"phase-flip, Toffoli",5000,3,0.0126
+id,odd,19,no correction (Fez 86),5000,3,0.0062
+id,odd,19,"bit-flip, Toffoli",5000,3,0.0116
+id,odd,19,"phase-flip, Toffoli",5000,3,0.0152
+id,odd,21,no correction (Fez 86),5000,3,0.0054
+id,odd,21,"bit-flip, Toffoli",5000,3,0.0152
+id,odd,21,"phase-flip, Toffoli",5000,3,0.013
+id,odd,23,no correction (Fez 86),5000,3,0.0072
+id,odd,23,"bit-flip, Toffoli",5000,3,0.013
+id,odd,23,"phase-flip, Toffoli",5000,3,0.0118
+id,odd,25,no correction (Fez 86),5000,3,0.0082
+id,odd,25,"bit-flip, Toffoli",5000,3,0.0112
+id,odd,25,"phase-flip, Toffoli",5000,3,0.0146
+id,odd,27,no correction (Fez 86),5000,3,0.0086
+id,odd,27,"bit-flip, Toffoli",5000,3,0.0144
+id,odd,27,"phase-flip, Toffoli",5000,3,0.0124
+id,odd,29,no correction (Fez 86),5000,3,0.0088
+id,odd,29,"bit-flip, Toffoli",5000,3,0.0118
+id,odd,29,"phase-flip, Toffoli",5000,3,0.0116
+id,odd,31,no correction (Fez 86),5000,3,0.0086
+id,odd,31,"bit-flip, Toffoli",5000,3,0.0118
+id,odd,31,"phase-flip, Toffoli",5000,3,0.014
+id,odd,33,no correction (Fez 86),5000,3,0.009
+id,odd,33,"bit-flip, Toffoli",5000,3,0.0132
+id,odd,33,"phase-flip, Toffoli",5000,3,0.0122
+id,odd,35,no correction (Fez 86),5000,3,0.0092
+id,odd,35,"bit-flip, Toffoli",5000,3,0.0118
+id,odd,35,"phase-flip, Toffoli",5000,3,0.013
+id,odd,37,no correction (Fez 86),5000,3,0.0106
+id,odd,37,"bit-flip, Toffoli",5000,3,0.0128
+id,odd,37,"phase-flip, Toffoli",5000,3,0.014
+id,odd,39,no correction (Fez 86),5000,3,0.0094
+id,odd,39,"bit-flip, Toffoli",5000,3,0.0142
+id,odd,39,"phase-flip, Toffoli",5000,3,0.015
+id,odd,41,no correction (Fez 86),5000,3,0.0096
+id,odd,41,"bit-flip, Toffoli",5000,3,0.0152
+id,odd,41,"phase-flip, Toffoli",5000,3,0.0108
+id,odd,43,no correction (Fez 86),5000,3,0.0106
+id,odd,43,"bit-flip, Toffoli",5000,3,0.011
+id,odd,43,"phase-flip, Toffoli",5000,3,0.0142
+id,odd,45,no correction (Fez 86),5000,3,0.0088
+id,odd,45,"bit-flip, Toffoli",5000,3,0.0134
+id,odd,45,"phase-flip, Toffoli",5000,3,0.0152
+id,odd,47,no correction (Fez 86),5000,3,0.0096
+id,odd,47,"bit-flip, Toffoli",5000,3,0.015
+id,odd,47,"phase-flip, Toffoli",5000,3,0.0142
+id,odd,49,no correction (Fez 86),5000,3,0.0094
+id,odd,49,"bit-flip, Toffoli",5000,3,0.0144
+id,odd,49,"phase-flip, Toffoli",5000,3,0.0132
+id,odd,51,no correction (Fez 86),5000,3,0.0086
+id,odd,51,"bit-flip, Toffoli",5000,3,0.0128
+id,odd,51,"phase-flip, Toffoli",5000,3,0.0122
+id,odd,53,no correction (Fez 86),5000,3,0.0096
+id,odd,53,"bit-flip, Toffoli",5000,3,0.0126
+id,odd,53,"phase-flip, Toffoli",5000,3,0.0136
+id,odd,55,no correction (Fez 86),5000,3,0.01
+id,odd,55,"bit-flip, Toffoli",5000,3,0.013
+id,odd,55,"phase-flip, Toffoli",5000,3,0.0168
+id,odd,57,no correction (Fez 86),5000,3,0.0116
+id,odd,57,"bit-flip, Toffoli",5000,3,0.0158
+id,odd,57,"phase-flip, Toffoli",5000,3,0.0128
+id,odd,59,no correction (Fez 86),5000,3,0.0116
+id,odd,59,"bit-flip, Toffoli",5000,3,0.0128
+id,odd,59,"phase-flip, Toffoli",5000,3,0.0124
+id,odd,61,no correction (Fez 86),5000,3,0.011
+id,odd,61,"bit-flip, Toffoli",5000,3,0.0122
+id,odd,61,"phase-flip, Toffoli",5000,3,0.0148
+id,odd,63,no correction (Fez 86),5000,3,0.0102
+id,odd,63,"bit-flip, Toffoli",5000,3,0.0142
+id,odd,63,"phase-flip, Toffoli",5000,3,0.0158
+id,odd,65,no correction (Fez 86),5000,3,0.0106
+id,odd,65,"bit-flip, Toffoli",5000,3,0.015
+id,odd,65,"phase-flip, Toffoli",5000,3,0.0128
+id,odd,67,no correction (Fez 86),5000,3,0.0118
+id,odd,67,"bit-flip, Toffoli",5000,3,0.0118
+id,odd,67,"phase-flip, Toffoli",5000,3,0.0146
+id,odd,69,no correction (Fez 86),5000,3,0.0116
+id,odd,69,"bit-flip, Toffoli",5000,3,0.0136
+id,odd,69,"phase-flip, Toffoli",5000,3,0.0126
+id,odd,71,no correction (Fez 86),5000,3,0.0116
+id,odd,71,"bit-flip, Toffoli",5000,3,0.0124
+id,odd,71,"phase-flip, Toffoli",5000,3,0.0126
+id,odd,73,no correction (Fez 86),5000,3,0.0126
+id,odd,73,"bit-flip, Toffoli",5000,3,0.012
+id,odd,73,"phase-flip, Toffoli",5000,3,0.0134
+id,odd,75,no correction (Fez 86),5000,3,0.0118
+id,odd,75,"bit-flip, Toffoli",5000,3,0.0138
+id,odd,75,"phase-flip, Toffoli",5000,3,0.0146
+id,odd,77,no correction (Fez 86),5000,3,0.012
+id,odd,77,"bit-flip, Toffoli",5000,3,0.0138
+id,odd,77,"phase-flip, Toffoli",5000,3,0.0136
+id,odd,79,no correction (Fez 86),5000,3,0.0116
+id,odd,79,"bit-flip, Toffoli",5000,3,0.0114
+id,odd,79,"phase-flip, Toffoli",5000,3,0.0152
+id,odd,81,no correction (Fez 86),5000,3,0.0142
+id,odd,81,"bit-flip, Toffoli",5000,3,0.0138
+id,odd,81,"phase-flip, Toffoli",5000,3,0.0138
+id,odd,83,no correction (Fez 86),5000,3,0.0126
+id,odd,83,"bit-flip, Toffoli",5000,3,0.013
+id,odd,83,"phase-flip, Toffoli",5000,3,0.0156
+id,odd,85,no correction (Fez 86),5000,3,0.013
+id,odd,85,"bit-flip, Toffoli",5000,3,0.0148
+id,odd,85,"phase-flip, Toffoli",5000,3,0.0166
+id,odd,87,no correction (Fez 86),5000,3,0.0126
+id,odd,87,"bit-flip, Toffoli",5000,3,0.015
+id,odd,87,"phase-flip, Toffoli",5000,3,0.0152
+id,odd,89,no correction (Fez 86),5000,3,0.0134
+id,odd,89,"bit-flip, Toffoli",5000,3,0.0144
+id,odd,89,"phase-flip, Toffoli",5000,3,0.014
+id,odd,91,no correction (Fez 86),5000,3,0.0136
+id,odd,91,"bit-flip, Toffoli",5000,3,0.0132
+id,odd,91,"phase-flip, Toffoli",5000,3,0.0174
+id,odd,93,no correction (Fez 86),5000,3,0.013
+id,odd,93,"bit-flip, Toffoli",5000,3,0.0166
+id,odd,93,"phase-flip, Toffoli",5000,3,0.0148
+id,odd,95,no correction (Fez 86),5000,3,0.012
+id,odd,95,"bit-flip, Toffoli",5000,3,0.0138
+id,odd,95,"phase-flip, Toffoli",5000,3,0.0148
+id,odd,97,no correction (Fez 86),5000,3,0.0142
+id,odd,97,"bit-flip, Toffoli",5000,3,0.013
+id,odd,97,"phase-flip, Toffoli",5000,3,0.0138
+id,odd,99,no correction (Fez 86),5000,3,0.0156
+id,odd,99,"bit-flip, Toffoli",5000,3,0.0116
+id,odd,99,"phase-flip, Toffoli",5000,3,0.0128
+id,odd,101,no correction (Fez 86),5000,3,0.0126
+id,odd,101,"bit-flip, Toffoli",5000,3,0.0114
+id,odd,101,"phase-flip, Toffoli",5000,3,0.0176
+id,odd,103,no correction (Fez 86),5000,3,0.014
+id,odd,103,"bit-flip, Toffoli",5000,3,0.0174
+id,odd,103,"phase-flip, Toffoli",5000,3,0.0178
+id,odd,105,no correction (Fez 86),5000,3,0.0142
+id,odd,105,"bit-flip, Toffoli",5000,3,0.0162
+id,odd,105,"phase-flip, Toffoli",5000,3,0.0176
+id,odd,107,no correction (Fez 86),5000,3,0.0144
+id,odd,107,"bit-flip, Toffoli",5000,3,0.0152
+id,odd,107,"phase-flip, Toffoli",5000,3,0.0158
+id,odd,109,no correction (Fez 86),5000,3,0.0138
+id,odd,109,"bit-flip, Toffoli",5000,3,0.0132
+id,odd,109,"phase-flip, Toffoli",5000,3,0.0202
+id,odd,111,no correction (Fez 86),5000,3,0.0144
+id,odd,111,"bit-flip, Toffoli",5000,3,0.0178
+id,odd,111,"phase-flip, Toffoli",5000,3,0.0182
+id,odd,113,no correction (Fez 86),5000,3,0.0152
+id,odd,113,"bit-flip, Toffoli",5000,3,0.0164
+id,odd,113,"phase-flip, Toffoli",5000,3,0.0156
+id,odd,115,no correction (Fez 86),5000,3,0.0158
+id,odd,115,"bit-flip, Toffoli",5000,3,0.0136
+id,odd,115,"phase-flip, Toffoli",5000,3,0.0156
+id,odd,117,no correction (Fez 86),5000,3,0.016
+id,odd,117,"bit-flip, Toffoli",5000,3,0.0136
+id,odd,117,"phase-flip, Toffoli",5000,3,0.0162
+id,odd,119,no correction (Fez 86),5000,3,0.0146
+id,odd,119,"bit-flip, Toffoli",5000,3,0.0134
+id,odd,119,"phase-flip, Toffoli",5000,3,0.017
+id,odd,121,no correction (Fez 86),5000,3,0.0134
+id,odd,121,"bit-flip, Toffoli",5000,3,0.0152
+id,odd,121,"phase-flip, Toffoli",5000,3,0.0158
+id,odd,123,no correction (Fez 86),5000,3,0.0154
+id,odd,123,"bit-flip, Toffoli",5000,3,0.013
+id,odd,123,"phase-flip, Toffoli",5000,3,0.0156
+id,odd,125,no correction (Fez 86),5000,3,0.0152
+id,odd,125,"bit-flip, Toffoli",5000,3,0.012
+id,odd,125,"phase-flip, Toffoli",5000,3,0.0158
+id,odd,127,no correction (Fez 86),5000,3,0.0168
+id,odd,127,"bit-flip, Toffoli",5000,3,0.0128
+id,odd,127,"phase-flip, Toffoli",5000,3,0.017
+id,odd,129,no correction (Fez 86),5000,3,0.0154
+id,odd,129,"bit-flip, Toffoli",5000,3,0.0126
+id,odd,129,"phase-flip, Toffoli",5000,3,0.017
+id,odd,131,no correction (Fez 86),5000,3,0.0164
+id,odd,131,"bit-flip, Toffoli",5000,3,0.0134
+id,odd,131,"phase-flip, Toffoli",5000,3,0.0152
+id,odd,133,no correction (Fez 86),5000,3,0.0152
+id,odd,133,"bit-flip, Toffoli",5000,3,0.0122
+id,odd,133,"phase-flip, Toffoli",5000,3,0.0148
+id,odd,135,no correction (Fez 86),5000,3,0.0166
+id,odd,135,"bit-flip, Toffoli",5000,3,0.012
+id,odd,135,"phase-flip, Toffoli",5000,3,0.0156
+id,odd,137,no correction (Fez 86),5000,3,0.016
+id,odd,137,"bit-flip, Toffoli",5000,3,0.0132
+id,odd,137,"phase-flip, Toffoli",5000,3,0.0176
+id,odd,139,no correction (Fez 86),5000,3,0.0168
+id,odd,139,"bit-flip, Toffoli",5000,3,0.0146
+id,odd,139,"phase-flip, Toffoli",5000,3,0.0192
+id,odd,141,no correction (Fez 86),5000,3,0.0168
+id,odd,141,"bit-flip, Toffoli",5000,3,0.0156
+id,odd,141,"phase-flip, Toffoli",5000,3,0.0176
+id,odd,143,no correction (Fez 86),5000,3,0.0164
+id,odd,143,"bit-flip, Toffoli",5000,3,0.0144
+id,odd,143,"phase-flip, Toffoli",5000,3,0.0166
+id,odd,145,no correction (Fez 86),5000,3,0.0182
+id,odd,145,"bit-flip, Toffoli",5000,3,0.0122
+id,odd,145,"phase-flip, Toffoli",5000,3,0.0144
+id,odd,147,no correction (Fez 86),5000,3,0.0182
+id,odd,147,"bit-flip, Toffoli",5000,3,0.0112
+id,odd,147,"phase-flip, Toffoli",5000,3,0.0176
+id,odd,149,no correction (Fez 86),5000,3,0.018
+id,odd,149,"bit-flip, Toffoli",5000,3,0.0138
+id,odd,149,"phase-flip, Toffoli",5000,3,0.0174
+id,odd,151,no correction (Fez 86),5000,3,0.0182
+id,odd,151,"bit-flip, Toffoli",5000,3,0.0124
+id,odd,151,"phase-flip, Toffoli",5000,3,0.0172
+id,odd,153,no correction (Fez 86),5000,3,0.0192
+id,odd,153,"bit-flip, Toffoli",5000,3,0.0128
+id,odd,153,"phase-flip, Toffoli",5000,3,0.0198
+id,odd,155,no correction (Fez 86),5000,3,0.0204
+id,odd,155,"bit-flip, Toffoli",5000,3,0.016
+id,odd,155,"phase-flip, Toffoli",5000,3,0.021
+id,odd,157,no correction (Fez 86),5000,3,0.02
+id,odd,157,"bit-flip, Toffoli",5000,3,0.016
+id,odd,157,"phase-flip, Toffoli",5000,3,0.0158
+id,odd,159,no correction (Fez 86),5000,3,0.0228
+id,odd,159,"bit-flip, Toffoli",5000,3,0.0118
+id,odd,159,"phase-flip, Toffoli",5000,3,0.0186
+id,odd,161,no correction (Fez 86),5000,3,0.0202
+id,odd,161,"bit-flip, Toffoli",5000,3,0.0142
+id,odd,161,"phase-flip, Toffoli",5000,3,0.019
+id,odd,163,no correction (Fez 86),5000,3,0.0218
+id,odd,163,"bit-flip, Toffoli",5000,3,0.0136
+id,odd,163,"phase-flip, Toffoli",5000,3,0.0214
+id,odd,165,no correction (Fez 86),5000,3,0.0194
+id,odd,165,"bit-flip, Toffoli",5000,3,0.0166
+id,odd,165,"phase-flip, Toffoli",5000,3,0.0196
+id,odd,167,no correction (Fez 86),5000,3,0.0206
+id,odd,167,"bit-flip, Toffoli",5000,3,0.0162
+id,odd,167,"phase-flip, Toffoli",5000,3,0.0216
+id,odd,169,no correction (Fez 86),5000,3,0.023
+id,odd,169,"bit-flip, Toffoli",5000,3,0.0156
+id,odd,169,"phase-flip, Toffoli",5000,3,0.0196
+id,odd,171,no correction (Fez 86),5000,3,0.0222
+id,odd,171,"bit-flip, Toffoli",5000,3,0.016
+id,odd,171,"phase-flip, Toffoli",5000,3,0.0168
+id,odd,173,no correction (Fez 86),5000,3,0.0232
+id,odd,173,"bit-flip, Toffoli",5000,3,0.0128
+id,odd,173,"phase-flip, Toffoli",5000,3,0.019
+id,odd,175,no correction (Fez 86),5000,3,0.024
+id,odd,175,"bit-flip, Toffoli",5000,3,0.014
+id,odd,175,"phase-flip, Toffoli",5000,3,0.017
+id,odd,177,no correction (Fez 86),5000,3,0.0234
+id,odd,177,"bit-flip, Toffoli",5000,3,0.0128
+id,odd,177,"phase-flip, Toffoli",5000,3,0.018

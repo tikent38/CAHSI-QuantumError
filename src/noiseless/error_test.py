@@ -126,6 +126,6 @@ def print_result(syndromes, p1):
 
 if __name__ == "__main__":
     # Uncomment the codes to test
-    test_bit_flip()        # run bit_flip_code
-    # test_phase_flip()    # run phase_flip_code
+    #test_bit_flip()        # run bit_flip_code
+    test_phase_flip()    # run phase_flip_code
     # test_shor()          # run shor_code; test_shor(show_diagrams=True) also opens every circuit as a picture

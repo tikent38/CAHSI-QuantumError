@@ -34,8 +34,8 @@ CODES = {
     "bit-flip, Toffoli": bit_flip_toffoli,
     "phase-flip, if blocks": phase_flip_encoded,
     "phase-flip, Toffoli": phase_flip_toffoli,
-    #"Shor, if blocks": shor_encoded,
-    #"Shor, Toffoli": shor_toffoli,
+    "Shor, if blocks": shor_encoded,
+    "Shor, Toffoli": shor_toffoli,
 }
 # The codes compare() runs when it isn't told which. The Shor codes are left out: with 17 and 9 qubits they take most
 # of the run time

@@ -1,0 +1,17 @@
+gate_set,parity,code,compared_with,shots,seed,pays_off_at_gates
+x,even,"bit-flip, Toffoli",no correction (Fez 86),5000,3,48
+x,even,"phase-flip, Toffoli",no correction (Fez 86),5000,3,40
+x,odd,"bit-flip, Toffoli",no correction (Fez 86),5000,3,155
+x,odd,"phase-flip, Toffoli",no correction (Fez 86),5000,3,139
+y,even,"bit-flip, Toffoli",no correction (Fez 86),5000,3,48
+y,even,"phase-flip, Toffoli",no correction (Fez 86),5000,3,32
+y,odd,"bit-flip, Toffoli",no correction (Fez 86),5000,3,155
+y,odd,"phase-flip, Toffoli",no correction (Fez 86),5000,3,153
+repeat,even,"bit-flip, Toffoli",no correction (Fez 86),5000,3,60
+repeat,even,"phase-flip, Toffoli",no correction (Fez 86),5000,3,42
+repeat,odd,"bit-flip, Toffoli",no correction (Fez 86),5000,3,277
+repeat,odd,"phase-flip, Toffoli",no correction (Fez 86),5000,3,223
+id,even,"bit-flip, Toffoli",no correction (Fez 86),5000,3,126
+id,even,"phase-flip, Toffoli",no correction (Fez 86),5000,3,160
+id,odd,"bit-flip, Toffoli",no correction (Fez 86),5000,3,123
+id,odd,"phase-flip, Toffoli",no correction (Fez 86),5000,3,169

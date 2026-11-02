@@ -93,7 +93,7 @@ What each directory is for:
 - **`src/installation_tests/`**: Small scripts that confirm Qiskit, Aer and the fake IBM backends are installed and working. Run these first on a new machine.
 - **`src/noiseless/`**: The bit-flip, phase-flip and Shor codes on a perfect simulator, with errors placed by hand. Shows that each code detects every single error and reports the right correction.
 - **`src/noisy/`**: The codes built to protect any 1-qubit circuit, run on the IBM Fez noise simulator next to the same circuit with no correction. Also checks the codes' failure rates against the theory formulas.
-- **`src/pay_off/`**: Runs `compare_fez.py` at many numbers of gates for the chosen gate sets, and plots the error with no correction next to the Toffoli bit-flip and phase-flip codes, to show where each code starts paying off.
+- **`src/pay_off/`**: Runs `compare_fez.py` at many numbers of gates for the chosen gate sets, and plots the error with no correction next to the Toffoli codes (bit-flip, phase-flip and Shor), to show where each code starts paying off.
 - **`src/output_tools/`**: Shared code every script uses for printing tables, writing CSV and text files, and drawing and saving plots, so they all look the same.
 - **`src/real_hardware_runs/`**: Runs the bit-flip and phase-flip codes on the real ibm_fez through IBM Quantum, next to the same circuits on the simulator. Saves every result and job ID.
 - **`src/simulator_noise_sources/`**: Simulator only: splits each Fez qubit's error into its sources (readout, gate, T1, T2) to show which ones matter most.

@@ -1,0 +1,3748 @@
+gate_set,parity,gates,run,shots,seed,error
+x,even,0,no correction (Brisbane 105),5000,3,0.0102
+x,even,0,"bit-flip, Toffoli",5000,3,0.05
+x,even,0,"phase-flip, Toffoli",5000,3,0.047
+x,even,2,no correction (Brisbane 105),5000,3,0.0084
+x,even,2,"bit-flip, Toffoli",5000,3,0.0456
+x,even,2,"phase-flip, Toffoli",5000,3,0.047
+x,even,4,no correction (Brisbane 105),5000,3,0.0106
+x,even,4,"bit-flip, Toffoli",5000,3,0.0582
+x,even,4,"phase-flip, Toffoli",5000,3,0.047
+x,even,6,no correction (Brisbane 105),5000,3,0.0118
+x,even,6,"bit-flip, Toffoli",5000,3,0.06
+x,even,6,"phase-flip, Toffoli",5000,3,0.047
+x,even,8,no correction (Brisbane 105),5000,3,0.0116
+x,even,8,"bit-flip, Toffoli",5000,3,0.054
+x,even,8,"phase-flip, Toffoli",5000,3,0.047
+x,even,10,no correction (Brisbane 105),5000,3,0.0118
+x,even,10,"bit-flip, Toffoli",5000,3,0.0566
+x,even,10,"phase-flip, Toffoli",5000,3,0.047
+x,even,12,no correction (Brisbane 105),5000,3,0.0126
+x,even,12,"bit-flip, Toffoli",5000,3,0.05
+x,even,12,"phase-flip, Toffoli",5000,3,0.047
+x,even,14,no correction (Brisbane 105),5000,3,0.0116
+x,even,14,"bit-flip, Toffoli",5000,3,0.0492
+x,even,14,"phase-flip, Toffoli",5000,3,0.047
+x,even,16,no correction (Brisbane 105),5000,3,0.0138
+x,even,16,"bit-flip, Toffoli",5000,3,0.0528
+x,even,16,"phase-flip, Toffoli",5000,3,0.047
+x,even,18,no correction (Brisbane 105),5000,3,0.0106
+x,even,18,"bit-flip, Toffoli",5000,3,0.0506
+x,even,18,"phase-flip, Toffoli",5000,3,0.047
+x,even,20,no correction (Brisbane 105),5000,3,0.0146
+x,even,20,"bit-flip, Toffoli",5000,3,0.0496
+x,even,20,"phase-flip, Toffoli",5000,3,0.047
+x,even,22,no correction (Brisbane 105),5000,3,0.016
+x,even,22,"bit-flip, Toffoli",5000,3,0.046
+x,even,22,"phase-flip, Toffoli",5000,3,0.047
+x,even,24,no correction (Brisbane 105),5000,3,0.0134
+x,even,24,"bit-flip, Toffoli",5000,3,0.0482
+x,even,24,"phase-flip, Toffoli",5000,3,0.047
+x,even,26,no correction (Brisbane 105),5000,3,0.0154
+x,even,26,"bit-flip, Toffoli",5000,3,0.0456
+x,even,26,"phase-flip, Toffoli",5000,3,0.047
+x,even,28,no correction (Brisbane 105),5000,3,0.016
+x,even,28,"bit-flip, Toffoli",5000,3,0.0498
+x,even,28,"phase-flip, Toffoli",5000,3,0.047
+x,even,30,no correction (Brisbane 105),5000,3,0.0156
+x,even,30,"bit-flip, Toffoli",5000,3,0.0484
+x,even,30,"phase-flip, Toffoli",5000,3,0.047
+x,even,32,no correction (Brisbane 105),5000,3,0.0162
+x,even,32,"bit-flip, Toffoli",5000,3,0.0452
+x,even,32,"phase-flip, Toffoli",5000,3,0.047
+x,even,34,no correction (Brisbane 105),5000,3,0.0196
+x,even,34,"bit-flip, Toffoli",5000,3,0.0516
+x,even,34,"phase-flip, Toffoli",5000,3,0.047
+x,even,36,no correction (Brisbane 105),5000,3,0.0162
+x,even,36,"bit-flip, Toffoli",5000,3,0.0522
+x,even,36,"phase-flip, Toffoli",5000,3,0.047
+x,even,38,no correction (Brisbane 105),5000,3,0.0172
+x,even,38,"bit-flip, Toffoli",5000,3,0.045
+x,even,38,"phase-flip, Toffoli",5000,3,0.047
+x,even,40,no correction (Brisbane 105),5000,3,0.0192
+x,even,40,"bit-flip, Toffoli",5000,3,0.0504
+x,even,40,"phase-flip, Toffoli",5000,3,0.047
+x,even,42,no correction (Brisbane 105),5000,3,0.017
+x,even,42,"bit-flip, Toffoli",5000,3,0.0516
+x,even,42,"phase-flip, Toffoli",5000,3,0.047
+x,even,44,no correction (Brisbane 105),5000,3,0.02
+x,even,44,"bit-flip, Toffoli",5000,3,0.0534
+x,even,44,"phase-flip, Toffoli",5000,3,0.047
+x,even,46,no correction (Brisbane 105),5000,3,0.0168
+x,even,46,"bit-flip, Toffoli",5000,3,0.054
+x,even,46,"phase-flip, Toffoli",5000,3,0.047
+x,even,48,no correction (Brisbane 105),5000,3,0.0194
+x,even,48,"bit-flip, Toffoli",5000,3,0.0516
+x,even,48,"phase-flip, Toffoli",5000,3,0.047
+x,even,50,no correction (Brisbane 105),5000,3,0.0204
+x,even,50,"bit-flip, Toffoli",5000,3,0.053
+x,even,50,"phase-flip, Toffoli",5000,3,0.047
+x,even,52,no correction (Brisbane 105),5000,3,0.0192
+x,even,52,"bit-flip, Toffoli",5000,3,0.0572
+x,even,52,"phase-flip, Toffoli",5000,3,0.047
+x,even,54,no correction (Brisbane 105),5000,3,0.0202
+x,even,54,"bit-flip, Toffoli",5000,3,0.0512
+x,even,54,"phase-flip, Toffoli",5000,3,0.047
+x,even,56,no correction (Brisbane 105),5000,3,0.0192
+x,even,56,"bit-flip, Toffoli",5000,3,0.0542
+x,even,56,"phase-flip, Toffoli",5000,3,0.047
+x,even,58,no correction (Brisbane 105),5000,3,0.0228
+x,even,58,"bit-flip, Toffoli",5000,3,0.0472
+x,even,58,"phase-flip, Toffoli",5000,3,0.047
+x,even,60,no correction (Brisbane 105),5000,3,0.0194
+x,even,60,"bit-flip, Toffoli",5000,3,0.0494
+x,even,60,"phase-flip, Toffoli",5000,3,0.047
+x,even,62,no correction (Brisbane 105),5000,3,0.021
+x,even,62,"bit-flip, Toffoli",5000,3,0.0534
+x,even,62,"phase-flip, Toffoli",5000,3,0.047
+x,even,64,no correction (Brisbane 105),5000,3,0.0204
+x,even,64,"bit-flip, Toffoli",5000,3,0.0458
+x,even,64,"phase-flip, Toffoli",5000,3,0.047
+x,even,66,no correction (Brisbane 105),5000,3,0.0226
+x,even,66,"bit-flip, Toffoli",5000,3,0.048
+x,even,66,"phase-flip, Toffoli",5000,3,0.047
+x,even,68,no correction (Brisbane 105),5000,3,0.0238
+x,even,68,"bit-flip, Toffoli",5000,3,0.0514
+x,even,68,"phase-flip, Toffoli",5000,3,0.047
+x,even,70,no correction (Brisbane 105),5000,3,0.023
+x,even,70,"bit-flip, Toffoli",5000,3,0.0496
+x,even,70,"phase-flip, Toffoli",5000,3,0.047
+x,even,72,no correction (Brisbane 105),5000,3,0.0258
+x,even,72,"bit-flip, Toffoli",5000,3,0.0564
+x,even,72,"phase-flip, Toffoli",5000,3,0.047
+x,even,74,no correction (Brisbane 105),5000,3,0.0254
+x,even,74,"bit-flip, Toffoli",5000,3,0.0458
+x,even,74,"phase-flip, Toffoli",5000,3,0.047
+x,even,76,no correction (Brisbane 105),5000,3,0.0234
+x,even,76,"bit-flip, Toffoli",5000,3,0.05
+x,even,76,"phase-flip, Toffoli",5000,3,0.047
+x,even,78,no correction (Brisbane 105),5000,3,0.0238
+x,even,78,"bit-flip, Toffoli",5000,3,0.0548
+x,even,78,"phase-flip, Toffoli",5000,3,0.047
+x,even,80,no correction (Brisbane 105),5000,3,0.0282
+x,even,80,"bit-flip, Toffoli",5000,3,0.0506
+x,even,80,"phase-flip, Toffoli",5000,3,0.047
+x,even,82,no correction (Brisbane 105),5000,3,0.0248
+x,even,82,"bit-flip, Toffoli",5000,3,0.0522
+x,even,82,"phase-flip, Toffoli",5000,3,0.047
+x,even,84,no correction (Brisbane 105),5000,3,0.0286
+x,even,84,"bit-flip, Toffoli",5000,3,0.0534
+x,even,84,"phase-flip, Toffoli",5000,3,0.047
+x,even,86,no correction (Brisbane 105),5000,3,0.0296
+x,even,86,"bit-flip, Toffoli",5000,3,0.0504
+x,even,86,"phase-flip, Toffoli",5000,3,0.047
+x,even,88,no correction (Brisbane 105),5000,3,0.026
+x,even,88,"bit-flip, Toffoli",5000,3,0.0556
+x,even,88,"phase-flip, Toffoli",5000,3,0.047
+x,even,90,no correction (Brisbane 105),5000,3,0.0278
+x,even,90,"bit-flip, Toffoli",5000,3,0.0536
+x,even,90,"phase-flip, Toffoli",5000,3,0.047
+x,even,92,no correction (Brisbane 105),5000,3,0.0288
+x,even,92,"bit-flip, Toffoli",5000,3,0.052
+x,even,92,"phase-flip, Toffoli",5000,3,0.047
+x,even,94,no correction (Brisbane 105),5000,3,0.0272
+x,even,94,"bit-flip, Toffoli",5000,3,0.0512
+x,even,94,"phase-flip, Toffoli",5000,3,0.047
+x,even,96,no correction (Brisbane 105),5000,3,0.028
+x,even,96,"bit-flip, Toffoli",5000,3,0.0556
+x,even,96,"phase-flip, Toffoli",5000,3,0.047
+x,even,98,no correction (Brisbane 105),5000,3,0.0292
+x,even,98,"bit-flip, Toffoli",5000,3,0.0602
+x,even,98,"phase-flip, Toffoli",5000,3,0.047
+x,even,100,no correction (Brisbane 105),5000,3,0.0292
+x,even,100,"bit-flip, Toffoli",5000,3,0.0554
+x,even,100,"phase-flip, Toffoli",5000,3,0.047
+x,even,102,no correction (Brisbane 105),5000,3,0.0308
+x,even,102,"bit-flip, Toffoli",5000,3,0.0544
+x,even,102,"phase-flip, Toffoli",5000,3,0.047
+x,even,104,no correction (Brisbane 105),5000,3,0.0286
+x,even,104,"bit-flip, Toffoli",5000,3,0.0592
+x,even,104,"phase-flip, Toffoli",5000,3,0.047
+x,even,106,no correction (Brisbane 105),5000,3,0.0308
+x,even,106,"bit-flip, Toffoli",5000,3,0.0596
+x,even,106,"phase-flip, Toffoli",5000,3,0.047
+x,even,108,no correction (Brisbane 105),5000,3,0.031
+x,even,108,"bit-flip, Toffoli",5000,3,0.058
+x,even,108,"phase-flip, Toffoli",5000,3,0.047
+x,even,110,no correction (Brisbane 105),5000,3,0.0304
+x,even,110,"bit-flip, Toffoli",5000,3,0.0506
+x,even,110,"phase-flip, Toffoli",5000,3,0.047
+x,even,112,no correction (Brisbane 105),5000,3,0.0314
+x,even,112,"bit-flip, Toffoli",5000,3,0.0516
+x,even,112,"phase-flip, Toffoli",5000,3,0.047
+x,even,114,no correction (Brisbane 105),5000,3,0.029
+x,even,114,"bit-flip, Toffoli",5000,3,0.0548
+x,even,114,"phase-flip, Toffoli",5000,3,0.047
+x,even,116,no correction (Brisbane 105),5000,3,0.0308
+x,even,116,"bit-flip, Toffoli",5000,3,0.0596
+x,even,116,"phase-flip, Toffoli",5000,3,0.047
+x,even,118,no correction (Brisbane 105),5000,3,0.0324
+x,even,118,"bit-flip, Toffoli",5000,3,0.0538
+x,even,118,"phase-flip, Toffoli",5000,3,0.047
+x,even,120,no correction (Brisbane 105),5000,3,0.0334
+x,even,120,"bit-flip, Toffoli",5000,3,0.055
+x,even,120,"phase-flip, Toffoli",5000,3,0.047
+x,even,122,no correction (Brisbane 105),5000,3,0.0338
+x,even,122,"bit-flip, Toffoli",5000,3,0.0524
+x,even,122,"phase-flip, Toffoli",5000,3,0.047
+x,even,124,no correction (Brisbane 105),5000,3,0.0316
+x,even,124,"bit-flip, Toffoli",5000,3,0.0528
+x,even,124,"phase-flip, Toffoli",5000,3,0.047
+x,even,126,no correction (Brisbane 105),5000,3,0.0334
+x,even,126,"bit-flip, Toffoli",5000,3,0.0566
+x,even,126,"phase-flip, Toffoli",5000,3,0.047
+x,even,128,no correction (Brisbane 105),5000,3,0.0348
+x,even,128,"bit-flip, Toffoli",5000,3,0.0546
+x,even,128,"phase-flip, Toffoli",5000,3,0.047
+x,even,130,no correction (Brisbane 105),5000,3,0.0354
+x,even,130,"bit-flip, Toffoli",5000,3,0.0554
+x,even,130,"phase-flip, Toffoli",5000,3,0.047
+x,even,132,no correction (Brisbane 105),5000,3,0.0358
+x,even,132,"bit-flip, Toffoli",5000,3,0.0518
+x,even,132,"phase-flip, Toffoli",5000,3,0.047
+x,even,134,no correction (Brisbane 105),5000,3,0.0346
+x,even,134,"bit-flip, Toffoli",5000,3,0.0516
+x,even,134,"phase-flip, Toffoli",5000,3,0.047
+x,even,136,no correction (Brisbane 105),5000,3,0.0356
+x,even,136,"bit-flip, Toffoli",5000,3,0.0534
+x,even,136,"phase-flip, Toffoli",5000,3,0.047
+x,even,138,no correction (Brisbane 105),5000,3,0.0362
+x,even,138,"bit-flip, Toffoli",5000,3,0.0578
+x,even,138,"phase-flip, Toffoli",5000,3,0.047
+x,even,140,no correction (Brisbane 105),5000,3,0.0394
+x,even,140,"bit-flip, Toffoli",5000,3,0.0534
+x,even,140,"phase-flip, Toffoli",5000,3,0.047
+x,even,142,no correction (Brisbane 105),5000,3,0.0396
+x,even,142,"bit-flip, Toffoli",5000,3,0.0574
+x,even,142,"phase-flip, Toffoli",5000,3,0.047
+x,even,144,no correction (Brisbane 105),5000,3,0.0394
+x,even,144,"bit-flip, Toffoli",5000,3,0.058
+x,even,144,"phase-flip, Toffoli",5000,3,0.047
+x,even,146,no correction (Brisbane 105),5000,3,0.0396
+x,even,146,"bit-flip, Toffoli",5000,3,0.0532
+x,even,146,"phase-flip, Toffoli",5000,3,0.047
+x,even,148,no correction (Brisbane 105),5000,3,0.04
+x,even,148,"bit-flip, Toffoli",5000,3,0.0524
+x,even,148,"phase-flip, Toffoli",5000,3,0.047
+x,even,150,no correction (Brisbane 105),5000,3,0.0382
+x,even,150,"bit-flip, Toffoli",5000,3,0.057
+x,even,150,"phase-flip, Toffoli",5000,3,0.047
+x,even,152,no correction (Brisbane 105),5000,3,0.0382
+x,even,152,"bit-flip, Toffoli",5000,3,0.0562
+x,even,152,"phase-flip, Toffoli",5000,3,0.047
+x,even,154,no correction (Brisbane 105),5000,3,0.041
+x,even,154,"bit-flip, Toffoli",5000,3,0.0568
+x,even,154,"phase-flip, Toffoli",5000,3,0.047
+x,even,156,no correction (Brisbane 105),5000,3,0.0426
+x,even,156,"bit-flip, Toffoli",5000,3,0.0558
+x,even,156,"phase-flip, Toffoli",5000,3,0.047
+x,even,158,no correction (Brisbane 105),5000,3,0.04
+x,even,158,"bit-flip, Toffoli",5000,3,0.0562
+x,even,158,"phase-flip, Toffoli",5000,3,0.047
+x,even,160,no correction (Brisbane 105),5000,3,0.0428
+x,even,160,"bit-flip, Toffoli",5000,3,0.057
+x,even,160,"phase-flip, Toffoli",5000,3,0.047
+x,even,162,no correction (Brisbane 105),5000,3,0.0414
+x,even,162,"bit-flip, Toffoli",5000,3,0.0588
+x,even,162,"phase-flip, Toffoli",5000,3,0.047
+x,even,164,no correction (Brisbane 105),5000,3,0.0442
+x,even,164,"bit-flip, Toffoli",5000,3,0.0588
+x,even,164,"phase-flip, Toffoli",5000,3,0.047
+x,even,166,no correction (Brisbane 105),5000,3,0.0444
+x,even,166,"bit-flip, Toffoli",5000,3,0.0544
+x,even,166,"phase-flip, Toffoli",5000,3,0.047
+x,even,168,no correction (Brisbane 105),5000,3,0.0444
+x,even,168,"bit-flip, Toffoli",5000,3,0.0548
+x,even,168,"phase-flip, Toffoli",5000,3,0.047
+x,even,170,no correction (Brisbane 105),5000,3,0.0462
+x,even,170,"bit-flip, Toffoli",5000,3,0.0546
+x,even,170,"phase-flip, Toffoli",5000,3,0.047
+x,even,172,no correction (Brisbane 105),5000,3,0.0444
+x,even,172,"bit-flip, Toffoli",5000,3,0.0538
+x,even,172,"phase-flip, Toffoli",5000,3,0.047
+x,even,174,no correction (Brisbane 105),5000,3,0.046
+x,even,174,"bit-flip, Toffoli",5000,3,0.0498
+x,even,174,"phase-flip, Toffoli",5000,3,0.047
+x,even,176,no correction (Brisbane 105),5000,3,0.0454
+x,even,176,"bit-flip, Toffoli",5000,3,0.0518
+x,even,176,"phase-flip, Toffoli",5000,3,0.047
+x,even,178,no correction (Brisbane 105),5000,3,0.0474
+x,even,178,"bit-flip, Toffoli",5000,3,0.0572
+x,even,178,"phase-flip, Toffoli",5000,3,0.047
+x,even,180,no correction (Brisbane 105),5000,3,0.0464
+x,even,180,"bit-flip, Toffoli",5000,3,0.0554
+x,even,180,"phase-flip, Toffoli",5000,3,0.047
+x,even,182,no correction (Brisbane 105),5000,3,0.0478
+x,even,182,"bit-flip, Toffoli",5000,3,0.052
+x,even,182,"phase-flip, Toffoli",5000,3,0.047
+x,even,184,no correction (Brisbane 105),5000,3,0.0486
+x,even,184,"bit-flip, Toffoli",5000,3,0.0558
+x,even,184,"phase-flip, Toffoli",5000,3,0.047
+x,even,186,no correction (Brisbane 105),5000,3,0.0482
+x,even,186,"bit-flip, Toffoli",5000,3,0.0558
+x,even,186,"phase-flip, Toffoli",5000,3,0.047
+x,even,188,no correction (Brisbane 105),5000,3,0.0478
+x,even,188,"bit-flip, Toffoli",5000,3,0.0524
+x,even,188,"phase-flip, Toffoli",5000,3,0.047
+x,even,190,no correction (Brisbane 105),5000,3,0.0504
+x,even,190,"bit-flip, Toffoli",5000,3,0.0556
+x,even,190,"phase-flip, Toffoli",5000,3,0.047
+x,even,192,no correction (Brisbane 105),5000,3,0.0488
+x,even,192,"bit-flip, Toffoli",5000,3,0.0582
+x,even,192,"phase-flip, Toffoli",5000,3,0.047
+x,even,194,no correction (Brisbane 105),5000,3,0.0506
+x,even,194,"bit-flip, Toffoli",5000,3,0.0548
+x,even,194,"phase-flip, Toffoli",5000,3,0.047
+x,even,196,no correction (Brisbane 105),5000,3,0.0498
+x,even,196,"bit-flip, Toffoli",5000,3,0.0524
+x,even,196,"phase-flip, Toffoli",5000,3,0.047
+x,even,198,no correction (Brisbane 105),5000,3,0.0506
+x,even,198,"bit-flip, Toffoli",5000,3,0.0568
+x,even,198,"phase-flip, Toffoli",5000,3,0.047
+x,even,200,no correction (Brisbane 105),5000,3,0.0502
+x,even,200,"bit-flip, Toffoli",5000,3,0.0544
+x,even,200,"phase-flip, Toffoli",5000,3,0.047
+x,even,202,no correction (Brisbane 105),5000,3,0.0526
+x,even,202,"bit-flip, Toffoli",5000,3,0.054
+x,even,202,"phase-flip, Toffoli",5000,3,0.047
+x,even,204,no correction (Brisbane 105),5000,3,0.0526
+x,even,204,"bit-flip, Toffoli",5000,3,0.056
+x,even,204,"phase-flip, Toffoli",5000,3,0.047
+x,even,206,no correction (Brisbane 105),5000,3,0.052
+x,even,206,"bit-flip, Toffoli",5000,3,0.0594
+x,even,206,"phase-flip, Toffoli",5000,3,0.047
+x,even,208,no correction (Brisbane 105),5000,3,0.0542
+x,even,208,"bit-flip, Toffoli",5000,3,0.0582
+x,even,208,"phase-flip, Toffoli",5000,3,0.047
+x,even,210,no correction (Brisbane 105),5000,3,0.054
+x,even,210,"bit-flip, Toffoli",5000,3,0.059
+x,even,210,"phase-flip, Toffoli",5000,3,0.047
+x,even,212,no correction (Brisbane 105),5000,3,0.0544
+x,even,212,"bit-flip, Toffoli",5000,3,0.0574
+x,even,212,"phase-flip, Toffoli",5000,3,0.047
+x,even,214,no correction (Brisbane 105),5000,3,0.0526
+x,even,214,"bit-flip, Toffoli",5000,3,0.056
+x,even,214,"phase-flip, Toffoli",5000,3,0.047
+x,even,216,no correction (Brisbane 105),5000,3,0.055
+x,even,216,"bit-flip, Toffoli",5000,3,0.0594
+x,even,216,"phase-flip, Toffoli",5000,3,0.047
+x,even,218,no correction (Brisbane 105),5000,3,0.0554
+x,even,218,"bit-flip, Toffoli",5000,3,0.0532
+x,even,218,"phase-flip, Toffoli",5000,3,0.047
+x,even,220,no correction (Brisbane 105),5000,3,0.0534
+x,even,220,"bit-flip, Toffoli",5000,3,0.0556
+x,even,220,"phase-flip, Toffoli",5000,3,0.047
+x,even,222,no correction (Brisbane 105),5000,3,0.0562
+x,even,222,"bit-flip, Toffoli",5000,3,0.062
+x,even,222,"phase-flip, Toffoli",5000,3,0.047
+x,even,224,no correction (Brisbane 105),5000,3,0.0576
+x,even,224,"bit-flip, Toffoli",5000,3,0.0576
+x,even,224,"phase-flip, Toffoli",5000,3,0.047
+x,even,226,no correction (Brisbane 105),5000,3,0.0574
+x,even,226,"bit-flip, Toffoli",5000,3,0.0592
+x,even,226,"phase-flip, Toffoli",5000,3,0.047
+x,even,228,no correction (Brisbane 105),5000,3,0.0562
+x,even,228,"bit-flip, Toffoli",5000,3,0.0558
+x,even,228,"phase-flip, Toffoli",5000,3,0.047
+x,even,230,no correction (Brisbane 105),5000,3,0.057
+x,even,230,"bit-flip, Toffoli",5000,3,0.0578
+x,even,230,"phase-flip, Toffoli",5000,3,0.047
+x,even,232,no correction (Brisbane 105),5000,3,0.059
+x,even,232,"bit-flip, Toffoli",5000,3,0.0582
+x,even,232,"phase-flip, Toffoli",5000,3,0.047
+x,even,234,no correction (Brisbane 105),5000,3,0.0628
+x,even,234,"bit-flip, Toffoli",5000,3,0.0608
+x,even,234,"phase-flip, Toffoli",5000,3,0.047
+x,even,236,no correction (Brisbane 105),5000,3,0.061
+x,even,236,"bit-flip, Toffoli",5000,3,0.0628
+x,even,236,"phase-flip, Toffoli",5000,3,0.047
+x,even,238,no correction (Brisbane 105),5000,3,0.0598
+x,even,238,"bit-flip, Toffoli",5000,3,0.061
+x,even,238,"phase-flip, Toffoli",5000,3,0.047
+x,even,240,no correction (Brisbane 105),5000,3,0.0616
+x,even,240,"bit-flip, Toffoli",5000,3,0.0628
+x,even,240,"phase-flip, Toffoli",5000,3,0.047
+x,even,242,no correction (Brisbane 105),5000,3,0.06
+x,even,242,"bit-flip, Toffoli",5000,3,0.062
+x,even,242,"phase-flip, Toffoli",5000,3,0.047
+x,even,244,no correction (Brisbane 105),5000,3,0.0612
+x,even,244,"bit-flip, Toffoli",5000,3,0.0538
+x,even,244,"phase-flip, Toffoli",5000,3,0.047
+x,even,246,no correction (Brisbane 105),5000,3,0.0604
+x,even,246,"bit-flip, Toffoli",5000,3,0.0572
+x,even,246,"phase-flip, Toffoli",5000,3,0.047
+x,even,248,no correction (Brisbane 105),5000,3,0.0608
+x,even,248,"bit-flip, Toffoli",5000,3,0.0596
+x,even,248,"phase-flip, Toffoli",5000,3,0.047
+x,even,250,no correction (Brisbane 105),5000,3,0.0634
+x,even,250,"bit-flip, Toffoli",5000,3,0.058
+x,even,250,"phase-flip, Toffoli",5000,3,0.047
+x,even,252,no correction (Brisbane 105),5000,3,0.0632
+x,even,252,"bit-flip, Toffoli",5000,3,0.0622
+x,even,252,"phase-flip, Toffoli",5000,3,0.047
+x,odd,1,no correction (Brisbane 105),5000,3,0.006
+x,odd,1,"bit-flip, Toffoli",5000,3,0.0506
+x,odd,1,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,3,no correction (Brisbane 105),5000,3,0.0082
+x,odd,3,"bit-flip, Toffoli",5000,3,0.0514
+x,odd,3,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,5,no correction (Brisbane 105),5000,3,0.0116
+x,odd,5,"bit-flip, Toffoli",5000,3,0.0522
+x,odd,5,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,7,no correction (Brisbane 105),5000,3,0.0114
+x,odd,7,"bit-flip, Toffoli",5000,3,0.0538
+x,odd,7,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,9,no correction (Brisbane 105),5000,3,0.0096
+x,odd,9,"bit-flip, Toffoli",5000,3,0.0572
+x,odd,9,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,11,no correction (Brisbane 105),5000,3,0.012
+x,odd,11,"bit-flip, Toffoli",5000,3,0.0504
+x,odd,11,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,13,no correction (Brisbane 105),5000,3,0.0132
+x,odd,13,"bit-flip, Toffoli",5000,3,0.0576
+x,odd,13,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,15,no correction (Brisbane 105),5000,3,0.0126
+x,odd,15,"bit-flip, Toffoli",5000,3,0.0552
+x,odd,15,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,17,no correction (Brisbane 105),5000,3,0.0152
+x,odd,17,"bit-flip, Toffoli",5000,3,0.0542
+x,odd,17,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,19,no correction (Brisbane 105),5000,3,0.0148
+x,odd,19,"bit-flip, Toffoli",5000,3,0.0556
+x,odd,19,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,21,no correction (Brisbane 105),5000,3,0.0156
+x,odd,21,"bit-flip, Toffoli",5000,3,0.0496
+x,odd,21,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,23,no correction (Brisbane 105),5000,3,0.0136
+x,odd,23,"bit-flip, Toffoli",5000,3,0.0502
+x,odd,23,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,25,no correction (Brisbane 105),5000,3,0.0126
+x,odd,25,"bit-flip, Toffoli",5000,3,0.0488
+x,odd,25,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,27,no correction (Brisbane 105),5000,3,0.0136
+x,odd,27,"bit-flip, Toffoli",5000,3,0.0524
+x,odd,27,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,29,no correction (Brisbane 105),5000,3,0.0146
+x,odd,29,"bit-flip, Toffoli",5000,3,0.045
+x,odd,29,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,31,no correction (Brisbane 105),5000,3,0.0136
+x,odd,31,"bit-flip, Toffoli",5000,3,0.0514
+x,odd,31,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,33,no correction (Brisbane 105),5000,3,0.0136
+x,odd,33,"bit-flip, Toffoli",5000,3,0.0526
+x,odd,33,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,35,no correction (Brisbane 105),5000,3,0.0152
+x,odd,35,"bit-flip, Toffoli",5000,3,0.0534
+x,odd,35,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,37,no correction (Brisbane 105),5000,3,0.0174
+x,odd,37,"bit-flip, Toffoli",5000,3,0.0534
+x,odd,37,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,39,no correction (Brisbane 105),5000,3,0.0152
+x,odd,39,"bit-flip, Toffoli",5000,3,0.0516
+x,odd,39,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,41,no correction (Brisbane 105),5000,3,0.019
+x,odd,41,"bit-flip, Toffoli",5000,3,0.0554
+x,odd,41,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,43,no correction (Brisbane 105),5000,3,0.019
+x,odd,43,"bit-flip, Toffoli",5000,3,0.0508
+x,odd,43,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,45,no correction (Brisbane 105),5000,3,0.018
+x,odd,45,"bit-flip, Toffoli",5000,3,0.05
+x,odd,45,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,47,no correction (Brisbane 105),5000,3,0.017
+x,odd,47,"bit-flip, Toffoli",5000,3,0.0568
+x,odd,47,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,49,no correction (Brisbane 105),5000,3,0.0196
+x,odd,49,"bit-flip, Toffoli",5000,3,0.0534
+x,odd,49,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,51,no correction (Brisbane 105),5000,3,0.019
+x,odd,51,"bit-flip, Toffoli",5000,3,0.053
+x,odd,51,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,53,no correction (Brisbane 105),5000,3,0.0214
+x,odd,53,"bit-flip, Toffoli",5000,3,0.0502
+x,odd,53,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,55,no correction (Brisbane 105),5000,3,0.0196
+x,odd,55,"bit-flip, Toffoli",5000,3,0.05
+x,odd,55,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,57,no correction (Brisbane 105),5000,3,0.0182
+x,odd,57,"bit-flip, Toffoli",5000,3,0.0494
+x,odd,57,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,59,no correction (Brisbane 105),5000,3,0.0224
+x,odd,59,"bit-flip, Toffoli",5000,3,0.0508
+x,odd,59,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,61,no correction (Brisbane 105),5000,3,0.02
+x,odd,61,"bit-flip, Toffoli",5000,3,0.0502
+x,odd,61,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,63,no correction (Brisbane 105),5000,3,0.0176
+x,odd,63,"bit-flip, Toffoli",5000,3,0.0544
+x,odd,63,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,65,no correction (Brisbane 105),5000,3,0.0228
+x,odd,65,"bit-flip, Toffoli",5000,3,0.0544
+x,odd,65,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,67,no correction (Brisbane 105),5000,3,0.0252
+x,odd,67,"bit-flip, Toffoli",5000,3,0.0534
+x,odd,67,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,69,no correction (Brisbane 105),5000,3,0.0216
+x,odd,69,"bit-flip, Toffoli",5000,3,0.0542
+x,odd,69,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,71,no correction (Brisbane 105),5000,3,0.0226
+x,odd,71,"bit-flip, Toffoli",5000,3,0.0512
+x,odd,71,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,73,no correction (Brisbane 105),5000,3,0.0264
+x,odd,73,"bit-flip, Toffoli",5000,3,0.0496
+x,odd,73,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,75,no correction (Brisbane 105),5000,3,0.0232
+x,odd,75,"bit-flip, Toffoli",5000,3,0.049
+x,odd,75,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,77,no correction (Brisbane 105),5000,3,0.0226
+x,odd,77,"bit-flip, Toffoli",5000,3,0.0524
+x,odd,77,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,79,no correction (Brisbane 105),5000,3,0.0252
+x,odd,79,"bit-flip, Toffoli",5000,3,0.056
+x,odd,79,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,81,no correction (Brisbane 105),5000,3,0.0272
+x,odd,81,"bit-flip, Toffoli",5000,3,0.052
+x,odd,81,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,83,no correction (Brisbane 105),5000,3,0.0288
+x,odd,83,"bit-flip, Toffoli",5000,3,0.0562
+x,odd,83,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,85,no correction (Brisbane 105),5000,3,0.0262
+x,odd,85,"bit-flip, Toffoli",5000,3,0.0538
+x,odd,85,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,87,no correction (Brisbane 105),5000,3,0.0286
+x,odd,87,"bit-flip, Toffoli",5000,3,0.0572
+x,odd,87,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,89,no correction (Brisbane 105),5000,3,0.0284
+x,odd,89,"bit-flip, Toffoli",5000,3,0.0586
+x,odd,89,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,91,no correction (Brisbane 105),5000,3,0.0294
+x,odd,91,"bit-flip, Toffoli",5000,3,0.0534
+x,odd,91,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,93,no correction (Brisbane 105),5000,3,0.0306
+x,odd,93,"bit-flip, Toffoli",5000,3,0.0536
+x,odd,93,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,95,no correction (Brisbane 105),5000,3,0.0278
+x,odd,95,"bit-flip, Toffoli",5000,3,0.0568
+x,odd,95,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,97,no correction (Brisbane 105),5000,3,0.0298
+x,odd,97,"bit-flip, Toffoli",5000,3,0.0524
+x,odd,97,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,99,no correction (Brisbane 105),5000,3,0.0282
+x,odd,99,"bit-flip, Toffoli",5000,3,0.0574
+x,odd,99,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,101,no correction (Brisbane 105),5000,3,0.0306
+x,odd,101,"bit-flip, Toffoli",5000,3,0.057
+x,odd,101,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,103,no correction (Brisbane 105),5000,3,0.029
+x,odd,103,"bit-flip, Toffoli",5000,3,0.0554
+x,odd,103,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,105,no correction (Brisbane 105),5000,3,0.0306
+x,odd,105,"bit-flip, Toffoli",5000,3,0.0562
+x,odd,105,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,107,no correction (Brisbane 105),5000,3,0.0312
+x,odd,107,"bit-flip, Toffoli",5000,3,0.0512
+x,odd,107,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,109,no correction (Brisbane 105),5000,3,0.0302
+x,odd,109,"bit-flip, Toffoli",5000,3,0.0542
+x,odd,109,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,111,no correction (Brisbane 105),5000,3,0.033
+x,odd,111,"bit-flip, Toffoli",5000,3,0.0602
+x,odd,111,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,113,no correction (Brisbane 105),5000,3,0.0324
+x,odd,113,"bit-flip, Toffoli",5000,3,0.0574
+x,odd,113,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,115,no correction (Brisbane 105),5000,3,0.0328
+x,odd,115,"bit-flip, Toffoli",5000,3,0.0548
+x,odd,115,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,117,no correction (Brisbane 105),5000,3,0.0306
+x,odd,117,"bit-flip, Toffoli",5000,3,0.0582
+x,odd,117,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,119,no correction (Brisbane 105),5000,3,0.0328
+x,odd,119,"bit-flip, Toffoli",5000,3,0.0536
+x,odd,119,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,121,no correction (Brisbane 105),5000,3,0.033
+x,odd,121,"bit-flip, Toffoli",5000,3,0.052
+x,odd,121,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,123,no correction (Brisbane 105),5000,3,0.0336
+x,odd,123,"bit-flip, Toffoli",5000,3,0.0512
+x,odd,123,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,125,no correction (Brisbane 105),5000,3,0.0354
+x,odd,125,"bit-flip, Toffoli",5000,3,0.051
+x,odd,125,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,127,no correction (Brisbane 105),5000,3,0.0344
+x,odd,127,"bit-flip, Toffoli",5000,3,0.058
+x,odd,127,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,129,no correction (Brisbane 105),5000,3,0.0336
+x,odd,129,"bit-flip, Toffoli",5000,3,0.056
+x,odd,129,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,131,no correction (Brisbane 105),5000,3,0.0356
+x,odd,131,"bit-flip, Toffoli",5000,3,0.0532
+x,odd,131,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,133,no correction (Brisbane 105),5000,3,0.036
+x,odd,133,"bit-flip, Toffoli",5000,3,0.0564
+x,odd,133,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,135,no correction (Brisbane 105),5000,3,0.0366
+x,odd,135,"bit-flip, Toffoli",5000,3,0.0528
+x,odd,135,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,137,no correction (Brisbane 105),5000,3,0.0358
+x,odd,137,"bit-flip, Toffoli",5000,3,0.0556
+x,odd,137,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,139,no correction (Brisbane 105),5000,3,0.0362
+x,odd,139,"bit-flip, Toffoli",5000,3,0.0504
+x,odd,139,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,141,no correction (Brisbane 105),5000,3,0.0362
+x,odd,141,"bit-flip, Toffoli",5000,3,0.052
+x,odd,141,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,143,no correction (Brisbane 105),5000,3,0.0374
+x,odd,143,"bit-flip, Toffoli",5000,3,0.0538
+x,odd,143,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,145,no correction (Brisbane 105),5000,3,0.039
+x,odd,145,"bit-flip, Toffoli",5000,3,0.0608
+x,odd,145,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,147,no correction (Brisbane 105),5000,3,0.038
+x,odd,147,"bit-flip, Toffoli",5000,3,0.0548
+x,odd,147,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,149,no correction (Brisbane 105),5000,3,0.0392
+x,odd,149,"bit-flip, Toffoli",5000,3,0.0568
+x,odd,149,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,151,no correction (Brisbane 105),5000,3,0.0408
+x,odd,151,"bit-flip, Toffoli",5000,3,0.0544
+x,odd,151,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,153,no correction (Brisbane 105),5000,3,0.041
+x,odd,153,"bit-flip, Toffoli",5000,3,0.057
+x,odd,153,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,155,no correction (Brisbane 105),5000,3,0.0416
+x,odd,155,"bit-flip, Toffoli",5000,3,0.0626
+x,odd,155,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,157,no correction (Brisbane 105),5000,3,0.0422
+x,odd,157,"bit-flip, Toffoli",5000,3,0.051
+x,odd,157,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,159,no correction (Brisbane 105),5000,3,0.0418
+x,odd,159,"bit-flip, Toffoli",5000,3,0.0594
+x,odd,159,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,161,no correction (Brisbane 105),5000,3,0.0434
+x,odd,161,"bit-flip, Toffoli",5000,3,0.0564
+x,odd,161,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,163,no correction (Brisbane 105),5000,3,0.0408
+x,odd,163,"bit-flip, Toffoli",5000,3,0.0556
+x,odd,163,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,165,no correction (Brisbane 105),5000,3,0.0448
+x,odd,165,"bit-flip, Toffoli",5000,3,0.0598
+x,odd,165,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,167,no correction (Brisbane 105),5000,3,0.043
+x,odd,167,"bit-flip, Toffoli",5000,3,0.0604
+x,odd,167,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,169,no correction (Brisbane 105),5000,3,0.0418
+x,odd,169,"bit-flip, Toffoli",5000,3,0.0598
+x,odd,169,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,171,no correction (Brisbane 105),5000,3,0.0424
+x,odd,171,"bit-flip, Toffoli",5000,3,0.0576
+x,odd,171,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,173,no correction (Brisbane 105),5000,3,0.0454
+x,odd,173,"bit-flip, Toffoli",5000,3,0.054
+x,odd,173,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,175,no correction (Brisbane 105),5000,3,0.0448
+x,odd,175,"bit-flip, Toffoli",5000,3,0.0536
+x,odd,175,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,177,no correction (Brisbane 105),5000,3,0.046
+x,odd,177,"bit-flip, Toffoli",5000,3,0.0522
+x,odd,177,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,179,no correction (Brisbane 105),5000,3,0.047
+x,odd,179,"bit-flip, Toffoli",5000,3,0.0544
+x,odd,179,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,181,no correction (Brisbane 105),5000,3,0.0502
+x,odd,181,"bit-flip, Toffoli",5000,3,0.0578
+x,odd,181,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,183,no correction (Brisbane 105),5000,3,0.0468
+x,odd,183,"bit-flip, Toffoli",5000,3,0.061
+x,odd,183,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,185,no correction (Brisbane 105),5000,3,0.0472
+x,odd,185,"bit-flip, Toffoli",5000,3,0.059
+x,odd,185,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,187,no correction (Brisbane 105),5000,3,0.048
+x,odd,187,"bit-flip, Toffoli",5000,3,0.0504
+x,odd,187,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,189,no correction (Brisbane 105),5000,3,0.0482
+x,odd,189,"bit-flip, Toffoli",5000,3,0.0522
+x,odd,189,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,191,no correction (Brisbane 105),5000,3,0.0494
+x,odd,191,"bit-flip, Toffoli",5000,3,0.0558
+x,odd,191,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,193,no correction (Brisbane 105),5000,3,0.0514
+x,odd,193,"bit-flip, Toffoli",5000,3,0.0568
+x,odd,193,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,195,no correction (Brisbane 105),5000,3,0.052
+x,odd,195,"bit-flip, Toffoli",5000,3,0.0578
+x,odd,195,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,197,no correction (Brisbane 105),5000,3,0.0522
+x,odd,197,"bit-flip, Toffoli",5000,3,0.0508
+x,odd,197,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,199,no correction (Brisbane 105),5000,3,0.0514
+x,odd,199,"bit-flip, Toffoli",5000,3,0.0514
+x,odd,199,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,201,no correction (Brisbane 105),5000,3,0.0498
+x,odd,201,"bit-flip, Toffoli",5000,3,0.0572
+x,odd,201,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,203,no correction (Brisbane 105),5000,3,0.0554
+x,odd,203,"bit-flip, Toffoli",5000,3,0.0546
+x,odd,203,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,205,no correction (Brisbane 105),5000,3,0.0522
+x,odd,205,"bit-flip, Toffoli",5000,3,0.0568
+x,odd,205,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,207,no correction (Brisbane 105),5000,3,0.051
+x,odd,207,"bit-flip, Toffoli",5000,3,0.0626
+x,odd,207,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,209,no correction (Brisbane 105),5000,3,0.0532
+x,odd,209,"bit-flip, Toffoli",5000,3,0.0596
+x,odd,209,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,211,no correction (Brisbane 105),5000,3,0.0528
+x,odd,211,"bit-flip, Toffoli",5000,3,0.057
+x,odd,211,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,213,no correction (Brisbane 105),5000,3,0.053
+x,odd,213,"bit-flip, Toffoli",5000,3,0.0562
+x,odd,213,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,215,no correction (Brisbane 105),5000,3,0.0524
+x,odd,215,"bit-flip, Toffoli",5000,3,0.0628
+x,odd,215,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,217,no correction (Brisbane 105),5000,3,0.0534
+x,odd,217,"bit-flip, Toffoli",5000,3,0.062
+x,odd,217,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,219,no correction (Brisbane 105),5000,3,0.0544
+x,odd,219,"bit-flip, Toffoli",5000,3,0.0596
+x,odd,219,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,221,no correction (Brisbane 105),5000,3,0.0546
+x,odd,221,"bit-flip, Toffoli",5000,3,0.0596
+x,odd,221,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,223,no correction (Brisbane 105),5000,3,0.0578
+x,odd,223,"bit-flip, Toffoli",5000,3,0.0554
+x,odd,223,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,225,no correction (Brisbane 105),5000,3,0.057
+x,odd,225,"bit-flip, Toffoli",5000,3,0.0604
+x,odd,225,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,227,no correction (Brisbane 105),5000,3,0.0584
+x,odd,227,"bit-flip, Toffoli",5000,3,0.0576
+x,odd,227,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,229,no correction (Brisbane 105),5000,3,0.0592
+x,odd,229,"bit-flip, Toffoli",5000,3,0.066
+x,odd,229,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,231,no correction (Brisbane 105),5000,3,0.0596
+x,odd,231,"bit-flip, Toffoli",5000,3,0.0604
+x,odd,231,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,233,no correction (Brisbane 105),5000,3,0.0612
+x,odd,233,"bit-flip, Toffoli",5000,3,0.055
+x,odd,233,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,235,no correction (Brisbane 105),5000,3,0.0622
+x,odd,235,"bit-flip, Toffoli",5000,3,0.0584
+x,odd,235,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,237,no correction (Brisbane 105),5000,3,0.0626
+x,odd,237,"bit-flip, Toffoli",5000,3,0.0604
+x,odd,237,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,239,no correction (Brisbane 105),5000,3,0.06
+x,odd,239,"bit-flip, Toffoli",5000,3,0.0634
+x,odd,239,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,241,no correction (Brisbane 105),5000,3,0.0604
+x,odd,241,"bit-flip, Toffoli",5000,3,0.0624
+x,odd,241,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,243,no correction (Brisbane 105),5000,3,0.0614
+x,odd,243,"bit-flip, Toffoli",5000,3,0.0584
+x,odd,243,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,245,no correction (Brisbane 105),5000,3,0.062
+x,odd,245,"bit-flip, Toffoli",5000,3,0.0594
+x,odd,245,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,247,no correction (Brisbane 105),5000,3,0.0618
+x,odd,247,"bit-flip, Toffoli",5000,3,0.058
+x,odd,247,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,249,no correction (Brisbane 105),5000,3,0.0632
+x,odd,249,"bit-flip, Toffoli",5000,3,0.0618
+x,odd,249,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,251,no correction (Brisbane 105),5000,3,0.0628
+x,odd,251,"bit-flip, Toffoli",5000,3,0.0632
+x,odd,251,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,253,no correction (Brisbane 105),5000,3,0.0636
+x,odd,253,"bit-flip, Toffoli",5000,3,0.0626
+x,odd,253,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,255,no correction (Brisbane 105),5000,3,0.064
+x,odd,255,"bit-flip, Toffoli",5000,3,0.0594
+x,odd,255,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,257,no correction (Brisbane 105),5000,3,0.0646
+x,odd,257,"bit-flip, Toffoli",5000,3,0.0632
+x,odd,257,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,259,no correction (Brisbane 105),5000,3,0.0646
+x,odd,259,"bit-flip, Toffoli",5000,3,0.0696
+x,odd,259,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,261,no correction (Brisbane 105),5000,3,0.0646
+x,odd,261,"bit-flip, Toffoli",5000,3,0.0582
+x,odd,261,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,263,no correction (Brisbane 105),5000,3,0.0668
+x,odd,263,"bit-flip, Toffoli",5000,3,0.0622
+x,odd,263,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,265,no correction (Brisbane 105),5000,3,0.0652
+x,odd,265,"bit-flip, Toffoli",5000,3,0.0556
+x,odd,265,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,267,no correction (Brisbane 105),5000,3,0.0672
+x,odd,267,"bit-flip, Toffoli",5000,3,0.06
+x,odd,267,"phase-flip, Toffoli",5000,3,0.0534
+x,odd,269,no correction (Brisbane 105),5000,3,0.067
+x,odd,269,"bit-flip, Toffoli",5000,3,0.0636
+x,odd,269,"phase-flip, Toffoli",5000,3,0.0534
+y,even,0,no correction (Brisbane 105),5000,3,0.0102
+y,even,0,"bit-flip, Toffoli",5000,3,0.05
+y,even,0,"phase-flip, Toffoli",5000,3,0.047
+y,even,2,no correction (Brisbane 105),5000,3,0.0084
+y,even,2,"bit-flip, Toffoli",5000,3,0.0456
+y,even,2,"phase-flip, Toffoli",5000,3,0.058
+y,even,4,no correction (Brisbane 105),5000,3,0.0106
+y,even,4,"bit-flip, Toffoli",5000,3,0.0582
+y,even,4,"phase-flip, Toffoli",5000,3,0.0612
+y,even,6,no correction (Brisbane 105),5000,3,0.0118
+y,even,6,"bit-flip, Toffoli",5000,3,0.06
+y,even,6,"phase-flip, Toffoli",5000,3,0.054
+y,even,8,no correction (Brisbane 105),5000,3,0.0116
+y,even,8,"bit-flip, Toffoli",5000,3,0.054
+y,even,8,"phase-flip, Toffoli",5000,3,0.0566
+y,even,10,no correction (Brisbane 105),5000,3,0.0118
+y,even,10,"bit-flip, Toffoli",5000,3,0.0566
+y,even,10,"phase-flip, Toffoli",5000,3,0.0504
+y,even,12,no correction (Brisbane 105),5000,3,0.0126
+y,even,12,"bit-flip, Toffoli",5000,3,0.05
+y,even,12,"phase-flip, Toffoli",5000,3,0.049
+y,even,14,no correction (Brisbane 105),5000,3,0.0116
+y,even,14,"bit-flip, Toffoli",5000,3,0.0492
+y,even,14,"phase-flip, Toffoli",5000,3,0.0536
+y,even,16,no correction (Brisbane 105),5000,3,0.0138
+y,even,16,"bit-flip, Toffoli",5000,3,0.0528
+y,even,16,"phase-flip, Toffoli",5000,3,0.0522
+y,even,18,no correction (Brisbane 105),5000,3,0.0106
+y,even,18,"bit-flip, Toffoli",5000,3,0.0506
+y,even,18,"phase-flip, Toffoli",5000,3,0.0504
+y,even,20,no correction (Brisbane 105),5000,3,0.0146
+y,even,20,"bit-flip, Toffoli",5000,3,0.0496
+y,even,20,"phase-flip, Toffoli",5000,3,0.0478
+y,even,22,no correction (Brisbane 105),5000,3,0.016
+y,even,22,"bit-flip, Toffoli",5000,3,0.046
+y,even,22,"phase-flip, Toffoli",5000,3,0.0498
+y,even,24,no correction (Brisbane 105),5000,3,0.0134
+y,even,24,"bit-flip, Toffoli",5000,3,0.0482
+y,even,24,"phase-flip, Toffoli",5000,3,0.0458
+y,even,26,no correction (Brisbane 105),5000,3,0.0154
+y,even,26,"bit-flip, Toffoli",5000,3,0.0456
+y,even,26,"phase-flip, Toffoli",5000,3,0.05
+y,even,28,no correction (Brisbane 105),5000,3,0.016
+y,even,28,"bit-flip, Toffoli",5000,3,0.0498
+y,even,28,"phase-flip, Toffoli",5000,3,0.0504
+y,even,30,no correction (Brisbane 105),5000,3,0.0156
+y,even,30,"bit-flip, Toffoli",5000,3,0.0484
+y,even,30,"phase-flip, Toffoli",5000,3,0.046
+y,even,32,no correction (Brisbane 105),5000,3,0.0162
+y,even,32,"bit-flip, Toffoli",5000,3,0.0452
+y,even,32,"phase-flip, Toffoli",5000,3,0.054
+y,even,34,no correction (Brisbane 105),5000,3,0.0196
+y,even,34,"bit-flip, Toffoli",5000,3,0.0516
+y,even,34,"phase-flip, Toffoli",5000,3,0.0528
+y,even,36,no correction (Brisbane 105),5000,3,0.0162
+y,even,36,"bit-flip, Toffoli",5000,3,0.0522
+y,even,36,"phase-flip, Toffoli",5000,3,0.0468
+y,even,38,no correction (Brisbane 105),5000,3,0.0172
+y,even,38,"bit-flip, Toffoli",5000,3,0.045
+y,even,38,"phase-flip, Toffoli",5000,3,0.0524
+y,even,40,no correction (Brisbane 105),5000,3,0.0192
+y,even,40,"bit-flip, Toffoli",5000,3,0.0504
+y,even,40,"phase-flip, Toffoli",5000,3,0.0546
+y,even,42,no correction (Brisbane 105),5000,3,0.017
+y,even,42,"bit-flip, Toffoli",5000,3,0.0516
+y,even,42,"phase-flip, Toffoli",5000,3,0.0548
+y,even,44,no correction (Brisbane 105),5000,3,0.02
+y,even,44,"bit-flip, Toffoli",5000,3,0.0534
+y,even,44,"phase-flip, Toffoli",5000,3,0.0538
+y,even,46,no correction (Brisbane 105),5000,3,0.0168
+y,even,46,"bit-flip, Toffoli",5000,3,0.054
+y,even,46,"phase-flip, Toffoli",5000,3,0.0522
+y,even,48,no correction (Brisbane 105),5000,3,0.0194
+y,even,48,"bit-flip, Toffoli",5000,3,0.0516
+y,even,48,"phase-flip, Toffoli",5000,3,0.0536
+y,even,50,no correction (Brisbane 105),5000,3,0.0204
+y,even,50,"bit-flip, Toffoli",5000,3,0.053
+y,even,50,"phase-flip, Toffoli",5000,3,0.0594
+y,even,52,no correction (Brisbane 105),5000,3,0.0192
+y,even,52,"bit-flip, Toffoli",5000,3,0.0572
+y,even,52,"phase-flip, Toffoli",5000,3,0.0512
+y,even,54,no correction (Brisbane 105),5000,3,0.0202
+y,even,54,"bit-flip, Toffoli",5000,3,0.0512
+y,even,54,"phase-flip, Toffoli",5000,3,0.0562
+y,even,56,no correction (Brisbane 105),5000,3,0.0192
+y,even,56,"bit-flip, Toffoli",5000,3,0.0542
+y,even,56,"phase-flip, Toffoli",5000,3,0.048
+y,even,58,no correction (Brisbane 105),5000,3,0.0228
+y,even,58,"bit-flip, Toffoli",5000,3,0.0472
+y,even,58,"phase-flip, Toffoli",5000,3,0.0506
+y,even,60,no correction (Brisbane 105),5000,3,0.0194
+y,even,60,"bit-flip, Toffoli",5000,3,0.0494
+y,even,60,"phase-flip, Toffoli",5000,3,0.0542
+y,even,62,no correction (Brisbane 105),5000,3,0.021
+y,even,62,"bit-flip, Toffoli",5000,3,0.0534
+y,even,62,"phase-flip, Toffoli",5000,3,0.0484
+y,even,64,no correction (Brisbane 105),5000,3,0.0204
+y,even,64,"bit-flip, Toffoli",5000,3,0.0458
+y,even,64,"phase-flip, Toffoli",5000,3,0.0492
+y,even,66,no correction (Brisbane 105),5000,3,0.0226
+y,even,66,"bit-flip, Toffoli",5000,3,0.048
+y,even,66,"phase-flip, Toffoli",5000,3,0.0544
+y,even,68,no correction (Brisbane 105),5000,3,0.0238
+y,even,68,"bit-flip, Toffoli",5000,3,0.0514
+y,even,68,"phase-flip, Toffoli",5000,3,0.051
+y,even,70,no correction (Brisbane 105),5000,3,0.023
+y,even,70,"bit-flip, Toffoli",5000,3,0.0496
+y,even,70,"phase-flip, Toffoli",5000,3,0.0574
+y,even,72,no correction (Brisbane 105),5000,3,0.0258
+y,even,72,"bit-flip, Toffoli",5000,3,0.0564
+y,even,72,"phase-flip, Toffoli",5000,3,0.0476
+y,even,74,no correction (Brisbane 105),5000,3,0.0254
+y,even,74,"bit-flip, Toffoli",5000,3,0.0458
+y,even,74,"phase-flip, Toffoli",5000,3,0.0492
+y,even,76,no correction (Brisbane 105),5000,3,0.0234
+y,even,76,"bit-flip, Toffoli",5000,3,0.05
+y,even,76,"phase-flip, Toffoli",5000,3,0.0566
+y,even,78,no correction (Brisbane 105),5000,3,0.0238
+y,even,78,"bit-flip, Toffoli",5000,3,0.0548
+y,even,78,"phase-flip, Toffoli",5000,3,0.0516
+y,even,80,no correction (Brisbane 105),5000,3,0.0282
+y,even,80,"bit-flip, Toffoli",5000,3,0.0506
+y,even,80,"phase-flip, Toffoli",5000,3,0.0548
+y,even,82,no correction (Brisbane 105),5000,3,0.0248
+y,even,82,"bit-flip, Toffoli",5000,3,0.0522
+y,even,82,"phase-flip, Toffoli",5000,3,0.0542
+y,even,84,no correction (Brisbane 105),5000,3,0.0286
+y,even,84,"bit-flip, Toffoli",5000,3,0.0534
+y,even,84,"phase-flip, Toffoli",5000,3,0.054
+y,even,86,no correction (Brisbane 105),5000,3,0.0296
+y,even,86,"bit-flip, Toffoli",5000,3,0.0504
+y,even,86,"phase-flip, Toffoli",5000,3,0.0564
+y,even,88,no correction (Brisbane 105),5000,3,0.026
+y,even,88,"bit-flip, Toffoli",5000,3,0.0556
+y,even,88,"phase-flip, Toffoli",5000,3,0.0564
+y,even,90,no correction (Brisbane 105),5000,3,0.0278
+y,even,90,"bit-flip, Toffoli",5000,3,0.0536
+y,even,90,"phase-flip, Toffoli",5000,3,0.0552
+y,even,92,no correction (Brisbane 105),5000,3,0.0288
+y,even,92,"bit-flip, Toffoli",5000,3,0.052
+y,even,92,"phase-flip, Toffoli",5000,3,0.053
+y,even,94,no correction (Brisbane 105),5000,3,0.0272
+y,even,94,"bit-flip, Toffoli",5000,3,0.0512
+y,even,94,"phase-flip, Toffoli",5000,3,0.0568
+y,even,96,no correction (Brisbane 105),5000,3,0.028
+y,even,96,"bit-flip, Toffoli",5000,3,0.0556
+y,even,96,"phase-flip, Toffoli",5000,3,0.0608
+y,even,98,no correction (Brisbane 105),5000,3,0.0292
+y,even,98,"bit-flip, Toffoli",5000,3,0.0602
+y,even,98,"phase-flip, Toffoli",5000,3,0.0596
+y,even,100,no correction (Brisbane 105),5000,3,0.0292
+y,even,100,"bit-flip, Toffoli",5000,3,0.0554
+y,even,100,"phase-flip, Toffoli",5000,3,0.0586
+y,even,102,no correction (Brisbane 105),5000,3,0.0308
+y,even,102,"bit-flip, Toffoli",5000,3,0.0544
+y,even,102,"phase-flip, Toffoli",5000,3,0.0622
+y,even,104,no correction (Brisbane 105),5000,3,0.0286
+y,even,104,"bit-flip, Toffoli",5000,3,0.0592
+y,even,104,"phase-flip, Toffoli",5000,3,0.0628
+y,even,106,no correction (Brisbane 105),5000,3,0.0308
+y,even,106,"bit-flip, Toffoli",5000,3,0.0596
+y,even,106,"phase-flip, Toffoli",5000,3,0.06
+y,even,108,no correction (Brisbane 105),5000,3,0.031
+y,even,108,"bit-flip, Toffoli",5000,3,0.058
+y,even,108,"phase-flip, Toffoli",5000,3,0.052
+y,even,110,no correction (Brisbane 105),5000,3,0.0304
+y,even,110,"bit-flip, Toffoli",5000,3,0.0506
+y,even,110,"phase-flip, Toffoli",5000,3,0.0542
+y,even,112,no correction (Brisbane 105),5000,3,0.0314
+y,even,112,"bit-flip, Toffoli",5000,3,0.0516
+y,even,112,"phase-flip, Toffoli",5000,3,0.0616
+y,even,114,no correction (Brisbane 105),5000,3,0.029
+y,even,114,"bit-flip, Toffoli",5000,3,0.0548
+y,even,114,"phase-flip, Toffoli",5000,3,0.0632
+y,even,116,no correction (Brisbane 105),5000,3,0.0308
+y,even,116,"bit-flip, Toffoli",5000,3,0.0596
+y,even,116,"phase-flip, Toffoli",5000,3,0.0588
+y,even,118,no correction (Brisbane 105),5000,3,0.0324
+y,even,118,"bit-flip, Toffoli",5000,3,0.0538
+y,even,118,"phase-flip, Toffoli",5000,3,0.0598
+y,even,120,no correction (Brisbane 105),5000,3,0.0334
+y,even,120,"bit-flip, Toffoli",5000,3,0.055
+y,even,120,"phase-flip, Toffoli",5000,3,0.0572
+y,even,122,no correction (Brisbane 105),5000,3,0.0338
+y,even,122,"bit-flip, Toffoli",5000,3,0.0524
+y,even,122,"phase-flip, Toffoli",5000,3,0.0596
+y,even,124,no correction (Brisbane 105),5000,3,0.0316
+y,even,124,"bit-flip, Toffoli",5000,3,0.0528
+y,even,124,"phase-flip, Toffoli",5000,3,0.06
+y,even,126,no correction (Brisbane 105),5000,3,0.0334
+y,even,126,"bit-flip, Toffoli",5000,3,0.0566
+y,even,126,"phase-flip, Toffoli",5000,3,0.0604
+y,even,128,no correction (Brisbane 105),5000,3,0.0348
+y,even,128,"bit-flip, Toffoli",5000,3,0.0546
+y,even,128,"phase-flip, Toffoli",5000,3,0.0618
+y,even,130,no correction (Brisbane 105),5000,3,0.0354
+y,even,130,"bit-flip, Toffoli",5000,3,0.0554
+y,even,130,"phase-flip, Toffoli",5000,3,0.0568
+y,even,132,no correction (Brisbane 105),5000,3,0.0358
+y,even,132,"bit-flip, Toffoli",5000,3,0.0518
+y,even,132,"phase-flip, Toffoli",5000,3,0.0556
+y,even,134,no correction (Brisbane 105),5000,3,0.0346
+y,even,134,"bit-flip, Toffoli",5000,3,0.0516
+y,even,134,"phase-flip, Toffoli",5000,3,0.0572
+y,even,136,no correction (Brisbane 105),5000,3,0.0356
+y,even,136,"bit-flip, Toffoli",5000,3,0.0534
+y,even,136,"phase-flip, Toffoli",5000,3,0.0626
+y,even,138,no correction (Brisbane 105),5000,3,0.0362
+y,even,138,"bit-flip, Toffoli",5000,3,0.0578
+y,even,138,"phase-flip, Toffoli",5000,3,0.0594
+y,even,140,no correction (Brisbane 105),5000,3,0.0394
+y,even,140,"bit-flip, Toffoli",5000,3,0.0534
+y,even,140,"phase-flip, Toffoli",5000,3,0.06
+y,even,142,no correction (Brisbane 105),5000,3,0.0396
+y,even,142,"bit-flip, Toffoli",5000,3,0.0574
+y,even,142,"phase-flip, Toffoli",5000,3,0.0626
+y,even,144,no correction (Brisbane 105),5000,3,0.0394
+y,even,144,"bit-flip, Toffoli",5000,3,0.058
+y,even,144,"phase-flip, Toffoli",5000,3,0.059
+y,even,146,no correction (Brisbane 105),5000,3,0.0396
+y,even,146,"bit-flip, Toffoli",5000,3,0.0532
+y,even,146,"phase-flip, Toffoli",5000,3,0.0562
+y,even,148,no correction (Brisbane 105),5000,3,0.04
+y,even,148,"bit-flip, Toffoli",5000,3,0.0524
+y,even,148,"phase-flip, Toffoli",5000,3,0.0624
+y,even,150,no correction (Brisbane 105),5000,3,0.0382
+y,even,150,"bit-flip, Toffoli",5000,3,0.057
+y,even,150,"phase-flip, Toffoli",5000,3,0.061
+y,even,152,no correction (Brisbane 105),5000,3,0.0382
+y,even,152,"bit-flip, Toffoli",5000,3,0.0562
+y,even,152,"phase-flip, Toffoli",5000,3,0.0614
+y,even,154,no correction (Brisbane 105),5000,3,0.041
+y,even,154,"bit-flip, Toffoli",5000,3,0.0568
+y,even,154,"phase-flip, Toffoli",5000,3,0.0594
+y,even,156,no correction (Brisbane 105),5000,3,0.0426
+y,even,156,"bit-flip, Toffoli",5000,3,0.0558
+y,even,156,"phase-flip, Toffoli",5000,3,0.0608
+y,even,158,no correction (Brisbane 105),5000,3,0.04
+y,even,158,"bit-flip, Toffoli",5000,3,0.0562
+y,even,158,"phase-flip, Toffoli",5000,3,0.0598
+y,even,160,no correction (Brisbane 105),5000,3,0.0428
+y,even,160,"bit-flip, Toffoli",5000,3,0.057
+y,even,160,"phase-flip, Toffoli",5000,3,0.0634
+y,even,162,no correction (Brisbane 105),5000,3,0.0414
+y,even,162,"bit-flip, Toffoli",5000,3,0.0588
+y,even,162,"phase-flip, Toffoli",5000,3,0.0636
+y,even,164,no correction (Brisbane 105),5000,3,0.0442
+y,even,164,"bit-flip, Toffoli",5000,3,0.0588
+y,even,164,"phase-flip, Toffoli",5000,3,0.0628
+y,even,166,no correction (Brisbane 105),5000,3,0.0444
+y,even,166,"bit-flip, Toffoli",5000,3,0.0544
+y,even,166,"phase-flip, Toffoli",5000,3,0.0612
+y,even,168,no correction (Brisbane 105),5000,3,0.0444
+y,even,168,"bit-flip, Toffoli",5000,3,0.0548
+y,even,168,"phase-flip, Toffoli",5000,3,0.0588
+y,even,170,no correction (Brisbane 105),5000,3,0.0462
+y,even,170,"bit-flip, Toffoli",5000,3,0.0546
+y,even,170,"phase-flip, Toffoli",5000,3,0.0582
+y,even,172,no correction (Brisbane 105),5000,3,0.0444
+y,even,172,"bit-flip, Toffoli",5000,3,0.0538
+y,even,172,"phase-flip, Toffoli",5000,3,0.0578
+y,even,174,no correction (Brisbane 105),5000,3,0.046
+y,even,174,"bit-flip, Toffoli",5000,3,0.0498
+y,even,174,"phase-flip, Toffoli",5000,3,0.0566
+y,even,176,no correction (Brisbane 105),5000,3,0.0454
+y,even,176,"bit-flip, Toffoli",5000,3,0.0518
+y,even,176,"phase-flip, Toffoli",5000,3,0.0632
+y,even,178,no correction (Brisbane 105),5000,3,0.0474
+y,even,178,"bit-flip, Toffoli",5000,3,0.0572
+y,even,178,"phase-flip, Toffoli",5000,3,0.0602
+y,even,180,no correction (Brisbane 105),5000,3,0.0464
+y,even,180,"bit-flip, Toffoli",5000,3,0.0554
+y,even,180,"phase-flip, Toffoli",5000,3,0.0574
+y,even,182,no correction (Brisbane 105),5000,3,0.0478
+y,even,182,"bit-flip, Toffoli",5000,3,0.052
+y,even,182,"phase-flip, Toffoli",5000,3,0.0628
+y,even,184,no correction (Brisbane 105),5000,3,0.0486
+y,even,184,"bit-flip, Toffoli",5000,3,0.0558
+y,even,184,"phase-flip, Toffoli",5000,3,0.0608
+y,even,186,no correction (Brisbane 105),5000,3,0.0482
+y,even,186,"bit-flip, Toffoli",5000,3,0.0558
+y,even,186,"phase-flip, Toffoli",5000,3,0.0604
+y,even,188,no correction (Brisbane 105),5000,3,0.0478
+y,even,188,"bit-flip, Toffoli",5000,3,0.0524
+y,even,188,"phase-flip, Toffoli",5000,3,0.0622
+y,even,190,no correction (Brisbane 105),5000,3,0.0504
+y,even,190,"bit-flip, Toffoli",5000,3,0.0556
+y,even,190,"phase-flip, Toffoli",5000,3,0.0644
+y,even,192,no correction (Brisbane 105),5000,3,0.0488
+y,even,192,"bit-flip, Toffoli",5000,3,0.0582
+y,even,192,"phase-flip, Toffoli",5000,3,0.0604
+y,even,194,no correction (Brisbane 105),5000,3,0.0506
+y,even,194,"bit-flip, Toffoli",5000,3,0.0548
+y,even,194,"phase-flip, Toffoli",5000,3,0.0592
+y,even,196,no correction (Brisbane 105),5000,3,0.0498
+y,even,196,"bit-flip, Toffoli",5000,3,0.0524
+y,even,196,"phase-flip, Toffoli",5000,3,0.0624
+y,even,198,no correction (Brisbane 105),5000,3,0.0506
+y,even,198,"bit-flip, Toffoli",5000,3,0.0568
+y,even,198,"phase-flip, Toffoli",5000,3,0.0618
+y,even,200,no correction (Brisbane 105),5000,3,0.0502
+y,even,200,"bit-flip, Toffoli",5000,3,0.0544
+y,even,200,"phase-flip, Toffoli",5000,3,0.0612
+y,even,202,no correction (Brisbane 105),5000,3,0.0526
+y,even,202,"bit-flip, Toffoli",5000,3,0.054
+y,even,202,"phase-flip, Toffoli",5000,3,0.06
+y,even,204,no correction (Brisbane 105),5000,3,0.0526
+y,even,204,"bit-flip, Toffoli",5000,3,0.056
+y,even,204,"phase-flip, Toffoli",5000,3,0.0678
+y,even,206,no correction (Brisbane 105),5000,3,0.052
+y,even,206,"bit-flip, Toffoli",5000,3,0.0594
+y,even,206,"phase-flip, Toffoli",5000,3,0.0654
+y,even,208,no correction (Brisbane 105),5000,3,0.0542
+y,even,208,"bit-flip, Toffoli",5000,3,0.0582
+y,even,208,"phase-flip, Toffoli",5000,3,0.0668
+y,even,210,no correction (Brisbane 105),5000,3,0.054
+y,even,210,"bit-flip, Toffoli",5000,3,0.059
+y,even,210,"phase-flip, Toffoli",5000,3,0.0644
+y,even,212,no correction (Brisbane 105),5000,3,0.0544
+y,even,212,"bit-flip, Toffoli",5000,3,0.0574
+y,even,212,"phase-flip, Toffoli",5000,3,0.0612
+y,even,214,no correction (Brisbane 105),5000,3,0.0526
+y,even,214,"bit-flip, Toffoli",5000,3,0.056
+y,even,214,"phase-flip, Toffoli",5000,3,0.065
+y,even,216,no correction (Brisbane 105),5000,3,0.055
+y,even,216,"bit-flip, Toffoli",5000,3,0.0594
+y,even,216,"phase-flip, Toffoli",5000,3,0.0624
+y,even,218,no correction (Brisbane 105),5000,3,0.0554
+y,even,218,"bit-flip, Toffoli",5000,3,0.0532
+y,even,218,"phase-flip, Toffoli",5000,3,0.0618
+y,even,220,no correction (Brisbane 105),5000,3,0.0534
+y,even,220,"bit-flip, Toffoli",5000,3,0.0556
+y,even,220,"phase-flip, Toffoli",5000,3,0.0654
+y,even,222,no correction (Brisbane 105),5000,3,0.0562
+y,even,222,"bit-flip, Toffoli",5000,3,0.062
+y,even,222,"phase-flip, Toffoli",5000,3,0.0646
+y,even,224,no correction (Brisbane 105),5000,3,0.0576
+y,even,224,"bit-flip, Toffoli",5000,3,0.0576
+y,even,224,"phase-flip, Toffoli",5000,3,0.07
+y,even,226,no correction (Brisbane 105),5000,3,0.0574
+y,even,226,"bit-flip, Toffoli",5000,3,0.0592
+y,even,226,"phase-flip, Toffoli",5000,3,0.0642
+y,even,228,no correction (Brisbane 105),5000,3,0.0562
+y,even,228,"bit-flip, Toffoli",5000,3,0.0558
+y,even,228,"phase-flip, Toffoli",5000,3,0.0648
+y,even,230,no correction (Brisbane 105),5000,3,0.057
+y,even,230,"bit-flip, Toffoli",5000,3,0.0578
+y,even,230,"phase-flip, Toffoli",5000,3,0.0648
+y,even,232,no correction (Brisbane 105),5000,3,0.059
+y,even,232,"bit-flip, Toffoli",5000,3,0.0582
+y,even,232,"phase-flip, Toffoli",5000,3,0.0712
+y,even,234,no correction (Brisbane 105),5000,3,0.0628
+y,even,234,"bit-flip, Toffoli",5000,3,0.0608
+y,even,234,"phase-flip, Toffoli",5000,3,0.0724
+y,even,236,no correction (Brisbane 105),5000,3,0.061
+y,even,236,"bit-flip, Toffoli",5000,3,0.0628
+y,even,236,"phase-flip, Toffoli",5000,3,0.0706
+y,even,238,no correction (Brisbane 105),5000,3,0.0598
+y,even,238,"bit-flip, Toffoli",5000,3,0.061
+y,even,238,"phase-flip, Toffoli",5000,3,0.0682
+y,even,240,no correction (Brisbane 105),5000,3,0.0616
+y,even,240,"bit-flip, Toffoli",5000,3,0.0628
+y,even,240,"phase-flip, Toffoli",5000,3,0.0692
+y,even,242,no correction (Brisbane 105),5000,3,0.06
+y,even,242,"bit-flip, Toffoli",5000,3,0.062
+y,even,242,"phase-flip, Toffoli",5000,3,0.0634
+y,even,244,no correction (Brisbane 105),5000,3,0.0612
+y,even,244,"bit-flip, Toffoli",5000,3,0.0538
+y,even,244,"phase-flip, Toffoli",5000,3,0.065
+y,even,246,no correction (Brisbane 105),5000,3,0.0604
+y,even,246,"bit-flip, Toffoli",5000,3,0.0572
+y,even,246,"phase-flip, Toffoli",5000,3,0.0656
+y,even,248,no correction (Brisbane 105),5000,3,0.0608
+y,even,248,"bit-flip, Toffoli",5000,3,0.0596
+y,even,248,"phase-flip, Toffoli",5000,3,0.0648
+y,even,250,no correction (Brisbane 105),5000,3,0.0634
+y,even,250,"bit-flip, Toffoli",5000,3,0.058
+y,even,250,"phase-flip, Toffoli",5000,3,0.0726
+y,even,252,no correction (Brisbane 105),5000,3,0.0632
+y,even,252,"bit-flip, Toffoli",5000,3,0.0622
+y,even,252,"phase-flip, Toffoli",5000,3,0.0622
+y,even,254,no correction (Brisbane 105),5000,3,0.0648
+y,even,254,"bit-flip, Toffoli",5000,3,0.0564
+y,even,254,"phase-flip, Toffoli",5000,3,0.0694
+y,even,256,no correction (Brisbane 105),5000,3,0.0654
+y,even,256,"bit-flip, Toffoli",5000,3,0.0598
+y,even,256,"phase-flip, Toffoli",5000,3,0.0668
+y,even,258,no correction (Brisbane 105),5000,3,0.0636
+y,even,258,"bit-flip, Toffoli",5000,3,0.0618
+y,even,258,"phase-flip, Toffoli",5000,3,0.0638
+y,even,260,no correction (Brisbane 105),5000,3,0.0626
+y,even,260,"bit-flip, Toffoli",5000,3,0.056
+y,even,260,"phase-flip, Toffoli",5000,3,0.073
+y,even,262,no correction (Brisbane 105),5000,3,0.0646
+y,even,262,"bit-flip, Toffoli",5000,3,0.0662
+y,even,262,"phase-flip, Toffoli",5000,3,0.0644
+y,even,264,no correction (Brisbane 105),5000,3,0.0642
+y,even,264,"bit-flip, Toffoli",5000,3,0.0568
+y,even,264,"phase-flip, Toffoli",5000,3,0.0682
+y,even,266,no correction (Brisbane 105),5000,3,0.065
+y,even,266,"bit-flip, Toffoli",5000,3,0.0594
+y,even,266,"phase-flip, Toffoli",5000,3,0.0646
+y,even,268,no correction (Brisbane 105),5000,3,0.0658
+y,even,268,"bit-flip, Toffoli",5000,3,0.0592
+y,even,268,"phase-flip, Toffoli",5000,3,0.067
+y,even,270,no correction (Brisbane 105),5000,3,0.0674
+y,even,270,"bit-flip, Toffoli",5000,3,0.0614
+y,even,270,"phase-flip, Toffoli",5000,3,0.0726
+y,even,272,no correction (Brisbane 105),5000,3,0.0662
+y,even,272,"bit-flip, Toffoli",5000,3,0.062
+y,even,272,"phase-flip, Toffoli",5000,3,0.068
+y,even,274,no correction (Brisbane 105),5000,3,0.0668
+y,even,274,"bit-flip, Toffoli",5000,3,0.0588
+y,even,274,"phase-flip, Toffoli",5000,3,0.0738
+y,even,276,no correction (Brisbane 105),5000,3,0.0668
+y,even,276,"bit-flip, Toffoli",5000,3,0.0648
+y,even,276,"phase-flip, Toffoli",5000,3,0.0694
+y,even,278,no correction (Brisbane 105),5000,3,0.0672
+y,even,278,"bit-flip, Toffoli",5000,3,0.0604
+y,even,278,"phase-flip, Toffoli",5000,3,0.0754
+y,even,280,no correction (Brisbane 105),5000,3,0.0702
+y,even,280,"bit-flip, Toffoli",5000,3,0.0648
+y,even,280,"phase-flip, Toffoli",5000,3,0.0724
+y,even,282,no correction (Brisbane 105),5000,3,0.0704
+y,even,282,"bit-flip, Toffoli",5000,3,0.0654
+y,even,282,"phase-flip, Toffoli",5000,3,0.0754
+y,even,284,no correction (Brisbane 105),5000,3,0.0698
+y,even,284,"bit-flip, Toffoli",5000,3,0.0672
+y,even,284,"phase-flip, Toffoli",5000,3,0.0686
+y,even,286,no correction (Brisbane 105),5000,3,0.0706
+y,even,286,"bit-flip, Toffoli",5000,3,0.0606
+y,even,286,"phase-flip, Toffoli",5000,3,0.0722
+y,even,288,no correction (Brisbane 105),5000,3,0.0724
+y,even,288,"bit-flip, Toffoli",5000,3,0.0654
+y,even,288,"phase-flip, Toffoli",5000,3,0.0704
+y,even,290,no correction (Brisbane 105),5000,3,0.0724
+y,even,290,"bit-flip, Toffoli",5000,3,0.0608
+y,even,290,"phase-flip, Toffoli",5000,3,0.0718
+y,even,292,no correction (Brisbane 105),5000,3,0.0728
+y,even,292,"bit-flip, Toffoli",5000,3,0.0624
+y,even,292,"phase-flip, Toffoli",5000,3,0.0708
+y,even,294,no correction (Brisbane 105),5000,3,0.07
+y,even,294,"bit-flip, Toffoli",5000,3,0.0614
+y,even,294,"phase-flip, Toffoli",5000,3,0.069
+y,even,296,no correction (Brisbane 105),5000,3,0.0742
+y,even,296,"bit-flip, Toffoli",5000,3,0.0576
+y,even,296,"phase-flip, Toffoli",5000,3,0.0726
+y,odd,1,no correction (Brisbane 105),5000,3,0.006
+y,odd,1,"bit-flip, Toffoli",5000,3,0.0504
+y,odd,1,"phase-flip, Toffoli",5000,3,0.051
+y,odd,3,no correction (Brisbane 105),5000,3,0.0082
+y,odd,3,"bit-flip, Toffoli",5000,3,0.0514
+y,odd,3,"phase-flip, Toffoli",5000,3,0.0524
+y,odd,5,no correction (Brisbane 105),5000,3,0.0116
+y,odd,5,"bit-flip, Toffoli",5000,3,0.052
+y,odd,5,"phase-flip, Toffoli",5000,3,0.0552
+y,odd,7,no correction (Brisbane 105),5000,3,0.0114
+y,odd,7,"bit-flip, Toffoli",5000,3,0.0538
+y,odd,7,"phase-flip, Toffoli",5000,3,0.0578
+y,odd,9,no correction (Brisbane 105),5000,3,0.0096
+y,odd,9,"bit-flip, Toffoli",5000,3,0.0572
+y,odd,9,"phase-flip, Toffoli",5000,3,0.053
+y,odd,11,no correction (Brisbane 105),5000,3,0.012
+y,odd,11,"bit-flip, Toffoli",5000,3,0.0502
+y,odd,11,"phase-flip, Toffoli",5000,3,0.0588
+y,odd,13,no correction (Brisbane 105),5000,3,0.0132
+y,odd,13,"bit-flip, Toffoli",5000,3,0.0574
+y,odd,13,"phase-flip, Toffoli",5000,3,0.0544
+y,odd,15,no correction (Brisbane 105),5000,3,0.0126
+y,odd,15,"bit-flip, Toffoli",5000,3,0.0552
+y,odd,15,"phase-flip, Toffoli",5000,3,0.0542
+y,odd,17,no correction (Brisbane 105),5000,3,0.0152
+y,odd,17,"bit-flip, Toffoli",5000,3,0.0542
+y,odd,17,"phase-flip, Toffoli",5000,3,0.0564
+y,odd,19,no correction (Brisbane 105),5000,3,0.0148
+y,odd,19,"bit-flip, Toffoli",5000,3,0.0556
+y,odd,19,"phase-flip, Toffoli",5000,3,0.0502
+y,odd,21,no correction (Brisbane 105),5000,3,0.0156
+y,odd,21,"bit-flip, Toffoli",5000,3,0.0496
+y,odd,21,"phase-flip, Toffoli",5000,3,0.051
+y,odd,23,no correction (Brisbane 105),5000,3,0.0136
+y,odd,23,"bit-flip, Toffoli",5000,3,0.0502
+y,odd,23,"phase-flip, Toffoli",5000,3,0.0506
+y,odd,25,no correction (Brisbane 105),5000,3,0.0126
+y,odd,25,"bit-flip, Toffoli",5000,3,0.0486
+y,odd,25,"phase-flip, Toffoli",5000,3,0.0526
+y,odd,27,no correction (Brisbane 105),5000,3,0.0136
+y,odd,27,"bit-flip, Toffoli",5000,3,0.0524
+y,odd,27,"phase-flip, Toffoli",5000,3,0.0456
+y,odd,29,no correction (Brisbane 105),5000,3,0.0146
+y,odd,29,"bit-flip, Toffoli",5000,3,0.045
+y,odd,29,"phase-flip, Toffoli",5000,3,0.0522
+y,odd,31,no correction (Brisbane 105),5000,3,0.0136
+y,odd,31,"bit-flip, Toffoli",5000,3,0.0516
+y,odd,31,"phase-flip, Toffoli",5000,3,0.0522
+y,odd,33,no correction (Brisbane 105),5000,3,0.0136
+y,odd,33,"bit-flip, Toffoli",5000,3,0.0522
+y,odd,33,"phase-flip, Toffoli",5000,3,0.0526
+y,odd,35,no correction (Brisbane 105),5000,3,0.0152
+y,odd,35,"bit-flip, Toffoli",5000,3,0.0538
+y,odd,35,"phase-flip, Toffoli",5000,3,0.0534
+y,odd,37,no correction (Brisbane 105),5000,3,0.0174
+y,odd,37,"bit-flip, Toffoli",5000,3,0.0534
+y,odd,37,"phase-flip, Toffoli",5000,3,0.0534
+y,odd,39,no correction (Brisbane 105),5000,3,0.0152
+y,odd,39,"bit-flip, Toffoli",5000,3,0.0518
+y,odd,39,"phase-flip, Toffoli",5000,3,0.0558
+y,odd,41,no correction (Brisbane 105),5000,3,0.019
+y,odd,41,"bit-flip, Toffoli",5000,3,0.0554
+y,odd,41,"phase-flip, Toffoli",5000,3,0.0504
+y,odd,43,no correction (Brisbane 105),5000,3,0.019
+y,odd,43,"bit-flip, Toffoli",5000,3,0.0508
+y,odd,43,"phase-flip, Toffoli",5000,3,0.052
+y,odd,45,no correction (Brisbane 105),5000,3,0.018
+y,odd,45,"bit-flip, Toffoli",5000,3,0.05
+y,odd,45,"phase-flip, Toffoli",5000,3,0.0592
+y,odd,47,no correction (Brisbane 105),5000,3,0.017
+y,odd,47,"bit-flip, Toffoli",5000,3,0.0568
+y,odd,47,"phase-flip, Toffoli",5000,3,0.0548
+y,odd,49,no correction (Brisbane 105),5000,3,0.0196
+y,odd,49,"bit-flip, Toffoli",5000,3,0.0534
+y,odd,49,"phase-flip, Toffoli",5000,3,0.0542
+y,odd,51,no correction (Brisbane 105),5000,3,0.019
+y,odd,51,"bit-flip, Toffoli",5000,3,0.053
+y,odd,51,"phase-flip, Toffoli",5000,3,0.0516
+y,odd,53,no correction (Brisbane 105),5000,3,0.0214
+y,odd,53,"bit-flip, Toffoli",5000,3,0.0502
+y,odd,53,"phase-flip, Toffoli",5000,3,0.0508
+y,odd,55,no correction (Brisbane 105),5000,3,0.0196
+y,odd,55,"bit-flip, Toffoli",5000,3,0.05
+y,odd,55,"phase-flip, Toffoli",5000,3,0.052
+y,odd,57,no correction (Brisbane 105),5000,3,0.0182
+y,odd,57,"bit-flip, Toffoli",5000,3,0.0494
+y,odd,57,"phase-flip, Toffoli",5000,3,0.053
+y,odd,59,no correction (Brisbane 105),5000,3,0.0224
+y,odd,59,"bit-flip, Toffoli",5000,3,0.0508
+y,odd,59,"phase-flip, Toffoli",5000,3,0.0508
+y,odd,61,no correction (Brisbane 105),5000,3,0.02
+y,odd,61,"bit-flip, Toffoli",5000,3,0.0502
+y,odd,61,"phase-flip, Toffoli",5000,3,0.0564
+y,odd,63,no correction (Brisbane 105),5000,3,0.0176
+y,odd,63,"bit-flip, Toffoli",5000,3,0.0544
+y,odd,63,"phase-flip, Toffoli",5000,3,0.0582
+y,odd,65,no correction (Brisbane 105),5000,3,0.0228
+y,odd,65,"bit-flip, Toffoli",5000,3,0.0544
+y,odd,65,"phase-flip, Toffoli",5000,3,0.0554
+y,odd,67,no correction (Brisbane 105),5000,3,0.0252
+y,odd,67,"bit-flip, Toffoli",5000,3,0.0532
+y,odd,67,"phase-flip, Toffoli",5000,3,0.0562
+y,odd,69,no correction (Brisbane 105),5000,3,0.0216
+y,odd,69,"bit-flip, Toffoli",5000,3,0.0542
+y,odd,69,"phase-flip, Toffoli",5000,3,0.0544
+y,odd,71,no correction (Brisbane 105),5000,3,0.0226
+y,odd,71,"bit-flip, Toffoli",5000,3,0.0512
+y,odd,71,"phase-flip, Toffoli",5000,3,0.05
+y,odd,73,no correction (Brisbane 105),5000,3,0.0264
+y,odd,73,"bit-flip, Toffoli",5000,3,0.0496
+y,odd,73,"phase-flip, Toffoli",5000,3,0.0504
+y,odd,75,no correction (Brisbane 105),5000,3,0.0232
+y,odd,75,"bit-flip, Toffoli",5000,3,0.049
+y,odd,75,"phase-flip, Toffoli",5000,3,0.055
+y,odd,77,no correction (Brisbane 105),5000,3,0.0226
+y,odd,77,"bit-flip, Toffoli",5000,3,0.0526
+y,odd,77,"phase-flip, Toffoli",5000,3,0.0576
+y,odd,79,no correction (Brisbane 105),5000,3,0.0252
+y,odd,79,"bit-flip, Toffoli",5000,3,0.056
+y,odd,79,"phase-flip, Toffoli",5000,3,0.054
+y,odd,81,no correction (Brisbane 105),5000,3,0.0272
+y,odd,81,"bit-flip, Toffoli",5000,3,0.0518
+y,odd,81,"phase-flip, Toffoli",5000,3,0.0588
+y,odd,83,no correction (Brisbane 105),5000,3,0.0288
+y,odd,83,"bit-flip, Toffoli",5000,3,0.0564
+y,odd,83,"phase-flip, Toffoli",5000,3,0.0564
+y,odd,85,no correction (Brisbane 105),5000,3,0.0262
+y,odd,85,"bit-flip, Toffoli",5000,3,0.0538
+y,odd,85,"phase-flip, Toffoli",5000,3,0.0584
+y,odd,87,no correction (Brisbane 105),5000,3,0.0286
+y,odd,87,"bit-flip, Toffoli",5000,3,0.0572
+y,odd,87,"phase-flip, Toffoli",5000,3,0.0594
+y,odd,89,no correction (Brisbane 105),5000,3,0.0284
+y,odd,89,"bit-flip, Toffoli",5000,3,0.0586
+y,odd,89,"phase-flip, Toffoli",5000,3,0.0548
+y,odd,91,no correction (Brisbane 105),5000,3,0.0294
+y,odd,91,"bit-flip, Toffoli",5000,3,0.0532
+y,odd,91,"phase-flip, Toffoli",5000,3,0.0544
+y,odd,93,no correction (Brisbane 105),5000,3,0.0306
+y,odd,93,"bit-flip, Toffoli",5000,3,0.0536
+y,odd,93,"phase-flip, Toffoli",5000,3,0.059
+y,odd,95,no correction (Brisbane 105),5000,3,0.0278
+y,odd,95,"bit-flip, Toffoli",5000,3,0.0568
+y,odd,95,"phase-flip, Toffoli",5000,3,0.0542
+y,odd,97,no correction (Brisbane 105),5000,3,0.0298
+y,odd,97,"bit-flip, Toffoli",5000,3,0.0524
+y,odd,97,"phase-flip, Toffoli",5000,3,0.0598
+y,odd,99,no correction (Brisbane 105),5000,3,0.0282
+y,odd,99,"bit-flip, Toffoli",5000,3,0.0578
+y,odd,99,"phase-flip, Toffoli",5000,3,0.0612
+y,odd,101,no correction (Brisbane 105),5000,3,0.0306
+y,odd,101,"bit-flip, Toffoli",5000,3,0.057
+y,odd,101,"phase-flip, Toffoli",5000,3,0.056
+y,odd,103,no correction (Brisbane 105),5000,3,0.029
+y,odd,103,"bit-flip, Toffoli",5000,3,0.0556
+y,odd,103,"phase-flip, Toffoli",5000,3,0.0578
+y,odd,105,no correction (Brisbane 105),5000,3,0.0306
+y,odd,105,"bit-flip, Toffoli",5000,3,0.0562
+y,odd,105,"phase-flip, Toffoli",5000,3,0.0534
+y,odd,107,no correction (Brisbane 105),5000,3,0.0312
+y,odd,107,"bit-flip, Toffoli",5000,3,0.0512
+y,odd,107,"phase-flip, Toffoli",5000,3,0.0558
+y,odd,109,no correction (Brisbane 105),5000,3,0.0302
+y,odd,109,"bit-flip, Toffoli",5000,3,0.0542
+y,odd,109,"phase-flip, Toffoli",5000,3,0.0648
+y,odd,111,no correction (Brisbane 105),5000,3,0.033
+y,odd,111,"bit-flip, Toffoli",5000,3,0.0602
+y,odd,111,"phase-flip, Toffoli",5000,3,0.0616
+y,odd,113,no correction (Brisbane 105),5000,3,0.0324
+y,odd,113,"bit-flip, Toffoli",5000,3,0.0574
+y,odd,113,"phase-flip, Toffoli",5000,3,0.0594
+y,odd,115,no correction (Brisbane 105),5000,3,0.0328
+y,odd,115,"bit-flip, Toffoli",5000,3,0.055
+y,odd,115,"phase-flip, Toffoli",5000,3,0.0626
+y,odd,117,no correction (Brisbane 105),5000,3,0.0306
+y,odd,117,"bit-flip, Toffoli",5000,3,0.0582
+y,odd,117,"phase-flip, Toffoli",5000,3,0.0586
+y,odd,119,no correction (Brisbane 105),5000,3,0.0328
+y,odd,119,"bit-flip, Toffoli",5000,3,0.0536
+y,odd,119,"phase-flip, Toffoli",5000,3,0.0568
+y,odd,121,no correction (Brisbane 105),5000,3,0.033
+y,odd,121,"bit-flip, Toffoli",5000,3,0.052
+y,odd,121,"phase-flip, Toffoli",5000,3,0.0538
+y,odd,123,no correction (Brisbane 105),5000,3,0.0336
+y,odd,123,"bit-flip, Toffoli",5000,3,0.0512
+y,odd,123,"phase-flip, Toffoli",5000,3,0.0574
+y,odd,125,no correction (Brisbane 105),5000,3,0.0354
+y,odd,125,"bit-flip, Toffoli",5000,3,0.051
+y,odd,125,"phase-flip, Toffoli",5000,3,0.0624
+y,odd,127,no correction (Brisbane 105),5000,3,0.0344
+y,odd,127,"bit-flip, Toffoli",5000,3,0.058
+y,odd,127,"phase-flip, Toffoli",5000,3,0.0614
+y,odd,129,no correction (Brisbane 105),5000,3,0.0336
+y,odd,129,"bit-flip, Toffoli",5000,3,0.056
+y,odd,129,"phase-flip, Toffoli",5000,3,0.059
+y,odd,131,no correction (Brisbane 105),5000,3,0.0356
+y,odd,131,"bit-flip, Toffoli",5000,3,0.0534
+y,odd,131,"phase-flip, Toffoli",5000,3,0.0602
+y,odd,133,no correction (Brisbane 105),5000,3,0.036
+y,odd,133,"bit-flip, Toffoli",5000,3,0.0564
+y,odd,133,"phase-flip, Toffoli",5000,3,0.0574
+y,odd,135,no correction (Brisbane 105),5000,3,0.0366
+y,odd,135,"bit-flip, Toffoli",5000,3,0.0528
+y,odd,135,"phase-flip, Toffoli",5000,3,0.0618
+y,odd,137,no correction (Brisbane 105),5000,3,0.0358
+y,odd,137,"bit-flip, Toffoli",5000,3,0.0556
+y,odd,137,"phase-flip, Toffoli",5000,3,0.0574
+y,odd,139,no correction (Brisbane 105),5000,3,0.0362
+y,odd,139,"bit-flip, Toffoli",5000,3,0.0506
+y,odd,139,"phase-flip, Toffoli",5000,3,0.0562
+y,odd,141,no correction (Brisbane 105),5000,3,0.0362
+y,odd,141,"bit-flip, Toffoli",5000,3,0.052
+y,odd,141,"phase-flip, Toffoli",5000,3,0.0596
+y,odd,143,no correction (Brisbane 105),5000,3,0.0374
+y,odd,143,"bit-flip, Toffoli",5000,3,0.0538
+y,odd,143,"phase-flip, Toffoli",5000,3,0.0648
+y,odd,145,no correction (Brisbane 105),5000,3,0.039
+y,odd,145,"bit-flip, Toffoli",5000,3,0.0608
+y,odd,145,"phase-flip, Toffoli",5000,3,0.059
+y,odd,147,no correction (Brisbane 105),5000,3,0.038
+y,odd,147,"bit-flip, Toffoli",5000,3,0.0548
+y,odd,147,"phase-flip, Toffoli",5000,3,0.0628
+y,odd,149,no correction (Brisbane 105),5000,3,0.0392
+y,odd,149,"bit-flip, Toffoli",5000,3,0.0568
+y,odd,149,"phase-flip, Toffoli",5000,3,0.0596
+y,odd,151,no correction (Brisbane 105),5000,3,0.0408
+y,odd,151,"bit-flip, Toffoli",5000,3,0.0546
+y,odd,151,"phase-flip, Toffoli",5000,3,0.063
+y,odd,153,no correction (Brisbane 105),5000,3,0.041
+y,odd,153,"bit-flip, Toffoli",5000,3,0.057
+y,odd,153,"phase-flip, Toffoli",5000,3,0.0666
+y,odd,155,no correction (Brisbane 105),5000,3,0.0416
+y,odd,155,"bit-flip, Toffoli",5000,3,0.0626
+y,odd,155,"phase-flip, Toffoli",5000,3,0.0572
+y,odd,157,no correction (Brisbane 105),5000,3,0.0422
+y,odd,157,"bit-flip, Toffoli",5000,3,0.0512
+y,odd,157,"phase-flip, Toffoli",5000,3,0.0678
+y,odd,159,no correction (Brisbane 105),5000,3,0.0418
+y,odd,159,"bit-flip, Toffoli",5000,3,0.0594
+y,odd,159,"phase-flip, Toffoli",5000,3,0.0644
+y,odd,161,no correction (Brisbane 105),5000,3,0.0434
+y,odd,161,"bit-flip, Toffoli",5000,3,0.0566
+y,odd,161,"phase-flip, Toffoli",5000,3,0.0634
+y,odd,163,no correction (Brisbane 105),5000,3,0.0408
+y,odd,163,"bit-flip, Toffoli",5000,3,0.0556
+y,odd,163,"phase-flip, Toffoli",5000,3,0.0682
+y,odd,165,no correction (Brisbane 105),5000,3,0.0448
+y,odd,165,"bit-flip, Toffoli",5000,3,0.0598
+y,odd,165,"phase-flip, Toffoli",5000,3,0.0672
+y,odd,167,no correction (Brisbane 105),5000,3,0.043
+y,odd,167,"bit-flip, Toffoli",5000,3,0.06
+y,odd,167,"phase-flip, Toffoli",5000,3,0.0652
+y,odd,169,no correction (Brisbane 105),5000,3,0.0418
+y,odd,169,"bit-flip, Toffoli",5000,3,0.0598
+y,odd,169,"phase-flip, Toffoli",5000,3,0.0656
+y,odd,171,no correction (Brisbane 105),5000,3,0.0424
+y,odd,171,"bit-flip, Toffoli",5000,3,0.0574
+y,odd,171,"phase-flip, Toffoli",5000,3,0.0592
+y,odd,173,no correction (Brisbane 105),5000,3,0.0454
+y,odd,173,"bit-flip, Toffoli",5000,3,0.0536
+y,odd,173,"phase-flip, Toffoli",5000,3,0.0586
+y,odd,175,no correction (Brisbane 105),5000,3,0.0448
+y,odd,175,"bit-flip, Toffoli",5000,3,0.0536
+y,odd,175,"phase-flip, Toffoli",5000,3,0.0568
+y,odd,177,no correction (Brisbane 105),5000,3,0.046
+y,odd,177,"bit-flip, Toffoli",5000,3,0.0522
+y,odd,177,"phase-flip, Toffoli",5000,3,0.0614
+y,odd,179,no correction (Brisbane 105),5000,3,0.047
+y,odd,179,"bit-flip, Toffoli",5000,3,0.0546
+y,odd,179,"phase-flip, Toffoli",5000,3,0.0642
+y,odd,181,no correction (Brisbane 105),5000,3,0.0502
+y,odd,181,"bit-flip, Toffoli",5000,3,0.0578
+y,odd,181,"phase-flip, Toffoli",5000,3,0.0642
+y,odd,183,no correction (Brisbane 105),5000,3,0.0468
+y,odd,183,"bit-flip, Toffoli",5000,3,0.061
+y,odd,183,"phase-flip, Toffoli",5000,3,0.0666
+y,odd,185,no correction (Brisbane 105),5000,3,0.0472
+y,odd,185,"bit-flip, Toffoli",5000,3,0.059
+y,odd,185,"phase-flip, Toffoli",5000,3,0.0578
+y,odd,187,no correction (Brisbane 105),5000,3,0.048
+y,odd,187,"bit-flip, Toffoli",5000,3,0.0506
+y,odd,187,"phase-flip, Toffoli",5000,3,0.059
+y,odd,189,no correction (Brisbane 105),5000,3,0.0482
+y,odd,189,"bit-flip, Toffoli",5000,3,0.052
+y,odd,189,"phase-flip, Toffoli",5000,3,0.059
+y,odd,191,no correction (Brisbane 105),5000,3,0.0494
+y,odd,191,"bit-flip, Toffoli",5000,3,0.0556
+y,odd,191,"phase-flip, Toffoli",5000,3,0.0626
+y,odd,193,no correction (Brisbane 105),5000,3,0.0514
+y,odd,193,"bit-flip, Toffoli",5000,3,0.0566
+y,odd,193,"phase-flip, Toffoli",5000,3,0.0646
+y,odd,195,no correction (Brisbane 105),5000,3,0.052
+y,odd,195,"bit-flip, Toffoli",5000,3,0.0578
+y,odd,195,"phase-flip, Toffoli",5000,3,0.0584
+y,odd,197,no correction (Brisbane 105),5000,3,0.0522
+y,odd,197,"bit-flip, Toffoli",5000,3,0.0506
+y,odd,197,"phase-flip, Toffoli",5000,3,0.0612
+y,odd,199,no correction (Brisbane 105),5000,3,0.0514
+y,odd,199,"bit-flip, Toffoli",5000,3,0.0514
+y,odd,199,"phase-flip, Toffoli",5000,3,0.0644
+y,odd,201,no correction (Brisbane 105),5000,3,0.0498
+y,odd,201,"bit-flip, Toffoli",5000,3,0.0572
+y,odd,201,"phase-flip, Toffoli",5000,3,0.062
+y,odd,203,no correction (Brisbane 105),5000,3,0.0554
+y,odd,203,"bit-flip, Toffoli",5000,3,0.0546
+y,odd,203,"phase-flip, Toffoli",5000,3,0.0618
+y,odd,205,no correction (Brisbane 105),5000,3,0.0522
+y,odd,205,"bit-flip, Toffoli",5000,3,0.0568
+y,odd,205,"phase-flip, Toffoli",5000,3,0.0676
+y,odd,207,no correction (Brisbane 105),5000,3,0.051
+y,odd,207,"bit-flip, Toffoli",5000,3,0.0626
+y,odd,207,"phase-flip, Toffoli",5000,3,0.066
+y,odd,209,no correction (Brisbane 105),5000,3,0.0532
+y,odd,209,"bit-flip, Toffoli",5000,3,0.0596
+y,odd,209,"phase-flip, Toffoli",5000,3,0.0638
+y,odd,211,no correction (Brisbane 105),5000,3,0.0528
+y,odd,211,"bit-flip, Toffoli",5000,3,0.0574
+y,odd,211,"phase-flip, Toffoli",5000,3,0.061
+y,odd,213,no correction (Brisbane 105),5000,3,0.053
+y,odd,213,"bit-flip, Toffoli",5000,3,0.0562
+y,odd,213,"phase-flip, Toffoli",5000,3,0.0728
+y,odd,215,no correction (Brisbane 105),5000,3,0.0524
+y,odd,215,"bit-flip, Toffoli",5000,3,0.0628
+y,odd,215,"phase-flip, Toffoli",5000,3,0.071
+y,odd,217,no correction (Brisbane 105),5000,3,0.0534
+y,odd,217,"bit-flip, Toffoli",5000,3,0.062
+y,odd,217,"phase-flip, Toffoli",5000,3,0.0722
+y,odd,219,no correction (Brisbane 105),5000,3,0.0544
+y,odd,219,"bit-flip, Toffoli",5000,3,0.0596
+y,odd,219,"phase-flip, Toffoli",5000,3,0.0644
+y,odd,221,no correction (Brisbane 105),5000,3,0.0546
+y,odd,221,"bit-flip, Toffoli",5000,3,0.0596
+y,odd,221,"phase-flip, Toffoli",5000,3,0.063
+y,odd,223,no correction (Brisbane 105),5000,3,0.0578
+y,odd,223,"bit-flip, Toffoli",5000,3,0.0554
+y,odd,223,"phase-flip, Toffoli",5000,3,0.0686
+y,odd,225,no correction (Brisbane 105),5000,3,0.057
+y,odd,225,"bit-flip, Toffoli",5000,3,0.0604
+y,odd,225,"phase-flip, Toffoli",5000,3,0.0676
+y,odd,227,no correction (Brisbane 105),5000,3,0.0584
+y,odd,227,"bit-flip, Toffoli",5000,3,0.0576
+y,odd,227,"phase-flip, Toffoli",5000,3,0.0736
+y,odd,229,no correction (Brisbane 105),5000,3,0.0592
+y,odd,229,"bit-flip, Toffoli",5000,3,0.066
+y,odd,229,"phase-flip, Toffoli",5000,3,0.0668
+y,odd,231,no correction (Brisbane 105),5000,3,0.0596
+y,odd,231,"bit-flip, Toffoli",5000,3,0.0606
+y,odd,231,"phase-flip, Toffoli",5000,3,0.0656
+y,odd,233,no correction (Brisbane 105),5000,3,0.0612
+y,odd,233,"bit-flip, Toffoli",5000,3,0.0552
+y,odd,233,"phase-flip, Toffoli",5000,3,0.0688
+y,odd,235,no correction (Brisbane 105),5000,3,0.0622
+y,odd,235,"bit-flip, Toffoli",5000,3,0.0586
+y,odd,235,"phase-flip, Toffoli",5000,3,0.0696
+y,odd,237,no correction (Brisbane 105),5000,3,0.0626
+y,odd,237,"bit-flip, Toffoli",5000,3,0.0604
+y,odd,237,"phase-flip, Toffoli",5000,3,0.0702
+y,odd,239,no correction (Brisbane 105),5000,3,0.06
+y,odd,239,"bit-flip, Toffoli",5000,3,0.0634
+y,odd,239,"phase-flip, Toffoli",5000,3,0.0698
+y,odd,241,no correction (Brisbane 105),5000,3,0.0604
+y,odd,241,"bit-flip, Toffoli",5000,3,0.0624
+y,odd,241,"phase-flip, Toffoli",5000,3,0.0676
+y,odd,243,no correction (Brisbane 105),5000,3,0.0614
+y,odd,243,"bit-flip, Toffoli",5000,3,0.0584
+y,odd,243,"phase-flip, Toffoli",5000,3,0.067
+y,odd,245,no correction (Brisbane 105),5000,3,0.062
+y,odd,245,"bit-flip, Toffoli",5000,3,0.0598
+y,odd,245,"phase-flip, Toffoli",5000,3,0.0632
+y,odd,247,no correction (Brisbane 105),5000,3,0.0618
+y,odd,247,"bit-flip, Toffoli",5000,3,0.058
+y,odd,247,"phase-flip, Toffoli",5000,3,0.071
+y,odd,249,no correction (Brisbane 105),5000,3,0.0632
+y,odd,249,"bit-flip, Toffoli",5000,3,0.0618
+y,odd,249,"phase-flip, Toffoli",5000,3,0.0706
+y,odd,251,no correction (Brisbane 105),5000,3,0.0628
+y,odd,251,"bit-flip, Toffoli",5000,3,0.0632
+y,odd,251,"phase-flip, Toffoli",5000,3,0.0734
+y,odd,253,no correction (Brisbane 105),5000,3,0.0636
+y,odd,253,"bit-flip, Toffoli",5000,3,0.0628
+y,odd,253,"phase-flip, Toffoli",5000,3,0.0682
+y,odd,255,no correction (Brisbane 105),5000,3,0.064
+y,odd,255,"bit-flip, Toffoli",5000,3,0.0594
+y,odd,255,"phase-flip, Toffoli",5000,3,0.0722
+y,odd,257,no correction (Brisbane 105),5000,3,0.0646
+y,odd,257,"bit-flip, Toffoli",5000,3,0.063
+y,odd,257,"phase-flip, Toffoli",5000,3,0.0758
+y,odd,259,no correction (Brisbane 105),5000,3,0.0646
+y,odd,259,"bit-flip, Toffoli",5000,3,0.0696
+y,odd,259,"phase-flip, Toffoli",5000,3,0.0678
+y,odd,261,no correction (Brisbane 105),5000,3,0.0646
+y,odd,261,"bit-flip, Toffoli",5000,3,0.0582
+y,odd,261,"phase-flip, Toffoli",5000,3,0.072
+y,odd,263,no correction (Brisbane 105),5000,3,0.0668
+y,odd,263,"bit-flip, Toffoli",5000,3,0.0622
+y,odd,263,"phase-flip, Toffoli",5000,3,0.0688
+y,odd,265,no correction (Brisbane 105),5000,3,0.0652
+y,odd,265,"bit-flip, Toffoli",5000,3,0.0556
+y,odd,265,"phase-flip, Toffoli",5000,3,0.0706
+y,odd,267,no correction (Brisbane 105),5000,3,0.0672
+y,odd,267,"bit-flip, Toffoli",5000,3,0.0598
+y,odd,267,"phase-flip, Toffoli",5000,3,0.0738
+y,odd,269,no correction (Brisbane 105),5000,3,0.067
+y,odd,269,"bit-flip, Toffoli",5000,3,0.0636
+y,odd,269,"phase-flip, Toffoli",5000,3,0.0716
+y,odd,271,no correction (Brisbane 105),5000,3,0.0704
+y,odd,271,"bit-flip, Toffoli",5000,3,0.0622
+y,odd,271,"phase-flip, Toffoli",5000,3,0.0688
+y,odd,273,no correction (Brisbane 105),5000,3,0.0658
+y,odd,273,"bit-flip, Toffoli",5000,3,0.0594
+y,odd,273,"phase-flip, Toffoli",5000,3,0.0666
+y,odd,275,no correction (Brisbane 105),5000,3,0.0684
+y,odd,275,"bit-flip, Toffoli",5000,3,0.0544
+y,odd,275,"phase-flip, Toffoli",5000,3,0.0716
+y,odd,277,no correction (Brisbane 105),5000,3,0.0668
+y,odd,277,"bit-flip, Toffoli",5000,3,0.0602
+y,odd,277,"phase-flip, Toffoli",5000,3,0.0682
+y,odd,279,no correction (Brisbane 105),5000,3,0.0678
+y,odd,279,"bit-flip, Toffoli",5000,3,0.0582
+y,odd,279,"phase-flip, Toffoli",5000,3,0.0738
+y,odd,281,no correction (Brisbane 105),5000,3,0.069
+y,odd,281,"bit-flip, Toffoli",5000,3,0.0618
+y,odd,281,"phase-flip, Toffoli",5000,3,0.074
+y,odd,283,no correction (Brisbane 105),5000,3,0.0714
+y,odd,283,"bit-flip, Toffoli",5000,3,0.0624
+y,odd,283,"phase-flip, Toffoli",5000,3,0.0796
+y,odd,285,no correction (Brisbane 105),5000,3,0.0694
+y,odd,285,"bit-flip, Toffoli",5000,3,0.0708
+y,odd,285,"phase-flip, Toffoli",5000,3,0.0738
+y,odd,287,no correction (Brisbane 105),5000,3,0.0702
+y,odd,287,"bit-flip, Toffoli",5000,3,0.0628
+y,odd,287,"phase-flip, Toffoli",5000,3,0.0708
+y,odd,289,no correction (Brisbane 105),5000,3,0.0714
+y,odd,289,"bit-flip, Toffoli",5000,3,0.058
+y,odd,289,"phase-flip, Toffoli",5000,3,0.0722
+y,odd,291,no correction (Brisbane 105),5000,3,0.0714
+y,odd,291,"bit-flip, Toffoli",5000,3,0.06
+y,odd,291,"phase-flip, Toffoli",5000,3,0.0766
+y,odd,293,no correction (Brisbane 105),5000,3,0.0722
+y,odd,293,"bit-flip, Toffoli",5000,3,0.0656
+y,odd,293,"phase-flip, Toffoli",5000,3,0.0684
+y,odd,295,no correction (Brisbane 105),5000,3,0.072
+y,odd,295,"bit-flip, Toffoli",5000,3,0.0596
+y,odd,295,"phase-flip, Toffoli",5000,3,0.0704
+y,odd,297,no correction (Brisbane 105),5000,3,0.0728
+y,odd,297,"bit-flip, Toffoli",5000,3,0.0598
+y,odd,297,"phase-flip, Toffoli",5000,3,0.074
+y,odd,299,no correction (Brisbane 105),5000,3,0.0724
+y,odd,299,"bit-flip, Toffoli",5000,3,0.0606
+y,odd,299,"phase-flip, Toffoli",5000,3,0.0774
+y,odd,301,no correction (Brisbane 105),5000,3,0.0754
+y,odd,301,"bit-flip, Toffoli",5000,3,0.063
+y,odd,301,"phase-flip, Toffoli",5000,3,0.0774
+y,odd,303,no correction (Brisbane 105),5000,3,0.0736
+y,odd,303,"bit-flip, Toffoli",5000,3,0.064
+y,odd,303,"phase-flip, Toffoli",5000,3,0.0758
+y,odd,305,no correction (Brisbane 105),5000,3,0.0716
+y,odd,305,"bit-flip, Toffoli",5000,3,0.0648
+y,odd,305,"phase-flip, Toffoli",5000,3,0.081
+y,odd,307,no correction (Brisbane 105),5000,3,0.075
+y,odd,307,"bit-flip, Toffoli",5000,3,0.0676
+y,odd,307,"phase-flip, Toffoli",5000,3,0.0736
+y,odd,309,no correction (Brisbane 105),5000,3,0.0752
+y,odd,309,"bit-flip, Toffoli",5000,3,0.0624
+y,odd,309,"phase-flip, Toffoli",5000,3,0.0794
+y,odd,311,no correction (Brisbane 105),5000,3,0.0766
+y,odd,311,"bit-flip, Toffoli",5000,3,0.0688
+y,odd,311,"phase-flip, Toffoli",5000,3,0.0832
+y,odd,313,no correction (Brisbane 105),5000,3,0.0762
+y,odd,313,"bit-flip, Toffoli",5000,3,0.0684
+y,odd,313,"phase-flip, Toffoli",5000,3,0.0756
+y,odd,315,no correction (Brisbane 105),5000,3,0.0764
+y,odd,315,"bit-flip, Toffoli",5000,3,0.0628
+y,odd,315,"phase-flip, Toffoli",5000,3,0.0764
+y,odd,317,no correction (Brisbane 105),5000,3,0.0762
+y,odd,317,"bit-flip, Toffoli",5000,3,0.0644
+y,odd,317,"phase-flip, Toffoli",5000,3,0.074
+y,odd,319,no correction (Brisbane 105),5000,3,0.0784
+y,odd,319,"bit-flip, Toffoli",5000,3,0.0596
+y,odd,319,"phase-flip, Toffoli",5000,3,0.0744
+y,odd,321,no correction (Brisbane 105),5000,3,0.0784
+y,odd,321,"bit-flip, Toffoli",5000,3,0.0596
+y,odd,321,"phase-flip, Toffoli",5000,3,0.0742
+y,odd,323,no correction (Brisbane 105),5000,3,0.0788
+y,odd,323,"bit-flip, Toffoli",5000,3,0.0634
+y,odd,323,"phase-flip, Toffoli",5000,3,0.082
+y,odd,325,no correction (Brisbane 105),5000,3,0.0794
+y,odd,325,"bit-flip, Toffoli",5000,3,0.0664
+y,odd,325,"phase-flip, Toffoli",5000,3,0.0778
+y,odd,327,no correction (Brisbane 105),5000,3,0.0796
+y,odd,327,"bit-flip, Toffoli",5000,3,0.0624
+y,odd,327,"phase-flip, Toffoli",5000,3,0.0734
+y,odd,329,no correction (Brisbane 105),5000,3,0.0794
+y,odd,329,"bit-flip, Toffoli",5000,3,0.0572
+y,odd,329,"phase-flip, Toffoli",5000,3,0.0808
+y,odd,331,no correction (Brisbane 105),5000,3,0.0782
+y,odd,331,"bit-flip, Toffoli",5000,3,0.0668
+y,odd,331,"phase-flip, Toffoli",5000,3,0.079
+y,odd,333,no correction (Brisbane 105),5000,3,0.0806
+y,odd,333,"bit-flip, Toffoli",5000,3,0.0642
+y,odd,333,"phase-flip, Toffoli",5000,3,0.073
+y,odd,335,no correction (Brisbane 105),5000,3,0.0812
+y,odd,335,"bit-flip, Toffoli",5000,3,0.056
+y,odd,335,"phase-flip, Toffoli",5000,3,0.0808
+y,odd,337,no correction (Brisbane 105),5000,3,0.0836
+y,odd,337,"bit-flip, Toffoli",5000,3,0.0652
+y,odd,337,"phase-flip, Toffoli",5000,3,0.0756
+y,odd,339,no correction (Brisbane 105),5000,3,0.08
+y,odd,339,"bit-flip, Toffoli",5000,3,0.0622
+y,odd,339,"phase-flip, Toffoli",5000,3,0.0792
+y,odd,341,no correction (Brisbane 105),5000,3,0.0816
+y,odd,341,"bit-flip, Toffoli",5000,3,0.0634
+y,odd,341,"phase-flip, Toffoli",5000,3,0.0832
+y,odd,343,no correction (Brisbane 105),5000,3,0.0824
+y,odd,343,"bit-flip, Toffoli",5000,3,0.0676
+y,odd,343,"phase-flip, Toffoli",5000,3,0.0852
+y,odd,345,no correction (Brisbane 105),5000,3,0.0832
+y,odd,345,"bit-flip, Toffoli",5000,3,0.069
+y,odd,345,"phase-flip, Toffoli",5000,3,0.0808
+y,odd,347,no correction (Brisbane 105),5000,3,0.0824
+y,odd,347,"bit-flip, Toffoli",5000,3,0.0668
+y,odd,347,"phase-flip, Toffoli",5000,3,0.0804
+y,odd,349,no correction (Brisbane 105),5000,3,0.0842
+y,odd,349,"bit-flip, Toffoli",5000,3,0.0656
+y,odd,349,"phase-flip, Toffoli",5000,3,0.0814
+y,odd,351,no correction (Brisbane 105),5000,3,0.085
+y,odd,351,"bit-flip, Toffoli",5000,3,0.0638
+y,odd,351,"phase-flip, Toffoli",5000,3,0.0778
+y,odd,353,no correction (Brisbane 105),5000,3,0.0872
+y,odd,353,"bit-flip, Toffoli",5000,3,0.062
+y,odd,353,"phase-flip, Toffoli",5000,3,0.085
+repeat,even,0,no correction (Brisbane 105),5000,3,0.0102
+repeat,even,0,"bit-flip, Toffoli",5000,3,0.05
+repeat,even,0,"phase-flip, Toffoli",5000,3,0.047
+repeat,even,6,no correction (Brisbane 105),5000,3,0.0106
+repeat,even,6,"bit-flip, Toffoli",5000,3,0.0582
+repeat,even,6,"phase-flip, Toffoli",5000,3,0.0612
+repeat,even,12,no correction (Brisbane 105),5000,3,0.0116
+repeat,even,12,"bit-flip, Toffoli",5000,3,0.054
+repeat,even,12,"phase-flip, Toffoli",5000,3,0.0566
+repeat,even,18,no correction (Brisbane 105),5000,3,0.0126
+repeat,even,18,"bit-flip, Toffoli",5000,3,0.05
+repeat,even,18,"phase-flip, Toffoli",5000,3,0.049
+repeat,even,24,no correction (Brisbane 105),5000,3,0.0138
+repeat,even,24,"bit-flip, Toffoli",5000,3,0.0528
+repeat,even,24,"phase-flip, Toffoli",5000,3,0.0522
+repeat,even,30,no correction (Brisbane 105),5000,3,0.0146
+repeat,even,30,"bit-flip, Toffoli",5000,3,0.0496
+repeat,even,30,"phase-flip, Toffoli",5000,3,0.0478
+repeat,even,36,no correction (Brisbane 105),5000,3,0.0134
+repeat,even,36,"bit-flip, Toffoli",5000,3,0.0482
+repeat,even,36,"phase-flip, Toffoli",5000,3,0.0458
+repeat,even,42,no correction (Brisbane 105),5000,3,0.016
+repeat,even,42,"bit-flip, Toffoli",5000,3,0.0498
+repeat,even,42,"phase-flip, Toffoli",5000,3,0.0504
+repeat,even,48,no correction (Brisbane 105),5000,3,0.0162
+repeat,even,48,"bit-flip, Toffoli",5000,3,0.0452
+repeat,even,48,"phase-flip, Toffoli",5000,3,0.054
+repeat,even,54,no correction (Brisbane 105),5000,3,0.0162
+repeat,even,54,"bit-flip, Toffoli",5000,3,0.0522
+repeat,even,54,"phase-flip, Toffoli",5000,3,0.0468
+repeat,even,60,no correction (Brisbane 105),5000,3,0.0192
+repeat,even,60,"bit-flip, Toffoli",5000,3,0.0504
+repeat,even,60,"phase-flip, Toffoli",5000,3,0.0546
+repeat,even,66,no correction (Brisbane 105),5000,3,0.02
+repeat,even,66,"bit-flip, Toffoli",5000,3,0.0534
+repeat,even,66,"phase-flip, Toffoli",5000,3,0.0538
+repeat,even,72,no correction (Brisbane 105),5000,3,0.0194
+repeat,even,72,"bit-flip, Toffoli",5000,3,0.0516
+repeat,even,72,"phase-flip, Toffoli",5000,3,0.0536
+repeat,even,78,no correction (Brisbane 105),5000,3,0.0192
+repeat,even,78,"bit-flip, Toffoli",5000,3,0.0572
+repeat,even,78,"phase-flip, Toffoli",5000,3,0.0512
+repeat,even,84,no correction (Brisbane 105),5000,3,0.0192
+repeat,even,84,"bit-flip, Toffoli",5000,3,0.0542
+repeat,even,84,"phase-flip, Toffoli",5000,3,0.048
+repeat,even,90,no correction (Brisbane 105),5000,3,0.0194
+repeat,even,90,"bit-flip, Toffoli",5000,3,0.0494
+repeat,even,90,"phase-flip, Toffoli",5000,3,0.0542
+repeat,even,96,no correction (Brisbane 105),5000,3,0.0204
+repeat,even,96,"bit-flip, Toffoli",5000,3,0.0458
+repeat,even,96,"phase-flip, Toffoli",5000,3,0.0492
+repeat,even,102,no correction (Brisbane 105),5000,3,0.0238
+repeat,even,102,"bit-flip, Toffoli",5000,3,0.0514
+repeat,even,102,"phase-flip, Toffoli",5000,3,0.051
+repeat,even,108,no correction (Brisbane 105),5000,3,0.0258
+repeat,even,108,"bit-flip, Toffoli",5000,3,0.0564
+repeat,even,108,"phase-flip, Toffoli",5000,3,0.0476
+repeat,even,114,no correction (Brisbane 105),5000,3,0.0234
+repeat,even,114,"bit-flip, Toffoli",5000,3,0.05
+repeat,even,114,"phase-flip, Toffoli",5000,3,0.0566
+repeat,even,120,no correction (Brisbane 105),5000,3,0.0282
+repeat,even,120,"bit-flip, Toffoli",5000,3,0.0506
+repeat,even,120,"phase-flip, Toffoli",5000,3,0.0548
+repeat,even,126,no correction (Brisbane 105),5000,3,0.0286
+repeat,even,126,"bit-flip, Toffoli",5000,3,0.0534
+repeat,even,126,"phase-flip, Toffoli",5000,3,0.054
+repeat,even,132,no correction (Brisbane 105),5000,3,0.026
+repeat,even,132,"bit-flip, Toffoli",5000,3,0.0556
+repeat,even,132,"phase-flip, Toffoli",5000,3,0.0564
+repeat,even,138,no correction (Brisbane 105),5000,3,0.0288
+repeat,even,138,"bit-flip, Toffoli",5000,3,0.052
+repeat,even,138,"phase-flip, Toffoli",5000,3,0.053
+repeat,even,144,no correction (Brisbane 105),5000,3,0.028
+repeat,even,144,"bit-flip, Toffoli",5000,3,0.0556
+repeat,even,144,"phase-flip, Toffoli",5000,3,0.0608
+repeat,even,150,no correction (Brisbane 105),5000,3,0.0292
+repeat,even,150,"bit-flip, Toffoli",5000,3,0.0554
+repeat,even,150,"phase-flip, Toffoli",5000,3,0.0586
+repeat,even,156,no correction (Brisbane 105),5000,3,0.0286
+repeat,even,156,"bit-flip, Toffoli",5000,3,0.0592
+repeat,even,156,"phase-flip, Toffoli",5000,3,0.0628
+repeat,even,162,no correction (Brisbane 105),5000,3,0.031
+repeat,even,162,"bit-flip, Toffoli",5000,3,0.058
+repeat,even,162,"phase-flip, Toffoli",5000,3,0.052
+repeat,even,168,no correction (Brisbane 105),5000,3,0.0314
+repeat,even,168,"bit-flip, Toffoli",5000,3,0.0516
+repeat,even,168,"phase-flip, Toffoli",5000,3,0.0616
+repeat,even,174,no correction (Brisbane 105),5000,3,0.0308
+repeat,even,174,"bit-flip, Toffoli",5000,3,0.0596
+repeat,even,174,"phase-flip, Toffoli",5000,3,0.0588
+repeat,even,180,no correction (Brisbane 105),5000,3,0.0334
+repeat,even,180,"bit-flip, Toffoli",5000,3,0.055
+repeat,even,180,"phase-flip, Toffoli",5000,3,0.0572
+repeat,even,186,no correction (Brisbane 105),5000,3,0.0316
+repeat,even,186,"bit-flip, Toffoli",5000,3,0.0528
+repeat,even,186,"phase-flip, Toffoli",5000,3,0.06
+repeat,even,192,no correction (Brisbane 105),5000,3,0.0348
+repeat,even,192,"bit-flip, Toffoli",5000,3,0.0546
+repeat,even,192,"phase-flip, Toffoli",5000,3,0.0618
+repeat,even,198,no correction (Brisbane 105),5000,3,0.0358
+repeat,even,198,"bit-flip, Toffoli",5000,3,0.0518
+repeat,even,198,"phase-flip, Toffoli",5000,3,0.0556
+repeat,even,204,no correction (Brisbane 105),5000,3,0.0356
+repeat,even,204,"bit-flip, Toffoli",5000,3,0.0534
+repeat,even,204,"phase-flip, Toffoli",5000,3,0.0626
+repeat,even,210,no correction (Brisbane 105),5000,3,0.0394
+repeat,even,210,"bit-flip, Toffoli",5000,3,0.0534
+repeat,even,210,"phase-flip, Toffoli",5000,3,0.06
+repeat,even,216,no correction (Brisbane 105),5000,3,0.0394
+repeat,even,216,"bit-flip, Toffoli",5000,3,0.058
+repeat,even,216,"phase-flip, Toffoli",5000,3,0.059
+repeat,even,222,no correction (Brisbane 105),5000,3,0.04
+repeat,even,222,"bit-flip, Toffoli",5000,3,0.0524
+repeat,even,222,"phase-flip, Toffoli",5000,3,0.0624
+repeat,even,228,no correction (Brisbane 105),5000,3,0.0382
+repeat,even,228,"bit-flip, Toffoli",5000,3,0.0562
+repeat,even,228,"phase-flip, Toffoli",5000,3,0.0614
+repeat,even,234,no correction (Brisbane 105),5000,3,0.0426
+repeat,even,234,"bit-flip, Toffoli",5000,3,0.0558
+repeat,even,234,"phase-flip, Toffoli",5000,3,0.0608
+repeat,even,240,no correction (Brisbane 105),5000,3,0.0428
+repeat,even,240,"bit-flip, Toffoli",5000,3,0.057
+repeat,even,240,"phase-flip, Toffoli",5000,3,0.0634
+repeat,even,246,no correction (Brisbane 105),5000,3,0.0442
+repeat,even,246,"bit-flip, Toffoli",5000,3,0.0588
+repeat,even,246,"phase-flip, Toffoli",5000,3,0.0628
+repeat,even,252,no correction (Brisbane 105),5000,3,0.0444
+repeat,even,252,"bit-flip, Toffoli",5000,3,0.0548
+repeat,even,252,"phase-flip, Toffoli",5000,3,0.0588
+repeat,even,258,no correction (Brisbane 105),5000,3,0.0444
+repeat,even,258,"bit-flip, Toffoli",5000,3,0.0538
+repeat,even,258,"phase-flip, Toffoli",5000,3,0.0578
+repeat,even,264,no correction (Brisbane 105),5000,3,0.0454
+repeat,even,264,"bit-flip, Toffoli",5000,3,0.0518
+repeat,even,264,"phase-flip, Toffoli",5000,3,0.0632
+repeat,even,270,no correction (Brisbane 105),5000,3,0.0464
+repeat,even,270,"bit-flip, Toffoli",5000,3,0.0554
+repeat,even,270,"phase-flip, Toffoli",5000,3,0.0574
+repeat,even,276,no correction (Brisbane 105),5000,3,0.0486
+repeat,even,276,"bit-flip, Toffoli",5000,3,0.0558
+repeat,even,276,"phase-flip, Toffoli",5000,3,0.0608
+repeat,even,282,no correction (Brisbane 105),5000,3,0.0478
+repeat,even,282,"bit-flip, Toffoli",5000,3,0.0524
+repeat,even,282,"phase-flip, Toffoli",5000,3,0.0622
+repeat,even,288,no correction (Brisbane 105),5000,3,0.0488
+repeat,even,288,"bit-flip, Toffoli",5000,3,0.0582
+repeat,even,288,"phase-flip, Toffoli",5000,3,0.0604
+repeat,even,294,no correction (Brisbane 105),5000,3,0.0498
+repeat,even,294,"bit-flip, Toffoli",5000,3,0.0524
+repeat,even,294,"phase-flip, Toffoli",5000,3,0.0624
+repeat,even,300,no correction (Brisbane 105),5000,3,0.0502
+repeat,even,300,"bit-flip, Toffoli",5000,3,0.0544
+repeat,even,300,"phase-flip, Toffoli",5000,3,0.0612
+repeat,even,306,no correction (Brisbane 105),5000,3,0.0526
+repeat,even,306,"bit-flip, Toffoli",5000,3,0.056
+repeat,even,306,"phase-flip, Toffoli",5000,3,0.0678
+repeat,even,312,no correction (Brisbane 105),5000,3,0.0542
+repeat,even,312,"bit-flip, Toffoli",5000,3,0.0582
+repeat,even,312,"phase-flip, Toffoli",5000,3,0.0668
+repeat,even,318,no correction (Brisbane 105),5000,3,0.0544
+repeat,even,318,"bit-flip, Toffoli",5000,3,0.0574
+repeat,even,318,"phase-flip, Toffoli",5000,3,0.0612
+repeat,even,324,no correction (Brisbane 105),5000,3,0.055
+repeat,even,324,"bit-flip, Toffoli",5000,3,0.0594
+repeat,even,324,"phase-flip, Toffoli",5000,3,0.0624
+repeat,even,330,no correction (Brisbane 105),5000,3,0.0534
+repeat,even,330,"bit-flip, Toffoli",5000,3,0.0556
+repeat,even,330,"phase-flip, Toffoli",5000,3,0.0654
+repeat,even,336,no correction (Brisbane 105),5000,3,0.0576
+repeat,even,336,"bit-flip, Toffoli",5000,3,0.0576
+repeat,even,336,"phase-flip, Toffoli",5000,3,0.07
+repeat,even,342,no correction (Brisbane 105),5000,3,0.0562
+repeat,even,342,"bit-flip, Toffoli",5000,3,0.0558
+repeat,even,342,"phase-flip, Toffoli",5000,3,0.0648
+repeat,even,348,no correction (Brisbane 105),5000,3,0.059
+repeat,even,348,"bit-flip, Toffoli",5000,3,0.0582
+repeat,even,348,"phase-flip, Toffoli",5000,3,0.0712
+repeat,even,354,no correction (Brisbane 105),5000,3,0.061
+repeat,even,354,"bit-flip, Toffoli",5000,3,0.0628
+repeat,even,354,"phase-flip, Toffoli",5000,3,0.0706
+repeat,even,360,no correction (Brisbane 105),5000,3,0.0616
+repeat,even,360,"bit-flip, Toffoli",5000,3,0.0628
+repeat,even,360,"phase-flip, Toffoli",5000,3,0.0692
+repeat,even,366,no correction (Brisbane 105),5000,3,0.0612
+repeat,even,366,"bit-flip, Toffoli",5000,3,0.0538
+repeat,even,366,"phase-flip, Toffoli",5000,3,0.065
+repeat,even,372,no correction (Brisbane 105),5000,3,0.0608
+repeat,even,372,"bit-flip, Toffoli",5000,3,0.0596
+repeat,even,372,"phase-flip, Toffoli",5000,3,0.0648
+repeat,even,378,no correction (Brisbane 105),5000,3,0.0632
+repeat,even,378,"bit-flip, Toffoli",5000,3,0.0622
+repeat,even,378,"phase-flip, Toffoli",5000,3,0.0622
+repeat,even,384,no correction (Brisbane 105),5000,3,0.0654
+repeat,even,384,"bit-flip, Toffoli",5000,3,0.0598
+repeat,even,384,"phase-flip, Toffoli",5000,3,0.0668
+repeat,even,390,no correction (Brisbane 105),5000,3,0.0626
+repeat,even,390,"bit-flip, Toffoli",5000,3,0.056
+repeat,even,390,"phase-flip, Toffoli",5000,3,0.073
+repeat,even,396,no correction (Brisbane 105),5000,3,0.0642
+repeat,even,396,"bit-flip, Toffoli",5000,3,0.0568
+repeat,even,396,"phase-flip, Toffoli",5000,3,0.0682
+repeat,even,402,no correction (Brisbane 105),5000,3,0.0658
+repeat,even,402,"bit-flip, Toffoli",5000,3,0.0592
+repeat,even,402,"phase-flip, Toffoli",5000,3,0.067
+repeat,even,408,no correction (Brisbane 105),5000,3,0.0662
+repeat,even,408,"bit-flip, Toffoli",5000,3,0.062
+repeat,even,408,"phase-flip, Toffoli",5000,3,0.068
+repeat,even,414,no correction (Brisbane 105),5000,3,0.0668
+repeat,even,414,"bit-flip, Toffoli",5000,3,0.0648
+repeat,even,414,"phase-flip, Toffoli",5000,3,0.0694
+repeat,even,420,no correction (Brisbane 105),5000,3,0.0702
+repeat,even,420,"bit-flip, Toffoli",5000,3,0.0648
+repeat,even,420,"phase-flip, Toffoli",5000,3,0.0724
+repeat,even,426,no correction (Brisbane 105),5000,3,0.0698
+repeat,even,426,"bit-flip, Toffoli",5000,3,0.0672
+repeat,even,426,"phase-flip, Toffoli",5000,3,0.0686
+repeat,even,432,no correction (Brisbane 105),5000,3,0.0724
+repeat,even,432,"bit-flip, Toffoli",5000,3,0.0654
+repeat,even,432,"phase-flip, Toffoli",5000,3,0.0704
+repeat,even,438,no correction (Brisbane 105),5000,3,0.0728
+repeat,even,438,"bit-flip, Toffoli",5000,3,0.0624
+repeat,even,438,"phase-flip, Toffoli",5000,3,0.0708
+repeat,even,444,no correction (Brisbane 105),5000,3,0.0742
+repeat,even,444,"bit-flip, Toffoli",5000,3,0.0576
+repeat,even,444,"phase-flip, Toffoli",5000,3,0.0726
+repeat,even,450,no correction (Brisbane 105),5000,3,0.074
+repeat,even,450,"bit-flip, Toffoli",5000,3,0.0616
+repeat,even,450,"phase-flip, Toffoli",5000,3,0.0734
+repeat,odd,1,no correction (Brisbane 105),5000,3,0.006
+repeat,odd,1,"bit-flip, Toffoli",5000,3,0.0506
+repeat,odd,1,"phase-flip, Toffoli",5000,3,0.0534
+repeat,odd,7,no correction (Brisbane 105),5000,3,0.0116
+repeat,odd,7,"bit-flip, Toffoli",5000,3,0.0522
+repeat,odd,7,"phase-flip, Toffoli",5000,3,0.0548
+repeat,odd,13,no correction (Brisbane 105),5000,3,0.0096
+repeat,odd,13,"bit-flip, Toffoli",5000,3,0.0572
+repeat,odd,13,"phase-flip, Toffoli",5000,3,0.0558
+repeat,odd,19,no correction (Brisbane 105),5000,3,0.0132
+repeat,odd,19,"bit-flip, Toffoli",5000,3,0.0576
+repeat,odd,19,"phase-flip, Toffoli",5000,3,0.0562
+repeat,odd,25,no correction (Brisbane 105),5000,3,0.0152
+repeat,odd,25,"bit-flip, Toffoli",5000,3,0.0542
+repeat,odd,25,"phase-flip, Toffoli",5000,3,0.0544
+repeat,odd,31,no correction (Brisbane 105),5000,3,0.0156
+repeat,odd,31,"bit-flip, Toffoli",5000,3,0.0496
+repeat,odd,31,"phase-flip, Toffoli",5000,3,0.0574
+repeat,odd,37,no correction (Brisbane 105),5000,3,0.0126
+repeat,odd,37,"bit-flip, Toffoli",5000,3,0.0488
+repeat,odd,37,"phase-flip, Toffoli",5000,3,0.054
+repeat,odd,43,no correction (Brisbane 105),5000,3,0.0146
+repeat,odd,43,"bit-flip, Toffoli",5000,3,0.045
+repeat,odd,43,"phase-flip, Toffoli",5000,3,0.0504
+repeat,odd,49,no correction (Brisbane 105),5000,3,0.0136
+repeat,odd,49,"bit-flip, Toffoli",5000,3,0.0526
+repeat,odd,49,"phase-flip, Toffoli",5000,3,0.0536
+repeat,odd,55,no correction (Brisbane 105),5000,3,0.0174
+repeat,odd,55,"bit-flip, Toffoli",5000,3,0.0534
+repeat,odd,55,"phase-flip, Toffoli",5000,3,0.0552
+repeat,odd,61,no correction (Brisbane 105),5000,3,0.019
+repeat,odd,61,"bit-flip, Toffoli",5000,3,0.0554
+repeat,odd,61,"phase-flip, Toffoli",5000,3,0.0566
+repeat,odd,67,no correction (Brisbane 105),5000,3,0.018
+repeat,odd,67,"bit-flip, Toffoli",5000,3,0.05
+repeat,odd,67,"phase-flip, Toffoli",5000,3,0.0544
+repeat,odd,73,no correction (Brisbane 105),5000,3,0.0196
+repeat,odd,73,"bit-flip, Toffoli",5000,3,0.0534
+repeat,odd,73,"phase-flip, Toffoli",5000,3,0.0552
+repeat,odd,79,no correction (Brisbane 105),5000,3,0.0214
+repeat,odd,79,"bit-flip, Toffoli",5000,3,0.0502
+repeat,odd,79,"phase-flip, Toffoli",5000,3,0.0542
+repeat,odd,85,no correction (Brisbane 105),5000,3,0.0182
+repeat,odd,85,"bit-flip, Toffoli",5000,3,0.0494
+repeat,odd,85,"phase-flip, Toffoli",5000,3,0.0502
+repeat,odd,91,no correction (Brisbane 105),5000,3,0.02
+repeat,odd,91,"bit-flip, Toffoli",5000,3,0.0502
+repeat,odd,91,"phase-flip, Toffoli",5000,3,0.0558
+repeat,odd,97,no correction (Brisbane 105),5000,3,0.0228
+repeat,odd,97,"bit-flip, Toffoli",5000,3,0.0544
+repeat,odd,97,"phase-flip, Toffoli",5000,3,0.0502
+repeat,odd,103,no correction (Brisbane 105),5000,3,0.0216
+repeat,odd,103,"bit-flip, Toffoli",5000,3,0.0542
+repeat,odd,103,"phase-flip, Toffoli",5000,3,0.0526
+repeat,odd,109,no correction (Brisbane 105),5000,3,0.0264
+repeat,odd,109,"bit-flip, Toffoli",5000,3,0.0496
+repeat,odd,109,"phase-flip, Toffoli",5000,3,0.0524
+repeat,odd,115,no correction (Brisbane 105),5000,3,0.0226
+repeat,odd,115,"bit-flip, Toffoli",5000,3,0.0524
+repeat,odd,115,"phase-flip, Toffoli",5000,3,0.0566
+repeat,odd,121,no correction (Brisbane 105),5000,3,0.0272
+repeat,odd,121,"bit-flip, Toffoli",5000,3,0.052
+repeat,odd,121,"phase-flip, Toffoli",5000,3,0.0562
+repeat,odd,127,no correction (Brisbane 105),5000,3,0.0262
+repeat,odd,127,"bit-flip, Toffoli",5000,3,0.0538
+repeat,odd,127,"phase-flip, Toffoli",5000,3,0.0542
+repeat,odd,133,no correction (Brisbane 105),5000,3,0.0284
+repeat,odd,133,"bit-flip, Toffoli",5000,3,0.0586
+repeat,odd,133,"phase-flip, Toffoli",5000,3,0.059
+repeat,odd,139,no correction (Brisbane 105),5000,3,0.0306
+repeat,odd,139,"bit-flip, Toffoli",5000,3,0.0536
+repeat,odd,139,"phase-flip, Toffoli",5000,3,0.0592
+repeat,odd,145,no correction (Brisbane 105),5000,3,0.0298
+repeat,odd,145,"bit-flip, Toffoli",5000,3,0.0524
+repeat,odd,145,"phase-flip, Toffoli",5000,3,0.055
+repeat,odd,151,no correction (Brisbane 105),5000,3,0.0306
+repeat,odd,151,"bit-flip, Toffoli",5000,3,0.057
+repeat,odd,151,"phase-flip, Toffoli",5000,3,0.0572
+repeat,odd,157,no correction (Brisbane 105),5000,3,0.0306
+repeat,odd,157,"bit-flip, Toffoli",5000,3,0.0562
+repeat,odd,157,"phase-flip, Toffoli",5000,3,0.0602
+repeat,odd,163,no correction (Brisbane 105),5000,3,0.0302
+repeat,odd,163,"bit-flip, Toffoli",5000,3,0.0542
+repeat,odd,163,"phase-flip, Toffoli",5000,3,0.0534
+repeat,odd,169,no correction (Brisbane 105),5000,3,0.0324
+repeat,odd,169,"bit-flip, Toffoli",5000,3,0.0574
+repeat,odd,169,"phase-flip, Toffoli",5000,3,0.0584
+repeat,odd,175,no correction (Brisbane 105),5000,3,0.0306
+repeat,odd,175,"bit-flip, Toffoli",5000,3,0.0582
+repeat,odd,175,"phase-flip, Toffoli",5000,3,0.0592
+repeat,odd,181,no correction (Brisbane 105),5000,3,0.033
+repeat,odd,181,"bit-flip, Toffoli",5000,3,0.052
+repeat,odd,181,"phase-flip, Toffoli",5000,3,0.0586
+repeat,odd,187,no correction (Brisbane 105),5000,3,0.0354
+repeat,odd,187,"bit-flip, Toffoli",5000,3,0.051
+repeat,odd,187,"phase-flip, Toffoli",5000,3,0.061
+repeat,odd,193,no correction (Brisbane 105),5000,3,0.0336
+repeat,odd,193,"bit-flip, Toffoli",5000,3,0.056
+repeat,odd,193,"phase-flip, Toffoli",5000,3,0.057
+repeat,odd,199,no correction (Brisbane 105),5000,3,0.036
+repeat,odd,199,"bit-flip, Toffoli",5000,3,0.0564
+repeat,odd,199,"phase-flip, Toffoli",5000,3,0.061
+repeat,odd,205,no correction (Brisbane 105),5000,3,0.0358
+repeat,odd,205,"bit-flip, Toffoli",5000,3,0.0556
+repeat,odd,205,"phase-flip, Toffoli",5000,3,0.0608
+repeat,odd,211,no correction (Brisbane 105),5000,3,0.0362
+repeat,odd,211,"bit-flip, Toffoli",5000,3,0.052
+repeat,odd,211,"phase-flip, Toffoli",5000,3,0.0652
+repeat,odd,217,no correction (Brisbane 105),5000,3,0.039
+repeat,odd,217,"bit-flip, Toffoli",5000,3,0.0608
+repeat,odd,217,"phase-flip, Toffoli",5000,3,0.0592
+repeat,odd,223,no correction (Brisbane 105),5000,3,0.0392
+repeat,odd,223,"bit-flip, Toffoli",5000,3,0.0568
+repeat,odd,223,"phase-flip, Toffoli",5000,3,0.069
+repeat,odd,229,no correction (Brisbane 105),5000,3,0.041
+repeat,odd,229,"bit-flip, Toffoli",5000,3,0.057
+repeat,odd,229,"phase-flip, Toffoli",5000,3,0.0596
+repeat,odd,235,no correction (Brisbane 105),5000,3,0.0422
+repeat,odd,235,"bit-flip, Toffoli",5000,3,0.051
+repeat,odd,235,"phase-flip, Toffoli",5000,3,0.0652
+repeat,odd,241,no correction (Brisbane 105),5000,3,0.0434
+repeat,odd,241,"bit-flip, Toffoli",5000,3,0.0564
+repeat,odd,241,"phase-flip, Toffoli",5000,3,0.0622
+repeat,odd,247,no correction (Brisbane 105),5000,3,0.0448
+repeat,odd,247,"bit-flip, Toffoli",5000,3,0.0598
+repeat,odd,247,"phase-flip, Toffoli",5000,3,0.0694
+repeat,odd,253,no correction (Brisbane 105),5000,3,0.0418
+repeat,odd,253,"bit-flip, Toffoli",5000,3,0.0598
+repeat,odd,253,"phase-flip, Toffoli",5000,3,0.066
+repeat,odd,259,no correction (Brisbane 105),5000,3,0.0454
+repeat,odd,259,"bit-flip, Toffoli",5000,3,0.054
+repeat,odd,259,"phase-flip, Toffoli",5000,3,0.0586
+repeat,odd,265,no correction (Brisbane 105),5000,3,0.046
+repeat,odd,265,"bit-flip, Toffoli",5000,3,0.0522
+repeat,odd,265,"phase-flip, Toffoli",5000,3,0.0648
+repeat,odd,271,no correction (Brisbane 105),5000,3,0.0502
+repeat,odd,271,"bit-flip, Toffoli",5000,3,0.0578
+repeat,odd,271,"phase-flip, Toffoli",5000,3,0.0546
+repeat,odd,277,no correction (Brisbane 105),5000,3,0.0472
+repeat,odd,277,"bit-flip, Toffoli",5000,3,0.059
+repeat,odd,277,"phase-flip, Toffoli",5000,3,0.0642
+repeat,odd,283,no correction (Brisbane 105),5000,3,0.0482
+repeat,odd,283,"bit-flip, Toffoli",5000,3,0.0522
+repeat,odd,283,"phase-flip, Toffoli",5000,3,0.0622
+repeat,odd,289,no correction (Brisbane 105),5000,3,0.0514
+repeat,odd,289,"bit-flip, Toffoli",5000,3,0.0568
+repeat,odd,289,"phase-flip, Toffoli",5000,3,0.0626
+repeat,odd,295,no correction (Brisbane 105),5000,3,0.0522
+repeat,odd,295,"bit-flip, Toffoli",5000,3,0.0508
+repeat,odd,295,"phase-flip, Toffoli",5000,3,0.069
+repeat,odd,301,no correction (Brisbane 105),5000,3,0.0498
+repeat,odd,301,"bit-flip, Toffoli",5000,3,0.0572
+repeat,odd,301,"phase-flip, Toffoli",5000,3,0.0646
+repeat,odd,307,no correction (Brisbane 105),5000,3,0.0522
+repeat,odd,307,"bit-flip, Toffoli",5000,3,0.0568
+repeat,odd,307,"phase-flip, Toffoli",5000,3,0.0676
+repeat,odd,313,no correction (Brisbane 105),5000,3,0.0532
+repeat,odd,313,"bit-flip, Toffoli",5000,3,0.0596
+repeat,odd,313,"phase-flip, Toffoli",5000,3,0.0702
+repeat,odd,319,no correction (Brisbane 105),5000,3,0.053
+repeat,odd,319,"bit-flip, Toffoli",5000,3,0.0562
+repeat,odd,319,"phase-flip, Toffoli",5000,3,0.0658
+repeat,odd,325,no correction (Brisbane 105),5000,3,0.0534
+repeat,odd,325,"bit-flip, Toffoli",5000,3,0.062
+repeat,odd,325,"phase-flip, Toffoli",5000,3,0.0668
+repeat,odd,331,no correction (Brisbane 105),5000,3,0.0546
+repeat,odd,331,"bit-flip, Toffoli",5000,3,0.0596
+repeat,odd,331,"phase-flip, Toffoli",5000,3,0.0648
+repeat,odd,337,no correction (Brisbane 105),5000,3,0.057
+repeat,odd,337,"bit-flip, Toffoli",5000,3,0.0604
+repeat,odd,337,"phase-flip, Toffoli",5000,3,0.0692
+repeat,odd,343,no correction (Brisbane 105),5000,3,0.0592
+repeat,odd,343,"bit-flip, Toffoli",5000,3,0.066
+repeat,odd,343,"phase-flip, Toffoli",5000,3,0.0632
+repeat,odd,349,no correction (Brisbane 105),5000,3,0.0612
+repeat,odd,349,"bit-flip, Toffoli",5000,3,0.055
+repeat,odd,349,"phase-flip, Toffoli",5000,3,0.0652
+repeat,odd,355,no correction (Brisbane 105),5000,3,0.0626
+repeat,odd,355,"bit-flip, Toffoli",5000,3,0.0604
+repeat,odd,355,"phase-flip, Toffoli",5000,3,0.0686
+repeat,odd,361,no correction (Brisbane 105),5000,3,0.0604
+repeat,odd,361,"bit-flip, Toffoli",5000,3,0.0624
+repeat,odd,361,"phase-flip, Toffoli",5000,3,0.0728
+repeat,odd,367,no correction (Brisbane 105),5000,3,0.062
+repeat,odd,367,"bit-flip, Toffoli",5000,3,0.0594
+repeat,odd,367,"phase-flip, Toffoli",5000,3,0.0714
+repeat,odd,373,no correction (Brisbane 105),5000,3,0.0632
+repeat,odd,373,"bit-flip, Toffoli",5000,3,0.0618
+repeat,odd,373,"phase-flip, Toffoli",5000,3,0.0716
+repeat,odd,379,no correction (Brisbane 105),5000,3,0.0636
+repeat,odd,379,"bit-flip, Toffoli",5000,3,0.0626
+repeat,odd,379,"phase-flip, Toffoli",5000,3,0.063
+repeat,odd,385,no correction (Brisbane 105),5000,3,0.0646
+repeat,odd,385,"bit-flip, Toffoli",5000,3,0.0632
+repeat,odd,385,"phase-flip, Toffoli",5000,3,0.0752
+repeat,odd,391,no correction (Brisbane 105),5000,3,0.0646
+repeat,odd,391,"bit-flip, Toffoli",5000,3,0.0582
+repeat,odd,391,"phase-flip, Toffoli",5000,3,0.07
+repeat,odd,397,no correction (Brisbane 105),5000,3,0.0652
+repeat,odd,397,"bit-flip, Toffoli",5000,3,0.0556
+repeat,odd,397,"phase-flip, Toffoli",5000,3,0.0684
+repeat,odd,403,no correction (Brisbane 105),5000,3,0.067
+repeat,odd,403,"bit-flip, Toffoli",5000,3,0.0636
+repeat,odd,403,"phase-flip, Toffoli",5000,3,0.0682
+repeat,odd,409,no correction (Brisbane 105),5000,3,0.0658
+repeat,odd,409,"bit-flip, Toffoli",5000,3,0.0588
+repeat,odd,409,"phase-flip, Toffoli",5000,3,0.0666
+repeat,odd,415,no correction (Brisbane 105),5000,3,0.0668
+repeat,odd,415,"bit-flip, Toffoli",5000,3,0.0598
+repeat,odd,415,"phase-flip, Toffoli",5000,3,0.0728
+repeat,odd,421,no correction (Brisbane 105),5000,3,0.069
+repeat,odd,421,"bit-flip, Toffoli",5000,3,0.0618
+repeat,odd,421,"phase-flip, Toffoli",5000,3,0.069
+repeat,odd,427,no correction (Brisbane 105),5000,3,0.0694
+repeat,odd,427,"bit-flip, Toffoli",5000,3,0.0708
+repeat,odd,427,"phase-flip, Toffoli",5000,3,0.0774
+repeat,odd,433,no correction (Brisbane 105),5000,3,0.0714
+repeat,odd,433,"bit-flip, Toffoli",5000,3,0.058
+repeat,odd,433,"phase-flip, Toffoli",5000,3,0.0778
+repeat,odd,439,no correction (Brisbane 105),5000,3,0.0722
+repeat,odd,439,"bit-flip, Toffoli",5000,3,0.0656
+repeat,odd,439,"phase-flip, Toffoli",5000,3,0.0722
+repeat,odd,445,no correction (Brisbane 105),5000,3,0.0728
+repeat,odd,445,"bit-flip, Toffoli",5000,3,0.0596
+repeat,odd,445,"phase-flip, Toffoli",5000,3,0.0764
+repeat,odd,451,no correction (Brisbane 105),5000,3,0.0754
+repeat,odd,451,"bit-flip, Toffoli",5000,3,0.063
+repeat,odd,451,"phase-flip, Toffoli",5000,3,0.072
+repeat,odd,457,no correction (Brisbane 105),5000,3,0.0716
+repeat,odd,457,"bit-flip, Toffoli",5000,3,0.0646
+repeat,odd,457,"phase-flip, Toffoli",5000,3,0.0816
+repeat,odd,463,no correction (Brisbane 105),5000,3,0.0752
+repeat,odd,463,"bit-flip, Toffoli",5000,3,0.0624
+repeat,odd,463,"phase-flip, Toffoli",5000,3,0.073
+repeat,odd,469,no correction (Brisbane 105),5000,3,0.0762
+repeat,odd,469,"bit-flip, Toffoli",5000,3,0.0682
+repeat,odd,469,"phase-flip, Toffoli",5000,3,0.0748
+repeat,odd,475,no correction (Brisbane 105),5000,3,0.0762
+repeat,odd,475,"bit-flip, Toffoli",5000,3,0.0644
+repeat,odd,475,"phase-flip, Toffoli",5000,3,0.0812
+repeat,odd,481,no correction (Brisbane 105),5000,3,0.0784
+repeat,odd,481,"bit-flip, Toffoli",5000,3,0.0594
+repeat,odd,481,"phase-flip, Toffoli",5000,3,0.072
+repeat,odd,487,no correction (Brisbane 105),5000,3,0.0794
+repeat,odd,487,"bit-flip, Toffoli",5000,3,0.0664
+repeat,odd,487,"phase-flip, Toffoli",5000,3,0.0774
+repeat,odd,493,no correction (Brisbane 105),5000,3,0.0794
+repeat,odd,493,"bit-flip, Toffoli",5000,3,0.0572
+repeat,odd,493,"phase-flip, Toffoli",5000,3,0.0808
+repeat,odd,499,no correction (Brisbane 105),5000,3,0.0806
+repeat,odd,499,"bit-flip, Toffoli",5000,3,0.064
+repeat,odd,499,"phase-flip, Toffoli",5000,3,0.0828
+id,even,0,no correction (Brisbane 105),5000,3,0.0102
+id,even,0,"bit-flip, Toffoli",5000,3,0.05
+id,even,0,"phase-flip, Toffoli",5000,3,0.047
+id,even,2,no correction (Brisbane 105),5000,3,0.0082
+id,even,2,"bit-flip, Toffoli",5000,3,0.0456
+id,even,2,"phase-flip, Toffoli",5000,3,0.058
+id,even,4,no correction (Brisbane 105),5000,3,0.0104
+id,even,4,"bit-flip, Toffoli",5000,3,0.0582
+id,even,4,"phase-flip, Toffoli",5000,3,0.0612
+id,even,6,no correction (Brisbane 105),5000,3,0.011
+id,even,6,"bit-flip, Toffoli",5000,3,0.06
+id,even,6,"phase-flip, Toffoli",5000,3,0.0538
+id,even,8,no correction (Brisbane 105),5000,3,0.0106
+id,even,8,"bit-flip, Toffoli",5000,3,0.0538
+id,even,8,"phase-flip, Toffoli",5000,3,0.0566
+id,even,10,no correction (Brisbane 105),5000,3,0.0106
+id,even,10,"bit-flip, Toffoli",5000,3,0.0566
+id,even,10,"phase-flip, Toffoli",5000,3,0.0504
+id,even,12,no correction (Brisbane 105),5000,3,0.0108
+id,even,12,"bit-flip, Toffoli",5000,3,0.05
+id,even,12,"phase-flip, Toffoli",5000,3,0.049
+id,even,14,no correction (Brisbane 105),5000,3,0.0094
+id,even,14,"bit-flip, Toffoli",5000,3,0.049
+id,even,14,"phase-flip, Toffoli",5000,3,0.0536
+id,even,16,no correction (Brisbane 105),5000,3,0.0112
+id,even,16,"bit-flip, Toffoli",5000,3,0.0526
+id,even,16,"phase-flip, Toffoli",5000,3,0.0524
+id,even,18,no correction (Brisbane 105),5000,3,0.008
+id,even,18,"bit-flip, Toffoli",5000,3,0.0506
+id,even,18,"phase-flip, Toffoli",5000,3,0.0504
+id,even,20,no correction (Brisbane 105),5000,3,0.0114
+id,even,20,"bit-flip, Toffoli",5000,3,0.0496
+id,even,20,"phase-flip, Toffoli",5000,3,0.0478
+id,even,22,no correction (Brisbane 105),5000,3,0.0124
+id,even,22,"bit-flip, Toffoli",5000,3,0.046
+id,even,22,"phase-flip, Toffoli",5000,3,0.0498
+id,even,24,no correction (Brisbane 105),5000,3,0.0092
+id,even,24,"bit-flip, Toffoli",5000,3,0.048
+id,even,24,"phase-flip, Toffoli",5000,3,0.0458
+id,even,26,no correction (Brisbane 105),5000,3,0.011
+id,even,26,"bit-flip, Toffoli",5000,3,0.0454
+id,even,26,"phase-flip, Toffoli",5000,3,0.05
+id,even,28,no correction (Brisbane 105),5000,3,0.0114
+id,even,28,"bit-flip, Toffoli",5000,3,0.0498
+id,even,28,"phase-flip, Toffoli",5000,3,0.0504
+id,even,30,no correction (Brisbane 105),5000,3,0.0106
+id,even,30,"bit-flip, Toffoli",5000,3,0.0484
+id,even,30,"phase-flip, Toffoli",5000,3,0.0458
+id,even,32,no correction (Brisbane 105),5000,3,0.011
+id,even,32,"bit-flip, Toffoli",5000,3,0.0452
+id,even,32,"phase-flip, Toffoli",5000,3,0.054
+id,even,34,no correction (Brisbane 105),5000,3,0.0142
+id,even,34,"bit-flip, Toffoli",5000,3,0.0516
+id,even,34,"phase-flip, Toffoli",5000,3,0.0528
+id,even,36,no correction (Brisbane 105),5000,3,0.0108
+id,even,36,"bit-flip, Toffoli",5000,3,0.0522
+id,even,36,"phase-flip, Toffoli",5000,3,0.0468
+id,even,38,no correction (Brisbane 105),5000,3,0.011
+id,even,38,"bit-flip, Toffoli",5000,3,0.045
+id,even,38,"phase-flip, Toffoli",5000,3,0.0524
+id,even,40,no correction (Brisbane 105),5000,3,0.0126
+id,even,40,"bit-flip, Toffoli",5000,3,0.0506
+id,even,40,"phase-flip, Toffoli",5000,3,0.0546
+id,even,42,no correction (Brisbane 105),5000,3,0.01
+id,even,42,"bit-flip, Toffoli",5000,3,0.0514
+id,even,42,"phase-flip, Toffoli",5000,3,0.055
+id,even,44,no correction (Brisbane 105),5000,3,0.013
+id,even,44,"bit-flip, Toffoli",5000,3,0.0528
+id,even,44,"phase-flip, Toffoli",5000,3,0.0538
+id,even,46,no correction (Brisbane 105),5000,3,0.0092
+id,even,46,"bit-flip, Toffoli",5000,3,0.0536
+id,even,46,"phase-flip, Toffoli",5000,3,0.052
+id,even,48,no correction (Brisbane 105),5000,3,0.0118
+id,even,48,"bit-flip, Toffoli",5000,3,0.0514
+id,even,48,"phase-flip, Toffoli",5000,3,0.0538
+id,even,50,no correction (Brisbane 105),5000,3,0.012
+id,even,50,"bit-flip, Toffoli",5000,3,0.0524
+id,even,50,"phase-flip, Toffoli",5000,3,0.0592
+id,even,52,no correction (Brisbane 105),5000,3,0.0104
+id,even,52,"bit-flip, Toffoli",5000,3,0.0574
+id,even,52,"phase-flip, Toffoli",5000,3,0.051
+id,even,54,no correction (Brisbane 105),5000,3,0.0114
+id,even,54,"bit-flip, Toffoli",5000,3,0.0504
+id,even,54,"phase-flip, Toffoli",5000,3,0.0562
+id,even,56,no correction (Brisbane 105),5000,3,0.0104
+id,even,56,"bit-flip, Toffoli",5000,3,0.054
+id,even,56,"phase-flip, Toffoli",5000,3,0.0478
+id,even,58,no correction (Brisbane 105),5000,3,0.0138
+id,even,58,"bit-flip, Toffoli",5000,3,0.047
+id,even,58,"phase-flip, Toffoli",5000,3,0.0508
+id,even,60,no correction (Brisbane 105),5000,3,0.0102
+id,even,60,"bit-flip, Toffoli",5000,3,0.0494
+id,even,60,"phase-flip, Toffoli",5000,3,0.0544
+id,even,62,no correction (Brisbane 105),5000,3,0.0118
+id,even,62,"bit-flip, Toffoli",5000,3,0.0532
+id,even,62,"phase-flip, Toffoli",5000,3,0.0486
+id,even,64,no correction (Brisbane 105),5000,3,0.0104
+id,even,64,"bit-flip, Toffoli",5000,3,0.0454
+id,even,64,"phase-flip, Toffoli",5000,3,0.0492
+id,even,66,no correction (Brisbane 105),5000,3,0.0126
+id,even,66,"bit-flip, Toffoli",5000,3,0.0472
+id,even,66,"phase-flip, Toffoli",5000,3,0.0542
+id,even,68,no correction (Brisbane 105),5000,3,0.0134
+id,even,68,"bit-flip, Toffoli",5000,3,0.0514
+id,even,68,"phase-flip, Toffoli",5000,3,0.0512
+id,even,70,no correction (Brisbane 105),5000,3,0.0128
+id,even,70,"bit-flip, Toffoli",5000,3,0.0488
+id,even,70,"phase-flip, Toffoli",5000,3,0.0574
+id,even,72,no correction (Brisbane 105),5000,3,0.0146
+id,even,72,"bit-flip, Toffoli",5000,3,0.0562
+id,even,72,"phase-flip, Toffoli",5000,3,0.0476
+id,even,74,no correction (Brisbane 105),5000,3,0.014
+id,even,74,"bit-flip, Toffoli",5000,3,0.0452
+id,even,74,"phase-flip, Toffoli",5000,3,0.049
+id,even,76,no correction (Brisbane 105),5000,3,0.0122
+id,even,76,"bit-flip, Toffoli",5000,3,0.0492
+id,even,76,"phase-flip, Toffoli",5000,3,0.0564
+id,even,78,no correction (Brisbane 105),5000,3,0.0118
+id,even,78,"bit-flip, Toffoli",5000,3,0.0538
+id,even,78,"phase-flip, Toffoli",5000,3,0.0518
+id,even,80,no correction (Brisbane 105),5000,3,0.0158
+id,even,80,"bit-flip, Toffoli",5000,3,0.0496
+id,even,80,"phase-flip, Toffoli",5000,3,0.0548
+id,even,82,no correction (Brisbane 105),5000,3,0.0112
+id,even,82,"bit-flip, Toffoli",5000,3,0.0514
+id,even,82,"phase-flip, Toffoli",5000,3,0.0536
+id,even,84,no correction (Brisbane 105),5000,3,0.0148
+id,even,84,"bit-flip, Toffoli",5000,3,0.052
+id,even,84,"phase-flip, Toffoli",5000,3,0.054
+id,even,86,no correction (Brisbane 105),5000,3,0.0164
+id,even,86,"bit-flip, Toffoli",5000,3,0.0496
+id,even,86,"phase-flip, Toffoli",5000,3,0.0566
+id,even,88,no correction (Brisbane 105),5000,3,0.0116
+id,even,88,"bit-flip, Toffoli",5000,3,0.0538
+id,even,88,"phase-flip, Toffoli",5000,3,0.0566
+id,even,90,no correction (Brisbane 105),5000,3,0.0128
+id,even,90,"bit-flip, Toffoli",5000,3,0.0532
+id,even,90,"phase-flip, Toffoli",5000,3,0.0552
+id,even,92,no correction (Brisbane 105),5000,3,0.0138
+id,even,92,"bit-flip, Toffoli",5000,3,0.052
+id,even,92,"phase-flip, Toffoli",5000,3,0.0528
+id,even,94,no correction (Brisbane 105),5000,3,0.0122
+id,even,94,"bit-flip, Toffoli",5000,3,0.05
+id,even,94,"phase-flip, Toffoli",5000,3,0.0566
+id,even,96,no correction (Brisbane 105),5000,3,0.0124
+id,even,96,"bit-flip, Toffoli",5000,3,0.0544
+id,even,96,"phase-flip, Toffoli",5000,3,0.0608
+id,even,98,no correction (Brisbane 105),5000,3,0.0132
+id,even,98,"bit-flip, Toffoli",5000,3,0.0586
+id,even,98,"phase-flip, Toffoli",5000,3,0.0598
+id,even,100,no correction (Brisbane 105),5000,3,0.0134
+id,even,100,"bit-flip, Toffoli",5000,3,0.0544
+id,even,100,"phase-flip, Toffoli",5000,3,0.0584
+id,even,102,no correction (Brisbane 105),5000,3,0.015
+id,even,102,"bit-flip, Toffoli",5000,3,0.0532
+id,even,102,"phase-flip, Toffoli",5000,3,0.0624
+id,even,104,no correction (Brisbane 105),5000,3,0.012
+id,even,104,"bit-flip, Toffoli",5000,3,0.0582
+id,even,104,"phase-flip, Toffoli",5000,3,0.063
+id,even,106,no correction (Brisbane 105),5000,3,0.0142
+id,even,106,"bit-flip, Toffoli",5000,3,0.0574
+id,even,106,"phase-flip, Toffoli",5000,3,0.0602
+id,even,108,no correction (Brisbane 105),5000,3,0.0136
+id,even,108,"bit-flip, Toffoli",5000,3,0.056
+id,even,108,"phase-flip, Toffoli",5000,3,0.0522
+id,even,110,no correction (Brisbane 105),5000,3,0.0128
+id,even,110,"bit-flip, Toffoli",5000,3,0.048
+id,even,110,"phase-flip, Toffoli",5000,3,0.0544
+id,even,112,no correction (Brisbane 105),5000,3,0.0142
+id,even,112,"bit-flip, Toffoli",5000,3,0.0496
+id,even,112,"phase-flip, Toffoli",5000,3,0.0618
+id,even,114,no correction (Brisbane 105),5000,3,0.0114
+id,even,114,"bit-flip, Toffoli",5000,3,0.0538
+id,even,114,"phase-flip, Toffoli",5000,3,0.063
+id,even,116,no correction (Brisbane 105),5000,3,0.0126
+id,even,116,"bit-flip, Toffoli",5000,3,0.0572
+id,even,116,"phase-flip, Toffoli",5000,3,0.0588
+id,even,118,no correction (Brisbane 105),5000,3,0.014
+id,even,118,"bit-flip, Toffoli",5000,3,0.0512
+id,even,118,"phase-flip, Toffoli",5000,3,0.0598
+id,even,120,no correction (Brisbane 105),5000,3,0.0146
+id,even,120,"bit-flip, Toffoli",5000,3,0.0532
+id,even,120,"phase-flip, Toffoli",5000,3,0.0572
+id,even,122,no correction (Brisbane 105),5000,3,0.0142
+id,even,122,"bit-flip, Toffoli",5000,3,0.0502
+id,even,122,"phase-flip, Toffoli",5000,3,0.0598
+id,even,124,no correction (Brisbane 105),5000,3,0.0122
+id,even,124,"bit-flip, Toffoli",5000,3,0.0514
+id,even,124,"phase-flip, Toffoli",5000,3,0.0598
+id,even,126,no correction (Brisbane 105),5000,3,0.014
+id,even,126,"bit-flip, Toffoli",5000,3,0.0542
+id,even,126,"phase-flip, Toffoli",5000,3,0.0608
+id,even,128,no correction (Brisbane 105),5000,3,0.0148
+id,even,128,"bit-flip, Toffoli",5000,3,0.0534
+id,even,128,"phase-flip, Toffoli",5000,3,0.0618
+id,even,130,no correction (Brisbane 105),5000,3,0.0152
+id,even,130,"bit-flip, Toffoli",5000,3,0.0532
+id,even,130,"phase-flip, Toffoli",5000,3,0.0572
+id,even,132,no correction (Brisbane 105),5000,3,0.0144
+id,even,132,"bit-flip, Toffoli",5000,3,0.049
+id,even,132,"phase-flip, Toffoli",5000,3,0.0554
+id,even,134,no correction (Brisbane 105),5000,3,0.0126
+id,even,134,"bit-flip, Toffoli",5000,3,0.0484
+id,even,134,"phase-flip, Toffoli",5000,3,0.0576
+id,even,136,no correction (Brisbane 105),5000,3,0.0144
+id,even,136,"bit-flip, Toffoli",5000,3,0.0508
+id,even,136,"phase-flip, Toffoli",5000,3,0.0626
+id,even,138,no correction (Brisbane 105),5000,3,0.0146
+id,even,138,"bit-flip, Toffoli",5000,3,0.0542
+id,even,138,"phase-flip, Toffoli",5000,3,0.06
+id,even,140,no correction (Brisbane 105),5000,3,0.0166
+id,even,140,"bit-flip, Toffoli",5000,3,0.05
+id,even,140,"phase-flip, Toffoli",5000,3,0.06
+id,even,142,no correction (Brisbane 105),5000,3,0.0178
+id,even,142,"bit-flip, Toffoli",5000,3,0.053
+id,even,142,"phase-flip, Toffoli",5000,3,0.0622
+id,even,144,no correction (Brisbane 105),5000,3,0.016
+id,even,144,"bit-flip, Toffoli",5000,3,0.0538
+id,even,144,"phase-flip, Toffoli",5000,3,0.0594
+id,even,146,no correction (Brisbane 105),5000,3,0.0162
+id,even,146,"bit-flip, Toffoli",5000,3,0.0496
+id,even,146,"phase-flip, Toffoli",5000,3,0.0566
+id,even,148,no correction (Brisbane 105),5000,3,0.0156
+id,even,148,"bit-flip, Toffoli",5000,3,0.0494
+id,even,148,"phase-flip, Toffoli",5000,3,0.0624
+id,even,150,no correction (Brisbane 105),5000,3,0.0144
+id,even,150,"bit-flip, Toffoli",5000,3,0.0524
+id,even,150,"phase-flip, Toffoli",5000,3,0.061
+id,even,152,no correction (Brisbane 105),5000,3,0.0132
+id,even,152,"bit-flip, Toffoli",5000,3,0.051
+id,even,152,"phase-flip, Toffoli",5000,3,0.0608
+id,even,154,no correction (Brisbane 105),5000,3,0.0158
+id,even,154,"bit-flip, Toffoli",5000,3,0.0524
+id,even,154,"phase-flip, Toffoli",5000,3,0.06
+id,even,156,no correction (Brisbane 105),5000,3,0.0174
+id,even,156,"bit-flip, Toffoli",5000,3,0.0512
+id,even,156,"phase-flip, Toffoli",5000,3,0.0616
+id,even,158,no correction (Brisbane 105),5000,3,0.0148
+id,even,158,"bit-flip, Toffoli",5000,3,0.0518
+id,even,158,"phase-flip, Toffoli",5000,3,0.0602
+id,even,160,no correction (Brisbane 105),5000,3,0.0172
+id,even,160,"bit-flip, Toffoli",5000,3,0.052
+id,even,160,"phase-flip, Toffoli",5000,3,0.0634
+id,even,162,no correction (Brisbane 105),5000,3,0.0154
+id,even,162,"bit-flip, Toffoli",5000,3,0.0552
+id,even,162,"phase-flip, Toffoli",5000,3,0.0636
+id,even,164,no correction (Brisbane 105),5000,3,0.018
+id,even,164,"bit-flip, Toffoli",5000,3,0.055
+id,even,164,"phase-flip, Toffoli",5000,3,0.0634
+id,even,166,no correction (Brisbane 105),5000,3,0.018
+id,even,166,"bit-flip, Toffoli",5000,3,0.0506
+id,even,166,"phase-flip, Toffoli",5000,3,0.0614
+id,even,168,no correction (Brisbane 105),5000,3,0.0174
+id,even,168,"bit-flip, Toffoli",5000,3,0.0516
+id,even,168,"phase-flip, Toffoli",5000,3,0.0592
+id,even,170,no correction (Brisbane 105),5000,3,0.0194
+id,even,170,"bit-flip, Toffoli",5000,3,0.0508
+id,even,170,"phase-flip, Toffoli",5000,3,0.0584
+id,even,172,no correction (Brisbane 105),5000,3,0.0174
+id,even,172,"bit-flip, Toffoli",5000,3,0.0482
+id,even,172,"phase-flip, Toffoli",5000,3,0.0576
+id,even,174,no correction (Brisbane 105),5000,3,0.0188
+id,even,174,"bit-flip, Toffoli",5000,3,0.0446
+id,even,174,"phase-flip, Toffoli",5000,3,0.0564
+id,even,176,no correction (Brisbane 105),5000,3,0.0182
+id,even,176,"bit-flip, Toffoli",5000,3,0.0466
+id,even,176,"phase-flip, Toffoli",5000,3,0.0632
+id,even,178,no correction (Brisbane 105),5000,3,0.019
+id,even,178,"bit-flip, Toffoli",5000,3,0.052
+id,even,178,"phase-flip, Toffoli",5000,3,0.06
+id,even,180,no correction (Brisbane 105),5000,3,0.0182
+id,even,180,"bit-flip, Toffoli",5000,3,0.0484
+id,even,180,"phase-flip, Toffoli",5000,3,0.0578
+id,even,182,no correction (Brisbane 105),5000,3,0.0188
+id,even,182,"bit-flip, Toffoli",5000,3,0.047
+id,even,182,"phase-flip, Toffoli",5000,3,0.063
+id,even,184,no correction (Brisbane 105),5000,3,0.0198
+id,even,184,"bit-flip, Toffoli",5000,3,0.0498
+id,even,184,"phase-flip, Toffoli",5000,3,0.0616
+id,even,186,no correction (Brisbane 105),5000,3,0.019
+id,even,186,"bit-flip, Toffoli",5000,3,0.0498
+id,even,186,"phase-flip, Toffoli",5000,3,0.0602
+id,even,188,no correction (Brisbane 105),5000,3,0.018
+id,even,188,"bit-flip, Toffoli",5000,3,0.0468
+id,even,188,"phase-flip, Toffoli",5000,3,0.0624
+id,even,190,no correction (Brisbane 105),5000,3,0.0198
+id,even,190,"bit-flip, Toffoli",5000,3,0.0486
+id,even,190,"phase-flip, Toffoli",5000,3,0.0648
+id,even,192,no correction (Brisbane 105),5000,3,0.0182
+id,even,192,"bit-flip, Toffoli",5000,3,0.052
+id,even,192,"phase-flip, Toffoli",5000,3,0.0608
+id,even,194,no correction (Brisbane 105),5000,3,0.0196
+id,even,194,"bit-flip, Toffoli",5000,3,0.0488
+id,even,194,"phase-flip, Toffoli",5000,3,0.0594
+id,even,196,no correction (Brisbane 105),5000,3,0.0194
+id,even,196,"bit-flip, Toffoli",5000,3,0.0464
+id,even,196,"phase-flip, Toffoli",5000,3,0.0616
+id,even,198,no correction (Brisbane 105),5000,3,0.0188
+id,even,198,"bit-flip, Toffoli",5000,3,0.05
+id,even,198,"phase-flip, Toffoli",5000,3,0.0616
+id,even,200,no correction (Brisbane 105),5000,3,0.0184
+id,even,200,"bit-flip, Toffoli",5000,3,0.0486
+id,even,200,"phase-flip, Toffoli",5000,3,0.061
+id,even,202,no correction (Brisbane 105),5000,3,0.0204
+id,even,202,"bit-flip, Toffoli",5000,3,0.0478
+id,even,202,"phase-flip, Toffoli",5000,3,0.0604
+id,even,204,no correction (Brisbane 105),5000,3,0.0204
+id,even,204,"bit-flip, Toffoli",5000,3,0.049
+id,even,204,"phase-flip, Toffoli",5000,3,0.068
+id,even,206,no correction (Brisbane 105),5000,3,0.0192
+id,even,206,"bit-flip, Toffoli",5000,3,0.0524
+id,even,206,"phase-flip, Toffoli",5000,3,0.0656
+id,even,208,no correction (Brisbane 105),5000,3,0.021
+id,even,208,"bit-flip, Toffoli",5000,3,0.051
+id,even,208,"phase-flip, Toffoli",5000,3,0.0672
+id,even,210,no correction (Brisbane 105),5000,3,0.02
+id,even,210,"bit-flip, Toffoli",5000,3,0.0522
+id,even,210,"phase-flip, Toffoli",5000,3,0.0644
+id,even,212,no correction (Brisbane 105),5000,3,0.0208
+id,even,212,"bit-flip, Toffoli",5000,3,0.0494
+id,even,212,"phase-flip, Toffoli",5000,3,0.0614
+id,even,214,no correction (Brisbane 105),5000,3,0.018
+id,even,214,"bit-flip, Toffoli",5000,3,0.047
+id,even,214,"phase-flip, Toffoli",5000,3,0.0654
+id,even,216,no correction (Brisbane 105),5000,3,0.0206
+id,even,216,"bit-flip, Toffoli",5000,3,0.0518
+id,even,216,"phase-flip, Toffoli",5000,3,0.0616
+id,even,218,no correction (Brisbane 105),5000,3,0.021
+id,even,218,"bit-flip, Toffoli",5000,3,0.0452
+id,even,218,"phase-flip, Toffoli",5000,3,0.062
+id,even,220,no correction (Brisbane 105),5000,3,0.019
+id,even,220,"bit-flip, Toffoli",5000,3,0.0472
+id,even,220,"phase-flip, Toffoli",5000,3,0.0654
+id,even,222,no correction (Brisbane 105),5000,3,0.0206
+id,even,222,"bit-flip, Toffoli",5000,3,0.0524
+id,even,222,"phase-flip, Toffoli",5000,3,0.0646
+id,even,224,no correction (Brisbane 105),5000,3,0.021
+id,even,224,"bit-flip, Toffoli",5000,3,0.0496
+id,even,224,"phase-flip, Toffoli",5000,3,0.0696
+id,even,226,no correction (Brisbane 105),5000,3,0.0208
+id,even,226,"bit-flip, Toffoli",5000,3,0.0508
+id,even,226,"phase-flip, Toffoli",5000,3,0.064
+id,even,228,no correction (Brisbane 105),5000,3,0.0192
+id,even,228,"bit-flip, Toffoli",5000,3,0.0468
+id,even,228,"phase-flip, Toffoli",5000,3,0.0646
+id,even,230,no correction (Brisbane 105),5000,3,0.019
+id,even,230,"bit-flip, Toffoli",5000,3,0.0502
+id,even,230,"phase-flip, Toffoli",5000,3,0.0652
+id,even,232,no correction (Brisbane 105),5000,3,0.021
+id,even,232,"bit-flip, Toffoli",5000,3,0.0502
+id,even,232,"phase-flip, Toffoli",5000,3,0.0722
+id,even,234,no correction (Brisbane 105),5000,3,0.0242
+id,even,234,"bit-flip, Toffoli",5000,3,0.053
+id,even,234,"phase-flip, Toffoli",5000,3,0.0724
+id,even,236,no correction (Brisbane 105),5000,3,0.0228
+id,even,236,"bit-flip, Toffoli",5000,3,0.0538
+id,even,236,"phase-flip, Toffoli",5000,3,0.0702
+id,even,238,no correction (Brisbane 105),5000,3,0.021
+id,even,238,"bit-flip, Toffoli",5000,3,0.0528
+id,even,238,"phase-flip, Toffoli",5000,3,0.068
+id,even,240,no correction (Brisbane 105),5000,3,0.022
+id,even,240,"bit-flip, Toffoli",5000,3,0.053
+id,even,240,"phase-flip, Toffoli",5000,3,0.0688
+id,even,242,no correction (Brisbane 105),5000,3,0.0208
+id,even,242,"bit-flip, Toffoli",5000,3,0.0528
+id,even,242,"phase-flip, Toffoli",5000,3,0.0642
+id,even,244,no correction (Brisbane 105),5000,3,0.0214
+id,even,244,"bit-flip, Toffoli",5000,3,0.0452
+id,even,244,"phase-flip, Toffoli",5000,3,0.065
+id,even,246,no correction (Brisbane 105),5000,3,0.0202
+id,even,246,"bit-flip, Toffoli",5000,3,0.049
+id,even,246,"phase-flip, Toffoli",5000,3,0.0658
+id,even,248,no correction (Brisbane 105),5000,3,0.0198
+id,even,248,"bit-flip, Toffoli",5000,3,0.0484
+id,even,248,"phase-flip, Toffoli",5000,3,0.0654
+id,even,250,no correction (Brisbane 105),5000,3,0.0228
+id,even,250,"bit-flip, Toffoli",5000,3,0.0494
+id,even,250,"phase-flip, Toffoli",5000,3,0.0728
+id,even,252,no correction (Brisbane 105),5000,3,0.0218
+id,even,252,"bit-flip, Toffoli",5000,3,0.0538
+id,even,252,"phase-flip, Toffoli",5000,3,0.0618
+id,even,254,no correction (Brisbane 105),5000,3,0.023
+id,even,254,"bit-flip, Toffoli",5000,3,0.0458
+id,even,254,"phase-flip, Toffoli",5000,3,0.0694
+id,even,256,no correction (Brisbane 105),5000,3,0.0238
+id,even,256,"bit-flip, Toffoli",5000,3,0.0492
+id,even,256,"phase-flip, Toffoli",5000,3,0.0674
+id,even,258,no correction (Brisbane 105),5000,3,0.0212
+id,even,258,"bit-flip, Toffoli",5000,3,0.0516
+id,even,258,"phase-flip, Toffoli",5000,3,0.064
+id,even,260,no correction (Brisbane 105),5000,3,0.0206
+id,even,260,"bit-flip, Toffoli",5000,3,0.0466
+id,even,260,"phase-flip, Toffoli",5000,3,0.0742
+id,even,262,no correction (Brisbane 105),5000,3,0.022
+id,even,262,"bit-flip, Toffoli",5000,3,0.056
+id,even,262,"phase-flip, Toffoli",5000,3,0.0648
+id,even,264,no correction (Brisbane 105),5000,3,0.0224
+id,even,264,"bit-flip, Toffoli",5000,3,0.0474
+id,even,264,"phase-flip, Toffoli",5000,3,0.0686
+id,even,266,no correction (Brisbane 105),5000,3,0.022
+id,even,266,"bit-flip, Toffoli",5000,3,0.0478
+id,even,266,"phase-flip, Toffoli",5000,3,0.0646
+id,even,268,no correction (Brisbane 105),5000,3,0.022
+id,even,268,"bit-flip, Toffoli",5000,3,0.0476
+id,even,268,"phase-flip, Toffoli",5000,3,0.0688
+id,even,270,no correction (Brisbane 105),5000,3,0.0242
+id,even,270,"bit-flip, Toffoli",5000,3,0.048
+id,even,270,"phase-flip, Toffoli",5000,3,0.0732
+id,even,272,no correction (Brisbane 105),5000,3,0.0226
+id,even,272,"bit-flip, Toffoli",5000,3,0.05
+id,even,272,"phase-flip, Toffoli",5000,3,0.0686
+id,even,274,no correction (Brisbane 105),5000,3,0.0236
+id,even,274,"bit-flip, Toffoli",5000,3,0.0472
+id,even,274,"phase-flip, Toffoli",5000,3,0.0744
+id,even,276,no correction (Brisbane 105),5000,3,0.0234
+id,even,276,"bit-flip, Toffoli",5000,3,0.0518
+id,even,276,"phase-flip, Toffoli",5000,3,0.0708
+id,even,278,no correction (Brisbane 105),5000,3,0.0234
+id,even,278,"bit-flip, Toffoli",5000,3,0.0482
+id,even,278,"phase-flip, Toffoli",5000,3,0.0762
+id,even,280,no correction (Brisbane 105),5000,3,0.0254
+id,even,280,"bit-flip, Toffoli",5000,3,0.0532
+id,even,280,"phase-flip, Toffoli",5000,3,0.0732
+id,even,282,no correction (Brisbane 105),5000,3,0.0254
+id,even,282,"bit-flip, Toffoli",5000,3,0.0534
+id,even,282,"phase-flip, Toffoli",5000,3,0.0756
+id,even,284,no correction (Brisbane 105),5000,3,0.0246
+id,even,284,"bit-flip, Toffoli",5000,3,0.0554
+id,even,284,"phase-flip, Toffoli",5000,3,0.0688
+id,even,286,no correction (Brisbane 105),5000,3,0.0244
+id,even,286,"bit-flip, Toffoli",5000,3,0.0478
+id,even,286,"phase-flip, Toffoli",5000,3,0.0724
+id,even,288,no correction (Brisbane 105),5000,3,0.0254
+id,even,288,"bit-flip, Toffoli",5000,3,0.0544
+id,even,288,"phase-flip, Toffoli",5000,3,0.0704
+id,even,290,no correction (Brisbane 105),5000,3,0.0256
+id,even,290,"bit-flip, Toffoli",5000,3,0.0498
+id,even,290,"phase-flip, Toffoli",5000,3,0.0722
+id,even,292,no correction (Brisbane 105),5000,3,0.0248
+id,even,292,"bit-flip, Toffoli",5000,3,0.0494
+id,even,292,"phase-flip, Toffoli",5000,3,0.0714
+id,even,294,no correction (Brisbane 105),5000,3,0.0216
+id,even,294,"bit-flip, Toffoli",5000,3,0.0498
+id,even,294,"phase-flip, Toffoli",5000,3,0.0696
+id,even,296,no correction (Brisbane 105),5000,3,0.0264
+id,even,296,"bit-flip, Toffoli",5000,3,0.046
+id,even,296,"phase-flip, Toffoli",5000,3,0.0734
+id,even,298,no correction (Brisbane 105),5000,3,0.0242
+id,even,298,"bit-flip, Toffoli",5000,3,0.053
+id,even,298,"phase-flip, Toffoli",5000,3,0.077
+id,even,300,no correction (Brisbane 105),5000,3,0.026
+id,even,300,"bit-flip, Toffoli",5000,3,0.0496
+id,even,300,"phase-flip, Toffoli",5000,3,0.0738
+id,even,302,no correction (Brisbane 105),5000,3,0.0248
+id,even,302,"bit-flip, Toffoli",5000,3,0.047
+id,even,302,"phase-flip, Toffoli",5000,3,0.076
+id,even,304,no correction (Brisbane 105),5000,3,0.024
+id,even,304,"bit-flip, Toffoli",5000,3,0.0496
+id,even,304,"phase-flip, Toffoli",5000,3,0.0748
+id,even,306,no correction (Brisbane 105),5000,3,0.0232
+id,even,306,"bit-flip, Toffoli",5000,3,0.0536
+id,even,306,"phase-flip, Toffoli",5000,3,0.0704
+id,even,308,no correction (Brisbane 105),5000,3,0.0238
+id,even,308,"bit-flip, Toffoli",5000,3,0.0492
+id,even,308,"phase-flip, Toffoli",5000,3,0.0702
+id,even,310,no correction (Brisbane 105),5000,3,0.0256
+id,even,310,"bit-flip, Toffoli",5000,3,0.047
+id,even,310,"phase-flip, Toffoli",5000,3,0.078
+id,even,312,no correction (Brisbane 105),5000,3,0.0246
+id,even,312,"bit-flip, Toffoli",5000,3,0.0556
+id,even,312,"phase-flip, Toffoli",5000,3,0.0744
+id,even,314,no correction (Brisbane 105),5000,3,0.0246
+id,even,314,"bit-flip, Toffoli",5000,3,0.0502
+id,even,314,"phase-flip, Toffoli",5000,3,0.0746
+id,even,316,no correction (Brisbane 105),5000,3,0.0246
+id,even,316,"bit-flip, Toffoli",5000,3,0.0498
+id,even,316,"phase-flip, Toffoli",5000,3,0.0758
+id,even,318,no correction (Brisbane 105),5000,3,0.0252
+id,even,318,"bit-flip, Toffoli",5000,3,0.0534
+id,even,318,"phase-flip, Toffoli",5000,3,0.0726
+id,even,320,no correction (Brisbane 105),5000,3,0.0254
+id,even,320,"bit-flip, Toffoli",5000,3,0.0502
+id,even,320,"phase-flip, Toffoli",5000,3,0.072
+id,even,322,no correction (Brisbane 105),5000,3,0.0264
+id,even,322,"bit-flip, Toffoli",5000,3,0.0486
+id,even,322,"phase-flip, Toffoli",5000,3,0.0778
+id,even,324,no correction (Brisbane 105),5000,3,0.0262
+id,even,324,"bit-flip, Toffoli",5000,3,0.0542
+id,even,324,"phase-flip, Toffoli",5000,3,0.076
+id,even,326,no correction (Brisbane 105),5000,3,0.0244
+id,even,326,"bit-flip, Toffoli",5000,3,0.0498
+id,even,326,"phase-flip, Toffoli",5000,3,0.076
+id,even,328,no correction (Brisbane 105),5000,3,0.029
+id,even,328,"bit-flip, Toffoli",5000,3,0.0502
+id,even,328,"phase-flip, Toffoli",5000,3,0.0748
+id,even,330,no correction (Brisbane 105),5000,3,0.0248
+id,even,330,"bit-flip, Toffoli",5000,3,0.0464
+id,even,330,"phase-flip, Toffoli",5000,3,0.0788
+id,even,332,no correction (Brisbane 105),5000,3,0.023
+id,even,332,"bit-flip, Toffoli",5000,3,0.053
+id,even,332,"phase-flip, Toffoli",5000,3,0.0744
+id,even,334,no correction (Brisbane 105),5000,3,0.0264
+id,even,334,"bit-flip, Toffoli",5000,3,0.051
+id,even,334,"phase-flip, Toffoli",5000,3,0.075
+id,even,336,no correction (Brisbane 105),5000,3,0.024
+id,even,336,"bit-flip, Toffoli",5000,3,0.0442
+id,even,336,"phase-flip, Toffoli",5000,3,0.0792
+id,even,338,no correction (Brisbane 105),5000,3,0.0256
+id,even,338,"bit-flip, Toffoli",5000,3,0.0584
+id,even,338,"phase-flip, Toffoli",5000,3,0.0772
+id,even,340,no correction (Brisbane 105),5000,3,0.0248
+id,even,340,"bit-flip, Toffoli",5000,3,0.0492
+id,even,340,"phase-flip, Toffoli",5000,3,0.0746
+id,even,342,no correction (Brisbane 105),5000,3,0.0266
+id,even,342,"bit-flip, Toffoli",5000,3,0.05
+id,even,342,"phase-flip, Toffoli",5000,3,0.0784
+id,even,344,no correction (Brisbane 105),5000,3,0.025
+id,even,344,"bit-flip, Toffoli",5000,3,0.0496
+id,even,344,"phase-flip, Toffoli",5000,3,0.078
+id,even,346,no correction (Brisbane 105),5000,3,0.0232
+id,even,346,"bit-flip, Toffoli",5000,3,0.0492
+id,even,346,"phase-flip, Toffoli",5000,3,0.0858
+id,even,348,no correction (Brisbane 105),5000,3,0.0268
+id,even,348,"bit-flip, Toffoli",5000,3,0.0568
+id,even,348,"phase-flip, Toffoli",5000,3,0.0838
+id,even,350,no correction (Brisbane 105),5000,3,0.0244
+id,even,350,"bit-flip, Toffoli",5000,3,0.0546
+id,even,350,"phase-flip, Toffoli",5000,3,0.082
+id,even,352,no correction (Brisbane 105),5000,3,0.0258
+id,even,352,"bit-flip, Toffoli",5000,3,0.0544
+id,even,352,"phase-flip, Toffoli",5000,3,0.0776
+id,even,354,no correction (Brisbane 105),5000,3,0.0254
+id,even,354,"bit-flip, Toffoli",5000,3,0.0502
+id,even,354,"phase-flip, Toffoli",5000,3,0.0786
+id,even,356,no correction (Brisbane 105),5000,3,0.0242
+id,even,356,"bit-flip, Toffoli",5000,3,0.0488
+id,even,356,"phase-flip, Toffoli",5000,3,0.0796
+id,even,358,no correction (Brisbane 105),5000,3,0.0252
+id,even,358,"bit-flip, Toffoli",5000,3,0.0518
+id,even,358,"phase-flip, Toffoli",5000,3,0.078
+id,even,360,no correction (Brisbane 105),5000,3,0.0248
+id,even,360,"bit-flip, Toffoli",5000,3,0.0458
+id,even,360,"phase-flip, Toffoli",5000,3,0.0806
+id,even,362,no correction (Brisbane 105),5000,3,0.0244
+id,even,362,"bit-flip, Toffoli",5000,3,0.0496
+id,even,362,"phase-flip, Toffoli",5000,3,0.0802
+id,even,364,no correction (Brisbane 105),5000,3,0.0302
+id,even,364,"bit-flip, Toffoli",5000,3,0.0512
+id,even,364,"phase-flip, Toffoli",5000,3,0.0772
+id,even,366,no correction (Brisbane 105),5000,3,0.0256
+id,even,366,"bit-flip, Toffoli",5000,3,0.0478
+id,even,366,"phase-flip, Toffoli",5000,3,0.078
+id,even,368,no correction (Brisbane 105),5000,3,0.0266
+id,even,368,"bit-flip, Toffoli",5000,3,0.051
+id,even,368,"phase-flip, Toffoli",5000,3,0.0794
+id,even,370,no correction (Brisbane 105),5000,3,0.0286
+id,even,370,"bit-flip, Toffoli",5000,3,0.0502
+id,even,370,"phase-flip, Toffoli",5000,3,0.0786
+id,even,372,no correction (Brisbane 105),5000,3,0.0278
+id,even,372,"bit-flip, Toffoli",5000,3,0.0466
+id,even,372,"phase-flip, Toffoli",5000,3,0.0816
+id,even,374,no correction (Brisbane 105),5000,3,0.0262
+id,even,374,"bit-flip, Toffoli",5000,3,0.0464
+id,even,374,"phase-flip, Toffoli",5000,3,0.0848
+id,even,376,no correction (Brisbane 105),5000,3,0.0282
+id,even,376,"bit-flip, Toffoli",5000,3,0.0536
+id,even,376,"phase-flip, Toffoli",5000,3,0.0836
+id,even,378,no correction (Brisbane 105),5000,3,0.0282
+id,even,378,"bit-flip, Toffoli",5000,3,0.0544
+id,even,378,"phase-flip, Toffoli",5000,3,0.0846
+id,even,380,no correction (Brisbane 105),5000,3,0.0296
+id,even,380,"bit-flip, Toffoli",5000,3,0.0526
+id,even,380,"phase-flip, Toffoli",5000,3,0.0834
+id,even,382,no correction (Brisbane 105),5000,3,0.0248
+id,even,382,"bit-flip, Toffoli",5000,3,0.049
+id,even,382,"phase-flip, Toffoli",5000,3,0.084
+id,even,384,no correction (Brisbane 105),5000,3,0.0282
+id,even,384,"bit-flip, Toffoli",5000,3,0.0504
+id,even,384,"phase-flip, Toffoli",5000,3,0.0812
+id,even,386,no correction (Brisbane 105),5000,3,0.0288
+id,even,386,"bit-flip, Toffoli",5000,3,0.0484
+id,even,386,"phase-flip, Toffoli",5000,3,0.0858
+id,even,388,no correction (Brisbane 105),5000,3,0.0268
+id,even,388,"bit-flip, Toffoli",5000,3,0.0556
+id,even,388,"phase-flip, Toffoli",5000,3,0.0806
+id,even,390,no correction (Brisbane 105),5000,3,0.0272
+id,even,390,"bit-flip, Toffoli",5000,3,0.047
+id,even,390,"phase-flip, Toffoli",5000,3,0.0838
+id,even,392,no correction (Brisbane 105),5000,3,0.0284
+id,even,392,"bit-flip, Toffoli",5000,3,0.051
+id,even,392,"phase-flip, Toffoli",5000,3,0.0856
+id,even,394,no correction (Brisbane 105),5000,3,0.0294
+id,even,394,"bit-flip, Toffoli",5000,3,0.053
+id,even,394,"phase-flip, Toffoli",5000,3,0.0812
+id,even,396,no correction (Brisbane 105),5000,3,0.0296
+id,even,396,"bit-flip, Toffoli",5000,3,0.0466
+id,even,396,"phase-flip, Toffoli",5000,3,0.0804
+id,even,398,no correction (Brisbane 105),5000,3,0.0282
+id,even,398,"bit-flip, Toffoli",5000,3,0.0462
+id,even,398,"phase-flip, Toffoli",5000,3,0.0824
+id,even,400,no correction (Brisbane 105),5000,3,0.0282
+id,even,400,"bit-flip, Toffoli",5000,3,0.0482
+id,even,400,"phase-flip, Toffoli",5000,3,0.0844
+id,even,402,no correction (Brisbane 105),5000,3,0.0278
+id,even,402,"bit-flip, Toffoli",5000,3,0.0534
+id,even,402,"phase-flip, Toffoli",5000,3,0.0898
+id,even,404,no correction (Brisbane 105),5000,3,0.0276
+id,even,404,"bit-flip, Toffoli",5000,3,0.0558
+id,even,404,"phase-flip, Toffoli",5000,3,0.0852
+id,even,406,no correction (Brisbane 105),5000,3,0.0294
+id,even,406,"bit-flip, Toffoli",5000,3,0.0486
+id,even,406,"phase-flip, Toffoli",5000,3,0.08
+id,even,408,no correction (Brisbane 105),5000,3,0.0294
+id,even,408,"bit-flip, Toffoli",5000,3,0.0498
+id,even,408,"phase-flip, Toffoli",5000,3,0.087
+id,even,410,no correction (Brisbane 105),5000,3,0.0288
+id,even,410,"bit-flip, Toffoli",5000,3,0.0512
+id,even,410,"phase-flip, Toffoli",5000,3,0.0858
+id,even,412,no correction (Brisbane 105),5000,3,0.0284
+id,even,412,"bit-flip, Toffoli",5000,3,0.05
+id,even,412,"phase-flip, Toffoli",5000,3,0.0914
+id,even,414,no correction (Brisbane 105),5000,3,0.031
+id,even,414,"bit-flip, Toffoli",5000,3,0.0552
+id,even,414,"phase-flip, Toffoli",5000,3,0.087
+id,even,416,no correction (Brisbane 105),5000,3,0.0292
+id,even,416,"bit-flip, Toffoli",5000,3,0.0516
+id,even,416,"phase-flip, Toffoli",5000,3,0.0848
+id,even,418,no correction (Brisbane 105),5000,3,0.03
+id,even,418,"bit-flip, Toffoli",5000,3,0.0522
+id,even,418,"phase-flip, Toffoli",5000,3,0.0832
+id,even,420,no correction (Brisbane 105),5000,3,0.0302
+id,even,420,"bit-flip, Toffoli",5000,3,0.0518
+id,even,420,"phase-flip, Toffoli",5000,3,0.088
+id,even,422,no correction (Brisbane 105),5000,3,0.0318
+id,even,422,"bit-flip, Toffoli",5000,3,0.053
+id,even,422,"phase-flip, Toffoli",5000,3,0.0854
+id,even,424,no correction (Brisbane 105),5000,3,0.0288
+id,even,424,"bit-flip, Toffoli",5000,3,0.0486
+id,even,424,"phase-flip, Toffoli",5000,3,0.0898
+id,even,426,no correction (Brisbane 105),5000,3,0.0314
+id,even,426,"bit-flip, Toffoli",5000,3,0.0538
+id,even,426,"phase-flip, Toffoli",5000,3,0.0838
+id,even,428,no correction (Brisbane 105),5000,3,0.0306
+id,even,428,"bit-flip, Toffoli",5000,3,0.0506
+id,even,428,"phase-flip, Toffoli",5000,3,0.0886
+id,even,430,no correction (Brisbane 105),5000,3,0.0286
+id,even,430,"bit-flip, Toffoli",5000,3,0.0514
+id,even,430,"phase-flip, Toffoli",5000,3,0.0852
+id,even,432,no correction (Brisbane 105),5000,3,0.0302
+id,even,432,"bit-flip, Toffoli",5000,3,0.0526
+id,even,432,"phase-flip, Toffoli",5000,3,0.0882
+id,even,434,no correction (Brisbane 105),5000,3,0.0328
+id,even,434,"bit-flip, Toffoli",5000,3,0.0498
+id,even,434,"phase-flip, Toffoli",5000,3,0.0892
+id,even,436,no correction (Brisbane 105),5000,3,0.0302
+id,even,436,"bit-flip, Toffoli",5000,3,0.0486
+id,even,436,"phase-flip, Toffoli",5000,3,0.0894
+id,even,438,no correction (Brisbane 105),5000,3,0.033
+id,even,438,"bit-flip, Toffoli",5000,3,0.056
+id,even,438,"phase-flip, Toffoli",5000,3,0.091
+id,even,440,no correction (Brisbane 105),5000,3,0.0288
+id,even,440,"bit-flip, Toffoli",5000,3,0.0542
+id,even,440,"phase-flip, Toffoli",5000,3,0.0868
+id,even,442,no correction (Brisbane 105),5000,3,0.0316
+id,even,442,"bit-flip, Toffoli",5000,3,0.0478
+id,even,442,"phase-flip, Toffoli",5000,3,0.0864
+id,even,444,no correction (Brisbane 105),5000,3,0.0326
+id,even,444,"bit-flip, Toffoli",5000,3,0.0464
+id,even,444,"phase-flip, Toffoli",5000,3,0.0858
+id,even,446,no correction (Brisbane 105),5000,3,0.0316
+id,even,446,"bit-flip, Toffoli",5000,3,0.0494
+id,even,446,"phase-flip, Toffoli",5000,3,0.0864
+id,even,448,no correction (Brisbane 105),5000,3,0.0308
+id,even,448,"bit-flip, Toffoli",5000,3,0.0446
+id,even,448,"phase-flip, Toffoli",5000,3,0.0894
+id,even,450,no correction (Brisbane 105),5000,3,0.0314
+id,even,450,"bit-flip, Toffoli",5000,3,0.0504
+id,even,450,"phase-flip, Toffoli",5000,3,0.0876
+id,even,452,no correction (Brisbane 105),5000,3,0.0314
+id,even,452,"bit-flip, Toffoli",5000,3,0.0498
+id,even,452,"phase-flip, Toffoli",5000,3,0.0886
+id,even,454,no correction (Brisbane 105),5000,3,0.0312
+id,even,454,"bit-flip, Toffoli",5000,3,0.047
+id,even,454,"phase-flip, Toffoli",5000,3,0.0954
+id,even,456,no correction (Brisbane 105),5000,3,0.0304
+id,even,456,"bit-flip, Toffoli",5000,3,0.0536
+id,even,456,"phase-flip, Toffoli",5000,3,0.0946
+id,even,458,no correction (Brisbane 105),5000,3,0.0306
+id,even,458,"bit-flip, Toffoli",5000,3,0.0514
+id,even,458,"phase-flip, Toffoli",5000,3,0.0986
+id,even,460,no correction (Brisbane 105),5000,3,0.0308
+id,even,460,"bit-flip, Toffoli",5000,3,0.0558
+id,even,460,"phase-flip, Toffoli",5000,3,0.0944
+id,even,462,no correction (Brisbane 105),5000,3,0.0328
+id,even,462,"bit-flip, Toffoli",5000,3,0.0528
+id,even,462,"phase-flip, Toffoli",5000,3,0.09
+id,even,464,no correction (Brisbane 105),5000,3,0.031
+id,even,464,"bit-flip, Toffoli",5000,3,0.0494
+id,even,464,"phase-flip, Toffoli",5000,3,0.0908
+id,even,466,no correction (Brisbane 105),5000,3,0.0302
+id,even,466,"bit-flip, Toffoli",5000,3,0.0486
+id,even,466,"phase-flip, Toffoli",5000,3,0.0896
+id,even,468,no correction (Brisbane 105),5000,3,0.029
+id,even,468,"bit-flip, Toffoli",5000,3,0.0482
+id,even,468,"phase-flip, Toffoli",5000,3,0.0886
+id,even,470,no correction (Brisbane 105),5000,3,0.031
+id,even,470,"bit-flip, Toffoli",5000,3,0.0478
+id,even,470,"phase-flip, Toffoli",5000,3,0.0878
+id,even,472,no correction (Brisbane 105),5000,3,0.0296
+id,even,472,"bit-flip, Toffoli",5000,3,0.0452
+id,even,472,"phase-flip, Toffoli",5000,3,0.0918
+id,even,474,no correction (Brisbane 105),5000,3,0.0318
+id,even,474,"bit-flip, Toffoli",5000,3,0.0456
+id,even,474,"phase-flip, Toffoli",5000,3,0.0906
+id,even,476,no correction (Brisbane 105),5000,3,0.0304
+id,even,476,"bit-flip, Toffoli",5000,3,0.0476
+id,even,476,"phase-flip, Toffoli",5000,3,0.0938
+id,even,478,no correction (Brisbane 105),5000,3,0.0336
+id,even,478,"bit-flip, Toffoli",5000,3,0.0504
+id,even,478,"phase-flip, Toffoli",5000,3,0.0948
+id,even,480,no correction (Brisbane 105),5000,3,0.0334
+id,even,480,"bit-flip, Toffoli",5000,3,0.0534
+id,even,480,"phase-flip, Toffoli",5000,3,0.086
+id,even,482,no correction (Brisbane 105),5000,3,0.0324
+id,even,482,"bit-flip, Toffoli",5000,3,0.0452
+id,even,482,"phase-flip, Toffoli",5000,3,0.0976
+id,even,484,no correction (Brisbane 105),5000,3,0.0312
+id,even,484,"bit-flip, Toffoli",5000,3,0.054
+id,even,484,"phase-flip, Toffoli",5000,3,0.095
+id,even,486,no correction (Brisbane 105),5000,3,0.0306
+id,even,486,"bit-flip, Toffoli",5000,3,0.0546
+id,even,486,"phase-flip, Toffoli",5000,3,0.097
+id,even,488,no correction (Brisbane 105),5000,3,0.0314
+id,even,488,"bit-flip, Toffoli",5000,3,0.0496
+id,even,488,"phase-flip, Toffoli",5000,3,0.0922
+id,even,490,no correction (Brisbane 105),5000,3,0.0324
+id,even,490,"bit-flip, Toffoli",5000,3,0.0506
+id,even,490,"phase-flip, Toffoli",5000,3,0.095
+id,even,492,no correction (Brisbane 105),5000,3,0.0324
+id,even,492,"bit-flip, Toffoli",5000,3,0.0508
+id,even,492,"phase-flip, Toffoli",5000,3,0.0928
+id,even,494,no correction (Brisbane 105),5000,3,0.0316
+id,even,494,"bit-flip, Toffoli",5000,3,0.0482
+id,even,494,"phase-flip, Toffoli",5000,3,0.094
+id,even,496,no correction (Brisbane 105),5000,3,0.0298
+id,even,496,"bit-flip, Toffoli",5000,3,0.0494
+id,even,496,"phase-flip, Toffoli",5000,3,0.094
+id,even,498,no correction (Brisbane 105),5000,3,0.0318
+id,even,498,"bit-flip, Toffoli",5000,3,0.052
+id,even,498,"phase-flip, Toffoli",5000,3,0.0958
+id,even,500,no correction (Brisbane 105),5000,3,0.033
+id,even,500,"bit-flip, Toffoli",5000,3,0.0496
+id,even,500,"phase-flip, Toffoli",5000,3,0.098
+id,odd,1,no correction (Brisbane 105),5000,3,0.0082
+id,odd,1,"bit-flip, Toffoli",5000,3,0.0534
+id,odd,1,"phase-flip, Toffoli",5000,3,0.0522
+id,odd,3,no correction (Brisbane 105),5000,3,0.009
+id,odd,3,"bit-flip, Toffoli",5000,3,0.0514
+id,odd,3,"phase-flip, Toffoli",5000,3,0.0528
+id,odd,5,no correction (Brisbane 105),5000,3,0.0104
+id,odd,5,"bit-flip, Toffoli",5000,3,0.0524
+id,odd,5,"phase-flip, Toffoli",5000,3,0.0536
+id,odd,7,no correction (Brisbane 105),5000,3,0.0076
+id,odd,7,"bit-flip, Toffoli",5000,3,0.0544
+id,odd,7,"phase-flip, Toffoli",5000,3,0.056
+id,odd,9,no correction (Brisbane 105),5000,3,0.0118
+id,odd,9,"bit-flip, Toffoli",5000,3,0.0552
+id,odd,9,"phase-flip, Toffoli",5000,3,0.0522
+id,odd,11,no correction (Brisbane 105),5000,3,0.01
+id,odd,11,"bit-flip, Toffoli",5000,3,0.0522
+id,odd,11,"phase-flip, Toffoli",5000,3,0.057
+id,odd,13,no correction (Brisbane 105),5000,3,0.0112
+id,odd,13,"bit-flip, Toffoli",5000,3,0.056
+id,odd,13,"phase-flip, Toffoli",5000,3,0.0534
+id,odd,15,no correction (Brisbane 105),5000,3,0.011
+id,odd,15,"bit-flip, Toffoli",5000,3,0.0516
+id,odd,15,"phase-flip, Toffoli",5000,3,0.0508
+id,odd,17,no correction (Brisbane 105),5000,3,0.0096
+id,odd,17,"bit-flip, Toffoli",5000,3,0.0496
+id,odd,17,"phase-flip, Toffoli",5000,3,0.0518
+id,odd,19,no correction (Brisbane 105),5000,3,0.0106
+id,odd,19,"bit-flip, Toffoli",5000,3,0.0496
+id,odd,19,"phase-flip, Toffoli",5000,3,0.047
+id,odd,21,no correction (Brisbane 105),5000,3,0.0088
+id,odd,21,"bit-flip, Toffoli",5000,3,0.048
+id,odd,21,"phase-flip, Toffoli",5000,3,0.05
+id,odd,23,no correction (Brisbane 105),5000,3,0.0108
+id,odd,23,"bit-flip, Toffoli",5000,3,0.049
+id,odd,23,"phase-flip, Toffoli",5000,3,0.0508
+id,odd,25,no correction (Brisbane 105),5000,3,0.011
+id,odd,25,"bit-flip, Toffoli",5000,3,0.0502
+id,odd,25,"phase-flip, Toffoli",5000,3,0.0488
+id,odd,27,no correction (Brisbane 105),5000,3,0.0114
+id,odd,27,"bit-flip, Toffoli",5000,3,0.048
+id,odd,27,"phase-flip, Toffoli",5000,3,0.0472
+id,odd,29,no correction (Brisbane 105),5000,3,0.0112
+id,odd,29,"bit-flip, Toffoli",5000,3,0.0446
+id,odd,29,"phase-flip, Toffoli",5000,3,0.0532
+id,odd,31,no correction (Brisbane 105),5000,3,0.0112
+id,odd,31,"bit-flip, Toffoli",5000,3,0.0526
+id,odd,31,"phase-flip, Toffoli",5000,3,0.0462
+id,odd,33,no correction (Brisbane 105),5000,3,0.0096
+id,odd,33,"bit-flip, Toffoli",5000,3,0.0452
+id,odd,33,"phase-flip, Toffoli",5000,3,0.0476
+id,odd,35,no correction (Brisbane 105),5000,3,0.01
+id,odd,35,"bit-flip, Toffoli",5000,3,0.0466
+id,odd,35,"phase-flip, Toffoli",5000,3,0.046
+id,odd,37,no correction (Brisbane 105),5000,3,0.0124
+id,odd,37,"bit-flip, Toffoli",5000,3,0.0446
+id,odd,37,"phase-flip, Toffoli",5000,3,0.0502
+id,odd,39,no correction (Brisbane 105),5000,3,0.0102
+id,odd,39,"bit-flip, Toffoli",5000,3,0.0496
+id,odd,39,"phase-flip, Toffoli",5000,3,0.0514
+id,odd,41,no correction (Brisbane 105),5000,3,0.0128
+id,odd,41,"bit-flip, Toffoli",5000,3,0.0508
+id,odd,41,"phase-flip, Toffoli",5000,3,0.055
+id,odd,43,no correction (Brisbane 105),5000,3,0.0132
+id,odd,43,"bit-flip, Toffoli",5000,3,0.0536
+id,odd,43,"phase-flip, Toffoli",5000,3,0.054
+id,odd,45,no correction (Brisbane 105),5000,3,0.011
+id,odd,45,"bit-flip, Toffoli",5000,3,0.0528
+id,odd,45,"phase-flip, Toffoli",5000,3,0.053
+id,odd,47,no correction (Brisbane 105),5000,3,0.009
+id,odd,47,"bit-flip, Toffoli",5000,3,0.0526
+id,odd,47,"phase-flip, Toffoli",5000,3,0.051
+id,odd,49,no correction (Brisbane 105),5000,3,0.0098
+id,odd,49,"bit-flip, Toffoli",5000,3,0.0506
+id,odd,49,"phase-flip, Toffoli",5000,3,0.0548
+id,odd,51,no correction (Brisbane 105),5000,3,0.0098
+id,odd,51,"bit-flip, Toffoli",5000,3,0.054
+id,odd,51,"phase-flip, Toffoli",5000,3,0.0574
+id,odd,53,no correction (Brisbane 105),5000,3,0.0112
+id,odd,53,"bit-flip, Toffoli",5000,3,0.0554
+id,odd,53,"phase-flip, Toffoli",5000,3,0.0516
+id,odd,55,no correction (Brisbane 105),5000,3,0.0112
+id,odd,55,"bit-flip, Toffoli",5000,3,0.0508
+id,odd,55,"phase-flip, Toffoli",5000,3,0.0478
+id,odd,57,no correction (Brisbane 105),5000,3,0.0124
+id,odd,57,"bit-flip, Toffoli",5000,3,0.0454
+id,odd,57,"phase-flip, Toffoli",5000,3,0.056
+id,odd,59,no correction (Brisbane 105),5000,3,0.0114
+id,odd,59,"bit-flip, Toffoli",5000,3,0.0544
+id,odd,59,"phase-flip, Toffoli",5000,3,0.053
+id,odd,61,no correction (Brisbane 105),5000,3,0.0112
+id,odd,61,"bit-flip, Toffoli",5000,3,0.0518
+id,odd,61,"phase-flip, Toffoli",5000,3,0.0518
+id,odd,63,no correction (Brisbane 105),5000,3,0.0118
+id,odd,63,"bit-flip, Toffoli",5000,3,0.0496
+id,odd,63,"phase-flip, Toffoli",5000,3,0.048
+id,odd,65,no correction (Brisbane 105),5000,3,0.0112
+id,odd,65,"bit-flip, Toffoli",5000,3,0.0476
+id,odd,65,"phase-flip, Toffoli",5000,3,0.0518
+id,odd,67,no correction (Brisbane 105),5000,3,0.0122
+id,odd,67,"bit-flip, Toffoli",5000,3,0.0502
+id,odd,67,"phase-flip, Toffoli",5000,3,0.056
+id,odd,69,no correction (Brisbane 105),5000,3,0.0128
+id,odd,69,"bit-flip, Toffoli",5000,3,0.0536
+id,odd,69,"phase-flip, Toffoli",5000,3,0.0562
+id,odd,71,no correction (Brisbane 105),5000,3,0.013
+id,odd,71,"bit-flip, Toffoli",5000,3,0.0542
+id,odd,71,"phase-flip, Toffoli",5000,3,0.0516
+id,odd,73,no correction (Brisbane 105),5000,3,0.0142
+id,odd,73,"bit-flip, Toffoli",5000,3,0.0476
+id,odd,73,"phase-flip, Toffoli",5000,3,0.05
+id,odd,75,no correction (Brisbane 105),5000,3,0.0144
+id,odd,75,"bit-flip, Toffoli",5000,3,0.0468
+id,odd,75,"phase-flip, Toffoli",5000,3,0.0552
+id,odd,77,no correction (Brisbane 105),5000,3,0.0136
+id,odd,77,"bit-flip, Toffoli",5000,3,0.0518
+id,odd,77,"phase-flip, Toffoli",5000,3,0.058
+id,odd,79,no correction (Brisbane 105),5000,3,0.0116
+id,odd,79,"bit-flip, Toffoli",5000,3,0.0544
+id,odd,79,"phase-flip, Toffoli",5000,3,0.0532
+id,odd,81,no correction (Brisbane 105),5000,3,0.0156
+id,odd,81,"bit-flip, Toffoli",5000,3,0.0516
+id,odd,81,"phase-flip, Toffoli",5000,3,0.0512
+id,odd,83,no correction (Brisbane 105),5000,3,0.0132
+id,odd,83,"bit-flip, Toffoli",5000,3,0.0486
+id,odd,83,"phase-flip, Toffoli",5000,3,0.0494
+id,odd,85,no correction (Brisbane 105),5000,3,0.0132
+id,odd,85,"bit-flip, Toffoli",5000,3,0.047
+id,odd,85,"phase-flip, Toffoli",5000,3,0.0542
+id,odd,87,no correction (Brisbane 105),5000,3,0.0152
+id,odd,87,"bit-flip, Toffoli",5000,3,0.0502
+id,odd,87,"phase-flip, Toffoli",5000,3,0.0588
+id,odd,89,no correction (Brisbane 105),5000,3,0.0138
+id,odd,89,"bit-flip, Toffoli",5000,3,0.0562
+id,odd,89,"phase-flip, Toffoli",5000,3,0.0538
+id,odd,91,no correction (Brisbane 105),5000,3,0.0124
+id,odd,91,"bit-flip, Toffoli",5000,3,0.0516
+id,odd,91,"phase-flip, Toffoli",5000,3,0.0462
+id,odd,93,no correction (Brisbane 105),5000,3,0.0138
+id,odd,93,"bit-flip, Toffoli",5000,3,0.0442
+id,odd,93,"phase-flip, Toffoli",5000,3,0.0552
+id,odd,95,no correction (Brisbane 105),5000,3,0.012
+id,odd,95,"bit-flip, Toffoli",5000,3,0.0524
+id,odd,95,"phase-flip, Toffoli",5000,3,0.0586
+id,odd,97,no correction (Brisbane 105),5000,3,0.013
+id,odd,97,"bit-flip, Toffoli",5000,3,0.0564
+id,odd,97,"phase-flip, Toffoli",5000,3,0.0582
+id,odd,99,no correction (Brisbane 105),5000,3,0.0146
+id,odd,99,"bit-flip, Toffoli",5000,3,0.056
+id,odd,99,"phase-flip, Toffoli",5000,3,0.058
+id,odd,101,no correction (Brisbane 105),5000,3,0.013
+id,odd,101,"bit-flip, Toffoli",5000,3,0.0556
+id,odd,101,"phase-flip, Toffoli",5000,3,0.0582
+id,odd,103,no correction (Brisbane 105),5000,3,0.0134
+id,odd,103,"bit-flip, Toffoli",5000,3,0.055
+id,odd,103,"phase-flip, Toffoli",5000,3,0.0616
+id,odd,105,no correction (Brisbane 105),5000,3,0.0124
+id,odd,105,"bit-flip, Toffoli",5000,3,0.0548
+id,odd,105,"phase-flip, Toffoli",5000,3,0.058
+id,odd,107,no correction (Brisbane 105),5000,3,0.0132
+id,odd,107,"bit-flip, Toffoli",5000,3,0.0536
+id,odd,107,"phase-flip, Toffoli",5000,3,0.0628
+id,odd,109,no correction (Brisbane 105),5000,3,0.013
+id,odd,109,"bit-flip, Toffoli",5000,3,0.06
+id,odd,109,"phase-flip, Toffoli",5000,3,0.0552
+id,odd,111,no correction (Brisbane 105),5000,3,0.014
+id,odd,111,"bit-flip, Toffoli",5000,3,0.0522
+id,odd,111,"phase-flip, Toffoli",5000,3,0.0562
+id,odd,113,no correction (Brisbane 105),5000,3,0.0142
+id,odd,113,"bit-flip, Toffoli",5000,3,0.0526
+id,odd,113,"phase-flip, Toffoli",5000,3,0.0584
+id,odd,115,no correction (Brisbane 105),5000,3,0.0152
+id,odd,115,"bit-flip, Toffoli",5000,3,0.053
+id,odd,115,"phase-flip, Toffoli",5000,3,0.0552
+id,odd,117,no correction (Brisbane 105),5000,3,0.0142
+id,odd,117,"bit-flip, Toffoli",5000,3,0.0508
+id,odd,117,"phase-flip, Toffoli",5000,3,0.053
+id,odd,119,no correction (Brisbane 105),5000,3,0.0118
+id,odd,119,"bit-flip, Toffoli",5000,3,0.047
+id,odd,119,"phase-flip, Toffoli",5000,3,0.059
+id,odd,121,no correction (Brisbane 105),5000,3,0.0128
+id,odd,121,"bit-flip, Toffoli",5000,3,0.0514
+id,odd,121,"phase-flip, Toffoli",5000,3,0.0548
+id,odd,123,no correction (Brisbane 105),5000,3,0.015
+id,odd,123,"bit-flip, Toffoli",5000,3,0.047
+id,odd,123,"phase-flip, Toffoli",5000,3,0.0588
+id,odd,125,no correction (Brisbane 105),5000,3,0.0132
+id,odd,125,"bit-flip, Toffoli",5000,3,0.0514
+id,odd,125,"phase-flip, Toffoli",5000,3,0.0592
+id,odd,127,no correction (Brisbane 105),5000,3,0.0154
+id,odd,127,"bit-flip, Toffoli",5000,3,0.0514
+id,odd,127,"phase-flip, Toffoli",5000,3,0.0612
+id,odd,129,no correction (Brisbane 105),5000,3,0.0134
+id,odd,129,"bit-flip, Toffoli",5000,3,0.054
+id,odd,129,"phase-flip, Toffoli",5000,3,0.056
+id,odd,131,no correction (Brisbane 105),5000,3,0.0148
+id,odd,131,"bit-flip, Toffoli",5000,3,0.0492
+id,odd,131,"phase-flip, Toffoli",5000,3,0.055
+id,odd,133,no correction (Brisbane 105),5000,3,0.0132
+id,odd,133,"bit-flip, Toffoli",5000,3,0.0482
+id,odd,133,"phase-flip, Toffoli",5000,3,0.0542
+id,odd,135,no correction (Brisbane 105),5000,3,0.0148
+id,odd,135,"bit-flip, Toffoli",5000,3,0.0454
+id,odd,135,"phase-flip, Toffoli",5000,3,0.0598
+id,odd,137,no correction (Brisbane 105),5000,3,0.0136
+id,odd,137,"bit-flip, Toffoli",5000,3,0.0512
+id,odd,137,"phase-flip, Toffoli",5000,3,0.0536
+id,odd,139,no correction (Brisbane 105),5000,3,0.014
+id,odd,139,"bit-flip, Toffoli",5000,3,0.044
+id,odd,139,"phase-flip, Toffoli",5000,3,0.0562
+id,odd,141,no correction (Brisbane 105),5000,3,0.0142
+id,odd,141,"bit-flip, Toffoli",5000,3,0.0484
+id,odd,141,"phase-flip, Toffoli",5000,3,0.0636
+id,odd,143,no correction (Brisbane 105),5000,3,0.0144
+id,odd,143,"bit-flip, Toffoli",5000,3,0.0548
+id,odd,143,"phase-flip, Toffoli",5000,3,0.062
+id,odd,145,no correction (Brisbane 105),5000,3,0.0158
+id,odd,145,"bit-flip, Toffoli",5000,3,0.0536
+id,odd,145,"phase-flip, Toffoli",5000,3,0.062
+id,odd,147,no correction (Brisbane 105),5000,3,0.0162
+id,odd,147,"bit-flip, Toffoli",5000,3,0.0522
+id,odd,147,"phase-flip, Toffoli",5000,3,0.059
+id,odd,149,no correction (Brisbane 105),5000,3,0.0156
+id,odd,149,"bit-flip, Toffoli",5000,3,0.0502
+id,odd,149,"phase-flip, Toffoli",5000,3,0.0546
+id,odd,151,no correction (Brisbane 105),5000,3,0.0156
+id,odd,151,"bit-flip, Toffoli",5000,3,0.0452
+id,odd,151,"phase-flip, Toffoli",5000,3,0.0552
+id,odd,153,no correction (Brisbane 105),5000,3,0.0146
+id,odd,153,"bit-flip, Toffoli",5000,3,0.0478
+id,odd,153,"phase-flip, Toffoli",5000,3,0.06
+id,odd,155,no correction (Brisbane 105),5000,3,0.017
+id,odd,155,"bit-flip, Toffoli",5000,3,0.0524
+id,odd,155,"phase-flip, Toffoli",5000,3,0.06
+id,odd,157,no correction (Brisbane 105),5000,3,0.0162
+id,odd,157,"bit-flip, Toffoli",5000,3,0.0508
+id,odd,157,"phase-flip, Toffoli",5000,3,0.0642
+id,odd,159,no correction (Brisbane 105),5000,3,0.019
+id,odd,159,"bit-flip, Toffoli",5000,3,0.0548
+id,odd,159,"phase-flip, Toffoli",5000,3,0.0626
+id,odd,161,no correction (Brisbane 105),5000,3,0.0148
+id,odd,161,"bit-flip, Toffoli",5000,3,0.0548
+id,odd,161,"phase-flip, Toffoli",5000,3,0.0608
+id,odd,163,no correction (Brisbane 105),5000,3,0.0168
+id,odd,163,"bit-flip, Toffoli",5000,3,0.052
+id,odd,163,"phase-flip, Toffoli",5000,3,0.0628
+id,odd,165,no correction (Brisbane 105),5000,3,0.0156
+id,odd,165,"bit-flip, Toffoli",5000,3,0.054
+id,odd,165,"phase-flip, Toffoli",5000,3,0.06
+id,odd,167,no correction (Brisbane 105),5000,3,0.016
+id,odd,167,"bit-flip, Toffoli",5000,3,0.0478
+id,odd,167,"phase-flip, Toffoli",5000,3,0.06
+id,odd,169,no correction (Brisbane 105),5000,3,0.0184
+id,odd,169,"bit-flip, Toffoli",5000,3,0.0504
+id,odd,169,"phase-flip, Toffoli",5000,3,0.0604
+id,odd,171,no correction (Brisbane 105),5000,3,0.0168
+id,odd,171,"bit-flip, Toffoli",5000,3,0.0506
+id,odd,171,"phase-flip, Toffoli",5000,3,0.0578
+id,odd,173,no correction (Brisbane 105),5000,3,0.0176
+id,odd,173,"bit-flip, Toffoli",5000,3,0.0472
+id,odd,173,"phase-flip, Toffoli",5000,3,0.056
+id,odd,175,no correction (Brisbane 105),5000,3,0.0216
+id,odd,175,"bit-flip, Toffoli",5000,3,0.0456
+id,odd,175,"phase-flip, Toffoli",5000,3,0.0606
+id,odd,177,no correction (Brisbane 105),5000,3,0.017
+id,odd,177,"bit-flip, Toffoli",5000,3,0.0478
+id,odd,177,"phase-flip, Toffoli",5000,3,0.058
+id,odd,179,no correction (Brisbane 105),5000,3,0.0176
+id,odd,179,"bit-flip, Toffoli",5000,3,0.0472
+id,odd,179,"phase-flip, Toffoli",5000,3,0.064
+id,odd,181,no correction (Brisbane 105),5000,3,0.019
+id,odd,181,"bit-flip, Toffoli",5000,3,0.0512
+id,odd,181,"phase-flip, Toffoli",5000,3,0.0618
+id,odd,183,no correction (Brisbane 105),5000,3,0.018
+id,odd,183,"bit-flip, Toffoli",5000,3,0.0502
+id,odd,183,"phase-flip, Toffoli",5000,3,0.0618
+id,odd,185,no correction (Brisbane 105),5000,3,0.0188
+id,odd,185,"bit-flip, Toffoli",5000,3,0.0504
+id,odd,185,"phase-flip, Toffoli",5000,3,0.062
+id,odd,187,no correction (Brisbane 105),5000,3,0.0166
+id,odd,187,"bit-flip, Toffoli",5000,3,0.0498
+id,odd,187,"phase-flip, Toffoli",5000,3,0.0568
+id,odd,189,no correction (Brisbane 105),5000,3,0.0212
+id,odd,189,"bit-flip, Toffoli",5000,3,0.0462
+id,odd,189,"phase-flip, Toffoli",5000,3,0.0632
+id,odd,191,no correction (Brisbane 105),5000,3,0.0216
+id,odd,191,"bit-flip, Toffoli",5000,3,0.0504
+id,odd,191,"phase-flip, Toffoli",5000,3,0.0656
+id,odd,193,no correction (Brisbane 105),5000,3,0.0174
+id,odd,193,"bit-flip, Toffoli",5000,3,0.0512
+id,odd,193,"phase-flip, Toffoli",5000,3,0.0632
+id,odd,195,no correction (Brisbane 105),5000,3,0.02
+id,odd,195,"bit-flip, Toffoli",5000,3,0.0482
+id,odd,195,"phase-flip, Toffoli",5000,3,0.0574
+id,odd,197,no correction (Brisbane 105),5000,3,0.0198
+id,odd,197,"bit-flip, Toffoli",5000,3,0.0442
+id,odd,197,"phase-flip, Toffoli",5000,3,0.0618
+id,odd,199,no correction (Brisbane 105),5000,3,0.021
+id,odd,199,"bit-flip, Toffoli",5000,3,0.0498
+id,odd,199,"phase-flip, Toffoli",5000,3,0.064
+id,odd,201,no correction (Brisbane 105),5000,3,0.02
+id,odd,201,"bit-flip, Toffoli",5000,3,0.0506
+id,odd,201,"phase-flip, Toffoli",5000,3,0.062
+id,odd,203,no correction (Brisbane 105),5000,3,0.02
+id,odd,203,"bit-flip, Toffoli",5000,3,0.0498
+id,odd,203,"phase-flip, Toffoli",5000,3,0.064
+id,odd,205,no correction (Brisbane 105),5000,3,0.0194
+id,odd,205,"bit-flip, Toffoli",5000,3,0.0502
+id,odd,205,"phase-flip, Toffoli",5000,3,0.0636
+id,odd,207,no correction (Brisbane 105),5000,3,0.0212
+id,odd,207,"bit-flip, Toffoli",5000,3,0.0504
+id,odd,207,"phase-flip, Toffoli",5000,3,0.0634
+id,odd,209,no correction (Brisbane 105),5000,3,0.0196
+id,odd,209,"bit-flip, Toffoli",5000,3,0.0504
+id,odd,209,"phase-flip, Toffoli",5000,3,0.061
+id,odd,211,no correction (Brisbane 105),5000,3,0.0192
+id,odd,211,"bit-flip, Toffoli",5000,3,0.0472
+id,odd,211,"phase-flip, Toffoli",5000,3,0.0666
+id,odd,213,no correction (Brisbane 105),5000,3,0.02
+id,odd,213,"bit-flip, Toffoli",5000,3,0.0504
+id,odd,213,"phase-flip, Toffoli",5000,3,0.071
+id,odd,215,no correction (Brisbane 105),5000,3,0.0226
+id,odd,215,"bit-flip, Toffoli",5000,3,0.0542
+id,odd,215,"phase-flip, Toffoli",5000,3,0.0666
+id,odd,217,no correction (Brisbane 105),5000,3,0.0212
+id,odd,217,"bit-flip, Toffoli",5000,3,0.0512
+id,odd,217,"phase-flip, Toffoli",5000,3,0.059
+id,odd,219,no correction (Brisbane 105),5000,3,0.021
+id,odd,219,"bit-flip, Toffoli",5000,3,0.0464
+id,odd,219,"phase-flip, Toffoli",5000,3,0.066
+id,odd,221,no correction (Brisbane 105),5000,3,0.02
+id,odd,221,"bit-flip, Toffoli",5000,3,0.048
+id,odd,221,"phase-flip, Toffoli",5000,3,0.0676
+id,odd,223,no correction (Brisbane 105),5000,3,0.0212
+id,odd,223,"bit-flip, Toffoli",5000,3,0.0506
+id,odd,223,"phase-flip, Toffoli",5000,3,0.067
+id,odd,225,no correction (Brisbane 105),5000,3,0.0214
+id,odd,225,"bit-flip, Toffoli",5000,3,0.0508
+id,odd,225,"phase-flip, Toffoli",5000,3,0.063
+id,odd,227,no correction (Brisbane 105),5000,3,0.021
+id,odd,227,"bit-flip, Toffoli",5000,3,0.0476
+id,odd,227,"phase-flip, Toffoli",5000,3,0.0654
+id,odd,229,no correction (Brisbane 105),5000,3,0.0226
+id,odd,229,"bit-flip, Toffoli",5000,3,0.051
+id,odd,229,"phase-flip, Toffoli",5000,3,0.0678
+id,odd,231,no correction (Brisbane 105),5000,3,0.023
+id,odd,231,"bit-flip, Toffoli",5000,3,0.0524
+id,odd,231,"phase-flip, Toffoli",5000,3,0.0626
+id,odd,233,no correction (Brisbane 105),5000,3,0.0212
+id,odd,233,"bit-flip, Toffoli",5000,3,0.0466
+id,odd,233,"phase-flip, Toffoli",5000,3,0.0668
+id,odd,235,no correction (Brisbane 105),5000,3,0.021
+id,odd,235,"bit-flip, Toffoli",5000,3,0.0514
+id,odd,235,"phase-flip, Toffoli",5000,3,0.0668
+id,odd,237,no correction (Brisbane 105),5000,3,0.019
+id,odd,237,"bit-flip, Toffoli",5000,3,0.0526
+id,odd,237,"phase-flip, Toffoli",5000,3,0.0696
+id,odd,239,no correction (Brisbane 105),5000,3,0.0184
+id,odd,239,"bit-flip, Toffoli",5000,3,0.0528
+id,odd,239,"phase-flip, Toffoli",5000,3,0.0696
+id,odd,241,no correction (Brisbane 105),5000,3,0.0198
+id,odd,241,"bit-flip, Toffoli",5000,3,0.0544
+id,odd,241,"phase-flip, Toffoli",5000,3,0.0704
+id,odd,243,no correction (Brisbane 105),5000,3,0.0242
+id,odd,243,"bit-flip, Toffoli",5000,3,0.0538
+id,odd,243,"phase-flip, Toffoli",5000,3,0.0626
+id,odd,245,no correction (Brisbane 105),5000,3,0.0228
+id,odd,245,"bit-flip, Toffoli",5000,3,0.0458
+id,odd,245,"phase-flip, Toffoli",5000,3,0.069
+id,odd,247,no correction (Brisbane 105),5000,3,0.0204
+id,odd,247,"bit-flip, Toffoli",5000,3,0.0512
+id,odd,247,"phase-flip, Toffoli",5000,3,0.0658
+id,odd,249,no correction (Brisbane 105),5000,3,0.0188
+id,odd,249,"bit-flip, Toffoli",5000,3,0.049
+id,odd,249,"phase-flip, Toffoli",5000,3,0.0676
+id,odd,251,no correction (Brisbane 105),5000,3,0.0234
+id,odd,251,"bit-flip, Toffoli",5000,3,0.0488
+id,odd,251,"phase-flip, Toffoli",5000,3,0.0648
+id,odd,253,no correction (Brisbane 105),5000,3,0.0208
+id,odd,253,"bit-flip, Toffoli",5000,3,0.049
+id,odd,253,"phase-flip, Toffoli",5000,3,0.068
+id,odd,255,no correction (Brisbane 105),5000,3,0.0228
+id,odd,255,"bit-flip, Toffoli",5000,3,0.05
+id,odd,255,"phase-flip, Toffoli",5000,3,0.0704
+id,odd,257,no correction (Brisbane 105),5000,3,0.0234
+id,odd,257,"bit-flip, Toffoli",5000,3,0.051
+id,odd,257,"phase-flip, Toffoli",5000,3,0.0702
+id,odd,259,no correction (Brisbane 105),5000,3,0.0232
+id,odd,259,"bit-flip, Toffoli",5000,3,0.0522
+id,odd,259,"phase-flip, Toffoli",5000,3,0.0702
+id,odd,261,no correction (Brisbane 105),5000,3,0.0224
+id,odd,261,"bit-flip, Toffoli",5000,3,0.0516
+id,odd,261,"phase-flip, Toffoli",5000,3,0.0724
+id,odd,263,no correction (Brisbane 105),5000,3,0.0252
+id,odd,263,"bit-flip, Toffoli",5000,3,0.053
+id,odd,263,"phase-flip, Toffoli",5000,3,0.0674
+id,odd,265,no correction (Brisbane 105),5000,3,0.0242
+id,odd,265,"bit-flip, Toffoli",5000,3,0.0478
+id,odd,265,"phase-flip, Toffoli",5000,3,0.066
+id,odd,267,no correction (Brisbane 105),5000,3,0.0238
+id,odd,267,"bit-flip, Toffoli",5000,3,0.0464
+id,odd,267,"phase-flip, Toffoli",5000,3,0.0702
+id,odd,269,no correction (Brisbane 105),5000,3,0.0234
+id,odd,269,"bit-flip, Toffoli",5000,3,0.0498
+id,odd,269,"phase-flip, Toffoli",5000,3,0.0738
+id,odd,271,no correction (Brisbane 105),5000,3,0.0206
+id,odd,271,"bit-flip, Toffoli",5000,3,0.0548
+id,odd,271,"phase-flip, Toffoli",5000,3,0.068
+id,odd,273,no correction (Brisbane 105),5000,3,0.0228
+id,odd,273,"bit-flip, Toffoli",5000,3,0.0476
+id,odd,273,"phase-flip, Toffoli",5000,3,0.0696
+id,odd,275,no correction (Brisbane 105),5000,3,0.0208
+id,odd,275,"bit-flip, Toffoli",5000,3,0.05
+id,odd,275,"phase-flip, Toffoli",5000,3,0.0684
+id,odd,277,no correction (Brisbane 105),5000,3,0.0236
+id,odd,277,"bit-flip, Toffoli",5000,3,0.0482
+id,odd,277,"phase-flip, Toffoli",5000,3,0.0688
+id,odd,279,no correction (Brisbane 105),5000,3,0.025
+id,odd,279,"bit-flip, Toffoli",5000,3,0.048
+id,odd,279,"phase-flip, Toffoli",5000,3,0.0668
+id,odd,281,no correction (Brisbane 105),5000,3,0.0236
+id,odd,281,"bit-flip, Toffoli",5000,3,0.0484
+id,odd,281,"phase-flip, Toffoli",5000,3,0.0712
+id,odd,283,no correction (Brisbane 105),5000,3,0.0282
+id,odd,283,"bit-flip, Toffoli",5000,3,0.0514
+id,odd,283,"phase-flip, Toffoli",5000,3,0.0774
+id,odd,285,no correction (Brisbane 105),5000,3,0.024
+id,odd,285,"bit-flip, Toffoli",5000,3,0.0556
+id,odd,285,"phase-flip, Toffoli",5000,3,0.0706
+id,odd,287,no correction (Brisbane 105),5000,3,0.0242
+id,odd,287,"bit-flip, Toffoli",5000,3,0.0488
+id,odd,287,"phase-flip, Toffoli",5000,3,0.0752
+id,odd,289,no correction (Brisbane 105),5000,3,0.0258
+id,odd,289,"bit-flip, Toffoli",5000,3,0.0532
+id,odd,289,"phase-flip, Toffoli",5000,3,0.0734
+id,odd,291,no correction (Brisbane 105),5000,3,0.0232
+id,odd,291,"bit-flip, Toffoli",5000,3,0.0508
+id,odd,291,"phase-flip, Toffoli",5000,3,0.0724
+id,odd,293,no correction (Brisbane 105),5000,3,0.023
+id,odd,293,"bit-flip, Toffoli",5000,3,0.0486
+id,odd,293,"phase-flip, Toffoli",5000,3,0.0696
+id,odd,295,no correction (Brisbane 105),5000,3,0.0244
+id,odd,295,"bit-flip, Toffoli",5000,3,0.045
+id,odd,295,"phase-flip, Toffoli",5000,3,0.0752
+id,odd,297,no correction (Brisbane 105),5000,3,0.0248
+id,odd,297,"bit-flip, Toffoli",5000,3,0.0524
+id,odd,297,"phase-flip, Toffoli",5000,3,0.0744
+id,odd,299,no correction (Brisbane 105),5000,3,0.0254
+id,odd,299,"bit-flip, Toffoli",5000,3,0.0512
+id,odd,299,"phase-flip, Toffoli",5000,3,0.0704
+id,odd,301,no correction (Brisbane 105),5000,3,0.0238
+id,odd,301,"bit-flip, Toffoli",5000,3,0.0464
+id,odd,301,"phase-flip, Toffoli",5000,3,0.0736
+id,odd,303,no correction (Brisbane 105),5000,3,0.0252
+id,odd,303,"bit-flip, Toffoli",5000,3,0.0508
+id,odd,303,"phase-flip, Toffoli",5000,3,0.0766
+id,odd,305,no correction (Brisbane 105),5000,3,0.0256
+id,odd,305,"bit-flip, Toffoli",5000,3,0.0534
+id,odd,305,"phase-flip, Toffoli",5000,3,0.0744
+id,odd,307,no correction (Brisbane 105),5000,3,0.0268
+id,odd,307,"bit-flip, Toffoli",5000,3,0.0522
+id,odd,307,"phase-flip, Toffoli",5000,3,0.0714
+id,odd,309,no correction (Brisbane 105),5000,3,0.0238
+id,odd,309,"bit-flip, Toffoli",5000,3,0.0502
+id,odd,309,"phase-flip, Toffoli",5000,3,0.0698
+id,odd,311,no correction (Brisbane 105),5000,3,0.0244
+id,odd,311,"bit-flip, Toffoli",5000,3,0.046
+id,odd,311,"phase-flip, Toffoli",5000,3,0.0736
+id,odd,313,no correction (Brisbane 105),5000,3,0.023
+id,odd,313,"bit-flip, Toffoli",5000,3,0.0522
+id,odd,313,"phase-flip, Toffoli",5000,3,0.0714
+id,odd,315,no correction (Brisbane 105),5000,3,0.0248
+id,odd,315,"bit-flip, Toffoli",5000,3,0.0474
+id,odd,315,"phase-flip, Toffoli",5000,3,0.076
+id,odd,317,no correction (Brisbane 105),5000,3,0.0282
+id,odd,317,"bit-flip, Toffoli",5000,3,0.0496
+id,odd,317,"phase-flip, Toffoli",5000,3,0.0752
+id,odd,319,no correction (Brisbane 105),5000,3,0.0276
+id,odd,319,"bit-flip, Toffoli",5000,3,0.0524
+id,odd,319,"phase-flip, Toffoli",5000,3,0.0736
+id,odd,321,no correction (Brisbane 105),5000,3,0.0272
+id,odd,321,"bit-flip, Toffoli",5000,3,0.047
+id,odd,321,"phase-flip, Toffoli",5000,3,0.0778
+id,odd,323,no correction (Brisbane 105),5000,3,0.025
+id,odd,323,"bit-flip, Toffoli",5000,3,0.0508
+id,odd,323,"phase-flip, Toffoli",5000,3,0.0806
+id,odd,325,no correction (Brisbane 105),5000,3,0.0268
+id,odd,325,"bit-flip, Toffoli",5000,3,0.0568
+id,odd,325,"phase-flip, Toffoli",5000,3,0.0712
+id,odd,327,no correction (Brisbane 105),5000,3,0.0248
+id,odd,327,"bit-flip, Toffoli",5000,3,0.0432
+id,odd,327,"phase-flip, Toffoli",5000,3,0.0744
+id,odd,329,no correction (Brisbane 105),5000,3,0.0252
+id,odd,329,"bit-flip, Toffoli",5000,3,0.049
+id,odd,329,"phase-flip, Toffoli",5000,3,0.08
+id,odd,331,no correction (Brisbane 105),5000,3,0.026
+id,odd,331,"bit-flip, Toffoli",5000,3,0.0554
+id,odd,331,"phase-flip, Toffoli",5000,3,0.0784
+id,odd,333,no correction (Brisbane 105),5000,3,0.0212
+id,odd,333,"bit-flip, Toffoli",5000,3,0.0518
+id,odd,333,"phase-flip, Toffoli",5000,3,0.076
+id,odd,335,no correction (Brisbane 105),5000,3,0.027
+id,odd,335,"bit-flip, Toffoli",5000,3,0.05
+id,odd,335,"phase-flip, Toffoli",5000,3,0.077
+id,odd,337,no correction (Brisbane 105),5000,3,0.0258
+id,odd,337,"bit-flip, Toffoli",5000,3,0.0534
+id,odd,337,"phase-flip, Toffoli",5000,3,0.0768
+id,odd,339,no correction (Brisbane 105),5000,3,0.0252
+id,odd,339,"bit-flip, Toffoli",5000,3,0.0516
+id,odd,339,"phase-flip, Toffoli",5000,3,0.0762
+id,odd,341,no correction (Brisbane 105),5000,3,0.027
+id,odd,341,"bit-flip, Toffoli",5000,3,0.0486
+id,odd,341,"phase-flip, Toffoli",5000,3,0.0764
+id,odd,343,no correction (Brisbane 105),5000,3,0.0264
+id,odd,343,"bit-flip, Toffoli",5000,3,0.0494
+id,odd,343,"phase-flip, Toffoli",5000,3,0.0812
+id,odd,345,no correction (Brisbane 105),5000,3,0.0282
+id,odd,345,"bit-flip, Toffoli",5000,3,0.0512
+id,odd,345,"phase-flip, Toffoli",5000,3,0.0834
+id,odd,347,no correction (Brisbane 105),5000,3,0.0264
+id,odd,347,"bit-flip, Toffoli",5000,3,0.054
+id,odd,347,"phase-flip, Toffoli",5000,3,0.0854
+id,odd,349,no correction (Brisbane 105),5000,3,0.028
+id,odd,349,"bit-flip, Toffoli",5000,3,0.0536
+id,odd,349,"phase-flip, Toffoli",5000,3,0.0772
+id,odd,351,no correction (Brisbane 105),5000,3,0.028
+id,odd,351,"bit-flip, Toffoli",5000,3,0.0468
+id,odd,351,"phase-flip, Toffoli",5000,3,0.0768
+id,odd,353,no correction (Brisbane 105),5000,3,0.0248
+id,odd,353,"bit-flip, Toffoli",5000,3,0.0464
+id,odd,353,"phase-flip, Toffoli",5000,3,0.0824
+id,odd,355,no correction (Brisbane 105),5000,3,0.0268
+id,odd,355,"bit-flip, Toffoli",5000,3,0.0532
+id,odd,355,"phase-flip, Toffoli",5000,3,0.0768
+id,odd,357,no correction (Brisbane 105),5000,3,0.0234
+id,odd,357,"bit-flip, Toffoli",5000,3,0.0496
+id,odd,357,"phase-flip, Toffoli",5000,3,0.077
+id,odd,359,no correction (Brisbane 105),5000,3,0.0288
+id,odd,359,"bit-flip, Toffoli",5000,3,0.0508
+id,odd,359,"phase-flip, Toffoli",5000,3,0.0734
+id,odd,361,no correction (Brisbane 105),5000,3,0.0284
+id,odd,361,"bit-flip, Toffoli",5000,3,0.047
+id,odd,361,"phase-flip, Toffoli",5000,3,0.0728
+id,odd,363,no correction (Brisbane 105),5000,3,0.027
+id,odd,363,"bit-flip, Toffoli",5000,3,0.0476
+id,odd,363,"phase-flip, Toffoli",5000,3,0.0798
+id,odd,365,no correction (Brisbane 105),5000,3,0.0248
+id,odd,365,"bit-flip, Toffoli",5000,3,0.0478
+id,odd,365,"phase-flip, Toffoli",5000,3,0.0804
+id,odd,367,no correction (Brisbane 105),5000,3,0.0264
+id,odd,367,"bit-flip, Toffoli",5000,3,0.0518
+id,odd,367,"phase-flip, Toffoli",5000,3,0.0848
+id,odd,369,no correction (Brisbane 105),5000,3,0.0278
+id,odd,369,"bit-flip, Toffoli",5000,3,0.057
+id,odd,369,"phase-flip, Toffoli",5000,3,0.0878
+id,odd,371,no correction (Brisbane 105),5000,3,0.0298
+id,odd,371,"bit-flip, Toffoli",5000,3,0.0556
+id,odd,371,"phase-flip, Toffoli",5000,3,0.0794
+id,odd,373,no correction (Brisbane 105),5000,3,0.0274
+id,odd,373,"bit-flip, Toffoli",5000,3,0.0512
+id,odd,373,"phase-flip, Toffoli",5000,3,0.0818
+id,odd,375,no correction (Brisbane 105),5000,3,0.028
+id,odd,375,"bit-flip, Toffoli",5000,3,0.0506
+id,odd,375,"phase-flip, Toffoli",5000,3,0.0782
+id,odd,377,no correction (Brisbane 105),5000,3,0.0264
+id,odd,377,"bit-flip, Toffoli",5000,3,0.0484
+id,odd,377,"phase-flip, Toffoli",5000,3,0.0808
+id,odd,379,no correction (Brisbane 105),5000,3,0.026
+id,odd,379,"bit-flip, Toffoli",5000,3,0.0476
+id,odd,379,"phase-flip, Toffoli",5000,3,0.084
+id,odd,381,no correction (Brisbane 105),5000,3,0.0272
+id,odd,381,"bit-flip, Toffoli",5000,3,0.0524
+id,odd,381,"phase-flip, Toffoli",5000,3,0.0802
+id,odd,383,no correction (Brisbane 105),5000,3,0.0282
+id,odd,383,"bit-flip, Toffoli",5000,3,0.049
+id,odd,383,"phase-flip, Toffoli",5000,3,0.0858
+id,odd,385,no correction (Brisbane 105),5000,3,0.0272
+id,odd,385,"bit-flip, Toffoli",5000,3,0.0512
+id,odd,385,"phase-flip, Toffoli",5000,3,0.0872
+id,odd,387,no correction (Brisbane 105),5000,3,0.0282
+id,odd,387,"bit-flip, Toffoli",5000,3,0.0528
+id,odd,387,"phase-flip, Toffoli",5000,3,0.0846
+id,odd,389,no correction (Brisbane 105),5000,3,0.0286
+id,odd,389,"bit-flip, Toffoli",5000,3,0.0506
+id,odd,389,"phase-flip, Toffoli",5000,3,0.0846
+id,odd,391,no correction (Brisbane 105),5000,3,0.0284
+id,odd,391,"bit-flip, Toffoli",5000,3,0.051
+id,odd,391,"phase-flip, Toffoli",5000,3,0.0812
+id,odd,393,no correction (Brisbane 105),5000,3,0.0262
+id,odd,393,"bit-flip, Toffoli",5000,3,0.0474
+id,odd,393,"phase-flip, Toffoli",5000,3,0.0798
+id,odd,395,no correction (Brisbane 105),5000,3,0.0292
+id,odd,395,"bit-flip, Toffoli",5000,3,0.047
+id,odd,395,"phase-flip, Toffoli",5000,3,0.0838
+id,odd,397,no correction (Brisbane 105),5000,3,0.029
+id,odd,397,"bit-flip, Toffoli",5000,3,0.0494
+id,odd,397,"phase-flip, Toffoli",5000,3,0.0828
+id,odd,399,no correction (Brisbane 105),5000,3,0.0296
+id,odd,399,"bit-flip, Toffoli",5000,3,0.0496
+id,odd,399,"phase-flip, Toffoli",5000,3,0.0848
+id,odd,401,no correction (Brisbane 105),5000,3,0.0278
+id,odd,401,"bit-flip, Toffoli",5000,3,0.0518
+id,odd,401,"phase-flip, Toffoli",5000,3,0.085
+id,odd,403,no correction (Brisbane 105),5000,3,0.0302
+id,odd,403,"bit-flip, Toffoli",5000,3,0.0506
+id,odd,403,"phase-flip, Toffoli",5000,3,0.0824
+id,odd,405,no correction (Brisbane 105),5000,3,0.0284
+id,odd,405,"bit-flip, Toffoli",5000,3,0.051
+id,odd,405,"phase-flip, Toffoli",5000,3,0.0826
+id,odd,407,no correction (Brisbane 105),5000,3,0.0288
+id,odd,407,"bit-flip, Toffoli",5000,3,0.0522
+id,odd,407,"phase-flip, Toffoli",5000,3,0.0844
+id,odd,409,no correction (Brisbane 105),5000,3,0.0298
+id,odd,409,"bit-flip, Toffoli",5000,3,0.0514
+id,odd,409,"phase-flip, Toffoli",5000,3,0.0876
+id,odd,411,no correction (Brisbane 105),5000,3,0.0268
+id,odd,411,"bit-flip, Toffoli",5000,3,0.054
+id,odd,411,"phase-flip, Toffoli",5000,3,0.0802
+id,odd,413,no correction (Brisbane 105),5000,3,0.0302
+id,odd,413,"bit-flip, Toffoli",5000,3,0.0458
+id,odd,413,"phase-flip, Toffoli",5000,3,0.0852
+id,odd,415,no correction (Brisbane 105),5000,3,0.0288
+id,odd,415,"bit-flip, Toffoli",5000,3,0.0498
+id,odd,415,"phase-flip, Toffoli",5000,3,0.0828
+id,odd,417,no correction (Brisbane 105),5000,3,0.0298
+id,odd,417,"bit-flip, Toffoli",5000,3,0.048
+id,odd,417,"phase-flip, Toffoli",5000,3,0.085
+id,odd,419,no correction (Brisbane 105),5000,3,0.028
+id,odd,419,"bit-flip, Toffoli",5000,3,0.0508
+id,odd,419,"phase-flip, Toffoli",5000,3,0.0946
+id,odd,421,no correction (Brisbane 105),5000,3,0.0288
+id,odd,421,"bit-flip, Toffoli",5000,3,0.0552
+id,odd,421,"phase-flip, Toffoli",5000,3,0.0876
+id,odd,423,no correction (Brisbane 105),5000,3,0.03
+id,odd,423,"bit-flip, Toffoli",5000,3,0.0534
+id,odd,423,"phase-flip, Toffoli",5000,3,0.087
+id,odd,425,no correction (Brisbane 105),5000,3,0.031
+id,odd,425,"bit-flip, Toffoli",5000,3,0.052
+id,odd,425,"phase-flip, Toffoli",5000,3,0.0858
+id,odd,427,no correction (Brisbane 105),5000,3,0.031
+id,odd,427,"bit-flip, Toffoli",5000,3,0.0506
+id,odd,427,"phase-flip, Toffoli",5000,3,0.0896
+id,odd,429,no correction (Brisbane 105),5000,3,0.0308
+id,odd,429,"bit-flip, Toffoli",5000,3,0.0518
+id,odd,429,"phase-flip, Toffoli",5000,3,0.0898
+id,odd,431,no correction (Brisbane 105),5000,3,0.0306
+id,odd,431,"bit-flip, Toffoli",5000,3,0.0534
+id,odd,431,"phase-flip, Toffoli",5000,3,0.0872
+id,odd,433,no correction (Brisbane 105),5000,3,0.0302
+id,odd,433,"bit-flip, Toffoli",5000,3,0.0488
+id,odd,433,"phase-flip, Toffoli",5000,3,0.0848
+id,odd,435,no correction (Brisbane 105),5000,3,0.0298
+id,odd,435,"bit-flip, Toffoli",5000,3,0.0474
+id,odd,435,"phase-flip, Toffoli",5000,3,0.093
+id,odd,437,no correction (Brisbane 105),5000,3,0.029
+id,odd,437,"bit-flip, Toffoli",5000,3,0.0542
+id,odd,437,"phase-flip, Toffoli",5000,3,0.084
+id,odd,439,no correction (Brisbane 105),5000,3,0.0304
+id,odd,439,"bit-flip, Toffoli",5000,3,0.0466
+id,odd,439,"phase-flip, Toffoli",5000,3,0.0892
+id,odd,441,no correction (Brisbane 105),5000,3,0.0308
+id,odd,441,"bit-flip, Toffoli",5000,3,0.0534
+id,odd,441,"phase-flip, Toffoli",5000,3,0.0912
+id,odd,443,no correction (Brisbane 105),5000,3,0.0316
+id,odd,443,"bit-flip, Toffoli",5000,3,0.0508
+id,odd,443,"phase-flip, Toffoli",5000,3,0.0908
+id,odd,445,no correction (Brisbane 105),5000,3,0.0326
+id,odd,445,"bit-flip, Toffoli",5000,3,0.0498
+id,odd,445,"phase-flip, Toffoli",5000,3,0.0874
+id,odd,447,no correction (Brisbane 105),5000,3,0.0304
+id,odd,447,"bit-flip, Toffoli",5000,3,0.0498
+id,odd,447,"phase-flip, Toffoli",5000,3,0.0912
+id,odd,449,no correction (Brisbane 105),5000,3,0.0308
+id,odd,449,"bit-flip, Toffoli",5000,3,0.0504
+id,odd,449,"phase-flip, Toffoli",5000,3,0.0928
+id,odd,451,no correction (Brisbane 105),5000,3,0.0316
+id,odd,451,"bit-flip, Toffoli",5000,3,0.056
+id,odd,451,"phase-flip, Toffoli",5000,3,0.0856
+id,odd,453,no correction (Brisbane 105),5000,3,0.0326
+id,odd,453,"bit-flip, Toffoli",5000,3,0.045
+id,odd,453,"phase-flip, Toffoli",5000,3,0.0902
+id,odd,455,no correction (Brisbane 105),5000,3,0.0292
+id,odd,455,"bit-flip, Toffoli",5000,3,0.0498
+id,odd,455,"phase-flip, Toffoli",5000,3,0.0882
+id,odd,457,no correction (Brisbane 105),5000,3,0.033
+id,odd,457,"bit-flip, Toffoli",5000,3,0.047
+id,odd,457,"phase-flip, Toffoli",5000,3,0.0898
+id,odd,459,no correction (Brisbane 105),5000,3,0.029
+id,odd,459,"bit-flip, Toffoli",5000,3,0.0504
+id,odd,459,"phase-flip, Toffoli",5000,3,0.0988
+id,odd,461,no correction (Brisbane 105),5000,3,0.0298
+id,odd,461,"bit-flip, Toffoli",5000,3,0.0576
+id,odd,461,"phase-flip, Toffoli",5000,3,0.0872
+id,odd,463,no correction (Brisbane 105),5000,3,0.0312
+id,odd,463,"bit-flip, Toffoli",5000,3,0.0476
+id,odd,463,"phase-flip, Toffoli",5000,3,0.0952
+id,odd,465,no correction (Brisbane 105),5000,3,0.0316
+id,odd,465,"bit-flip, Toffoli",5000,3,0.0538
+id,odd,465,"phase-flip, Toffoli",5000,3,0.098
+id,odd,467,no correction (Brisbane 105),5000,3,0.0316
+id,odd,467,"bit-flip, Toffoli",5000,3,0.0536
+id,odd,467,"phase-flip, Toffoli",5000,3,0.0882
+id,odd,469,no correction (Brisbane 105),5000,3,0.0308
+id,odd,469,"bit-flip, Toffoli",5000,3,0.0472
+id,odd,469,"phase-flip, Toffoli",5000,3,0.0884
+id,odd,471,no correction (Brisbane 105),5000,3,0.0294
+id,odd,471,"bit-flip, Toffoli",5000,3,0.0466
+id,odd,471,"phase-flip, Toffoli",5000,3,0.0942
+id,odd,473,no correction (Brisbane 105),5000,3,0.0318
+id,odd,473,"bit-flip, Toffoli",5000,3,0.0478
+id,odd,473,"phase-flip, Toffoli",5000,3,0.0888
+id,odd,475,no correction (Brisbane 105),5000,3,0.0318
+id,odd,475,"bit-flip, Toffoli",5000,3,0.0464
+id,odd,475,"phase-flip, Toffoli",5000,3,0.0908
+id,odd,477,no correction (Brisbane 105),5000,3,0.0292
+id,odd,477,"bit-flip, Toffoli",5000,3,0.0466
+id,odd,477,"phase-flip, Toffoli",5000,3,0.0906
+id,odd,479,no correction (Brisbane 105),5000,3,0.0328
+id,odd,479,"bit-flip, Toffoli",5000,3,0.0492
+id,odd,479,"phase-flip, Toffoli",5000,3,0.09
+id,odd,481,no correction (Brisbane 105),5000,3,0.0328
+id,odd,481,"bit-flip, Toffoli",5000,3,0.047
+id,odd,481,"phase-flip, Toffoli",5000,3,0.0928
+id,odd,483,no correction (Brisbane 105),5000,3,0.031
+id,odd,483,"bit-flip, Toffoli",5000,3,0.0524
+id,odd,483,"phase-flip, Toffoli",5000,3,0.0994
+id,odd,485,no correction (Brisbane 105),5000,3,0.0306
+id,odd,485,"bit-flip, Toffoli",5000,3,0.058
+id,odd,485,"phase-flip, Toffoli",5000,3,0.0916
+id,odd,487,no correction (Brisbane 105),5000,3,0.0314
+id,odd,487,"bit-flip, Toffoli",5000,3,0.0516
+id,odd,487,"phase-flip, Toffoli",5000,3,0.0892
+id,odd,489,no correction (Brisbane 105),5000,3,0.0308
+id,odd,489,"bit-flip, Toffoli",5000,3,0.047
+id,odd,489,"phase-flip, Toffoli",5000,3,0.0874
+id,odd,491,no correction (Brisbane 105),5000,3,0.0292
+id,odd,491,"bit-flip, Toffoli",5000,3,0.0496
+id,odd,491,"phase-flip, Toffoli",5000,3,0.0928
+id,odd,493,no correction (Brisbane 105),5000,3,0.0316
+id,odd,493,"bit-flip, Toffoli",5000,3,0.0492
+id,odd,493,"phase-flip, Toffoli",5000,3,0.0956
+id,odd,495,no correction (Brisbane 105),5000,3,0.0306
+id,odd,495,"bit-flip, Toffoli",5000,3,0.0536
+id,odd,495,"phase-flip, Toffoli",5000,3,0.0934
+id,odd,497,no correction (Brisbane 105),5000,3,0.0344
+id,odd,497,"bit-flip, Toffoli",5000,3,0.0466
+id,odd,497,"phase-flip, Toffoli",5000,3,0.0898
+id,odd,499,no correction (Brisbane 105),5000,3,0.0304
+id,odd,499,"bit-flip, Toffoli",5000,3,0.0452
+id,odd,499,"phase-flip, Toffoli",5000,3,0.098

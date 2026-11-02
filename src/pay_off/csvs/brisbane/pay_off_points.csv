@@ -1,0 +1,17 @@
+gate_set,parity,code,compared_with,shots,seed,pays_off_at_gates
+x,even,"bit-flip, Toffoli",no correction (Brisbane 105),5000,3,244
+x,even,"phase-flip, Toffoli",no correction (Brisbane 105),5000,3,182
+x,odd,"bit-flip, Toffoli",no correction (Brisbane 105),5000,3,261
+x,odd,"phase-flip, Toffoli",no correction (Brisbane 105),5000,3,219
+y,even,"bit-flip, Toffoli",no correction (Brisbane 105),5000,3,244
+y,even,"phase-flip, Toffoli",no correction (Brisbane 105),5000,3,288
+y,odd,"bit-flip, Toffoli",no correction (Brisbane 105),5000,3,261
+y,odd,"phase-flip, Toffoli",no correction (Brisbane 105),5000,3,345
+repeat,even,"bit-flip, Toffoli",no correction (Brisbane 105),5000,3,366
+repeat,even,"phase-flip, Toffoli",no correction (Brisbane 105),5000,3,426
+repeat,odd,"bit-flip, Toffoli",no correction (Brisbane 105),5000,3,367
+repeat,odd,"phase-flip, Toffoli",no correction (Brisbane 105),5000,3,
+id,even,"bit-flip, Toffoli",no correction (Brisbane 105),5000,3,
+id,even,"phase-flip, Toffoli",no correction (Brisbane 105),5000,3,
+id,odd,"bit-flip, Toffoli",no correction (Brisbane 105),5000,3,
+id,odd,"phase-flip, Toffoli",no correction (Brisbane 105),5000,3,
