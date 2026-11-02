@@ -442,12 +442,18 @@ def print_match(backend, data):
         print(f"  q_0-q_{i} 2-qubit gate error: Fez {fez_links[fez_pair]:.1e}   {label} {links.get(pair, float('nan')):.1e}")
 
 
-def print_setup(backend, gate_set, num_gates, seed, mirror, shots, layouts, exact_p1, skipped, plain_for, pick):
-    kind, gate_names = GATE_SETS[gate_set]
+def print_setup(backend, gate_set, num_gates, seed, mirror, shots, layouts, exact_p1, skipped, plain_for, pick,
+                given=None):
+    # given: the test circuit compare() was handed, if it wasn't made from gate_set
     label = backend_label(backend)
     print(f"Backend:       {label} ({backend.name}, {backend.num_qubits} qubits)")
-    print(f"{kind.capitalize()} circuit: {num_gates} gates from {', '.join(gate_names)}  (seed {seed}"
-          f"{', mirrored' if mirror else ''})")
+    if given is not None:
+        counts = ", ".join(f"{gate}:{n}" for gate, n in given.count_ops().items())
+        print(f"Given circuit: {given.size()} gates ({counts})")
+    else:
+        kind, gate_names = GATE_SETS[gate_set]
+        print(f"{kind.capitalize()} circuit: {num_gates} gates from {', '.join(gate_names)}  (seed {seed}"
+              f"{', mirrored' if mirror else ''})")
     print(f"Shots per run: {shots}")
     small, shor = layouts["bit/phase-flip"], layouts["Shor"]
     print(f"{label + ' qubits:':<15}bit/phase-flip " + (f"data {small[:3]}, ancillas {small[3:]}" if small else "none"))
@@ -479,9 +485,11 @@ def print_sizes(backend, circuits, exact_p1):
 
 def compare(backend="fez", num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False, codes=DEFAULT_CODES,
             data_qubits=None, ancilla_qubits=None, shor_data_qubits=None, shor_ancilla_qubits=None, pick="best",
-            show=True):
+            circuit=None, show=True):
     # backend: which fake backend to run on (any of BACKENDS, e.g. "fez", "torino", "brisbane").
     # gate_set: which test circuit (a key of GATE_SETS). codes: which codes to compare (keys of CODES).
+    # circuit: a 1-qubit test circuit (no measurements) to run instead of making one from gate_set. Unlike the gate
+    # sets it may have H gates, which the bit-flip and phase-flip codes decode around (src/pay_off/pay_off_h.py)
     # data_qubits / ancilla_qubits: the backend's qubits for the bit-flip and phase-flip codes' q_0-q_2 / a_0-a_1
     # shor_data_qubits / shor_ancilla_qubits: its qubits for the Shor codes' q_0-q_8 / a_0-a_7 (see set_layout)
     # Any qubits left as None are picked for the backend the way pick says: "best" or "like fez" (see PICKS).
@@ -491,7 +499,9 @@ def compare(backend="fez", num_gates=1000, shots=1000, seed=None, gate_set="all"
     # Codes the backend can't run are left out of both
     if seed is None:
         seed = random.randrange(10**6)
-    circuit = test_circuit(gate_set, num_gates, seed, mirror)
+    given = circuit
+    if circuit is None:
+        circuit = test_circuit(gate_set, num_gates, seed, mirror)
     exact_p1 = Statevector(circuit).probabilities()[1]   # the exact answer, straight from the state: no shots or noise
     plain = circuit.copy()
     plain.measure_all()   # the codes add their own measurement
@@ -504,7 +514,8 @@ def compare(backend="fez", num_gates=1000, shots=1000, seed=None, gate_set="all"
     runs = run_all(plain, circuits, backend, shots, seed)
 
     if show:
-        print_setup(backend, gate_set, num_gates, seed, mirror, shots, layouts, exact_p1, skipped, plain_for, pick)
+        print_setup(backend, gate_set, num_gates, seed, mirror, shots, layouts, exact_p1, skipped, plain_for, pick,
+                    given)
         print_results(runs, shots, exact_p1)
         print_sizes(backend, circuits, exact_p1)
     return {name: abs(prob_one(counts)[0] / shots - exact_p1) for name, counts in runs}, plain_for
@@ -518,7 +529,8 @@ if __name__ == "__main__":
     SHOTS = 1000       # how many times each version of the circuit is run
     SEED = None        # a number (e.g. 3) gives the same circuit every time; None picks a new random one
     GATE_SET = "x"     # "all" = random X, Y, Z, S, T, id     "xz" = random X and Z     "repeat" = X, Y, Z in order,
-                       # over and over     "x", "y", "z" = only that gate (Z is done in software, so it adds no noise)
+                       # over and over     "x", "y", "z", "id" = only that gate (Z is done in software, so it adds no
+                       # noise; id is only waiting)
     MIRROR = False     # True adds the circuit's inverse, so the exact answer is always 0
     # Which codes to compare (keys of CODES). Add "Shor, if blocks" and "Shor, Toffoli" to include the Shor codes,
     # which are much slower and only run Pauli gates (not GATE_SET = "all")

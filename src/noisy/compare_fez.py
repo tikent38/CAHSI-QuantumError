@@ -70,6 +70,8 @@ GATE_SETS = {
     "x": ("repeating", ("x",)),
     "y": ("repeating", ("y",)),
     "z": ("repeating", ("z",)),
+    # Only waiting: id does nothing, but each one gets the backend's noise
+    "id": ("repeating", ("id",)),
 }
 
 
@@ -250,8 +252,6 @@ if __name__ == "__main__":
     SHOTS = 1000       # how many times each version of the circuit is run
     SEED = None        # a number (e.g. 3) gives the same circuit every time; None picks a new random one
     GATE_SET = "x"     # "all" = random X, Y, Z, S, T, id     "xz" = random X and Z     "repeat" = X, Y, Z in order,
-                       # over and over     "x", "y", "z" = only that gate (Z is done in software on Fez, so it adds no
-                       # noise)
     MIRROR = False     # True adds the circuit's inverse, so the exact answer is always 0
     # Which codes to compare (keys of CODES). Add "Shor, if blocks" and "Shor, Toffoli" to include the Shor codes,
     # which are much slower and only run Pauli gates (not GATE_SET = "all")
