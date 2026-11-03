@@ -41,29 +41,3 @@
 | | | Y | >1500 / >1500 | >1500 / >1500 | |
 | | | Repeat (X, Y, Z) | >1500 / >1500 | >1500 / >1500 | |
 | | | ID | >1500 / >1500 | >1500 / >1500 | |
-| **Fez, with H gates** | Same qubits and noise as Fez above | X, no H | 40 | 40 | |
-| | | X, H every 100 (stopped before first H) | 40 | 40 | |
-| | | X, H every 50 | >500 | 130 | |
-| | | X, H every 26, 10, 5 | >500 | >500 | |
-| | | Y, no H | 40 | 40 | |
-| | | Y, H every 100 (stopped before first H) | 40 | 40 | |
-| | | Y, H every 50, 26, 10, 5 | >500 | >500 | |
-| | | Repeat, no H | 40 | 40 | |
-| | | Repeat, H every 100 (stopped before first H) | 40 | 40 | |
-| | | Repeat, H every 50, 26, 10, 5 | >500 | >500 | |
-| | | Random X, Z, no H | 110 | 110 | |
-| | | Random X, Z, H every 100, 50, 26, 10, 5 | >500 | >500 | |
-| | | ID, no H | 100 | 130 | |
-| | | ID, H every 100, 50, 26, 10, 5 | >500 | >500 | |
-| | | Z, H every 100, 50, 26, 10, 5 | >500 | >500 | |
-| **Fez, Shor code** | **87**: 0.44 / 0.22 / 18.8; **97**: 0.31 / 0.29 / 4.15; **107**: 0.11 / 0.52 / 7.32; **86**: 0.22 / 0.26 / 4.15; **85**: 0.08 / 0.53 / 12.7; **84**: 0.23 / 0.24 / 2.44; **88**: 0.22 / 0.22 / 4.39; **89**: 0.09 / 0.16 / 16.8; **90**: 0.24 / 0.24 / 2.69; 2q range: 2.28–4.73; measured on 86 | X | | | ≤500 / ≤501 |
-| | | Y | | | >5000 / >5000 |
-| **Fez, Shor code, older layout** | **87**: 0.44 / 0.22 / 18.8; **88**: 0.22 / 0.22 / 4.39; **85**: 0.08 / 0.53 / 12.7; **97**: 0.31 / 0.29 / 4.15; **108**: 0.24 / 0.27 / 4.64; **107**: 0.11 / 0.52 / 7.32; **86**: 0.22 / 0.26 / 4.15; **77**: 0.09 / 0.25 / 8.54; **84**: 0.23 / 0.24 / 2.44; 2q range: 2.28–4.73; measured on 77 | Repeat (X, Y, Z) | | | >3000 / >3000 |
-
-## Rows to read with care
-
-- H every 100 on X, Y and Repeat: these sweeps stopped at 80 gates, before the first H at gate 100, so the 40s are really no-H results. The Random X, Z and ID runs did reach their H gates, and they never paid off
-- Kingston ID, phase-flip odd (443): probably shot noise. The odd sweep stopped at 451, right after its 5 wins, while the even sweep ran to 1500 and won 0 of the 251 points past 1000 gates. Sweeps stop once both codes have paid off, so most rows can't show whether a pay-off lasts
-- Sherbrooke ID: no correction barely degrades, so there's almost nothing for a code to beat. Aer's `id` noise on qubit 101 is only relaxation, which leaves `|0>` alone, so the error stays near its 0.004 readout error for all 1500 gates
-- Shor rows: not directly comparable with the other rows. The sweeps started at 500 gates, so `≤500` is only an upper bound. The X and Repeat plots reproduce with Aer's default simulation method, not the per-shot statevector the other rows use
-- Step sizes: counts move in steps of 2 for X, Y and ID, 6 for Repeat, and 10 for the H rows. That's why X with no H shows 40 where plain X shows 48
