@@ -109,3 +109,63 @@ s: 2/═════════════════════════
 
 - **Correction:** apply a $Z$ gate to the qubit with the error, since $Z \cdot Z = I$.
 
+## How the Codes Are Built
+
+The diagrams above show one check on an encoded qubit. The experiments in `src/noisy/` wrap a whole 1-qubit test circuit in the code instead, in the same order every time:
+
+1. Encode.
+2. Apply every gate of the test circuit to the encoded qubit.
+3. Correct, once.
+4. Measure.
+
+The correction only happens at the end, so errors build up for the whole circuit. The code has to fix all of them at once, and two flipped qubits are already too many.
+
+### Gates on the encoded qubit
+
+| Gate in the test circuit | Bit-flip code | Phase-flip code |
+|--------------------------|---------------|-----------------|
+| $X$                      | $X$ on all 3 qubits | $Z$ on all 3 qubits |
+| $Z$                      | $Z$ on all 3 qubits | $X$ on all 3 qubits |
+| $Y$, id                  | the same gate on all 3 qubits | the same gate on all 3 qubits |
+| $S$, $T$ and other phase gates | the gate on $q_0$ only | $H$, the gate, $H$ on $q_0$ only |
+| $H$ and anything else    | decode, the gate on $q_0$, encode again | decode, the gate on $q_0$, encode again |
+
+In the last row the qubit is **not protected** while the gate runs, and each one costs 4 more 2-qubit gates.
+
+### Two ways to correct
+
+- **If blocks** (`bit_flip_encoded.py`, `phase_flip_encoded.py`): measure the parities on 2 ancillas as in the diagrams above, then a classical `switch` picks which qubit to fix, then decode. That's 5 qubits, and the machine has to support mid-circuit measurement and if blocks.
+- **Toffoli** (`bit_flip_toffoli.py`, `phase_flip_toffoli.py`, after Reed et al. 2012): decode first, then let a Toffoli fix $q_0$ inside the circuit. That's 3 qubits, with no ancillas and no measurement before the end. The pay-off and real hardware runs use this version.
+
+### The Toffoli correction
+
+Decoding leaves the syndrome on $q_1$ and $q_2$, so they do the ancillas' job:
+
+```
+                  ░  ░           ┌───┐ ░ ┌─┐
+  q_0: ──■────■───░──░───■────■──┤ X ├─░─┤M├
+       ┌─┴─┐  │   ░  ░   │  ┌─┴─┐└─┬─┘ ░ └╥┘
+  q_1: ┤ X ├──┼───░──░───┼──┤ X ├──■───░──╫─
+       └───┘┌─┴─┐ ░  ░ ┌─┴─┐└───┘  │   ░  ║
+  q_2: ─────┤ X ├─░──░─┤ X ├───────■───░──╫─
+            └───┘ ░  ░ └───┘           ░  ║
+out: 1/═══════════════════════════════════╩═
+                                          0
+```
+
+The test circuit's gates go between the first two barriers, followed by decoding and the Toffoli.
+
+| Flipped qubit | $q_1$ | $q_2$ | The Toffoli |
+|---------------|-------|-------|-------------|
+| none          | 0     | 0     | does nothing |
+| $q_1$         | 1     | 0     | does nothing: the flip stays on $q_1$ and never reaches $q_0$ |
+| $q_2$         | 0     | 1     | does nothing: the flip stays on $q_2$ and never reaches $q_0$ |
+| $q_0$         | 1     | 1     | flips $q_0$ back |
+
+- Only a flip on $q_0$ needs fixing, unlike the if blocks, which fix whichever qubit flipped.
+- With two or three flipped qubits, $q_0$ ends up wrong, which is the $3p^2 - 2p^3$ failure rate from the repetition code.
+- The phase-flip code uses the same Toffoli: decoding's $H$ gates turn a sign flip back into a bit flip, so the table holds with "sign flipped" in place of "flipped".
+- The measurement comes after the correction, so the code can't fix a readout error on $q_0$.
+
+**Cost:** encoding and decoding take 2 CNOTs each and the Toffoli takes 6, so 10 2-qubit gates. On the IBM wiring it also needs one SWAP (3 more), which makes 13. The test circuit's gates are all 1-qubit gates, so this stays at 13 however long the circuit is, as long as it has no $H$ gates.
+
