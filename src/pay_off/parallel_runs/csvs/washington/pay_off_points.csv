@@ -1,0 +1,17 @@
+gate_set,parity,code,compared_with,shots,seed,pays_off_at_gates
+x,even,"bit-flip, Toffoli",no correction (Washington 54),5000,3,230
+x,even,"phase-flip, Toffoli",no correction (Washington 54),5000,3,202
+x,odd,"bit-flip, Toffoli",no correction (Washington 54),5000,3,375
+x,odd,"phase-flip, Toffoli",no correction (Washington 54),5000,3,267
+y,even,"bit-flip, Toffoli",no correction (Washington 54),5000,3,230
+y,even,"phase-flip, Toffoli",no correction (Washington 54),5000,3,224
+y,odd,"bit-flip, Toffoli",no correction (Washington 54),5000,3,375
+y,odd,"phase-flip, Toffoli",no correction (Washington 54),5000,3,373
+repeat,even,"bit-flip, Toffoli",no correction (Washington 54),5000,3,408
+repeat,even,"phase-flip, Toffoli",no correction (Washington 54),5000,3,372
+repeat,odd,"bit-flip, Toffoli",no correction (Washington 54),5000,3,565
+repeat,odd,"phase-flip, Toffoli",no correction (Washington 54),5000,3,577
+id,even,"bit-flip, Toffoli",no correction (Washington 54),5000,3,848
+id,even,"phase-flip, Toffoli",no correction (Washington 54),5000,3,
+id,odd,"bit-flip, Toffoli",no correction (Washington 54),5000,3,839
+id,odd,"phase-flip, Toffoli",no correction (Washington 54),5000,3,

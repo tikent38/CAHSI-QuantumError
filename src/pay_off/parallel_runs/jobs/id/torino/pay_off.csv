@@ -1,0 +1,799 @@
+gate_set,parity,gates,run,shots,seed,error
+id,even,0,no correction (Torino 62),5000,3,0.0138
+id,even,0,"bit-flip, Toffoli",5000,3,0.0348
+id,even,0,"phase-flip, Toffoli",5000,3,0.0362
+id,even,2,no correction (Torino 62),5000,3,0.0114
+id,even,2,"bit-flip, Toffoli",5000,3,0.0358
+id,even,2,"phase-flip, Toffoli",5000,3,0.0364
+id,even,4,no correction (Torino 62),5000,3,0.0146
+id,even,4,"bit-flip, Toffoli",5000,3,0.0366
+id,even,4,"phase-flip, Toffoli",5000,3,0.0372
+id,even,6,no correction (Torino 62),5000,3,0.0136
+id,even,6,"bit-flip, Toffoli",5000,3,0.0376
+id,even,6,"phase-flip, Toffoli",5000,3,0.0336
+id,even,8,no correction (Torino 62),5000,3,0.0138
+id,even,8,"bit-flip, Toffoli",5000,3,0.0336
+id,even,8,"phase-flip, Toffoli",5000,3,0.034
+id,even,10,no correction (Torino 62),5000,3,0.0152
+id,even,10,"bit-flip, Toffoli",5000,3,0.0344
+id,even,10,"phase-flip, Toffoli",5000,3,0.036
+id,even,12,no correction (Torino 62),5000,3,0.0144
+id,even,12,"bit-flip, Toffoli",5000,3,0.0362
+id,even,12,"phase-flip, Toffoli",5000,3,0.0334
+id,even,14,no correction (Torino 62),5000,3,0.0122
+id,even,14,"bit-flip, Toffoli",5000,3,0.0326
+id,even,14,"phase-flip, Toffoli",5000,3,0.0338
+id,even,16,no correction (Torino 62),5000,3,0.0146
+id,even,16,"bit-flip, Toffoli",5000,3,0.033
+id,even,16,"phase-flip, Toffoli",5000,3,0.0344
+id,even,18,no correction (Torino 62),5000,3,0.0116
+id,even,18,"bit-flip, Toffoli",5000,3,0.034
+id,even,18,"phase-flip, Toffoli",5000,3,0.0324
+id,even,20,no correction (Torino 62),5000,3,0.0146
+id,even,20,"bit-flip, Toffoli",5000,3,0.0316
+id,even,20,"phase-flip, Toffoli",5000,3,0.0318
+id,even,22,no correction (Torino 62),5000,3,0.0164
+id,even,22,"bit-flip, Toffoli",5000,3,0.0322
+id,even,22,"phase-flip, Toffoli",5000,3,0.0332
+id,even,24,no correction (Torino 62),5000,3,0.0142
+id,even,24,"bit-flip, Toffoli",5000,3,0.032
+id,even,24,"phase-flip, Toffoli",5000,3,0.0326
+id,even,26,no correction (Torino 62),5000,3,0.0164
+id,even,26,"bit-flip, Toffoli",5000,3,0.0314
+id,even,26,"phase-flip, Toffoli",5000,3,0.0326
+id,even,28,no correction (Torino 62),5000,3,0.0168
+id,even,28,"bit-flip, Toffoli",5000,3,0.0312
+id,even,28,"phase-flip, Toffoli",5000,3,0.0274
+id,even,30,no correction (Torino 62),5000,3,0.0174
+id,even,30,"bit-flip, Toffoli",5000,3,0.0268
+id,even,30,"phase-flip, Toffoli",5000,3,0.0304
+id,even,32,no correction (Torino 62),5000,3,0.0164
+id,even,32,"bit-flip, Toffoli",5000,3,0.0308
+id,even,32,"phase-flip, Toffoli",5000,3,0.0294
+id,even,34,no correction (Torino 62),5000,3,0.0196
+id,even,34,"bit-flip, Toffoli",5000,3,0.0294
+id,even,34,"phase-flip, Toffoli",5000,3,0.0366
+id,even,36,no correction (Torino 62),5000,3,0.018
+id,even,36,"bit-flip, Toffoli",5000,3,0.0364
+id,even,36,"phase-flip, Toffoli",5000,3,0.0294
+id,even,38,no correction (Torino 62),5000,3,0.0174
+id,even,38,"bit-flip, Toffoli",5000,3,0.0284
+id,even,38,"phase-flip, Toffoli",5000,3,0.0356
+id,even,40,no correction (Torino 62),5000,3,0.0178
+id,even,40,"bit-flip, Toffoli",5000,3,0.0342
+id,even,40,"phase-flip, Toffoli",5000,3,0.0312
+id,even,42,no correction (Torino 62),5000,3,0.0178
+id,even,42,"bit-flip, Toffoli",5000,3,0.0304
+id,even,42,"phase-flip, Toffoli",5000,3,0.0344
+id,even,44,no correction (Torino 62),5000,3,0.0212
+id,even,44,"bit-flip, Toffoli",5000,3,0.034
+id,even,44,"phase-flip, Toffoli",5000,3,0.0342
+id,even,46,no correction (Torino 62),5000,3,0.0164
+id,even,46,"bit-flip, Toffoli",5000,3,0.0326
+id,even,46,"phase-flip, Toffoli",5000,3,0.0336
+id,even,48,no correction (Torino 62),5000,3,0.0186
+id,even,48,"bit-flip, Toffoli",5000,3,0.0342
+id,even,48,"phase-flip, Toffoli",5000,3,0.0348
+id,even,50,no correction (Torino 62),5000,3,0.0206
+id,even,50,"bit-flip, Toffoli",5000,3,0.0342
+id,even,50,"phase-flip, Toffoli",5000,3,0.0338
+id,even,52,no correction (Torino 62),5000,3,0.018
+id,even,52,"bit-flip, Toffoli",5000,3,0.0336
+id,even,52,"phase-flip, Toffoli",5000,3,0.0342
+id,even,54,no correction (Torino 62),5000,3,0.0192
+id,even,54,"bit-flip, Toffoli",5000,3,0.0334
+id,even,54,"phase-flip, Toffoli",5000,3,0.032
+id,even,56,no correction (Torino 62),5000,3,0.018
+id,even,56,"bit-flip, Toffoli",5000,3,0.0308
+id,even,56,"phase-flip, Toffoli",5000,3,0.0322
+id,even,58,no correction (Torino 62),5000,3,0.0216
+id,even,58,"bit-flip, Toffoli",5000,3,0.0312
+id,even,58,"phase-flip, Toffoli",5000,3,0.031
+id,even,60,no correction (Torino 62),5000,3,0.017
+id,even,60,"bit-flip, Toffoli",5000,3,0.0308
+id,even,60,"phase-flip, Toffoli",5000,3,0.0328
+id,even,62,no correction (Torino 62),5000,3,0.0186
+id,even,62,"bit-flip, Toffoli",5000,3,0.0328
+id,even,62,"phase-flip, Toffoli",5000,3,0.0308
+id,even,64,no correction (Torino 62),5000,3,0.0172
+id,even,64,"bit-flip, Toffoli",5000,3,0.0304
+id,even,64,"phase-flip, Toffoli",5000,3,0.0368
+id,even,66,no correction (Torino 62),5000,3,0.0194
+id,even,66,"bit-flip, Toffoli",5000,3,0.0366
+id,even,66,"phase-flip, Toffoli",5000,3,0.036
+id,even,68,no correction (Torino 62),5000,3,0.0206
+id,even,68,"bit-flip, Toffoli",5000,3,0.0352
+id,even,68,"phase-flip, Toffoli",5000,3,0.0314
+id,even,70,no correction (Torino 62),5000,3,0.0208
+id,even,70,"bit-flip, Toffoli",5000,3,0.0308
+id,even,70,"phase-flip, Toffoli",5000,3,0.0328
+id,even,72,no correction (Torino 62),5000,3,0.0226
+id,even,72,"bit-flip, Toffoli",5000,3,0.0322
+id,even,72,"phase-flip, Toffoli",5000,3,0.0308
+id,even,74,no correction (Torino 62),5000,3,0.0204
+id,even,74,"bit-flip, Toffoli",5000,3,0.0302
+id,even,74,"phase-flip, Toffoli",5000,3,0.033
+id,even,76,no correction (Torino 62),5000,3,0.0202
+id,even,76,"bit-flip, Toffoli",5000,3,0.0328
+id,even,76,"phase-flip, Toffoli",5000,3,0.0324
+id,even,78,no correction (Torino 62),5000,3,0.0204
+id,even,78,"bit-flip, Toffoli",5000,3,0.0318
+id,even,78,"phase-flip, Toffoli",5000,3,0.0308
+id,even,80,no correction (Torino 62),5000,3,0.0226
+id,even,80,"bit-flip, Toffoli",5000,3,0.0304
+id,even,80,"phase-flip, Toffoli",5000,3,0.036
+id,even,82,no correction (Torino 62),5000,3,0.0176
+id,even,82,"bit-flip, Toffoli",5000,3,0.0364
+id,even,82,"phase-flip, Toffoli",5000,3,0.035
+id,even,84,no correction (Torino 62),5000,3,0.022
+id,even,84,"bit-flip, Toffoli",5000,3,0.0348
+id,even,84,"phase-flip, Toffoli",5000,3,0.0342
+id,even,86,no correction (Torino 62),5000,3,0.024
+id,even,86,"bit-flip, Toffoli",5000,3,0.0336
+id,even,86,"phase-flip, Toffoli",5000,3,0.037
+id,even,88,no correction (Torino 62),5000,3,0.02
+id,even,88,"bit-flip, Toffoli",5000,3,0.0364
+id,even,88,"phase-flip, Toffoli",5000,3,0.033
+id,even,90,no correction (Torino 62),5000,3,0.0212
+id,even,90,"bit-flip, Toffoli",5000,3,0.0326
+id,even,90,"phase-flip, Toffoli",5000,3,0.0362
+id,even,92,no correction (Torino 62),5000,3,0.0232
+id,even,92,"bit-flip, Toffoli",5000,3,0.0352
+id,even,92,"phase-flip, Toffoli",5000,3,0.0376
+id,even,94,no correction (Torino 62),5000,3,0.0208
+id,even,94,"bit-flip, Toffoli",5000,3,0.037
+id,even,94,"phase-flip, Toffoli",5000,3,0.0378
+id,even,96,no correction (Torino 62),5000,3,0.0208
+id,even,96,"bit-flip, Toffoli",5000,3,0.0368
+id,even,96,"phase-flip, Toffoli",5000,3,0.0346
+id,even,98,no correction (Torino 62),5000,3,0.0222
+id,even,98,"bit-flip, Toffoli",5000,3,0.0342
+id,even,98,"phase-flip, Toffoli",5000,3,0.0356
+id,even,100,no correction (Torino 62),5000,3,0.0222
+id,even,100,"bit-flip, Toffoli",5000,3,0.0336
+id,even,100,"phase-flip, Toffoli",5000,3,0.0398
+id,even,102,no correction (Torino 62),5000,3,0.0226
+id,even,102,"bit-flip, Toffoli",5000,3,0.0394
+id,even,102,"phase-flip, Toffoli",5000,3,0.0364
+id,even,104,no correction (Torino 62),5000,3,0.0216
+id,even,104,"bit-flip, Toffoli",5000,3,0.0362
+id,even,104,"phase-flip, Toffoli",5000,3,0.037
+id,even,106,no correction (Torino 62),5000,3,0.0222
+id,even,106,"bit-flip, Toffoli",5000,3,0.0342
+id,even,106,"phase-flip, Toffoli",5000,3,0.0304
+id,even,108,no correction (Torino 62),5000,3,0.0234
+id,even,108,"bit-flip, Toffoli",5000,3,0.0306
+id,even,108,"phase-flip, Toffoli",5000,3,0.0358
+id,even,110,no correction (Torino 62),5000,3,0.021
+id,even,110,"bit-flip, Toffoli",5000,3,0.0342
+id,even,110,"phase-flip, Toffoli",5000,3,0.0394
+id,even,112,no correction (Torino 62),5000,3,0.0234
+id,even,112,"bit-flip, Toffoli",5000,3,0.0378
+id,even,112,"phase-flip, Toffoli",5000,3,0.0382
+id,even,114,no correction (Torino 62),5000,3,0.0216
+id,even,114,"bit-flip, Toffoli",5000,3,0.0366
+id,even,114,"phase-flip, Toffoli",5000,3,0.0372
+id,even,116,no correction (Torino 62),5000,3,0.0216
+id,even,116,"bit-flip, Toffoli",5000,3,0.036
+id,even,116,"phase-flip, Toffoli",5000,3,0.0338
+id,even,118,no correction (Torino 62),5000,3,0.024
+id,even,118,"bit-flip, Toffoli",5000,3,0.0308
+id,even,118,"phase-flip, Toffoli",5000,3,0.0338
+id,even,120,no correction (Torino 62),5000,3,0.0238
+id,even,120,"bit-flip, Toffoli",5000,3,0.033
+id,even,120,"phase-flip, Toffoli",5000,3,0.0318
+id,even,122,no correction (Torino 62),5000,3,0.0254
+id,even,122,"bit-flip, Toffoli",5000,3,0.0296
+id,even,122,"phase-flip, Toffoli",5000,3,0.0354
+id,even,124,no correction (Torino 62),5000,3,0.0242
+id,even,124,"bit-flip, Toffoli",5000,3,0.0332
+id,even,124,"phase-flip, Toffoli",5000,3,0.035
+id,even,126,no correction (Torino 62),5000,3,0.0234
+id,even,126,"bit-flip, Toffoli",5000,3,0.0342
+id,even,126,"phase-flip, Toffoli",5000,3,0.039
+id,even,128,no correction (Torino 62),5000,3,0.0254
+id,even,128,"bit-flip, Toffoli",5000,3,0.0374
+id,even,128,"phase-flip, Toffoli",5000,3,0.0344
+id,even,130,no correction (Torino 62),5000,3,0.0246
+id,even,130,"bit-flip, Toffoli",5000,3,0.0322
+id,even,130,"phase-flip, Toffoli",5000,3,0.0322
+id,even,132,no correction (Torino 62),5000,3,0.0248
+id,even,132,"bit-flip, Toffoli",5000,3,0.031
+id,even,132,"phase-flip, Toffoli",5000,3,0.0348
+id,even,134,no correction (Torino 62),5000,3,0.0228
+id,even,134,"bit-flip, Toffoli",5000,3,0.0336
+id,even,134,"phase-flip, Toffoli",5000,3,0.0348
+id,even,136,no correction (Torino 62),5000,3,0.0258
+id,even,136,"bit-flip, Toffoli",5000,3,0.0334
+id,even,136,"phase-flip, Toffoli",5000,3,0.0362
+id,even,138,no correction (Torino 62),5000,3,0.0248
+id,even,138,"bit-flip, Toffoli",5000,3,0.0346
+id,even,138,"phase-flip, Toffoli",5000,3,0.0354
+id,even,140,no correction (Torino 62),5000,3,0.0266
+id,even,140,"bit-flip, Toffoli",5000,3,0.0332
+id,even,140,"phase-flip, Toffoli",5000,3,0.0376
+id,even,142,no correction (Torino 62),5000,3,0.0296
+id,even,142,"bit-flip, Toffoli",5000,3,0.0336
+id,even,142,"phase-flip, Toffoli",5000,3,0.034
+id,even,144,no correction (Torino 62),5000,3,0.0294
+id,even,144,"bit-flip, Toffoli",5000,3,0.0308
+id,even,144,"phase-flip, Toffoli",5000,3,0.0388
+id,even,146,no correction (Torino 62),5000,3,0.0278
+id,even,146,"bit-flip, Toffoli",5000,3,0.0352
+id,even,146,"phase-flip, Toffoli",5000,3,0.0398
+id,even,148,no correction (Torino 62),5000,3,0.0274
+id,even,148,"bit-flip, Toffoli",5000,3,0.0362
+id,even,148,"phase-flip, Toffoli",5000,3,0.0372
+id,even,150,no correction (Torino 62),5000,3,0.0254
+id,even,150,"bit-flip, Toffoli",5000,3,0.033
+id,even,150,"phase-flip, Toffoli",5000,3,0.0374
+id,even,152,no correction (Torino 62),5000,3,0.0262
+id,even,152,"bit-flip, Toffoli",5000,3,0.0336
+id,even,152,"phase-flip, Toffoli",5000,3,0.0358
+id,even,154,no correction (Torino 62),5000,3,0.0282
+id,even,154,"bit-flip, Toffoli",5000,3,0.0342
+id,even,154,"phase-flip, Toffoli",5000,3,0.0348
+id,even,156,no correction (Torino 62),5000,3,0.0308
+id,even,156,"bit-flip, Toffoli",5000,3,0.032
+id,even,156,"phase-flip, Toffoli",5000,3,0.0376
+id,even,158,no correction (Torino 62),5000,3,0.027
+id,even,158,"bit-flip, Toffoli",5000,3,0.0338
+id,even,158,"phase-flip, Toffoli",5000,3,0.0454
+id,even,160,no correction (Torino 62),5000,3,0.0298
+id,even,160,"bit-flip, Toffoli",5000,3,0.0416
+id,even,160,"phase-flip, Toffoli",5000,3,0.0394
+id,even,162,no correction (Torino 62),5000,3,0.028
+id,even,162,"bit-flip, Toffoli",5000,3,0.0364
+id,even,162,"phase-flip, Toffoli",5000,3,0.0378
+id,even,164,no correction (Torino 62),5000,3,0.0308
+id,even,164,"bit-flip, Toffoli",5000,3,0.0338
+id,even,164,"phase-flip, Toffoli",5000,3,0.035
+id,even,166,no correction (Torino 62),5000,3,0.0296
+id,even,166,"bit-flip, Toffoli",5000,3,0.0324
+id,even,166,"phase-flip, Toffoli",5000,3,0.0358
+id,even,168,no correction (Torino 62),5000,3,0.0312
+id,even,168,"bit-flip, Toffoli",5000,3,0.0332
+id,even,168,"phase-flip, Toffoli",5000,3,0.036
+id,even,170,no correction (Torino 62),5000,3,0.0338
+id,even,170,"bit-flip, Toffoli",5000,3,0.0326
+id,even,170,"phase-flip, Toffoli",5000,3,0.0348
+id,even,172,no correction (Torino 62),5000,3,0.0308
+id,even,172,"bit-flip, Toffoli",5000,3,0.0308
+id,even,172,"phase-flip, Toffoli",5000,3,0.037
+id,even,174,no correction (Torino 62),5000,3,0.0324
+id,even,174,"bit-flip, Toffoli",5000,3,0.0332
+id,even,174,"phase-flip, Toffoli",5000,3,0.0368
+id,even,176,no correction (Torino 62),5000,3,0.0322
+id,even,176,"bit-flip, Toffoli",5000,3,0.0342
+id,even,176,"phase-flip, Toffoli",5000,3,0.0356
+id,even,178,no correction (Torino 62),5000,3,0.034
+id,even,178,"bit-flip, Toffoli",5000,3,0.0326
+id,even,178,"phase-flip, Toffoli",5000,3,0.0352
+id,even,180,no correction (Torino 62),5000,3,0.0324
+id,even,180,"bit-flip, Toffoli",5000,3,0.0316
+id,even,180,"phase-flip, Toffoli",5000,3,0.0364
+id,even,182,no correction (Torino 62),5000,3,0.0344
+id,even,182,"bit-flip, Toffoli",5000,3,0.033
+id,even,182,"phase-flip, Toffoli",5000,3,0.0376
+id,even,184,no correction (Torino 62),5000,3,0.0344
+id,even,184,"bit-flip, Toffoli",5000,3,0.0332
+id,even,184,"phase-flip, Toffoli",5000,3,0.0378
+id,even,186,no correction (Torino 62),5000,3,0.034
+id,even,186,"bit-flip, Toffoli",5000,3,0.0342
+id,even,186,"phase-flip, Toffoli",5000,3,0.0374
+id,even,188,no correction (Torino 62),5000,3,0.0336
+id,even,188,"bit-flip, Toffoli",5000,3,0.0346
+id,even,188,"phase-flip, Toffoli",5000,3,0.04
+id,even,190,no correction (Torino 62),5000,3,0.0346
+id,even,190,"bit-flip, Toffoli",5000,3,0.0352
+id,even,190,"phase-flip, Toffoli",5000,3,0.0334
+id,even,192,no correction (Torino 62),5000,3,0.0346
+id,even,192,"bit-flip, Toffoli",5000,3,0.0288
+id,even,192,"phase-flip, Toffoli",5000,3,0.033
+id,even,194,no correction (Torino 62),5000,3,0.0342
+id,even,194,"bit-flip, Toffoli",5000,3,0.029
+id,even,194,"phase-flip, Toffoli",5000,3,0.0368
+id,even,196,no correction (Torino 62),5000,3,0.034
+id,even,196,"bit-flip, Toffoli",5000,3,0.0318
+id,even,196,"phase-flip, Toffoli",5000,3,0.0328
+id,even,198,no correction (Torino 62),5000,3,0.033
+id,even,198,"bit-flip, Toffoli",5000,3,0.0292
+id,even,198,"phase-flip, Toffoli",5000,3,0.0378
+id,even,200,no correction (Torino 62),5000,3,0.0338
+id,even,200,"bit-flip, Toffoli",5000,3,0.0338
+id,even,200,"phase-flip, Toffoli",5000,3,0.0374
+id,even,202,no correction (Torino 62),5000,3,0.0354
+id,even,202,"bit-flip, Toffoli",5000,3,0.0336
+id,even,202,"phase-flip, Toffoli",5000,3,0.0372
+id,even,204,no correction (Torino 62),5000,3,0.036
+id,even,204,"bit-flip, Toffoli",5000,3,0.0334
+id,even,204,"phase-flip, Toffoli",5000,3,0.036
+id,even,206,no correction (Torino 62),5000,3,0.0364
+id,even,206,"bit-flip, Toffoli",5000,3,0.0328
+id,even,206,"phase-flip, Toffoli",5000,3,0.0346
+id,even,208,no correction (Torino 62),5000,3,0.0362
+id,even,208,"bit-flip, Toffoli",5000,3,0.03
+id,even,208,"phase-flip, Toffoli",5000,3,0.0392
+id,even,210,no correction (Torino 62),5000,3,0.036
+id,even,210,"bit-flip, Toffoli",5000,3,0.0336
+id,even,210,"phase-flip, Toffoli",5000,3,0.0388
+id,even,212,no correction (Torino 62),5000,3,0.0376
+id,even,212,"bit-flip, Toffoli",5000,3,0.0322
+id,even,212,"phase-flip, Toffoli",5000,3,0.034
+id,even,214,no correction (Torino 62),5000,3,0.0336
+id,even,214,"bit-flip, Toffoli",5000,3,0.03
+id,even,214,"phase-flip, Toffoli",5000,3,0.035
+id,even,216,no correction (Torino 62),5000,3,0.0356
+id,even,216,"bit-flip, Toffoli",5000,3,0.0306
+id,even,216,"phase-flip, Toffoli",5000,3,0.0378
+id,even,218,no correction (Torino 62),5000,3,0.039
+id,even,218,"bit-flip, Toffoli",5000,3,0.0318
+id,even,218,"phase-flip, Toffoli",5000,3,0.042
+id,even,220,no correction (Torino 62),5000,3,0.0358
+id,even,220,"bit-flip, Toffoli",5000,3,0.0352
+id,even,220,"phase-flip, Toffoli",5000,3,0.0368
+id,even,222,no correction (Torino 62),5000,3,0.036
+id,even,222,"bit-flip, Toffoli",5000,3,0.032
+id,even,222,"phase-flip, Toffoli",5000,3,0.0372
+id,even,224,no correction (Torino 62),5000,3,0.0374
+id,even,224,"bit-flip, Toffoli",5000,3,0.0308
+id,even,224,"phase-flip, Toffoli",5000,3,0.037
+id,even,226,no correction (Torino 62),5000,3,0.0364
+id,even,226,"bit-flip, Toffoli",5000,3,0.0306
+id,even,226,"phase-flip, Toffoli",5000,3,0.0408
+id,even,228,no correction (Torino 62),5000,3,0.0348
+id,even,228,"bit-flip, Toffoli",5000,3,0.0378
+id,even,228,"phase-flip, Toffoli",5000,3,0.0382
+id,even,230,no correction (Torino 62),5000,3,0.0372
+id,even,230,"bit-flip, Toffoli",5000,3,0.0318
+id,even,230,"phase-flip, Toffoli",5000,3,0.0412
+id,even,232,no correction (Torino 62),5000,3,0.0378
+id,even,232,"bit-flip, Toffoli",5000,3,0.0336
+id,even,232,"phase-flip, Toffoli",5000,3,0.0414
+id,even,234,no correction (Torino 62),5000,3,0.043
+id,even,234,"bit-flip, Toffoli",5000,3,0.035
+id,even,234,"phase-flip, Toffoli",5000,3,0.042
+id,even,236,no correction (Torino 62),5000,3,0.0406
+id,even,236,"bit-flip, Toffoli",5000,3,0.0364
+id,even,236,"phase-flip, Toffoli",5000,3,0.0398
+id,even,238,no correction (Torino 62),5000,3,0.0396
+id,even,238,"bit-flip, Toffoli",5000,3,0.0328
+id,even,238,"phase-flip, Toffoli",5000,3,0.0468
+id,even,240,no correction (Torino 62),5000,3,0.0402
+id,even,240,"bit-flip, Toffoli",5000,3,0.0372
+id,even,240,"phase-flip, Toffoli",5000,3,0.039
+id,even,242,no correction (Torino 62),5000,3,0.04
+id,even,242,"bit-flip, Toffoli",5000,3,0.0314
+id,even,242,"phase-flip, Toffoli",5000,3,0.0388
+id,even,244,no correction (Torino 62),5000,3,0.0394
+id,even,244,"bit-flip, Toffoli",5000,3,0.0326
+id,even,244,"phase-flip, Toffoli",5000,3,0.0418
+id,even,246,no correction (Torino 62),5000,3,0.038
+id,even,246,"bit-flip, Toffoli",5000,3,0.0364
+id,even,246,"phase-flip, Toffoli",5000,3,0.0382
+id,even,248,no correction (Torino 62),5000,3,0.0394
+id,even,248,"bit-flip, Toffoli",5000,3,0.0314
+id,even,248,"phase-flip, Toffoli",5000,3,0.0348
+id,even,250,no correction (Torino 62),5000,3,0.042
+id,even,250,"bit-flip, Toffoli",5000,3,0.027
+id,even,250,"phase-flip, Toffoli",5000,3,0.0376
+id,even,252,no correction (Torino 62),5000,3,0.0406
+id,even,252,"bit-flip, Toffoli",5000,3,0.0312
+id,even,252,"phase-flip, Toffoli",5000,3,0.0382
+id,even,254,no correction (Torino 62),5000,3,0.0438
+id,even,254,"bit-flip, Toffoli",5000,3,0.0304
+id,even,254,"phase-flip, Toffoli",5000,3,0.0394
+id,even,256,no correction (Torino 62),5000,3,0.0426
+id,even,256,"bit-flip, Toffoli",5000,3,0.0324
+id,even,256,"phase-flip, Toffoli",5000,3,0.0456
+id,even,258,no correction (Torino 62),5000,3,0.0418
+id,even,258,"bit-flip, Toffoli",5000,3,0.0368
+id,even,258,"phase-flip, Toffoli",5000,3,0.0422
+id,even,260,no correction (Torino 62),5000,3,0.0404
+id,even,260,"bit-flip, Toffoli",5000,3,0.0356
+id,even,260,"phase-flip, Toffoli",5000,3,0.0434
+id,even,262,no correction (Torino 62),5000,3,0.0422
+id,even,262,"bit-flip, Toffoli",5000,3,0.0336
+id,even,262,"phase-flip, Toffoli",5000,3,0.0408
+id,even,264,no correction (Torino 62),5000,3,0.0428
+id,even,264,"bit-flip, Toffoli",5000,3,0.0344
+id,even,264,"phase-flip, Toffoli",5000,3,0.0406
+id,even,266,no correction (Torino 62),5000,3,0.0406
+id,even,266,"bit-flip, Toffoli",5000,3,0.033
+id,even,266,"phase-flip, Toffoli",5000,3,0.0396
+id,even,268,no correction (Torino 62),5000,3,0.0422
+id,even,268,"bit-flip, Toffoli",5000,3,0.0312
+id,even,268,"phase-flip, Toffoli",5000,3,0.0382
+id,even,270,no correction (Torino 62),5000,3,0.0446
+id,even,270,"bit-flip, Toffoli",5000,3,0.0302
+id,even,270,"phase-flip, Toffoli",5000,3,0.039
+id,odd,1,no correction (Torino 62),5000,3,0.011
+id,odd,1,"bit-flip, Toffoli",5000,3,0.037
+id,odd,1,"phase-flip, Toffoli",5000,3,0.0334
+id,odd,3,no correction (Torino 62),5000,3,0.0118
+id,odd,3,"bit-flip, Toffoli",5000,3,0.033
+id,odd,3,"phase-flip, Toffoli",5000,3,0.0334
+id,odd,5,no correction (Torino 62),5000,3,0.0142
+id,odd,5,"bit-flip, Toffoli",5000,3,0.0332
+id,odd,5,"phase-flip, Toffoli",5000,3,0.035
+id,odd,7,no correction (Torino 62),5000,3,0.012
+id,odd,7,"bit-flip, Toffoli",5000,3,0.0352
+id,odd,7,"phase-flip, Toffoli",5000,3,0.0336
+id,odd,9,no correction (Torino 62),5000,3,0.0164
+id,odd,9,"bit-flip, Toffoli",5000,3,0.0344
+id,odd,9,"phase-flip, Toffoli",5000,3,0.0362
+id,odd,11,no correction (Torino 62),5000,3,0.0124
+id,odd,11,"bit-flip, Toffoli",5000,3,0.036
+id,odd,11,"phase-flip, Toffoli",5000,3,0.0344
+id,odd,13,no correction (Torino 62),5000,3,0.0138
+id,odd,13,"bit-flip, Toffoli",5000,3,0.0344
+id,odd,13,"phase-flip, Toffoli",5000,3,0.0358
+id,odd,15,no correction (Torino 62),5000,3,0.0136
+id,odd,15,"bit-flip, Toffoli",5000,3,0.0358
+id,odd,15,"phase-flip, Toffoli",5000,3,0.0364
+id,odd,17,no correction (Torino 62),5000,3,0.0138
+id,odd,17,"bit-flip, Toffoli",5000,3,0.0362
+id,odd,17,"phase-flip, Toffoli",5000,3,0.0352
+id,odd,19,no correction (Torino 62),5000,3,0.0148
+id,odd,19,"bit-flip, Toffoli",5000,3,0.0346
+id,odd,19,"phase-flip, Toffoli",5000,3,0.0328
+id,odd,21,no correction (Torino 62),5000,3,0.0122
+id,odd,21,"bit-flip, Toffoli",5000,3,0.0324
+id,odd,21,"phase-flip, Toffoli",5000,3,0.0302
+id,odd,23,no correction (Torino 62),5000,3,0.0152
+id,odd,23,"bit-flip, Toffoli",5000,3,0.0296
+id,odd,23,"phase-flip, Toffoli",5000,3,0.0318
+id,odd,25,no correction (Torino 62),5000,3,0.0168
+id,odd,25,"bit-flip, Toffoli",5000,3,0.0314
+id,odd,25,"phase-flip, Toffoli",5000,3,0.0312
+id,odd,27,no correction (Torino 62),5000,3,0.0166
+id,odd,27,"bit-flip, Toffoli",5000,3,0.0312
+id,odd,27,"phase-flip, Toffoli",5000,3,0.0312
+id,odd,29,no correction (Torino 62),5000,3,0.0176
+id,odd,29,"bit-flip, Toffoli",5000,3,0.0312
+id,odd,29,"phase-flip, Toffoli",5000,3,0.0288
+id,odd,31,no correction (Torino 62),5000,3,0.0184
+id,odd,31,"bit-flip, Toffoli",5000,3,0.0276
+id,odd,31,"phase-flip, Toffoli",5000,3,0.0318
+id,odd,33,no correction (Torino 62),5000,3,0.0154
+id,odd,33,"bit-flip, Toffoli",5000,3,0.0312
+id,odd,33,"phase-flip, Toffoli",5000,3,0.0296
+id,odd,35,no correction (Torino 62),5000,3,0.0166
+id,odd,35,"bit-flip, Toffoli",5000,3,0.029
+id,odd,35,"phase-flip, Toffoli",5000,3,0.0334
+id,odd,37,no correction (Torino 62),5000,3,0.0188
+id,odd,37,"bit-flip, Toffoli",5000,3,0.0336
+id,odd,37,"phase-flip, Toffoli",5000,3,0.034
+id,odd,39,no correction (Torino 62),5000,3,0.0164
+id,odd,39,"bit-flip, Toffoli",5000,3,0.033
+id,odd,39,"phase-flip, Toffoli",5000,3,0.0374
+id,odd,41,no correction (Torino 62),5000,3,0.0194
+id,odd,41,"bit-flip, Toffoli",5000,3,0.036
+id,odd,41,"phase-flip, Toffoli",5000,3,0.0322
+id,odd,43,no correction (Torino 62),5000,3,0.0206
+id,odd,43,"bit-flip, Toffoli",5000,3,0.032
+id,odd,43,"phase-flip, Toffoli",5000,3,0.033
+id,odd,45,no correction (Torino 62),5000,3,0.0172
+id,odd,45,"bit-flip, Toffoli",5000,3,0.0332
+id,odd,45,"phase-flip, Toffoli",5000,3,0.0342
+id,odd,47,no correction (Torino 62),5000,3,0.0176
+id,odd,47,"bit-flip, Toffoli",5000,3,0.0342
+id,odd,47,"phase-flip, Toffoli",5000,3,0.0322
+id,odd,49,no correction (Torino 62),5000,3,0.0156
+id,odd,49,"bit-flip, Toffoli",5000,3,0.0312
+id,odd,49,"phase-flip, Toffoli",5000,3,0.0368
+id,odd,51,no correction (Torino 62),5000,3,0.0166
+id,odd,51,"bit-flip, Toffoli",5000,3,0.0364
+id,odd,51,"phase-flip, Toffoli",5000,3,0.0318
+id,odd,53,no correction (Torino 62),5000,3,0.0186
+id,odd,53,"bit-flip, Toffoli",5000,3,0.0308
+id,odd,53,"phase-flip, Toffoli",5000,3,0.0344
+id,odd,55,no correction (Torino 62),5000,3,0.018
+id,odd,55,"bit-flip, Toffoli",5000,3,0.033
+id,odd,55,"phase-flip, Toffoli",5000,3,0.036
+id,odd,57,no correction (Torino 62),5000,3,0.0202
+id,odd,57,"bit-flip, Toffoli",5000,3,0.0342
+id,odd,57,"phase-flip, Toffoli",5000,3,0.033
+id,odd,59,no correction (Torino 62),5000,3,0.0186
+id,odd,59,"bit-flip, Toffoli",5000,3,0.0326
+id,odd,59,"phase-flip, Toffoli",5000,3,0.0324
+id,odd,61,no correction (Torino 62),5000,3,0.0182
+id,odd,61,"bit-flip, Toffoli",5000,3,0.0322
+id,odd,61,"phase-flip, Toffoli",5000,3,0.0346
+id,odd,63,no correction (Torino 62),5000,3,0.0186
+id,odd,63,"bit-flip, Toffoli",5000,3,0.0336
+id,odd,63,"phase-flip, Toffoli",5000,3,0.0344
+id,odd,65,no correction (Torino 62),5000,3,0.0198
+id,odd,65,"bit-flip, Toffoli",5000,3,0.0336
+id,odd,65,"phase-flip, Toffoli",5000,3,0.0316
+id,odd,67,no correction (Torino 62),5000,3,0.019
+id,odd,67,"bit-flip, Toffoli",5000,3,0.0308
+id,odd,67,"phase-flip, Toffoli",5000,3,0.0368
+id,odd,69,no correction (Torino 62),5000,3,0.0206
+id,odd,69,"bit-flip, Toffoli",5000,3,0.0364
+id,odd,69,"phase-flip, Toffoli",5000,3,0.0292
+id,odd,71,no correction (Torino 62),5000,3,0.021
+id,odd,71,"bit-flip, Toffoli",5000,3,0.0286
+id,odd,71,"phase-flip, Toffoli",5000,3,0.0344
+id,odd,73,no correction (Torino 62),5000,3,0.0216
+id,odd,73,"bit-flip, Toffoli",5000,3,0.0334
+id,odd,73,"phase-flip, Toffoli",5000,3,0.032
+id,odd,75,no correction (Torino 62),5000,3,0.0212
+id,odd,75,"bit-flip, Toffoli",5000,3,0.0318
+id,odd,75,"phase-flip, Toffoli",5000,3,0.0352
+id,odd,77,no correction (Torino 62),5000,3,0.0206
+id,odd,77,"bit-flip, Toffoli",5000,3,0.035
+id,odd,77,"phase-flip, Toffoli",5000,3,0.032
+id,odd,79,no correction (Torino 62),5000,3,0.0198
+id,odd,79,"bit-flip, Toffoli",5000,3,0.0308
+id,odd,79,"phase-flip, Toffoli",5000,3,0.0368
+id,odd,81,no correction (Torino 62),5000,3,0.0224
+id,odd,81,"bit-flip, Toffoli",5000,3,0.038
+id,odd,81,"phase-flip, Toffoli",5000,3,0.0374
+id,odd,83,no correction (Torino 62),5000,3,0.0208
+id,odd,83,"bit-flip, Toffoli",5000,3,0.0356
+id,odd,83,"phase-flip, Toffoli",5000,3,0.0378
+id,odd,85,no correction (Torino 62),5000,3,0.0218
+id,odd,85,"bit-flip, Toffoli",5000,3,0.0368
+id,odd,85,"phase-flip, Toffoli",5000,3,0.036
+id,odd,87,no correction (Torino 62),5000,3,0.0232
+id,odd,87,"bit-flip, Toffoli",5000,3,0.0356
+id,odd,87,"phase-flip, Toffoli",5000,3,0.0358
+id,odd,89,no correction (Torino 62),5000,3,0.0216
+id,odd,89,"bit-flip, Toffoli",5000,3,0.0362
+id,odd,89,"phase-flip, Toffoli",5000,3,0.035
+id,odd,91,no correction (Torino 62),5000,3,0.0196
+id,odd,91,"bit-flip, Toffoli",5000,3,0.035
+id,odd,91,"phase-flip, Toffoli",5000,3,0.0342
+id,odd,93,no correction (Torino 62),5000,3,0.0214
+id,odd,93,"bit-flip, Toffoli",5000,3,0.0334
+id,odd,93,"phase-flip, Toffoli",5000,3,0.0374
+id,odd,95,no correction (Torino 62),5000,3,0.0192
+id,odd,95,"bit-flip, Toffoli",5000,3,0.0376
+id,odd,95,"phase-flip, Toffoli",5000,3,0.0378
+id,odd,97,no correction (Torino 62),5000,3,0.0218
+id,odd,97,"bit-flip, Toffoli",5000,3,0.038
+id,odd,97,"phase-flip, Toffoli",5000,3,0.033
+id,odd,99,no correction (Torino 62),5000,3,0.0234
+id,odd,99,"bit-flip, Toffoli",5000,3,0.0314
+id,odd,99,"phase-flip, Toffoli",5000,3,0.0334
+id,odd,101,no correction (Torino 62),5000,3,0.0218
+id,odd,101,"bit-flip, Toffoli",5000,3,0.0342
+id,odd,101,"phase-flip, Toffoli",5000,3,0.039
+id,odd,103,no correction (Torino 62),5000,3,0.0214
+id,odd,103,"bit-flip, Toffoli",5000,3,0.0382
+id,odd,103,"phase-flip, Toffoli",5000,3,0.0382
+id,odd,105,no correction (Torino 62),5000,3,0.0202
+id,odd,105,"bit-flip, Toffoli",5000,3,0.0376
+id,odd,105,"phase-flip, Toffoli",5000,3,0.0324
+id,odd,107,no correction (Torino 62),5000,3,0.022
+id,odd,107,"bit-flip, Toffoli",5000,3,0.032
+id,odd,107,"phase-flip, Toffoli",5000,3,0.0354
+id,odd,109,no correction (Torino 62),5000,3,0.0218
+id,odd,109,"bit-flip, Toffoli",5000,3,0.0346
+id,odd,109,"phase-flip, Toffoli",5000,3,0.0364
+id,odd,111,no correction (Torino 62),5000,3,0.024
+id,odd,111,"bit-flip, Toffoli",5000,3,0.0354
+id,odd,111,"phase-flip, Toffoli",5000,3,0.0382
+id,odd,113,no correction (Torino 62),5000,3,0.0238
+id,odd,113,"bit-flip, Toffoli",5000,3,0.0366
+id,odd,113,"phase-flip, Toffoli",5000,3,0.0334
+id,odd,115,no correction (Torino 62),5000,3,0.0238
+id,odd,115,"bit-flip, Toffoli",5000,3,0.0334
+id,odd,115,"phase-flip, Toffoli",5000,3,0.0348
+id,odd,117,no correction (Torino 62),5000,3,0.0236
+id,odd,117,"bit-flip, Toffoli",5000,3,0.033
+id,odd,117,"phase-flip, Toffoli",5000,3,0.0314
+id,odd,119,no correction (Torino 62),5000,3,0.0226
+id,odd,119,"bit-flip, Toffoli",5000,3,0.0294
+id,odd,119,"phase-flip, Toffoli",5000,3,0.0376
+id,odd,121,no correction (Torino 62),5000,3,0.0218
+id,odd,121,"bit-flip, Toffoli",5000,3,0.037
+id,odd,121,"phase-flip, Toffoli",5000,3,0.0328
+id,odd,123,no correction (Torino 62),5000,3,0.0254
+id,odd,123,"bit-flip, Toffoli",5000,3,0.031
+id,odd,123,"phase-flip, Toffoli",5000,3,0.0348
+id,odd,125,no correction (Torino 62),5000,3,0.0232
+id,odd,125,"bit-flip, Toffoli",5000,3,0.033
+id,odd,125,"phase-flip, Toffoli",5000,3,0.035
+id,odd,127,no correction (Torino 62),5000,3,0.0248
+id,odd,127,"bit-flip, Toffoli",5000,3,0.0338
+id,odd,127,"phase-flip, Toffoli",5000,3,0.0364
+id,odd,129,no correction (Torino 62),5000,3,0.0226
+id,odd,129,"bit-flip, Toffoli",5000,3,0.0346
+id,odd,129,"phase-flip, Toffoli",5000,3,0.0338
+id,odd,131,no correction (Torino 62),5000,3,0.0244
+id,odd,131,"bit-flip, Toffoli",5000,3,0.0334
+id,odd,131,"phase-flip, Toffoli",5000,3,0.034
+id,odd,133,no correction (Torino 62),5000,3,0.0244
+id,odd,133,"bit-flip, Toffoli",5000,3,0.0328
+id,odd,133,"phase-flip, Toffoli",5000,3,0.0348
+id,odd,135,no correction (Torino 62),5000,3,0.0252
+id,odd,135,"bit-flip, Toffoli",5000,3,0.0332
+id,odd,135,"phase-flip, Toffoli",5000,3,0.0288
+id,odd,137,no correction (Torino 62),5000,3,0.0246
+id,odd,137,"bit-flip, Toffoli",5000,3,0.0268
+id,odd,137,"phase-flip, Toffoli",5000,3,0.0362
+id,odd,139,no correction (Torino 62),5000,3,0.0256
+id,odd,139,"bit-flip, Toffoli",5000,3,0.0344
+id,odd,139,"phase-flip, Toffoli",5000,3,0.0338
+id,odd,141,no correction (Torino 62),5000,3,0.0242
+id,odd,141,"bit-flip, Toffoli",5000,3,0.0304
+id,odd,141,"phase-flip, Toffoli",5000,3,0.0362
+id,odd,143,no correction (Torino 62),5000,3,0.0258
+id,odd,143,"bit-flip, Toffoli",5000,3,0.0338
+id,odd,143,"phase-flip, Toffoli",5000,3,0.0324
+id,odd,145,no correction (Torino 62),5000,3,0.0276
+id,odd,145,"bit-flip, Toffoli",5000,3,0.0284
+id,odd,145,"phase-flip, Toffoli",5000,3,0.034
+id,odd,147,no correction (Torino 62),5000,3,0.0272
+id,odd,147,"bit-flip, Toffoli",5000,3,0.0296
+id,odd,147,"phase-flip, Toffoli",5000,3,0.0382
+id,odd,149,no correction (Torino 62),5000,3,0.0284
+id,odd,149,"bit-flip, Toffoli",5000,3,0.0338
+id,odd,149,"phase-flip, Toffoli",5000,3,0.0316
+id,odd,151,no correction (Torino 62),5000,3,0.029
+id,odd,151,"bit-flip, Toffoli",5000,3,0.0294
+id,odd,151,"phase-flip, Toffoli",5000,3,0.038
+id,odd,153,no correction (Torino 62),5000,3,0.0292
+id,odd,153,"bit-flip, Toffoli",5000,3,0.036
+id,odd,153,"phase-flip, Toffoli",5000,3,0.0386
+id,odd,155,no correction (Torino 62),5000,3,0.0304
+id,odd,155,"bit-flip, Toffoli",5000,3,0.0358
+id,odd,155,"phase-flip, Toffoli",5000,3,0.037
+id,odd,157,no correction (Torino 62),5000,3,0.028
+id,odd,157,"bit-flip, Toffoli",5000,3,0.0338
+id,odd,157,"phase-flip, Toffoli",5000,3,0.0354
+id,odd,159,no correction (Torino 62),5000,3,0.0324
+id,odd,159,"bit-flip, Toffoli",5000,3,0.0332
+id,odd,159,"phase-flip, Toffoli",5000,3,0.0366
+id,odd,161,no correction (Torino 62),5000,3,0.0274
+id,odd,161,"bit-flip, Toffoli",5000,3,0.0328
+id,odd,161,"phase-flip, Toffoli",5000,3,0.0378
+id,odd,163,no correction (Torino 62),5000,3,0.0306
+id,odd,163,"bit-flip, Toffoli",5000,3,0.0356
+id,odd,163,"phase-flip, Toffoli",5000,3,0.036
+id,odd,165,no correction (Torino 62),5000,3,0.0296
+id,odd,165,"bit-flip, Toffoli",5000,3,0.0324
+id,odd,165,"phase-flip, Toffoli",5000,3,0.0378
+id,odd,167,no correction (Torino 62),5000,3,0.0302
+id,odd,167,"bit-flip, Toffoli",5000,3,0.0348
+id,odd,167,"phase-flip, Toffoli",5000,3,0.039
+id,odd,169,no correction (Torino 62),5000,3,0.031
+id,odd,169,"bit-flip, Toffoli",5000,3,0.0362
+id,odd,169,"phase-flip, Toffoli",5000,3,0.0364
+id,odd,171,no correction (Torino 62),5000,3,0.0312
+id,odd,171,"bit-flip, Toffoli",5000,3,0.0348
+id,odd,171,"phase-flip, Toffoli",5000,3,0.0346
+id,odd,173,no correction (Torino 62),5000,3,0.0314
+id,odd,173,"bit-flip, Toffoli",5000,3,0.0308
+id,odd,173,"phase-flip, Toffoli",5000,3,0.037
+id,odd,175,no correction (Torino 62),5000,3,0.036
+id,odd,175,"bit-flip, Toffoli",5000,3,0.034
+id,odd,175,"phase-flip, Toffoli",5000,3,0.036
+id,odd,177,no correction (Torino 62),5000,3,0.031
+id,odd,177,"bit-flip, Toffoli",5000,3,0.0328
+id,odd,177,"phase-flip, Toffoli",5000,3,0.0364
+id,odd,179,no correction (Torino 62),5000,3,0.0326
+id,odd,179,"bit-flip, Toffoli",5000,3,0.0326
+id,odd,179,"phase-flip, Toffoli",5000,3,0.0374
+id,odd,181,no correction (Torino 62),5000,3,0.034
+id,odd,181,"bit-flip, Toffoli",5000,3,0.0348
+id,odd,181,"phase-flip, Toffoli",5000,3,0.0384
+id,odd,183,no correction (Torino 62),5000,3,0.0326
+id,odd,183,"bit-flip, Toffoli",5000,3,0.0348
+id,odd,183,"phase-flip, Toffoli",5000,3,0.0356
+id,odd,185,no correction (Torino 62),5000,3,0.035
+id,odd,185,"bit-flip, Toffoli",5000,3,0.032
+id,odd,185,"phase-flip, Toffoli",5000,3,0.0368
+id,odd,187,no correction (Torino 62),5000,3,0.0304
+id,odd,187,"bit-flip, Toffoli",5000,3,0.0336
+id,odd,187,"phase-flip, Toffoli",5000,3,0.0354
+id,odd,189,no correction (Torino 62),5000,3,0.0374
+id,odd,189,"bit-flip, Toffoli",5000,3,0.0306
+id,odd,189,"phase-flip, Toffoli",5000,3,0.0368
+id,odd,191,no correction (Torino 62),5000,3,0.0358
+id,odd,191,"bit-flip, Toffoli",5000,3,0.0352
+id,odd,191,"phase-flip, Toffoli",5000,3,0.0356
+id,odd,193,no correction (Torino 62),5000,3,0.0328
+id,odd,193,"bit-flip, Toffoli",5000,3,0.0324
+id,odd,193,"phase-flip, Toffoli",5000,3,0.0374
+id,odd,195,no correction (Torino 62),5000,3,0.0348
+id,odd,195,"bit-flip, Toffoli",5000,3,0.0332
+id,odd,195,"phase-flip, Toffoli",5000,3,0.04
+id,odd,197,no correction (Torino 62),5000,3,0.0348
+id,odd,197,"bit-flip, Toffoli",5000,3,0.0338
+id,odd,197,"phase-flip, Toffoli",5000,3,0.0406
+id,odd,199,no correction (Torino 62),5000,3,0.0364
+id,odd,199,"bit-flip, Toffoli",5000,3,0.0366
+id,odd,199,"phase-flip, Toffoli",5000,3,0.0312
+id,odd,201,no correction (Torino 62),5000,3,0.0356
+id,odd,201,"bit-flip, Toffoli",5000,3,0.0276
+id,odd,201,"phase-flip, Toffoli",5000,3,0.0368
+id,odd,203,no correction (Torino 62),5000,3,0.0356
+id,odd,203,"bit-flip, Toffoli",5000,3,0.0352
+id,odd,203,"phase-flip, Toffoli",5000,3,0.039
+id,odd,205,no correction (Torino 62),5000,3,0.035
+id,odd,205,"bit-flip, Toffoli",5000,3,0.0342
+id,odd,205,"phase-flip, Toffoli",5000,3,0.0342
+id,odd,207,no correction (Torino 62),5000,3,0.0376
+id,odd,207,"bit-flip, Toffoli",5000,3,0.0278
+id,odd,207,"phase-flip, Toffoli",5000,3,0.0372
+id,odd,209,no correction (Torino 62),5000,3,0.0348
+id,odd,209,"bit-flip, Toffoli",5000,3,0.033
+id,odd,209,"phase-flip, Toffoli",5000,3,0.044
+id,odd,211,no correction (Torino 62),5000,3,0.0358
+id,odd,211,"bit-flip, Toffoli",5000,3,0.037
+id,odd,211,"phase-flip, Toffoli",5000,3,0.04
+id,odd,213,no correction (Torino 62),5000,3,0.0366
+id,odd,213,"bit-flip, Toffoli",5000,3,0.033
+id,odd,213,"phase-flip, Toffoli",5000,3,0.0376
+id,odd,215,no correction (Torino 62),5000,3,0.04
+id,odd,215,"bit-flip, Toffoli",5000,3,0.032
+id,odd,215,"phase-flip, Toffoli",5000,3,0.0364
+id,odd,217,no correction (Torino 62),5000,3,0.0366
+id,odd,217,"bit-flip, Toffoli",5000,3,0.031
+id,odd,217,"phase-flip, Toffoli",5000,3,0.036
+id,odd,219,no correction (Torino 62),5000,3,0.0374
+id,odd,219,"bit-flip, Toffoli",5000,3,0.0308
+id,odd,219,"phase-flip, Toffoli",5000,3,0.0352
+id,odd,221,no correction (Torino 62),5000,3,0.037
+id,odd,221,"bit-flip, Toffoli",5000,3,0.0286
+id,odd,221,"phase-flip, Toffoli",5000,3,0.0364
+id,odd,223,no correction (Torino 62),5000,3,0.0376
+id,odd,223,"bit-flip, Toffoli",5000,3,0.0312
+id,odd,223,"phase-flip, Toffoli",5000,3,0.0384
+id,odd,225,no correction (Torino 62),5000,3,0.0388
+id,odd,225,"bit-flip, Toffoli",5000,3,0.0336
+id,odd,225,"phase-flip, Toffoli",5000,3,0.043
+id,odd,227,no correction (Torino 62),5000,3,0.0378
+id,odd,227,"bit-flip, Toffoli",5000,3,0.037
+id,odd,227,"phase-flip, Toffoli",5000,3,0.0424
+id,odd,229,no correction (Torino 62),5000,3,0.041
+id,odd,229,"bit-flip, Toffoli",5000,3,0.036
+id,odd,229,"phase-flip, Toffoli",5000,3,0.0442
+id,odd,231,no correction (Torino 62),5000,3,0.0406
+id,odd,231,"bit-flip, Toffoli",5000,3,0.0376
+id,odd,231,"phase-flip, Toffoli",5000,3,0.046
+id,odd,233,no correction (Torino 62),5000,3,0.0386
+id,odd,233,"bit-flip, Toffoli",5000,3,0.0384
+id,odd,233,"phase-flip, Toffoli",5000,3,0.0362
+id,odd,235,no correction (Torino 62),5000,3,0.0376
+id,odd,235,"bit-flip, Toffoli",5000,3,0.0292
+id,odd,235,"phase-flip, Toffoli",5000,3,0.0382
+id,odd,237,no correction (Torino 62),5000,3,0.0364
+id,odd,237,"bit-flip, Toffoli",5000,3,0.0322
+id,odd,237,"phase-flip, Toffoli",5000,3,0.0434
+id,odd,239,no correction (Torino 62),5000,3,0.0358
+id,odd,239,"bit-flip, Toffoli",5000,3,0.0358
+id,odd,239,"phase-flip, Toffoli",5000,3,0.0402
+id,odd,241,no correction (Torino 62),5000,3,0.0368
+id,odd,241,"bit-flip, Toffoli",5000,3,0.0342
+id,odd,241,"phase-flip, Toffoli",5000,3,0.0412
+id,odd,243,no correction (Torino 62),5000,3,0.0416
+id,odd,243,"bit-flip, Toffoli",5000,3,0.0346
+id,odd,243,"phase-flip, Toffoli",5000,3,0.039
+id,odd,245,no correction (Torino 62),5000,3,0.041
+id,odd,245,"bit-flip, Toffoli",5000,3,0.0328
+id,odd,245,"phase-flip, Toffoli",5000,3,0.041
+id,odd,247,no correction (Torino 62),5000,3,0.0404
+id,odd,247,"bit-flip, Toffoli",5000,3,0.034
+id,odd,247,"phase-flip, Toffoli",5000,3,0.0356
+id,odd,249,no correction (Torino 62),5000,3,0.0364
+id,odd,249,"bit-flip, Toffoli",5000,3,0.0314
+id,odd,249,"phase-flip, Toffoli",5000,3,0.0402
+id,odd,251,no correction (Torino 62),5000,3,0.0418
+id,odd,251,"bit-flip, Toffoli",5000,3,0.0336
+id,odd,251,"phase-flip, Toffoli",5000,3,0.0414
+id,odd,253,no correction (Torino 62),5000,3,0.0412
+id,odd,253,"bit-flip, Toffoli",5000,3,0.0354
+id,odd,253,"phase-flip, Toffoli",5000,3,0.04
+id,odd,255,no correction (Torino 62),5000,3,0.0428
+id,odd,255,"bit-flip, Toffoli",5000,3,0.033
+id,odd,255,"phase-flip, Toffoli",5000,3,0.042
+id,odd,257,no correction (Torino 62),5000,3,0.0436
+id,odd,257,"bit-flip, Toffoli",5000,3,0.0344
+id,odd,257,"phase-flip, Toffoli",5000,3,0.0368
+id,odd,259,no correction (Torino 62),5000,3,0.0436
+id,odd,259,"bit-flip, Toffoli",5000,3,0.03
+id,odd,259,"phase-flip, Toffoli",5000,3,0.0394

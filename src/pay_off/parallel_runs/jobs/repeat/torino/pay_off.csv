@@ -1,0 +1,235 @@
+gate_set,parity,gates,run,shots,seed,error
+repeat,even,0,no correction (Torino 62),5000,3,0.0138
+repeat,even,0,"bit-flip, Toffoli",5000,3,0.0348
+repeat,even,0,"phase-flip, Toffoli",5000,3,0.0362
+repeat,even,6,no correction (Torino 62),5000,3,0.0146
+repeat,even,6,"bit-flip, Toffoli",5000,3,0.0366
+repeat,even,6,"phase-flip, Toffoli",5000,3,0.0372
+repeat,even,12,no correction (Torino 62),5000,3,0.0148
+repeat,even,12,"bit-flip, Toffoli",5000,3,0.0338
+repeat,even,12,"phase-flip, Toffoli",5000,3,0.034
+repeat,even,18,no correction (Torino 62),5000,3,0.0156
+repeat,even,18,"bit-flip, Toffoli",5000,3,0.0364
+repeat,even,18,"phase-flip, Toffoli",5000,3,0.0334
+repeat,even,24,no correction (Torino 62),5000,3,0.0168
+repeat,even,24,"bit-flip, Toffoli",5000,3,0.033
+repeat,even,24,"phase-flip, Toffoli",5000,3,0.0344
+repeat,even,30,no correction (Torino 62),5000,3,0.017
+repeat,even,30,"bit-flip, Toffoli",5000,3,0.0316
+repeat,even,30,"phase-flip, Toffoli",5000,3,0.0318
+repeat,even,36,no correction (Torino 62),5000,3,0.0172
+repeat,even,36,"bit-flip, Toffoli",5000,3,0.0324
+repeat,even,36,"phase-flip, Toffoli",5000,3,0.0326
+repeat,even,42,no correction (Torino 62),5000,3,0.0196
+repeat,even,42,"bit-flip, Toffoli",5000,3,0.0318
+repeat,even,42,"phase-flip, Toffoli",5000,3,0.0274
+repeat,even,48,no correction (Torino 62),5000,3,0.0194
+repeat,even,48,"bit-flip, Toffoli",5000,3,0.0312
+repeat,even,48,"phase-flip, Toffoli",5000,3,0.0294
+repeat,even,54,no correction (Torino 62),5000,3,0.0212
+repeat,even,54,"bit-flip, Toffoli",5000,3,0.0364
+repeat,even,54,"phase-flip, Toffoli",5000,3,0.0294
+repeat,even,60,no correction (Torino 62),5000,3,0.0222
+repeat,even,60,"bit-flip, Toffoli",5000,3,0.0342
+repeat,even,60,"phase-flip, Toffoli",5000,3,0.0312
+repeat,even,66,no correction (Torino 62),5000,3,0.0258
+repeat,even,66,"bit-flip, Toffoli",5000,3,0.0346
+repeat,even,66,"phase-flip, Toffoli",5000,3,0.034
+repeat,even,72,no correction (Torino 62),5000,3,0.0242
+repeat,even,72,"bit-flip, Toffoli",5000,3,0.0344
+repeat,even,72,"phase-flip, Toffoli",5000,3,0.035
+repeat,even,78,no correction (Torino 62),5000,3,0.0244
+repeat,even,78,"bit-flip, Toffoli",5000,3,0.034
+repeat,even,78,"phase-flip, Toffoli",5000,3,0.0342
+repeat,even,84,no correction (Torino 62),5000,3,0.0244
+repeat,even,84,"bit-flip, Toffoli",5000,3,0.0318
+repeat,even,84,"phase-flip, Toffoli",5000,3,0.0322
+repeat,even,90,no correction (Torino 62),5000,3,0.0248
+repeat,even,90,"bit-flip, Toffoli",5000,3,0.0314
+repeat,even,90,"phase-flip, Toffoli",5000,3,0.0328
+repeat,even,96,no correction (Torino 62),5000,3,0.0248
+repeat,even,96,"bit-flip, Toffoli",5000,3,0.0306
+repeat,even,96,"phase-flip, Toffoli",5000,3,0.0368
+repeat,even,102,no correction (Torino 62),5000,3,0.0278
+repeat,even,102,"bit-flip, Toffoli",5000,3,0.0354
+repeat,even,102,"phase-flip, Toffoli",5000,3,0.0314
+repeat,even,108,no correction (Torino 62),5000,3,0.0308
+repeat,even,108,"bit-flip, Toffoli",5000,3,0.0322
+repeat,even,108,"phase-flip, Toffoli",5000,3,0.0308
+repeat,even,114,no correction (Torino 62),5000,3,0.0286
+repeat,even,114,"bit-flip, Toffoli",5000,3,0.0328
+repeat,even,114,"phase-flip, Toffoli",5000,3,0.0324
+repeat,even,120,no correction (Torino 62),5000,3,0.032
+repeat,even,120,"bit-flip, Toffoli",5000,3,0.03
+repeat,even,120,"phase-flip, Toffoli",5000,3,0.0364
+repeat,even,126,no correction (Torino 62),5000,3,0.0328
+repeat,even,126,"bit-flip, Toffoli",5000,3,0.0354
+repeat,even,126,"phase-flip, Toffoli",5000,3,0.034
+repeat,even,132,no correction (Torino 62),5000,3,0.0308
+repeat,even,132,"bit-flip, Toffoli",5000,3,0.0368
+repeat,even,132,"phase-flip, Toffoli",5000,3,0.033
+repeat,even,138,no correction (Torino 62),5000,3,0.0348
+repeat,even,138,"bit-flip, Toffoli",5000,3,0.0352
+repeat,even,138,"phase-flip, Toffoli",5000,3,0.0374
+repeat,even,144,no correction (Torino 62),5000,3,0.0322
+repeat,even,144,"bit-flip, Toffoli",5000,3,0.0364
+repeat,even,144,"phase-flip, Toffoli",5000,3,0.0346
+repeat,even,150,no correction (Torino 62),5000,3,0.0338
+repeat,even,150,"bit-flip, Toffoli",5000,3,0.0338
+repeat,even,150,"phase-flip, Toffoli",5000,3,0.0398
+repeat,even,156,no correction (Torino 62),5000,3,0.0338
+repeat,even,156,"bit-flip, Toffoli",5000,3,0.0362
+repeat,even,156,"phase-flip, Toffoli",5000,3,0.037
+repeat,even,162,no correction (Torino 62),5000,3,0.0364
+repeat,even,162,"bit-flip, Toffoli",5000,3,0.031
+repeat,even,162,"phase-flip, Toffoli",5000,3,0.0358
+repeat,even,168,no correction (Torino 62),5000,3,0.0358
+repeat,even,168,"bit-flip, Toffoli",5000,3,0.0386
+repeat,even,168,"phase-flip, Toffoli",5000,3,0.0382
+repeat,even,174,no correction (Torino 62),5000,3,0.0348
+repeat,even,174,"bit-flip, Toffoli",5000,3,0.0366
+repeat,even,174,"phase-flip, Toffoli",5000,3,0.034
+repeat,even,180,no correction (Torino 62),5000,3,0.0372
+repeat,even,180,"bit-flip, Toffoli",5000,3,0.034
+repeat,even,180,"phase-flip, Toffoli",5000,3,0.0318
+repeat,even,186,no correction (Torino 62),5000,3,0.038
+repeat,even,186,"bit-flip, Toffoli",5000,3,0.034
+repeat,even,186,"phase-flip, Toffoli",5000,3,0.0354
+repeat,even,192,no correction (Torino 62),5000,3,0.0406
+repeat,even,192,"bit-flip, Toffoli",5000,3,0.038
+repeat,even,192,"phase-flip, Toffoli",5000,3,0.0344
+repeat,even,198,no correction (Torino 62),5000,3,0.0402
+repeat,even,198,"bit-flip, Toffoli",5000,3,0.0326
+repeat,even,198,"phase-flip, Toffoli",5000,3,0.0346
+repeat,even,204,no correction (Torino 62),5000,3,0.041
+repeat,even,204,"bit-flip, Toffoli",5000,3,0.0358
+repeat,even,204,"phase-flip, Toffoli",5000,3,0.0362
+repeat,odd,1,no correction (Torino 62),5000,3,0.0092
+repeat,odd,1,"bit-flip, Toffoli",5000,3,0.0372
+repeat,odd,1,"phase-flip, Toffoli",5000,3,0.0402
+repeat,odd,7,no correction (Torino 62),5000,3,0.0148
+repeat,odd,7,"bit-flip, Toffoli",5000,3,0.04
+repeat,odd,7,"phase-flip, Toffoli",5000,3,0.041
+repeat,odd,13,no correction (Torino 62),5000,3,0.0132
+repeat,odd,13,"bit-flip, Toffoli",5000,3,0.0376
+repeat,odd,13,"phase-flip, Toffoli",5000,3,0.0424
+repeat,odd,19,no correction (Torino 62),5000,3,0.0156
+repeat,odd,19,"bit-flip, Toffoli",5000,3,0.0386
+repeat,odd,19,"phase-flip, Toffoli",5000,3,0.04
+repeat,odd,25,no correction (Torino 62),5000,3,0.0178
+repeat,odd,25,"bit-flip, Toffoli",5000,3,0.042
+repeat,odd,25,"phase-flip, Toffoli",5000,3,0.0366
+repeat,odd,31,no correction (Torino 62),5000,3,0.019
+repeat,odd,31,"bit-flip, Toffoli",5000,3,0.0386
+repeat,odd,31,"phase-flip, Toffoli",5000,3,0.0394
+repeat,odd,37,no correction (Torino 62),5000,3,0.0156
+repeat,odd,37,"bit-flip, Toffoli",5000,3,0.0382
+repeat,odd,37,"phase-flip, Toffoli",5000,3,0.0392
+repeat,odd,43,no correction (Torino 62),5000,3,0.018
+repeat,odd,43,"bit-flip, Toffoli",5000,3,0.0358
+repeat,odd,43,"phase-flip, Toffoli",5000,3,0.0346
+repeat,odd,49,no correction (Torino 62),5000,3,0.0164
+repeat,odd,49,"bit-flip, Toffoli",5000,3,0.0384
+repeat,odd,49,"phase-flip, Toffoli",5000,3,0.0408
+repeat,odd,55,no correction (Torino 62),5000,3,0.022
+repeat,odd,55,"bit-flip, Toffoli",5000,3,0.0362
+repeat,odd,55,"phase-flip, Toffoli",5000,3,0.0396
+repeat,odd,61,no correction (Torino 62),5000,3,0.024
+repeat,odd,61,"bit-flip, Toffoli",5000,3,0.0378
+repeat,odd,61,"phase-flip, Toffoli",5000,3,0.0378
+repeat,odd,67,no correction (Torino 62),5000,3,0.022
+repeat,odd,67,"bit-flip, Toffoli",5000,3,0.0342
+repeat,odd,67,"phase-flip, Toffoli",5000,3,0.0338
+repeat,odd,73,no correction (Torino 62),5000,3,0.0246
+repeat,odd,73,"bit-flip, Toffoli",5000,3,0.041
+repeat,odd,73,"phase-flip, Toffoli",5000,3,0.0446
+repeat,odd,79,no correction (Torino 62),5000,3,0.0262
+repeat,odd,79,"bit-flip, Toffoli",5000,3,0.0384
+repeat,odd,79,"phase-flip, Toffoli",5000,3,0.0426
+repeat,odd,85,no correction (Torino 62),5000,3,0.0226
+repeat,odd,85,"bit-flip, Toffoli",5000,3,0.0368
+repeat,odd,85,"phase-flip, Toffoli",5000,3,0.0366
+repeat,odd,91,no correction (Torino 62),5000,3,0.0278
+repeat,odd,91,"bit-flip, Toffoli",5000,3,0.0394
+repeat,odd,91,"phase-flip, Toffoli",5000,3,0.0402
+repeat,odd,97,no correction (Torino 62),5000,3,0.0274
+repeat,odd,97,"bit-flip, Toffoli",5000,3,0.0436
+repeat,odd,97,"phase-flip, Toffoli",5000,3,0.039
+repeat,odd,103,no correction (Torino 62),5000,3,0.0262
+repeat,odd,103,"bit-flip, Toffoli",5000,3,0.0416
+repeat,odd,103,"phase-flip, Toffoli",5000,3,0.039
+repeat,odd,109,no correction (Torino 62),5000,3,0.0306
+repeat,odd,109,"bit-flip, Toffoli",5000,3,0.037
+repeat,odd,109,"phase-flip, Toffoli",5000,3,0.042
+repeat,odd,115,no correction (Torino 62),5000,3,0.0266
+repeat,odd,115,"bit-flip, Toffoli",5000,3,0.0384
+repeat,odd,115,"phase-flip, Toffoli",5000,3,0.0406
+repeat,odd,121,no correction (Torino 62),5000,3,0.0308
+repeat,odd,121,"bit-flip, Toffoli",5000,3,0.0362
+repeat,odd,121,"phase-flip, Toffoli",5000,3,0.0374
+repeat,odd,127,no correction (Torino 62),5000,3,0.0306
+repeat,odd,127,"bit-flip, Toffoli",5000,3,0.04
+repeat,odd,127,"phase-flip, Toffoli",5000,3,0.0388
+repeat,odd,133,no correction (Torino 62),5000,3,0.0334
+repeat,odd,133,"bit-flip, Toffoli",5000,3,0.04
+repeat,odd,133,"phase-flip, Toffoli",5000,3,0.0382
+repeat,odd,139,no correction (Torino 62),5000,3,0.0344
+repeat,odd,139,"bit-flip, Toffoli",5000,3,0.0376
+repeat,odd,139,"phase-flip, Toffoli",5000,3,0.0382
+repeat,odd,145,no correction (Torino 62),5000,3,0.0346
+repeat,odd,145,"bit-flip, Toffoli",5000,3,0.04
+repeat,odd,145,"phase-flip, Toffoli",5000,3,0.0412
+repeat,odd,151,no correction (Torino 62),5000,3,0.0342
+repeat,odd,151,"bit-flip, Toffoli",5000,3,0.0442
+repeat,odd,151,"phase-flip, Toffoli",5000,3,0.0408
+repeat,odd,157,no correction (Torino 62),5000,3,0.0358
+repeat,odd,157,"bit-flip, Toffoli",5000,3,0.044
+repeat,odd,157,"phase-flip, Toffoli",5000,3,0.0406
+repeat,odd,163,no correction (Torino 62),5000,3,0.0354
+repeat,odd,163,"bit-flip, Toffoli",5000,3,0.0424
+repeat,odd,163,"phase-flip, Toffoli",5000,3,0.0424
+repeat,odd,169,no correction (Torino 62),5000,3,0.0364
+repeat,odd,169,"bit-flip, Toffoli",5000,3,0.0398
+repeat,odd,169,"phase-flip, Toffoli",5000,3,0.043
+repeat,odd,175,no correction (Torino 62),5000,3,0.0364
+repeat,odd,175,"bit-flip, Toffoli",5000,3,0.0466
+repeat,odd,175,"phase-flip, Toffoli",5000,3,0.0398
+repeat,odd,181,no correction (Torino 62),5000,3,0.0364
+repeat,odd,181,"bit-flip, Toffoli",5000,3,0.0396
+repeat,odd,181,"phase-flip, Toffoli",5000,3,0.0394
+repeat,odd,187,no correction (Torino 62),5000,3,0.0392
+repeat,odd,187,"bit-flip, Toffoli",5000,3,0.0432
+repeat,odd,187,"phase-flip, Toffoli",5000,3,0.0466
+repeat,odd,193,no correction (Torino 62),5000,3,0.0384
+repeat,odd,193,"bit-flip, Toffoli",5000,3,0.0392
+repeat,odd,193,"phase-flip, Toffoli",5000,3,0.046
+repeat,odd,199,no correction (Torino 62),5000,3,0.042
+repeat,odd,199,"bit-flip, Toffoli",5000,3,0.0424
+repeat,odd,199,"phase-flip, Toffoli",5000,3,0.04
+repeat,odd,205,no correction (Torino 62),5000,3,0.0392
+repeat,odd,205,"bit-flip, Toffoli",5000,3,0.0418
+repeat,odd,205,"phase-flip, Toffoli",5000,3,0.041
+repeat,odd,211,no correction (Torino 62),5000,3,0.0412
+repeat,odd,211,"bit-flip, Toffoli",5000,3,0.0434
+repeat,odd,211,"phase-flip, Toffoli",5000,3,0.0426
+repeat,odd,217,no correction (Torino 62),5000,3,0.042
+repeat,odd,217,"bit-flip, Toffoli",5000,3,0.0454
+repeat,odd,217,"phase-flip, Toffoli",5000,3,0.041
+repeat,odd,223,no correction (Torino 62),5000,3,0.0436
+repeat,odd,223,"bit-flip, Toffoli",5000,3,0.0434
+repeat,odd,223,"phase-flip, Toffoli",5000,3,0.044
+repeat,odd,229,no correction (Torino 62),5000,3,0.0456
+repeat,odd,229,"bit-flip, Toffoli",5000,3,0.044
+repeat,odd,229,"phase-flip, Toffoli",5000,3,0.0444
+repeat,odd,235,no correction (Torino 62),5000,3,0.0468
+repeat,odd,235,"bit-flip, Toffoli",5000,3,0.0374
+repeat,odd,235,"phase-flip, Toffoli",5000,3,0.0416
+repeat,odd,241,no correction (Torino 62),5000,3,0.0466
+repeat,odd,241,"bit-flip, Toffoli",5000,3,0.0394
+repeat,odd,241,"phase-flip, Toffoli",5000,3,0.0376
+repeat,odd,247,no correction (Torino 62),5000,3,0.0478
+repeat,odd,247,"bit-flip, Toffoli",5000,3,0.043
+repeat,odd,247,"phase-flip, Toffoli",5000,3,0.0432
+repeat,odd,253,no correction (Torino 62),5000,3,0.0438
+repeat,odd,253,"bit-flip, Toffoli",5000,3,0.0408
+repeat,odd,253,"phase-flip, Toffoli",5000,3,0.042

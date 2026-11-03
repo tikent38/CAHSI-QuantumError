@@ -1,0 +1,99 @@
+/Users/timothykent/Desktop/Cal_Poly/CAHSI/CAHSI-ErrorCorrection/CAHSI-QuantumError/.venv/lib/python3.14/site-packages/qiskit_ibm_runtime/fake_provider/backends/nighthawk/fake_nighthawk.py:78: UserWarning: Properties of fake_nighthawk are not intended to represent typical nighthawk error values.
+  warnings.warn(
+Noise (bit flips per X gate, phase flips per X gate, readout error) of each data qubit, next to the Fez qubit it copies:
+  q_0   Fez 87:      4.4e-04  2.2e-04  1.9e-02     Kingston 67: 2.4e-04  2.4e-04  1.6e-02
+  q_1   Fez 88:      2.2e-04  2.2e-04  4.4e-03     Kingston 57: 1.5e-04  1.3e-04  4.8e-03
+  q_2   Fez 86:      2.2e-04  2.6e-04  4.2e-03     Kingston 68: 1.6e-04  2.0e-04  3.4e-03
+  q_0-q_1 2-qubit gate error: Fez 2.3e-03   Kingston 2.3e-03
+  q_0-q_2 2-qubit gate error: Fez 2.6e-03   Kingston 1.4e-03
+
+gate set "repeat" (X, Y, Z), 5000 shots, seed 3, Kingston qubits [67, 57, 68]. Error = |P(1) - exact P(1)| on Kingston noise
+
+repeat, even:
+   gates  no correction (Kingston 68)            bit-flip, Toffoli          phase-flip, Toffoli
+-----------------------------------------------------------------------------------------------
+       0                       0.0034                       0.0162                       0.0176
+       6                       0.0056                       0.0186                       0.0220
+      12                       0.0062                       0.0174                       0.0150
+      18                       0.0058                       0.0186                       0.0158
+      24                       0.0064                       0.0134                       0.0156
+      30                       0.0068                       0.0166                       0.0164
+      36                       0.0066                       0.0166                       0.0160
+      42                       0.0096                       0.0146                       0.0130
+      48                       0.0096                       0.0134                       0.0128
+      54                       0.0092                       0.0176                       0.0146
+      60                       0.0118                       0.0158                       0.0154
+      66                       0.0116                       0.0182                       0.0168
+      72                       0.0122                       0.0160                       0.0160
+      78                       0.0126                       0.0172                       0.0156
+      84                       0.0126                       0.0158                       0.0158
+      90                       0.0126                       0.0152                       0.0176
+      96                       0.0138                       0.0172                       0.0168
+     102                       0.0144                       0.0170                       0.0168
+     108                       0.0152                       0.0168                       0.0146
+     114                       0.0150                       0.0162                       0.0170
+     120                       0.0172                       0.0176                       0.0196
+     126                       0.0164                       0.0174                       0.0184
+     132                       0.0162                       0.0192                       0.0190
+     138                       0.0182                       0.0220                       0.0190
+     144                       0.0200                       0.0192                       0.0174
+     150                       0.0192                       0.0158                       0.0174
+     156                       0.0178                       0.0174                       0.0188
+     162                       0.0208                       0.0158                       0.0174
+     168                       0.0200                       0.0196                       0.0176
+     174                       0.0202                       0.0180                       0.0188
+     180                       0.0204                       0.0172                       0.0170
+     186                       0.0208                       0.0194                       0.0202
+
+repeat, odd:
+   gates  no correction (Kingston 68)            bit-flip, Toffoli          phase-flip, Toffoli
+-----------------------------------------------------------------------------------------------
+       1                       0.0024                       0.0186                       0.0210
+       7                       0.0062                       0.0190                       0.0210
+      13                       0.0058                       0.0176                       0.0204
+      19                       0.0068                       0.0158                       0.0182
+      25                       0.0078                       0.0234                       0.0218
+      31                       0.0084                       0.0198                       0.0204
+      37                       0.0078                       0.0214                       0.0170
+      43                       0.0082                       0.0128                       0.0158
+      49                       0.0076                       0.0154                       0.0166
+      55                       0.0098                       0.0188                       0.0204
+      61                       0.0110                       0.0202                       0.0174
+      67                       0.0108                       0.0136                       0.0156
+      73                       0.0110                       0.0210                       0.0196
+      79                       0.0126                       0.0176                       0.0160
+      85                       0.0116                       0.0144                       0.0158
+      91                       0.0120                       0.0186                       0.0184
+      97                       0.0132                       0.0196                       0.0204
+     103                       0.0138                       0.0188                       0.0214
+     109                       0.0150                       0.0190                       0.0168
+     115                       0.0150                       0.0162                       0.0186
+     121                       0.0166                       0.0190                       0.0204
+     127                       0.0162                       0.0178                       0.0204
+     133                       0.0172                       0.0194                       0.0194
+     139                       0.0202                       0.0196                       0.0214
+     145                       0.0192                       0.0182                       0.0228
+     151                       0.0196                       0.0220                       0.0196
+     157                       0.0202                       0.0196                       0.0204
+     163                       0.0206                       0.0204                       0.0188
+     169                       0.0216                       0.0174                       0.0218
+     175                       0.0208                       0.0224                       0.0160
+     181                       0.0208                       0.0192                       0.0198
+     187                       0.0224                       0.0188                       0.0210
+     193                       0.0216                       0.0178                       0.0234
+     199                       0.0234                       0.0182                       0.0182
+     205                       0.0224                       0.0190                       0.0234
+     211                       0.0236                       0.0224                       0.0220
+     217                       0.0244                       0.0218                       0.0194
+     223                       0.0272                       0.0238                       0.0194
+     229                       0.0260                       0.0234                       0.0206
+     235                       0.0274                       0.0216                       0.0218
+Saved plot to /Users/timothykent/Desktop/Cal_Poly/CAHSI/CAHSI-ErrorCorrection/CAHSI-QuantumError/src/pay_off/parallel_runs/images/kingston/pay_off_repeat.png
+
+How many gates each code needs to pay off on Kingston (where it starts beating no correction 5 times in a row):
+                bit-flip, Toffoli         phase-flip, Toffoli       
+--------------------------------------------------------------------
+  repeat, even  144 gates                 162 gates                 
+  repeat, odd   181 gates                 211 gates                 
+Wrote /Users/timothykent/Desktop/Cal_Poly/CAHSI/CAHSI-ErrorCorrection/CAHSI-QuantumError/src/pay_off/parallel_runs/jobs/repeat/kingston/pay_off.csv
+Wrote /Users/timothykent/Desktop/Cal_Poly/CAHSI/CAHSI-ErrorCorrection/CAHSI-QuantumError/src/pay_off/parallel_runs/jobs/repeat/kingston/pay_off_points.csv

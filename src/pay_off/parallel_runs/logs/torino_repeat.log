@@ -1,0 +1,105 @@
+/Users/timothykent/Desktop/Cal_Poly/CAHSI/CAHSI-ErrorCorrection/CAHSI-QuantumError/.venv/lib/python3.14/site-packages/qiskit_ibm_runtime/fake_provider/backends/nighthawk/fake_nighthawk.py:78: UserWarning: Properties of fake_nighthawk are not intended to represent typical nighthawk error values.
+  warnings.warn(
+Noise (bit flips per X gate, phase flips per X gate, readout error) of each data qubit, next to the Fez qubit it copies:
+  q_0   Fez 87:    4.4e-04  2.2e-04  1.9e-02     Torino 61: 3.0e-04  2.0e-04  2.3e-02
+  q_1   Fez 88:    2.2e-04  2.2e-04  4.4e-03     Torino 60: 1.7e-04  1.7e-04  6.1e-03
+  q_2   Fez 86:    2.2e-04  2.6e-04  4.2e-03     Torino 62: 2.2e-04  2.4e-04  1.2e-02
+  q_0-q_1 2-qubit gate error: Fez 2.3e-03   Torino 2.7e-03
+  q_0-q_2 2-qubit gate error: Fez 2.6e-03   Torino 3.4e-03
+
+gate set "repeat" (X, Y, Z), 5000 shots, seed 3, Torino qubits [61, 60, 62]. Error = |P(1) - exact P(1)| on Torino noise
+
+repeat, even:
+   gates  no correction (Torino 62)          bit-flip, Toffoli        phase-flip, Toffoli
+-----------------------------------------------------------------------------------------
+       0                     0.0138                     0.0348                     0.0362
+       6                     0.0146                     0.0366                     0.0372
+      12                     0.0148                     0.0338                     0.0340
+      18                     0.0156                     0.0364                     0.0334
+      24                     0.0168                     0.0330                     0.0344
+      30                     0.0170                     0.0316                     0.0318
+      36                     0.0172                     0.0324                     0.0326
+      42                     0.0196                     0.0318                     0.0274
+      48                     0.0194                     0.0312                     0.0294
+      54                     0.0212                     0.0364                     0.0294
+      60                     0.0222                     0.0342                     0.0312
+      66                     0.0258                     0.0346                     0.0340
+      72                     0.0242                     0.0344                     0.0350
+      78                     0.0244                     0.0340                     0.0342
+      84                     0.0244                     0.0318                     0.0322
+      90                     0.0248                     0.0314                     0.0328
+      96                     0.0248                     0.0306                     0.0368
+     102                     0.0278                     0.0354                     0.0314
+     108                     0.0308                     0.0322                     0.0308
+     114                     0.0286                     0.0328                     0.0324
+     120                     0.0320                     0.0300                     0.0364
+     126                     0.0328                     0.0354                     0.0340
+     132                     0.0308                     0.0368                     0.0330
+     138                     0.0348                     0.0352                     0.0374
+     144                     0.0322                     0.0364                     0.0346
+     150                     0.0338                     0.0338                     0.0398
+     156                     0.0338                     0.0362                     0.0370
+     162                     0.0364                     0.0310                     0.0358
+     168                     0.0358                     0.0386                     0.0382
+     174                     0.0348                     0.0366                     0.0340
+     180                     0.0372                     0.0340                     0.0318
+     186                     0.0380                     0.0340                     0.0354
+     192                     0.0406                     0.0380                     0.0344
+     198                     0.0402                     0.0326                     0.0346
+     204                     0.0410                     0.0358                     0.0362
+
+repeat, odd:
+   gates  no correction (Torino 62)          bit-flip, Toffoli        phase-flip, Toffoli
+-----------------------------------------------------------------------------------------
+       1                     0.0092                     0.0372                     0.0402
+       7                     0.0148                     0.0400                     0.0410
+      13                     0.0132                     0.0376                     0.0424
+      19                     0.0156                     0.0386                     0.0400
+      25                     0.0178                     0.0420                     0.0366
+      31                     0.0190                     0.0386                     0.0394
+      37                     0.0156                     0.0382                     0.0392
+      43                     0.0180                     0.0358                     0.0346
+      49                     0.0164                     0.0384                     0.0408
+      55                     0.0220                     0.0362                     0.0396
+      61                     0.0240                     0.0378                     0.0378
+      67                     0.0220                     0.0342                     0.0338
+      73                     0.0246                     0.0410                     0.0446
+      79                     0.0262                     0.0384                     0.0426
+      85                     0.0226                     0.0368                     0.0366
+      91                     0.0278                     0.0394                     0.0402
+      97                     0.0274                     0.0436                     0.0390
+     103                     0.0262                     0.0416                     0.0390
+     109                     0.0306                     0.0370                     0.0420
+     115                     0.0266                     0.0384                     0.0406
+     121                     0.0308                     0.0362                     0.0374
+     127                     0.0306                     0.0400                     0.0388
+     133                     0.0334                     0.0400                     0.0382
+     139                     0.0344                     0.0376                     0.0382
+     145                     0.0346                     0.0400                     0.0412
+     151                     0.0342                     0.0442                     0.0408
+     157                     0.0358                     0.0440                     0.0406
+     163                     0.0354                     0.0424                     0.0424
+     169                     0.0364                     0.0398                     0.0430
+     175                     0.0364                     0.0466                     0.0398
+     181                     0.0364                     0.0396                     0.0394
+     187                     0.0392                     0.0432                     0.0466
+     193                     0.0384                     0.0392                     0.0460
+     199                     0.0420                     0.0424                     0.0400
+     205                     0.0392                     0.0418                     0.0410
+     211                     0.0412                     0.0434                     0.0426
+     217                     0.0420                     0.0454                     0.0410
+     223                     0.0436                     0.0434                     0.0440
+     229                     0.0456                     0.0440                     0.0444
+     235                     0.0468                     0.0374                     0.0416
+     241                     0.0466                     0.0394                     0.0376
+     247                     0.0478                     0.0430                     0.0432
+     253                     0.0438                     0.0408                     0.0420
+Saved plot to /Users/timothykent/Desktop/Cal_Poly/CAHSI/CAHSI-ErrorCorrection/CAHSI-QuantumError/src/pay_off/parallel_runs/images/torino/pay_off_repeat.png
+
+How many gates each code needs to pay off on Torino (where it starts beating no correction 5 times in a row):
+                bit-flip, Toffoli         phase-flip, Toffoli       
+--------------------------------------------------------------------
+  repeat, even  180 gates                 174 gates                 
+  repeat, odd   223 gates                 229 gates                 
+Wrote /Users/timothykent/Desktop/Cal_Poly/CAHSI/CAHSI-ErrorCorrection/CAHSI-QuantumError/src/pay_off/parallel_runs/jobs/repeat/torino/pay_off.csv
+Wrote /Users/timothykent/Desktop/Cal_Poly/CAHSI/CAHSI-ErrorCorrection/CAHSI-QuantumError/src/pay_off/parallel_runs/jobs/repeat/torino/pay_off_points.csv

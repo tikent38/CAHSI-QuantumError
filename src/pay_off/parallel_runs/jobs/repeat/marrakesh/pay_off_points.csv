@@ -1,0 +1,5 @@
+gate_set,parity,code,compared_with,shots,seed,pays_off_at_gates
+repeat,even,"bit-flip, Toffoli",no correction (Marrakesh 39),5000,3,162
+repeat,even,"phase-flip, Toffoli",no correction (Marrakesh 39),5000,3,180
+repeat,odd,"bit-flip, Toffoli",no correction (Marrakesh 39),5000,3,193
+repeat,odd,"phase-flip, Toffoli",no correction (Marrakesh 39),5000,3,229

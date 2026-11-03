@@ -1,0 +1,5 @@
+gate_set,parity,code,compared_with,shots,seed,pays_off_at_gates
+y,even,"bit-flip, Toffoli",no correction (Fez 86),5000,3,48
+y,even,"phase-flip, Toffoli",no correction (Fez 86),5000,3,32
+y,odd,"bit-flip, Toffoli",no correction (Fez 86),5000,3,155
+y,odd,"phase-flip, Toffoli",no correction (Fez 86),5000,3,153

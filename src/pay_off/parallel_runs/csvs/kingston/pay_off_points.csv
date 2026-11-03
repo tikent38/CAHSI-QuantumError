@@ -1,0 +1,17 @@
+gate_set,parity,code,compared_with,shots,seed,pays_off_at_gates
+x,even,"bit-flip, Toffoli",no correction (Kingston 68),5000,3,96
+x,even,"phase-flip, Toffoli",no correction (Kingston 68),5000,3,92
+x,odd,"bit-flip, Toffoli",no correction (Kingston 68),5000,3,129
+x,odd,"phase-flip, Toffoli",no correction (Kingston 68),5000,3,125
+y,even,"bit-flip, Toffoli",no correction (Kingston 68),5000,3,96
+y,even,"phase-flip, Toffoli",no correction (Kingston 68),5000,3,106
+y,odd,"bit-flip, Toffoli",no correction (Kingston 68),5000,3,129
+y,odd,"phase-flip, Toffoli",no correction (Kingston 68),5000,3,127
+repeat,even,"bit-flip, Toffoli",no correction (Kingston 68),5000,3,144
+repeat,even,"phase-flip, Toffoli",no correction (Kingston 68),5000,3,162
+repeat,odd,"bit-flip, Toffoli",no correction (Kingston 68),5000,3,181
+repeat,odd,"phase-flip, Toffoli",no correction (Kingston 68),5000,3,211
+id,even,"bit-flip, Toffoli",no correction (Kingston 68),5000,3,208
+id,even,"phase-flip, Toffoli",no correction (Kingston 68),5000,3,
+id,odd,"bit-flip, Toffoli",no correction (Kingston 68),5000,3,255
+id,odd,"phase-flip, Toffoli",no correction (Kingston 68),5000,3,443

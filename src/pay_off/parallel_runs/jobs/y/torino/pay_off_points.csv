@@ -1,0 +1,5 @@
+gate_set,parity,code,compared_with,shots,seed,pays_off_at_gates
+y,even,"bit-flip, Toffoli",no correction (Torino 62),5000,3,118
+y,even,"phase-flip, Toffoli",no correction (Torino 62),5000,3,116
+y,odd,"bit-flip, Toffoli",no correction (Torino 62),5000,3,147
+y,odd,"phase-flip, Toffoli",no correction (Torino 62),5000,3,149

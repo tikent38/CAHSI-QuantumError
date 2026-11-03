@@ -1,0 +1,397 @@
+gate_set,parity,gates,run,shots,seed,error
+x,even,0,no correction (Marrakesh 39),5000,3,0.0086
+x,even,0,"bit-flip, Toffoli",5000,3,0.0282
+x,even,0,"phase-flip, Toffoli",5000,3,0.0268
+x,even,2,no correction (Marrakesh 39),5000,3,0.007
+x,even,2,"bit-flip, Toffoli",5000,3,0.027
+x,even,2,"phase-flip, Toffoli",5000,3,0.0268
+x,even,4,no correction (Marrakesh 39),5000,3,0.0102
+x,even,4,"bit-flip, Toffoli",5000,3,0.029
+x,even,4,"phase-flip, Toffoli",5000,3,0.0268
+x,even,6,no correction (Marrakesh 39),5000,3,0.0108
+x,even,6,"bit-flip, Toffoli",5000,3,0.03
+x,even,6,"phase-flip, Toffoli",5000,3,0.0268
+x,even,8,no correction (Marrakesh 39),5000,3,0.0116
+x,even,8,"bit-flip, Toffoli",5000,3,0.0266
+x,even,8,"phase-flip, Toffoli",5000,3,0.0268
+x,even,10,no correction (Marrakesh 39),5000,3,0.0108
+x,even,10,"bit-flip, Toffoli",5000,3,0.027
+x,even,10,"phase-flip, Toffoli",5000,3,0.0268
+x,even,12,no correction (Marrakesh 39),5000,3,0.0114
+x,even,12,"bit-flip, Toffoli",5000,3,0.0298
+x,even,12,"phase-flip, Toffoli",5000,3,0.0268
+x,even,14,no correction (Marrakesh 39),5000,3,0.0104
+x,even,14,"bit-flip, Toffoli",5000,3,0.0258
+x,even,14,"phase-flip, Toffoli",5000,3,0.0268
+x,even,16,no correction (Marrakesh 39),5000,3,0.0122
+x,even,16,"bit-flip, Toffoli",5000,3,0.0252
+x,even,16,"phase-flip, Toffoli",5000,3,0.0268
+x,even,18,no correction (Marrakesh 39),5000,3,0.0104
+x,even,18,"bit-flip, Toffoli",5000,3,0.0246
+x,even,18,"phase-flip, Toffoli",5000,3,0.0268
+x,even,20,no correction (Marrakesh 39),5000,3,0.0136
+x,even,20,"bit-flip, Toffoli",5000,3,0.0248
+x,even,20,"phase-flip, Toffoli",5000,3,0.0268
+x,even,22,no correction (Marrakesh 39),5000,3,0.0152
+x,even,22,"bit-flip, Toffoli",5000,3,0.025
+x,even,22,"phase-flip, Toffoli",5000,3,0.0268
+x,even,24,no correction (Marrakesh 39),5000,3,0.0122
+x,even,24,"bit-flip, Toffoli",5000,3,0.0252
+x,even,24,"phase-flip, Toffoli",5000,3,0.0268
+x,even,26,no correction (Marrakesh 39),5000,3,0.0146
+x,even,26,"bit-flip, Toffoli",5000,3,0.0224
+x,even,26,"phase-flip, Toffoli",5000,3,0.0268
+x,even,28,no correction (Marrakesh 39),5000,3,0.0156
+x,even,28,"bit-flip, Toffoli",5000,3,0.024
+x,even,28,"phase-flip, Toffoli",5000,3,0.0268
+x,even,30,no correction (Marrakesh 39),5000,3,0.0156
+x,even,30,"bit-flip, Toffoli",5000,3,0.0212
+x,even,30,"phase-flip, Toffoli",5000,3,0.0268
+x,even,32,no correction (Marrakesh 39),5000,3,0.016
+x,even,32,"bit-flip, Toffoli",5000,3,0.023
+x,even,32,"phase-flip, Toffoli",5000,3,0.0268
+x,even,34,no correction (Marrakesh 39),5000,3,0.019
+x,even,34,"bit-flip, Toffoli",5000,3,0.0238
+x,even,34,"phase-flip, Toffoli",5000,3,0.0268
+x,even,36,no correction (Marrakesh 39),5000,3,0.0164
+x,even,36,"bit-flip, Toffoli",5000,3,0.0264
+x,even,36,"phase-flip, Toffoli",5000,3,0.0268
+x,even,38,no correction (Marrakesh 39),5000,3,0.0174
+x,even,38,"bit-flip, Toffoli",5000,3,0.024
+x,even,38,"phase-flip, Toffoli",5000,3,0.0268
+x,even,40,no correction (Marrakesh 39),5000,3,0.0194
+x,even,40,"bit-flip, Toffoli",5000,3,0.0276
+x,even,40,"phase-flip, Toffoli",5000,3,0.0268
+x,even,42,no correction (Marrakesh 39),5000,3,0.017
+x,even,42,"bit-flip, Toffoli",5000,3,0.0256
+x,even,42,"phase-flip, Toffoli",5000,3,0.0268
+x,even,44,no correction (Marrakesh 39),5000,3,0.0198
+x,even,44,"bit-flip, Toffoli",5000,3,0.025
+x,even,44,"phase-flip, Toffoli",5000,3,0.0268
+x,even,46,no correction (Marrakesh 39),5000,3,0.0168
+x,even,46,"bit-flip, Toffoli",5000,3,0.0248
+x,even,46,"phase-flip, Toffoli",5000,3,0.0268
+x,even,48,no correction (Marrakesh 39),5000,3,0.0192
+x,even,48,"bit-flip, Toffoli",5000,3,0.0256
+x,even,48,"phase-flip, Toffoli",5000,3,0.0268
+x,even,50,no correction (Marrakesh 39),5000,3,0.0204
+x,even,50,"bit-flip, Toffoli",5000,3,0.0262
+x,even,50,"phase-flip, Toffoli",5000,3,0.0268
+x,even,52,no correction (Marrakesh 39),5000,3,0.02
+x,even,52,"bit-flip, Toffoli",5000,3,0.023
+x,even,52,"phase-flip, Toffoli",5000,3,0.0268
+x,even,54,no correction (Marrakesh 39),5000,3,0.0204
+x,even,54,"bit-flip, Toffoli",5000,3,0.0256
+x,even,54,"phase-flip, Toffoli",5000,3,0.0268
+x,even,56,no correction (Marrakesh 39),5000,3,0.0194
+x,even,56,"bit-flip, Toffoli",5000,3,0.024
+x,even,56,"phase-flip, Toffoli",5000,3,0.0268
+x,even,58,no correction (Marrakesh 39),5000,3,0.023
+x,even,58,"bit-flip, Toffoli",5000,3,0.0262
+x,even,58,"phase-flip, Toffoli",5000,3,0.0268
+x,even,60,no correction (Marrakesh 39),5000,3,0.0202
+x,even,60,"bit-flip, Toffoli",5000,3,0.0266
+x,even,60,"phase-flip, Toffoli",5000,3,0.0268
+x,even,62,no correction (Marrakesh 39),5000,3,0.022
+x,even,62,"bit-flip, Toffoli",5000,3,0.0258
+x,even,62,"phase-flip, Toffoli",5000,3,0.0268
+x,even,64,no correction (Marrakesh 39),5000,3,0.0202
+x,even,64,"bit-flip, Toffoli",5000,3,0.026
+x,even,64,"phase-flip, Toffoli",5000,3,0.0268
+x,even,66,no correction (Marrakesh 39),5000,3,0.0224
+x,even,66,"bit-flip, Toffoli",5000,3,0.0276
+x,even,66,"phase-flip, Toffoli",5000,3,0.0268
+x,even,68,no correction (Marrakesh 39),5000,3,0.0232
+x,even,68,"bit-flip, Toffoli",5000,3,0.0278
+x,even,68,"phase-flip, Toffoli",5000,3,0.0268
+x,even,70,no correction (Marrakesh 39),5000,3,0.0216
+x,even,70,"bit-flip, Toffoli",5000,3,0.026
+x,even,70,"phase-flip, Toffoli",5000,3,0.0268
+x,even,72,no correction (Marrakesh 39),5000,3,0.0248
+x,even,72,"bit-flip, Toffoli",5000,3,0.0254
+x,even,72,"phase-flip, Toffoli",5000,3,0.0268
+x,even,74,no correction (Marrakesh 39),5000,3,0.0248
+x,even,74,"bit-flip, Toffoli",5000,3,0.0244
+x,even,74,"phase-flip, Toffoli",5000,3,0.0268
+x,even,76,no correction (Marrakesh 39),5000,3,0.0228
+x,even,76,"bit-flip, Toffoli",5000,3,0.027
+x,even,76,"phase-flip, Toffoli",5000,3,0.0268
+x,even,78,no correction (Marrakesh 39),5000,3,0.023
+x,even,78,"bit-flip, Toffoli",5000,3,0.0284
+x,even,78,"phase-flip, Toffoli",5000,3,0.0268
+x,even,80,no correction (Marrakesh 39),5000,3,0.0272
+x,even,80,"bit-flip, Toffoli",5000,3,0.025
+x,even,80,"phase-flip, Toffoli",5000,3,0.0268
+x,even,82,no correction (Marrakesh 39),5000,3,0.0244
+x,even,82,"bit-flip, Toffoli",5000,3,0.0298
+x,even,82,"phase-flip, Toffoli",5000,3,0.0268
+x,even,84,no correction (Marrakesh 39),5000,3,0.0276
+x,even,84,"bit-flip, Toffoli",5000,3,0.0286
+x,even,84,"phase-flip, Toffoli",5000,3,0.0268
+x,even,86,no correction (Marrakesh 39),5000,3,0.0292
+x,even,86,"bit-flip, Toffoli",5000,3,0.0286
+x,even,86,"phase-flip, Toffoli",5000,3,0.0268
+x,even,88,no correction (Marrakesh 39),5000,3,0.0254
+x,even,88,"bit-flip, Toffoli",5000,3,0.0316
+x,even,88,"phase-flip, Toffoli",5000,3,0.0268
+x,even,90,no correction (Marrakesh 39),5000,3,0.0268
+x,even,90,"bit-flip, Toffoli",5000,3,0.0276
+x,even,90,"phase-flip, Toffoli",5000,3,0.0268
+x,even,92,no correction (Marrakesh 39),5000,3,0.0284
+x,even,92,"bit-flip, Toffoli",5000,3,0.0302
+x,even,92,"phase-flip, Toffoli",5000,3,0.0268
+x,even,94,no correction (Marrakesh 39),5000,3,0.027
+x,even,94,"bit-flip, Toffoli",5000,3,0.0288
+x,even,94,"phase-flip, Toffoli",5000,3,0.0268
+x,even,96,no correction (Marrakesh 39),5000,3,0.028
+x,even,96,"bit-flip, Toffoli",5000,3,0.0288
+x,even,96,"phase-flip, Toffoli",5000,3,0.0268
+x,even,98,no correction (Marrakesh 39),5000,3,0.0284
+x,even,98,"bit-flip, Toffoli",5000,3,0.0286
+x,even,98,"phase-flip, Toffoli",5000,3,0.0268
+x,even,100,no correction (Marrakesh 39),5000,3,0.029
+x,even,100,"bit-flip, Toffoli",5000,3,0.0258
+x,even,100,"phase-flip, Toffoli",5000,3,0.0268
+x,even,102,no correction (Marrakesh 39),5000,3,0.0298
+x,even,102,"bit-flip, Toffoli",5000,3,0.0306
+x,even,102,"phase-flip, Toffoli",5000,3,0.0268
+x,even,104,no correction (Marrakesh 39),5000,3,0.0282
+x,even,104,"bit-flip, Toffoli",5000,3,0.031
+x,even,104,"phase-flip, Toffoli",5000,3,0.0268
+x,even,106,no correction (Marrakesh 39),5000,3,0.0302
+x,even,106,"bit-flip, Toffoli",5000,3,0.0296
+x,even,106,"phase-flip, Toffoli",5000,3,0.0268
+x,even,108,no correction (Marrakesh 39),5000,3,0.0302
+x,even,108,"bit-flip, Toffoli",5000,3,0.0244
+x,even,108,"phase-flip, Toffoli",5000,3,0.0268
+x,even,110,no correction (Marrakesh 39),5000,3,0.03
+x,even,110,"bit-flip, Toffoli",5000,3,0.0254
+x,even,110,"phase-flip, Toffoli",5000,3,0.0268
+x,even,112,no correction (Marrakesh 39),5000,3,0.0308
+x,even,112,"bit-flip, Toffoli",5000,3,0.0294
+x,even,112,"phase-flip, Toffoli",5000,3,0.0268
+x,even,114,no correction (Marrakesh 39),5000,3,0.0286
+x,even,114,"bit-flip, Toffoli",5000,3,0.0302
+x,even,114,"phase-flip, Toffoli",5000,3,0.0268
+x,even,116,no correction (Marrakesh 39),5000,3,0.0304
+x,even,116,"bit-flip, Toffoli",5000,3,0.0302
+x,even,116,"phase-flip, Toffoli",5000,3,0.0268
+x,even,118,no correction (Marrakesh 39),5000,3,0.0308
+x,even,118,"bit-flip, Toffoli",5000,3,0.0278
+x,even,118,"phase-flip, Toffoli",5000,3,0.0268
+x,even,120,no correction (Marrakesh 39),5000,3,0.0316
+x,even,120,"bit-flip, Toffoli",5000,3,0.0286
+x,even,120,"phase-flip, Toffoli",5000,3,0.0268
+x,even,122,no correction (Marrakesh 39),5000,3,0.032
+x,even,122,"bit-flip, Toffoli",5000,3,0.0282
+x,even,122,"phase-flip, Toffoli",5000,3,0.0268
+x,even,124,no correction (Marrakesh 39),5000,3,0.0316
+x,even,124,"bit-flip, Toffoli",5000,3,0.0312
+x,even,124,"phase-flip, Toffoli",5000,3,0.0268
+x,odd,1,no correction (Marrakesh 39),5000,3,0.0048
+x,odd,1,"bit-flip, Toffoli",5000,3,0.0264
+x,odd,1,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,3,no correction (Marrakesh 39),5000,3,0.0076
+x,odd,3,"bit-flip, Toffoli",5000,3,0.0314
+x,odd,3,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,5,no correction (Marrakesh 39),5000,3,0.0112
+x,odd,5,"bit-flip, Toffoli",5000,3,0.0318
+x,odd,5,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,7,no correction (Marrakesh 39),5000,3,0.0108
+x,odd,7,"bit-flip, Toffoli",5000,3,0.0312
+x,odd,7,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,9,no correction (Marrakesh 39),5000,3,0.0084
+x,odd,9,"bit-flip, Toffoli",5000,3,0.0286
+x,odd,9,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,11,no correction (Marrakesh 39),5000,3,0.011
+x,odd,11,"bit-flip, Toffoli",5000,3,0.0294
+x,odd,11,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,13,no correction (Marrakesh 39),5000,3,0.0122
+x,odd,13,"bit-flip, Toffoli",5000,3,0.0292
+x,odd,13,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,15,no correction (Marrakesh 39),5000,3,0.0114
+x,odd,15,"bit-flip, Toffoli",5000,3,0.0328
+x,odd,15,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,17,no correction (Marrakesh 39),5000,3,0.0142
+x,odd,17,"bit-flip, Toffoli",5000,3,0.033
+x,odd,17,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,19,no correction (Marrakesh 39),5000,3,0.0128
+x,odd,19,"bit-flip, Toffoli",5000,3,0.0342
+x,odd,19,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,21,no correction (Marrakesh 39),5000,3,0.0148
+x,odd,21,"bit-flip, Toffoli",5000,3,0.0294
+x,odd,21,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,23,no correction (Marrakesh 39),5000,3,0.0136
+x,odd,23,"bit-flip, Toffoli",5000,3,0.0286
+x,odd,23,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,25,no correction (Marrakesh 39),5000,3,0.012
+x,odd,25,"bit-flip, Toffoli",5000,3,0.0324
+x,odd,25,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,27,no correction (Marrakesh 39),5000,3,0.013
+x,odd,27,"bit-flip, Toffoli",5000,3,0.0266
+x,odd,27,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,29,no correction (Marrakesh 39),5000,3,0.0148
+x,odd,29,"bit-flip, Toffoli",5000,3,0.026
+x,odd,29,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,31,no correction (Marrakesh 39),5000,3,0.013
+x,odd,31,"bit-flip, Toffoli",5000,3,0.0268
+x,odd,31,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,33,no correction (Marrakesh 39),5000,3,0.0136
+x,odd,33,"bit-flip, Toffoli",5000,3,0.0282
+x,odd,33,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,35,no correction (Marrakesh 39),5000,3,0.0156
+x,odd,35,"bit-flip, Toffoli",5000,3,0.0282
+x,odd,35,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,37,no correction (Marrakesh 39),5000,3,0.0176
+x,odd,37,"bit-flip, Toffoli",5000,3,0.029
+x,odd,37,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,39,no correction (Marrakesh 39),5000,3,0.0146
+x,odd,39,"bit-flip, Toffoli",5000,3,0.032
+x,odd,39,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,41,no correction (Marrakesh 39),5000,3,0.0188
+x,odd,41,"bit-flip, Toffoli",5000,3,0.0298
+x,odd,41,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,43,no correction (Marrakesh 39),5000,3,0.0176
+x,odd,43,"bit-flip, Toffoli",5000,3,0.0304
+x,odd,43,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,45,no correction (Marrakesh 39),5000,3,0.0176
+x,odd,45,"bit-flip, Toffoli",5000,3,0.0274
+x,odd,45,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,47,no correction (Marrakesh 39),5000,3,0.0178
+x,odd,47,"bit-flip, Toffoli",5000,3,0.0296
+x,odd,47,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,49,no correction (Marrakesh 39),5000,3,0.019
+x,odd,49,"bit-flip, Toffoli",5000,3,0.0324
+x,odd,49,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,51,no correction (Marrakesh 39),5000,3,0.019
+x,odd,51,"bit-flip, Toffoli",5000,3,0.0308
+x,odd,51,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,53,no correction (Marrakesh 39),5000,3,0.0208
+x,odd,53,"bit-flip, Toffoli",5000,3,0.0296
+x,odd,53,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,55,no correction (Marrakesh 39),5000,3,0.02
+x,odd,55,"bit-flip, Toffoli",5000,3,0.0306
+x,odd,55,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,57,no correction (Marrakesh 39),5000,3,0.018
+x,odd,57,"bit-flip, Toffoli",5000,3,0.0264
+x,odd,57,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,59,no correction (Marrakesh 39),5000,3,0.0226
+x,odd,59,"bit-flip, Toffoli",5000,3,0.0264
+x,odd,59,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,61,no correction (Marrakesh 39),5000,3,0.0208
+x,odd,61,"bit-flip, Toffoli",5000,3,0.0312
+x,odd,61,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,63,no correction (Marrakesh 39),5000,3,0.0174
+x,odd,63,"bit-flip, Toffoli",5000,3,0.0348
+x,odd,63,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,65,no correction (Marrakesh 39),5000,3,0.0232
+x,odd,65,"bit-flip, Toffoli",5000,3,0.0334
+x,odd,65,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,67,no correction (Marrakesh 39),5000,3,0.023
+x,odd,67,"bit-flip, Toffoli",5000,3,0.0344
+x,odd,67,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,69,no correction (Marrakesh 39),5000,3,0.0208
+x,odd,69,"bit-flip, Toffoli",5000,3,0.0342
+x,odd,69,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,71,no correction (Marrakesh 39),5000,3,0.0216
+x,odd,71,"bit-flip, Toffoli",5000,3,0.0302
+x,odd,71,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,73,no correction (Marrakesh 39),5000,3,0.0256
+x,odd,73,"bit-flip, Toffoli",5000,3,0.0296
+x,odd,73,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,75,no correction (Marrakesh 39),5000,3,0.0226
+x,odd,75,"bit-flip, Toffoli",5000,3,0.0306
+x,odd,75,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,77,no correction (Marrakesh 39),5000,3,0.022
+x,odd,77,"bit-flip, Toffoli",5000,3,0.0304
+x,odd,77,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,79,no correction (Marrakesh 39),5000,3,0.0244
+x,odd,79,"bit-flip, Toffoli",5000,3,0.0306
+x,odd,79,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,81,no correction (Marrakesh 39),5000,3,0.0266
+x,odd,81,"bit-flip, Toffoli",5000,3,0.0298
+x,odd,81,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,83,no correction (Marrakesh 39),5000,3,0.028
+x,odd,83,"bit-flip, Toffoli",5000,3,0.0286
+x,odd,83,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,85,no correction (Marrakesh 39),5000,3,0.0252
+x,odd,85,"bit-flip, Toffoli",5000,3,0.0324
+x,odd,85,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,87,no correction (Marrakesh 39),5000,3,0.0284
+x,odd,87,"bit-flip, Toffoli",5000,3,0.0334
+x,odd,87,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,89,no correction (Marrakesh 39),5000,3,0.0276
+x,odd,89,"bit-flip, Toffoli",5000,3,0.0332
+x,odd,89,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,91,no correction (Marrakesh 39),5000,3,0.0274
+x,odd,91,"bit-flip, Toffoli",5000,3,0.034
+x,odd,91,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,93,no correction (Marrakesh 39),5000,3,0.0302
+x,odd,93,"bit-flip, Toffoli",5000,3,0.0342
+x,odd,93,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,95,no correction (Marrakesh 39),5000,3,0.0278
+x,odd,95,"bit-flip, Toffoli",5000,3,0.0308
+x,odd,95,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,97,no correction (Marrakesh 39),5000,3,0.0292
+x,odd,97,"bit-flip, Toffoli",5000,3,0.0354
+x,odd,97,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,99,no correction (Marrakesh 39),5000,3,0.0274
+x,odd,99,"bit-flip, Toffoli",5000,3,0.0344
+x,odd,99,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,101,no correction (Marrakesh 39),5000,3,0.03
+x,odd,101,"bit-flip, Toffoli",5000,3,0.0326
+x,odd,101,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,103,no correction (Marrakesh 39),5000,3,0.0284
+x,odd,103,"bit-flip, Toffoli",5000,3,0.032
+x,odd,103,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,105,no correction (Marrakesh 39),5000,3,0.03
+x,odd,105,"bit-flip, Toffoli",5000,3,0.032
+x,odd,105,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,107,no correction (Marrakesh 39),5000,3,0.0302
+x,odd,107,"bit-flip, Toffoli",5000,3,0.0358
+x,odd,107,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,109,no correction (Marrakesh 39),5000,3,0.0296
+x,odd,109,"bit-flip, Toffoli",5000,3,0.0322
+x,odd,109,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,111,no correction (Marrakesh 39),5000,3,0.0324
+x,odd,111,"bit-flip, Toffoli",5000,3,0.0376
+x,odd,111,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,113,no correction (Marrakesh 39),5000,3,0.0304
+x,odd,113,"bit-flip, Toffoli",5000,3,0.0312
+x,odd,113,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,115,no correction (Marrakesh 39),5000,3,0.032
+x,odd,115,"bit-flip, Toffoli",5000,3,0.0306
+x,odd,115,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,117,no correction (Marrakesh 39),5000,3,0.0304
+x,odd,117,"bit-flip, Toffoli",5000,3,0.038
+x,odd,117,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,119,no correction (Marrakesh 39),5000,3,0.0318
+x,odd,119,"bit-flip, Toffoli",5000,3,0.0336
+x,odd,119,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,121,no correction (Marrakesh 39),5000,3,0.0324
+x,odd,121,"bit-flip, Toffoli",5000,3,0.0336
+x,odd,121,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,123,no correction (Marrakesh 39),5000,3,0.0326
+x,odd,123,"bit-flip, Toffoli",5000,3,0.0366
+x,odd,123,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,125,no correction (Marrakesh 39),5000,3,0.0346
+x,odd,125,"bit-flip, Toffoli",5000,3,0.0348
+x,odd,125,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,127,no correction (Marrakesh 39),5000,3,0.0336
+x,odd,127,"bit-flip, Toffoli",5000,3,0.0362
+x,odd,127,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,129,no correction (Marrakesh 39),5000,3,0.0332
+x,odd,129,"bit-flip, Toffoli",5000,3,0.0314
+x,odd,129,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,131,no correction (Marrakesh 39),5000,3,0.0348
+x,odd,131,"bit-flip, Toffoli",5000,3,0.0298
+x,odd,131,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,133,no correction (Marrakesh 39),5000,3,0.0352
+x,odd,133,"bit-flip, Toffoli",5000,3,0.031
+x,odd,133,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,135,no correction (Marrakesh 39),5000,3,0.036
+x,odd,135,"bit-flip, Toffoli",5000,3,0.0282
+x,odd,135,"phase-flip, Toffoli",5000,3,0.0286
+x,odd,137,no correction (Marrakesh 39),5000,3,0.0356
+x,odd,137,"bit-flip, Toffoli",5000,3,0.0342
+x,odd,137,"phase-flip, Toffoli",5000,3,0.0286

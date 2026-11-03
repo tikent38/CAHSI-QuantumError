@@ -1,0 +1,17 @@
+gate_set,parity,code,compared_with,shots,seed,pays_off_at_gates
+x,even,"bit-flip, Toffoli",no correction (Kolkata 16),5000,3,314
+x,even,"phase-flip, Toffoli",no correction (Kolkata 16),5000,3,262
+x,odd,"bit-flip, Toffoli",no correction (Kolkata 16),5000,3,375
+x,odd,"phase-flip, Toffoli",no correction (Kolkata 16),5000,3,309
+y,even,"bit-flip, Toffoli",no correction (Kolkata 16),5000,3,314
+y,even,"phase-flip, Toffoli",no correction (Kolkata 16),5000,3,312
+y,odd,"bit-flip, Toffoli",no correction (Kolkata 16),5000,3,375
+y,odd,"phase-flip, Toffoli",no correction (Kolkata 16),5000,3,385
+repeat,even,"bit-flip, Toffoli",no correction (Kolkata 16),5000,3,474
+repeat,even,"phase-flip, Toffoli",no correction (Kolkata 16),5000,3,450
+repeat,odd,"bit-flip, Toffoli",no correction (Kolkata 16),5000,3,565
+repeat,odd,"phase-flip, Toffoli",no correction (Kolkata 16),5000,3,547
+id,even,"bit-flip, Toffoli",no correction (Kolkata 16),5000,3,1010
+id,even,"phase-flip, Toffoli",no correction (Kolkata 16),5000,3,
+id,odd,"bit-flip, Toffoli",no correction (Kolkata 16),5000,3,1007
+id,odd,"phase-flip, Toffoli",no correction (Kolkata 16),5000,3,

@@ -1,0 +1,87 @@
+/Users/timothykent/Desktop/Cal_Poly/CAHSI/CAHSI-ErrorCorrection/CAHSI-QuantumError/.venv/lib/python3.14/site-packages/qiskit_ibm_runtime/fake_provider/backends/nighthawk/fake_nighthawk.py:78: UserWarning: Properties of fake_nighthawk are not intended to represent typical nighthawk error values.
+  warnings.warn(
+
+gate set "repeat" (X, Y, Z), 5000 shots, seed 3, Fez qubits [87, 88, 86]. Error = |P(1) - exact P(1)| on Fez noise
+
+repeat, even:
+   gates  no correction (Fez 86)       bit-flip, Toffoli     phase-flip, Toffoli
+--------------------------------------------------------------------------------
+       0                  0.0048                  0.0156                  0.0140
+       6                  0.0060                  0.0152                  0.0158
+      12                  0.0070                  0.0118                  0.0134
+      18                  0.0068                  0.0144                  0.0140
+      24                  0.0078                  0.0136                  0.0114
+      30                  0.0084                  0.0134                  0.0136
+      36                  0.0094                  0.0132                  0.0130
+      42                  0.0122                  0.0118                  0.0110
+      48                  0.0126                  0.0146                  0.0094
+      54                  0.0132                  0.0150                  0.0102
+      60                  0.0154                  0.0132                  0.0124
+      66                  0.0166                  0.0138                  0.0148
+      72                  0.0174                  0.0154                  0.0128
+      78                  0.0182                  0.0126                  0.0124
+      84                  0.0182                  0.0138                  0.0146
+
+repeat, odd:
+   gates  no correction (Fez 86)       bit-flip, Toffoli     phase-flip, Toffoli
+--------------------------------------------------------------------------------
+       1                  0.0030                  0.0322                  0.0340
+       7                  0.0068                  0.0374                  0.0384
+      13                  0.0070                  0.0332                  0.0368
+      19                  0.0080                  0.0338                  0.0320
+      25                  0.0098                  0.0364                  0.0366
+      31                  0.0104                  0.0338                  0.0328
+      37                  0.0100                  0.0368                  0.0320
+      43                  0.0108                  0.0322                  0.0296
+      49                  0.0108                  0.0342                  0.0302
+      55                  0.0138                  0.0352                  0.0354
+      61                  0.0150                  0.0340                  0.0312
+      67                  0.0150                  0.0344                  0.0298
+      73                  0.0160                  0.0386                  0.0398
+      79                  0.0176                  0.0320                  0.0314
+      85                  0.0176                  0.0324                  0.0278
+      91                  0.0186                  0.0352                  0.0328
+      97                  0.0210                  0.0320                  0.0370
+     103                  0.0204                  0.0352                  0.0384
+     109                  0.0216                  0.0338                  0.0388
+     115                  0.0218                  0.0356                  0.0320
+     121                  0.0246                  0.0362                  0.0378
+     127                  0.0236                  0.0364                  0.0428
+     133                  0.0254                  0.0372                  0.0350
+     139                  0.0282                  0.0390                  0.0314
+     145                  0.0278                  0.0402                  0.0360
+     151                  0.0286                  0.0388                  0.0396
+     157                  0.0296                  0.0334                  0.0370
+     163                  0.0296                  0.0332                  0.0350
+     169                  0.0300                  0.0386                  0.0358
+     175                  0.0300                  0.0382                  0.0372
+     181                  0.0302                  0.0398                  0.0398
+     187                  0.0332                  0.0390                  0.0362
+     193                  0.0322                  0.0352                  0.0380
+     199                  0.0346                  0.0350                  0.0356
+     205                  0.0338                  0.0406                  0.0368
+     211                  0.0352                  0.0368                  0.0402
+     217                  0.0358                  0.0396                  0.0418
+     223                  0.0392                  0.0372                  0.0354
+     229                  0.0384                  0.0442                  0.0364
+     235                  0.0396                  0.0356                  0.0378
+     241                  0.0394                  0.0384                  0.0344
+     247                  0.0418                  0.0420                  0.0382
+     253                  0.0400                  0.0404                  0.0388
+     259                  0.0424                  0.0406                  0.0422
+     265                  0.0416                  0.0414                  0.0354
+     271                  0.0450                  0.0454                  0.0420
+     277                  0.0442                  0.0426                  0.0384
+     283                  0.0456                  0.0394                  0.0332
+     289                  0.0458                  0.0390                  0.0396
+     295                  0.0482                  0.0424                  0.0396
+     301                  0.0464                  0.0440                  0.0370
+Saved plot to /Users/timothykent/Desktop/Cal_Poly/CAHSI/CAHSI-ErrorCorrection/CAHSI-QuantumError/src/pay_off/parallel_runs/images/fez/pay_off_repeat.png
+
+How many gates each code needs to pay off on Fez (where it starts beating no correction 5 times in a row):
+                bit-flip, Toffoli         phase-flip, Toffoli       
+--------------------------------------------------------------------
+  repeat, even  60 gates                  42 gates                  
+  repeat, odd   277 gates                 223 gates                 
+Wrote /Users/timothykent/Desktop/Cal_Poly/CAHSI/CAHSI-ErrorCorrection/CAHSI-QuantumError/src/pay_off/parallel_runs/jobs/repeat/fez/pay_off.csv
+Wrote /Users/timothykent/Desktop/Cal_Poly/CAHSI/CAHSI-ErrorCorrection/CAHSI-QuantumError/src/pay_off/parallel_runs/jobs/repeat/fez/pay_off_points.csv
