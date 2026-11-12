@@ -65,7 +65,7 @@ def plot_benchmark_results(
                 alpha=0.15,
             )
 
-    # 4. Format plot axes, title, grid, and legend
+    # 4. Format plot axes, title, grid
     plt.title(
         "Quantum Error Metric vs. Circuit Gate Length (FakeFez)",
         fontsize=14,
@@ -83,7 +83,7 @@ def plot_benchmark_results(
 
     # 5. Save chart and display plot window
     plt.savefig(output_image, dpi=300)
-    print(f"✅ Plot successfully saved to '{output_image}'.")
+    print(f" Plot saved to '{output_image}'.")
     plt.show()
 
 

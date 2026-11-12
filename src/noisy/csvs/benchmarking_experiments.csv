@@ -1,39 +1,85 @@
-circuit_type,num_gates,shots,random_seed,noise_model,ideal_p0,ideal_p1,observed_p0,observed_p1,error_metric
-unencoded,10,10000,3,FakeFez,1.0000,0.0000,0.9806,0.0194,0.0194
-unencoded,10,10000,42,FakeFez,1.0000,0.0000,0.9814,0.0186,0.0186
-unencoded,10,10000,3,FakeFez,1.0000,0.0000,0.9806,0.0194,0.0194
-unencoded,10,10000,42,FakeFez,1.0000,0.0000,0.9814,0.0186,0.0186
-unencoded,10,10000,100,FakeFez,1.0000,0.0000,0.9817,0.0183,0.0183
-unencoded,50,10000,3,FakeFez,1.0000,0.0000,0.9489,0.0511,0.0511
-unencoded,50,10000,42,FakeFez,1.0000,0.0000,0.9544,0.0456,0.0456
-unencoded,50,10000,100,FakeFez,1.0000,0.0000,0.9506,0.0494,0.0494
-unencoded,100,10000,3,FakeFez,1.0000,0.0000,0.9126,0.0874,0.0874
-unencoded,100,10000,42,FakeFez,1.0000,0.0000,0.9197,0.0803,0.0803
-unencoded,100,10000,100,FakeFez,1.0000,0.0000,0.9113,0.0887,0.0887
-unencoded,500,10000,3,FakeFez,1.0000,0.0000,0.6415,0.3585,0.3585
-unencoded,500,10000,42,FakeFez,1.0000,0.0000,0.6370,0.3630,0.3630
-unencoded,500,10000,100,FakeFez,1.0000,0.0000,0.6256,0.3744,0.3744
-"bit-flip, if blocks",10,10000,3,FakeFez,1.0000,0.0000,0.9162,0.0838,0.0838
-"bit-flip, if blocks",10,10000,42,FakeFez,1.0000,0.0000,0.9077,0.0923,0.0923
-"bit-flip, if blocks",10,10000,100,FakeFez,1.0000,0.0000,0.9009,0.0991,0.0991
-"bit-flip, if blocks",50,10000,3,FakeFez,1.0000,0.0000,0.9085,0.0915,0.0915
-"bit-flip, if blocks",50,10000,42,FakeFez,1.0000,0.0000,0.9030,0.0970,0.0970
-"bit-flip, if blocks",50,10000,100,FakeFez,1.0000,0.0000,0.9004,0.0996,0.0996
-"bit-flip, if blocks",100,10000,3,FakeFez,1.0000,0.0000,0.9051,0.0949,0.0949
-"bit-flip, if blocks",100,10000,42,FakeFez,1.0000,0.0000,0.8978,0.1022,0.1022
-"bit-flip, if blocks",100,10000,100,FakeFez,1.0000,0.0000,0.8901,0.1099,0.1099
-"bit-flip, if blocks",500,10000,3,FakeFez,1.0000,0.0000,0.8640,0.1360,0.1360
-"bit-flip, if blocks",500,10000,42,FakeFez,1.0000,0.0000,0.8529,0.1471,0.1471
-"bit-flip, if blocks",500,10000,100,FakeFez,1.0000,0.0000,0.8560,0.1440,0.1440
-"phase-flip, if blocks",10,10000,3,FakeFez,1.0000,0.0000,0.9109,0.0891,0.0891
-"phase-flip, if blocks",10,10000,42,FakeFez,1.0000,0.0000,0.9236,0.0764,0.0764
-"phase-flip, if blocks",10,10000,100,FakeFez,1.0000,0.0000,0.9027,0.0973,0.0973
-"phase-flip, if blocks",50,10000,3,FakeFez,1.0000,0.0000,0.9109,0.0891,0.0891
-"phase-flip, if blocks",50,10000,42,FakeFez,1.0000,0.0000,0.9236,0.0764,0.0764
-"phase-flip, if blocks",50,10000,100,FakeFez,1.0000,0.0000,0.9027,0.0973,0.0973
-"phase-flip, if blocks",100,10000,3,FakeFez,1.0000,0.0000,0.9109,0.0891,0.0891
-"phase-flip, if blocks",100,10000,42,FakeFez,1.0000,0.0000,0.9236,0.0764,0.0764
-"phase-flip, if blocks",100,10000,100,FakeFez,1.0000,0.0000,0.9027,0.0973,0.0973
-"phase-flip, if blocks",500,10000,3,FakeFez,1.0000,0.0000,0.9109,0.0891,0.0891
-"phase-flip, if blocks",500,10000,42,FakeFez,1.0000,0.0000,0.9236,0.0764,0.0764
-"phase-flip, if blocks",500,10000,100,FakeFez,1.0000,0.0000,0.9027,0.0973,0.0973
+gate_set,circuit_type,num_gates,shots,random_seed,noise_model,error_metric
+x,no noise,10,10000,100,FakeFez,0.0
+x,"Fez noise, no correction (Fez 87)",10,10000,100,FakeFez,0.0229
+x,"Fez noise, no correction (Fez 86)",10,10000,100,FakeFez,0.0056
+x,"Fez noise, bit-flip, if blocks",10,10000,100,FakeFez,0.0387
+x,"Fez noise, bit-flip, Toffoli",10,10000,100,FakeFez,0.0134
+x,"Fez noise, phase-flip, if blocks",10,10000,100,FakeFez,0.0404
+x,"Fez noise, phase-flip, Toffoli",10,10000,100,FakeFez,0.012
+x,no noise,50,10000,100,FakeFez,0.0
+x,"Fez noise, no correction (Fez 87)",50,10000,100,FakeFez,0.0414
+x,"Fez noise, no correction (Fez 86)",50,10000,100,FakeFez,0.0147
+x,"Fez noise, bit-flip, if blocks",50,10000,100,FakeFez,0.0424
+x,"Fez noise, bit-flip, Toffoli",50,10000,100,FakeFez,0.0124
+x,"Fez noise, phase-flip, if blocks",50,10000,100,FakeFez,0.0404
+x,"Fez noise, phase-flip, Toffoli",50,10000,100,FakeFez,0.012
+x,no noise,100,10000,100,FakeFez,0.0
+x,"Fez noise, no correction (Fez 87)",100,10000,100,FakeFez,0.0604
+x,"Fez noise, no correction (Fez 86)",100,10000,100,FakeFez,0.0276
+x,"Fez noise, bit-flip, if blocks",100,10000,100,FakeFez,0.0416
+x,"Fez noise, bit-flip, Toffoli",100,10000,100,FakeFez,0.0154
+x,"Fez noise, phase-flip, if blocks",100,10000,100,FakeFez,0.0404
+x,"Fez noise, phase-flip, Toffoli",100,10000,100,FakeFez,0.012
+x,no noise,500,10000,100,FakeFez,0.0
+x,"Fez noise, no correction (Fez 87)",500,10000,100,FakeFez,0.1991
+x,"Fez noise, no correction (Fez 86)",500,10000,100,FakeFez,0.1099
+x,"Fez noise, bit-flip, if blocks",500,10000,100,FakeFez,0.0851
+x,"Fez noise, bit-flip, Toffoli",500,10000,100,FakeFez,0.0562
+x,"Fez noise, phase-flip, if blocks",500,10000,100,FakeFez,0.0404
+x,"Fez noise, phase-flip, Toffoli",500,10000,100,FakeFez,0.012
+repeat,no noise,10,10000,100,FakeFez,0.0
+repeat,"Fez noise, no correction (Fez 87)",10,10000,100,FakeFez,0.02059999999999995
+repeat,"Fez noise, no correction (Fez 86)",10,10000,100,FakeFez,0.0046000000000000485
+repeat,"Fez noise, bit-flip, if blocks",10,10000,100,FakeFez,0.051100000000000034
+repeat,"Fez noise, bit-flip, Toffoli",10,10000,100,FakeFez,0.031100000000000017
+repeat,"Fez noise, phase-flip, if blocks",10,10000,100,FakeFez,0.05049999999999999
+repeat,"Fez noise, phase-flip, Toffoli",10,10000,100,FakeFez,0.03080000000000005
+repeat,no noise,50,10000,100,FakeFez,0.0
+repeat,"Fez noise, no correction (Fez 87)",50,10000,100,FakeFez,0.0331
+repeat,"Fez noise, no correction (Fez 86)",50,10000,100,FakeFez,0.0114
+repeat,"Fez noise, bit-flip, if blocks",50,10000,100,FakeFez,0.0374
+repeat,"Fez noise, bit-flip, Toffoli",50,10000,100,FakeFez,0.0139
+repeat,"Fez noise, phase-flip, if blocks",50,10000,100,FakeFez,0.0387
+repeat,"Fez noise, phase-flip, Toffoli",50,10000,100,FakeFez,0.0117
+repeat,no noise,100,10000,100,FakeFez,0.0
+repeat,"Fez noise, no correction (Fez 87)",100,10000,100,FakeFez,0.04349999999999998
+repeat,"Fez noise, no correction (Fez 86)",100,10000,100,FakeFez,0.01639999999999997
+repeat,"Fez noise, bit-flip, if blocks",100,10000,100,FakeFez,0.05269999999999997
+repeat,"Fez noise, bit-flip, Toffoli",100,10000,100,FakeFez,0.03200000000000003
+repeat,"Fez noise, phase-flip, if blocks",100,10000,100,FakeFez,0.05279999999999996
+repeat,"Fez noise, phase-flip, Toffoli",100,10000,100,FakeFez,0.03200000000000003
+repeat,no noise,500,10000,100,FakeFez,0.0
+repeat,"Fez noise, no correction (Fez 87)",500,10000,100,FakeFez,0.148
+repeat,"Fez noise, no correction (Fez 86)",500,10000,100,FakeFez,0.0759
+repeat,"Fez noise, bit-flip, if blocks",500,10000,100,FakeFez,0.0643
+repeat,"Fez noise, bit-flip, Toffoli",500,10000,100,FakeFez,0.0341
+repeat,"Fez noise, phase-flip, if blocks",500,10000,100,FakeFez,0.0582
+repeat,"Fez noise, phase-flip, Toffoli",500,10000,100,FakeFez,0.0274
+xz,no noise,10,10000,100,FakeFez,0.0
+xz,"Fez noise, no correction (Fez 87)",10,10000,100,FakeFez,0.020100000000000007
+xz,"Fez noise, no correction (Fez 86)",10,10000,100,FakeFez,0.0043999999999999595
+xz,"Fez noise, bit-flip, if blocks",10,10000,100,FakeFez,0.049900000000000055
+xz,"Fez noise, bit-flip, Toffoli",10,10000,100,FakeFez,0.03049999999999997
+xz,"Fez noise, phase-flip, if blocks",10,10000,100,FakeFez,0.05489999999999995
+xz,"Fez noise, phase-flip, Toffoli",10,10000,100,FakeFez,0.03049999999999997
+xz,no noise,50,10000,100,FakeFez,0.0
+xz,"Fez noise, no correction (Fez 87)",50,10000,100,FakeFez,0.0295
+xz,"Fez noise, no correction (Fez 86)",50,10000,100,FakeFez,0.0092
+xz,"Fez noise, bit-flip, if blocks",50,10000,100,FakeFez,0.0397
+xz,"Fez noise, bit-flip, Toffoli",50,10000,100,FakeFez,0.0124
+xz,"Fez noise, phase-flip, if blocks",50,10000,100,FakeFez,0.0392
+xz,"Fez noise, phase-flip, Toffoli",50,10000,100,FakeFez,0.0132
+xz,no noise,100,10000,100,FakeFez,0.0
+xz,"Fez noise, no correction (Fez 87)",100,10000,100,FakeFez,0.04039999999999999
+xz,"Fez noise, no correction (Fez 86)",100,10000,100,FakeFez,0.01429999999999998
+xz,"Fez noise, bit-flip, if blocks",100,10000,100,FakeFez,0.049900000000000055
+xz,"Fez noise, bit-flip, Toffoli",100,10000,100,FakeFez,0.031100000000000017
+xz,"Fez noise, phase-flip, if blocks",100,10000,100,FakeFez,0.05259999999999998
+xz,"Fez noise, phase-flip, Toffoli",100,10000,100,FakeFez,0.03200000000000003
+xz,no noise,500,10000,100,FakeFez,0.0
+xz,"Fez noise, no correction (Fez 87)",500,10000,100,FakeFez,0.1214
+xz,"Fez noise, no correction (Fez 86)",500,10000,100,FakeFez,0.0585
+xz,"Fez noise, bit-flip, if blocks",500,10000,100,FakeFez,0.0556
+xz,"Fez noise, bit-flip, Toffoli",500,10000,100,FakeFez,0.0293
+xz,"Fez noise, phase-flip, if blocks",500,10000,100,FakeFez,0.0477
+xz,"Fez noise, phase-flip, Toffoli",500,10000,100,FakeFez,0.0244
