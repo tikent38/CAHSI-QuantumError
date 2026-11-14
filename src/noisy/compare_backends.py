@@ -4,29 +4,24 @@
 # each result is from the exact answer and how big each circuit is once it is on the backend.
 # Change the experiment, and which backend it runs on, in the settings block at the bottom of the file
 import math
-import os
 import random
-import sys
 from collections import deque
 from functools import cache
 from itertools import combinations
 
-from qiskit import transpile
 from qiskit.circuit import Gate
 from qiskit.quantum_info import PTM, Statevector, average_gate_fidelity
-from qiskit.transpiler import Target, TranspilerError
-from qiskit_aer import AerSimulator
 from qiskit_aer.noise.device import basic_device_gate_errors, basic_device_readout_errors
 from qiskit_ibm_runtime.fake_provider import FakeProviderForBackendV2
 
-# Reuse the test circuits, the codes and the results table from compare_fez.py, so the only difference is the backend
-from compare_fez import CODES, DEFAULT_CODES, GATE_SETS, encode_all, print_results, test_circuit
+# Reuse the test circuits, the codes, and the steps that transpile, run and print the circuits from compare_fez.py, so
+# the only difference is the backend and how its qubits are picked. CODES and GATE_SETS aren't used in this file: the
+# settings at the bottom name their keys, and src/pay_off imports GATE_SETS from here
+from compare_fez import (CODES, DEFAULT_CODES, GATE_SETS, code_layout, encode_all, layout_for, print_circuit,
+                         print_compared_with, print_qubits, print_results, print_sizes, run_all, test_circuit,
+                         transpile_all)
 from fez_common import (DEFAULT_ANCILLA_QUBITS, DEFAULT_DATA_QUBITS, DEFAULT_SHOR_ANCILLA_QUBITS,
-                        DEFAULT_SHOR_DATA_QUBITS, physical_qubits, prob_one)
-
-# The code for printing tables lives in src/output_tools
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "output_tools"))
-from output_tools import print_table_header
+                        DEFAULT_SHOR_DATA_QUBITS, prob_one, working_target)
 
 # Every backend compare() can run on, by its short name (e.g. "fez", "torino", "brisbane"): the fake IBM backends in
 # qiskit_ibm_runtime, which are copies of real IBM machines with their wiring and noise
@@ -36,6 +31,10 @@ BACKENDS = sorted(b.name.removeprefix("fake_") for b in FakeProviderForBackendV2
 #   "like fez"  the qubits whose noise is closest to the Fez defaults, wired the same way (see matched_qubits), so
 #               every backend runs with about the same noise as Fez
 PICKS = ("best", "like fez")
+# The noise simulator runs every shot on its own: it applies the gates one by one, with random errors picked from the
+# backend's noise for that shot, and measures at the end. Left to itself, as in compare_fez.py, Aer would use a density
+# matrix for the circuits with no if blocks, working out the exact probabilities and sampling every shot from them
+SIMULATION_METHOD = "statevector"
 
 
 # ---- The backend ----
@@ -58,28 +57,9 @@ def backend_label(backend):
     return backend.name.removeprefix("fake_").capitalize()
 
 
-def working_target(backend, max_error=0.5):
-    # The backend's target (its gates, connections and error rates) without connections whose error is max_error or
-    # more: fake backends list a broken connection with an error of 1.0, and routing through one would ruin the
-    # circuit. The same as working_target in src/real_hardware_runs/hardware_common.py. compare_fez.py leaves the
-    # broken connections out of the CZ wiring instead, which only works on backends whose 2-qubit gate is CZ
-    target = backend.target
-    kept = Target(num_qubits=target.num_qubits, dt=target.dt, granularity=target.granularity,
-                  min_length=target.min_length, pulse_alignment=target.pulse_alignment,
-                  acquire_alignment=target.acquire_alignment, qubit_properties=target.qubit_properties,
-                  concurrent_measurements=target.concurrent_measurements)
-    for name in target.operation_names:
-        props = target[name]
-        if props is None or list(props) == [None]:
-            props = None   # available on every qubit (e.g. if_else, barrier)
-        else:
-            props = {qargs: p for qargs, p in props.items()
-                     if len(qargs) < 2 or p is None or p.error is None or p.error < max_error}
-        kept.add_instruction(target.operation_from_name(name), props, name=name)
-    return kept
-
-
 # ---- Picking the qubits ----
+# The backend's wiring and error rates are read from working_target (in fez_common.py), which leaves out its broken
+# connections
 
 def gates(target, num_qubits):
     # The backend's gates that act on num_qubits qubits, as {name: {qubits: error}} (measure and reset aren't gates)
@@ -312,48 +292,27 @@ def default_qubits(backend, pick="best"):
     return matched_qubits(short_name(backend.name)) if pick == "like fez" else auto_qubits(backend)
 
 
-def code_layout(backend, data, ancillas, num_data, num_ancillas, code):
-    # One code's layout, data + ancillas, after checking it has the right number of qubits, uses each qubit once, and
-    # only uses qubits the backend has. None when there are no data qubits for it, and only the data qubits when there
-    # are no ancillas (then only the Toffoli codes, which need no ancillas, can run)
-    if data is None:
-        return None
-    label = backend_label(backend)
-    layout = list(data) + list(ancillas or ())
-    if len(data) != num_data or (ancillas is not None and len(ancillas) != num_ancillas):
-        raise ValueError(f"{code} codes need {num_data} data qubits and {num_ancillas} ancillas, "
-                         f"got {len(data)} and {len(ancillas or ())}")
-    if len(set(layout)) != len(layout):
-        raise ValueError(f"{code} codes can only use each {label} qubit once, got {layout}")
-    bad = [q for q in layout if not 0 <= q < backend.num_qubits]
-    if bad:
-        raise ValueError(f"{label} only has qubits 0-{backend.num_qubits - 1}, got {bad}")
-    return layout
-
-
 def set_layout(backend, data=None, ancillas=None, shor_data=None, shor_ancillas=None, pick="best"):
     # Which of the backend's physical qubits each circuit qubit runs on. data = (qubit for q_0, q_1, q_2), ancillas =
     # (qubit for a_0, a_1) of the bit-flip and phase-flip codes. shor_data = (qubit for q_0, ..., q_8), shor_ancillas =
     # (qubit for a_0, ..., a_7) of the Shor codes. Any left as None are picked by default_qubits, the way pick says
     # (see PICKS). Every code puts its data qubits first and its ancillas after, so each layout is data + ancillas:
     # the Toffoli codes use only the data qubits. The two layouts can share qubits, since every code runs on its own.
-    # "no correction" is the qubit the circuit runs on when no code is run
+    # A layout is None when the backend has no qubits for that code, and only the data qubits when it has no ancillas
+    # for it (see compare_fez.py's code_layout). "no correction" is the qubit the circuit runs on when no code is run
     picked = default_qubits(backend, pick)
     data, ancillas = picked["data"] if data is None else data, picked["ancillas"] if ancillas is None else ancillas
     shor_data = picked["shor_data"] if shor_data is None else shor_data
     shor_ancillas = picked["shor_ancillas"] if shor_ancillas is None else shor_ancillas
     target = working_target(backend)
     best = min(range(backend.num_qubits), key=lambda q: qubit_error(target, q))
-    return {"bit/phase-flip": code_layout(backend, data, ancillas, 3, 2, "bit-flip and phase-flip"),
-            "Shor": code_layout(backend, shor_data, shor_ancillas, 9, 8, "Shor"),
+    label = backend_label(backend)
+    return {"bit/phase-flip": code_layout(backend, data, ancillas, 3, 2, "bit-flip and phase-flip", label),
+            "Shor": code_layout(backend, shor_data, shor_ancillas, 9, 8, "Shor", label),
             "no correction": (data or shor_data or [best])[0]}
 
 
 # ---- Helpers ----
-
-def layout_for(name, layouts):
-    return layouts["Shor" if name.startswith("Shor") else "bit/phase-flip"]
-
 
 def skip_unrunnable(encoded, skipped, layouts, backend, pick):
     # Moves the codes the backend can't run into skipped, with the reason: ones needing more connected qubits than
@@ -379,45 +338,17 @@ def skip_unrunnable(encoded, skipped, layouts, backend, pick):
 
 
 def on_backend(plain, encoded, skipped, backend, layouts, seed):
-    # Every circuit converted to the backend's gates and placed on its qubits.
-    # optimization_level=0 keeps every gate: otherwise the transpiler would merge the test gates into one or two.
-    # The target passed in leaves out the backend's broken connections (see working_target). Every code starts on the
-    # same qubits (layouts), so differences between the codes don't come from landing on better or worse qubits.
-    # Routing moves a code's qubits around with SWAPs, so its result is often measured on a different qubit than the
-    # one q_0 started on. As in compare_fez.py, no correction runs on the qubit each code is measured on, so both are
-    # read out on the same physical qubit (with no codes, it runs on layouts["no correction"]).
+    # Every circuit converted to the backend's gates and placed on its qubits, the way compare_fez.py's on_fez does it
+    # on Fez (see there and its transpile_all): every gate kept, every code starting on the same qubits (layouts), and
+    # no correction on the qubit each code ends up measured on (with no codes, on layouts["no correction"]).
+    # Unlike on_fez, the backend's whole target is passed in, without its broken connections (see working_target), so
+    # this works whatever the backend's 2-qubit gate is.
     # A code the transpiler can't put on the backend is moved into skipped, with the reason. This happens on Cairo:
     # some of its CX gates only work one way, and the transpiler can't turn a CX around without an H gate, which Cairo
     # doesn't have.
     # Returns the circuits, {run: circuit}, and the no-correction run each code is compared with, {code: run}
     options = dict(optimization_level=0, routing_method="sabre", seed_transpiler=seed, target=working_target(backend))
-    label = backend_label(backend)
-    coded = {}
-    for name, qc in list(encoded.items()):
-        try:
-            coded[name] = transpile(qc, initial_layout=layout_for(name, layouts)[:qc.num_qubits], **options)
-        except TranspilerError as err:
-            skipped[name] = f"the transpiler can't put it on {label}: {str(err).strip(chr(39))}"
-            del encoded[name]
-    measured_on = {name: physical_qubits(qc)[1] for name, qc in coded.items()}
-    plain_for = {name: f"no correction ({label} {q})" for name, q in measured_on.items()}
-    circuits = {f"no correction ({label} {q})": transpile(plain, initial_layout=[q], **options)
-                for q in dict.fromkeys(measured_on.values()) or [layouts["no correction"]]}
-    circuits.update(coded)
-    return circuits, plain_for
-
-
-def run_all(plain, circuits, backend, shots, seed):
-    # [(name, counts)]: the test circuit on a perfect simulator, then every circuit on the backend's noise simulator.
-    # method="statevector" runs every shot on its own: it applies the gates one by one, with random errors picked
-    # from the backend's noise for that shot, and measures at the end. Left to itself Aer would use a density matrix
-    # for the circuits with no if blocks, working out the exact probabilities and sampling every shot from them
-    runs = [("no noise", AerSimulator().run(plain, shots=shots).result().get_counts())]
-    noisy_sim = AerSimulator.from_backend(backend, method="statevector")
-    for name, circuit in circuits.items():
-        counts = noisy_sim.run(circuit, shots=shots, seed_simulator=seed).result().get_counts()
-        runs.append((f"{backend_label(backend)} noise, {name}", counts))
-    return runs
+    return transpile_all(plain, encoded, layouts, options, backend_label(backend), layouts["no correction"], skipped)
 
 
 # ---- Printing ----
@@ -444,43 +375,16 @@ def print_match(backend, data):
 
 def print_setup(backend, gate_set, num_gates, seed, mirror, shots, layouts, exact_p1, skipped, plain_for, pick,
                 given=None):
-    # given: the test circuit compare() was handed, if it wasn't made from gate_set
+    # compare_fez.py's print_setup, with the backend first and, for qubits picked "like fez", how closely their noise
+    # matches Fez's. given: the test circuit compare() was handed, if it wasn't made from gate_set
     label = backend_label(backend)
     print(f"Backend:       {label} ({backend.name}, {backend.num_qubits} qubits)")
-    if given is not None:
-        counts = ", ".join(f"{gate}:{n}" for gate, n in given.count_ops().items())
-        print(f"Given circuit: {given.size()} gates ({counts})")
-    else:
-        kind, gate_names = GATE_SETS[gate_set]
-        print(f"{kind.capitalize()} circuit: {num_gates} gates from {', '.join(gate_names)}  (seed {seed}"
-              f"{', mirrored' if mirror else ''})")
-    print(f"Shots per run: {shots}")
-    small, shor = layouts["bit/phase-flip"], layouts["Shor"]
-    print(f"{label + ' qubits:':<15}bit/phase-flip " + (f"data {small[:3]}, ancillas {small[3:]}" if small else "none"))
-    print(" " * 15 + "Shor " + (f"data {shor[:9]}, ancillas {shor[9:]}" if shor else "none"))
+    print_circuit(gate_set, num_gates, seed, mirror, shots, given)
+    print_qubits(layouts, label)
+    small = layouts["bit/phase-flip"]
     if pick == "like fez" and small and backend.name != "fake_fez":
         print_match(backend, small[:3])
-    print("Compared with:  " + ",  ".join(f"{name} -> {run}" for name, run in plain_for.items())
-          + "  (no correction runs on the qubit each code is measured on)")
-    print(f"Exact answer:  P(0) = {1 - exact_p1:.4f}   P(1) = {exact_p1:.4f}")
-    for name, err in skipped.items():
-        print(f"Skipped {name}: {err}")
-    print()
-
-
-def print_sizes(backend, circuits, exact_p1):
-    # Each transpiled circuit's size: gates (barriers left out, measurements counted), two-qubit gates, depth, and how
-    # many of each gate
-    print(f"\nTranspiled circuits on {backend_label(backend)}:")
-    size_width = max(22, max(len(name) for name in circuits) + 2)
-    print_table_header(f"  {'run':<{size_width}}{'gates':>8}{'2-qubit':>9}{'depth':>8}   gate counts")
-    for name, circuit in circuits.items():
-        counts = " ".join(f"{gate}:{n}" for gate, n in circuit.count_ops().items() if gate != "barrier")
-        print(f"  {name:<{size_width}}{circuit.size():>8}{circuit.num_nonlocal_gates():>9}{circuit.depth():>8}"
-              f"   {counts}")
-    if 0.35 < exact_p1 < 0.65:
-        print("\nNote: the exact answer is close to 50/50, and noise tends to push results toward 50/50,")
-        print("so noise is hard to see here. Try another SEED or set MIRROR = True (exact answer is then always 0).")
+    print_compared_with(plain_for, exact_p1, skipped)
 
 
 def compare(backend="fez", num_gates=1000, shots=1000, seed=None, gate_set="all", mirror=False, codes=DEFAULT_CODES,
@@ -495,8 +399,8 @@ def compare(backend="fez", num_gates=1000, shots=1000, seed=None, gate_set="all"
     # Any qubits left as None are picked for the backend the way pick says: "best" or "like fez" (see PICKS).
     # show=False skips the printing. Returns each run's error, {run: |P(1) - exact P(1)|}, e.g. for
     # "Torino noise, no correction (Torino 12)" and "Torino noise, bit-flip, Toffoli", and the no-correction run each
-    # code is compared with, e.g. {"bit-flip, Toffoli": "no correction (Torino 12)"} (src/pay_off/pay_off.py uses both).
-    # Codes the backend can't run are left out of both
+    # code is compared with, e.g. {"bit-flip, Toffoli": "no correction (Torino 12)"} (find_pay_off in
+    # src/pay_off/pay_off_common.py uses both). Codes the backend can't run are left out of both
     if seed is None:
         seed = random.randrange(10**6)
     given = circuit
@@ -508,16 +412,17 @@ def compare(backend="fez", num_gates=1000, shots=1000, seed=None, gate_set="all"
     encoded, skipped = encode_all(circuit, codes)
 
     backend = get_backend(backend)
+    label = backend_label(backend)
     layouts = set_layout(backend, data_qubits, ancilla_qubits, shor_data_qubits, shor_ancilla_qubits, pick)
     skip_unrunnable(encoded, skipped, layouts, backend, pick)
     circuits, plain_for = on_backend(plain, encoded, skipped, backend, layouts, seed)
-    runs = run_all(plain, circuits, backend, shots, seed)
+    runs = run_all(plain, circuits, backend, shots, seed, label, method=SIMULATION_METHOD)
 
     if show:
         print_setup(backend, gate_set, num_gates, seed, mirror, shots, layouts, exact_p1, skipped, plain_for, pick,
                     given)
         print_results(runs, shots, exact_p1)
-        print_sizes(backend, circuits, exact_p1)
+        print_sizes(circuits, exact_p1, label)
     return {name: abs(prob_one(counts)[0] / shots - exact_p1) for name, counts in runs}, plain_for
 
 

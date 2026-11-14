@@ -24,23 +24,23 @@ from qiskit import QuantumCircuit
 from qiskit_aer import AerSimulator
 from qiskit_aer.noise import NoiseModel, pauli_error
 
+# The circuits and helpers live in src/noisy, and the code for printing, CSV files and plots in src/output_tools
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(HERE, "..", "noisy"))
+sys.path.insert(0, os.path.join(HERE, "..", "output_tools"))
 from bit_flip_encoded import bit_flip_encoded
 from bit_flip_toffoli import bit_flip_toffoli
 from fez_common import prob_one
+from output_tools import COLORS, INK, MUTED, print_table_header, pyplot, save_plot, style, write_csv
 from phase_flip_encoded import phase_flip_encoded
 from phase_flip_toffoli import phase_flip_toffoli
-
-# The code for printing, CSV files and plots lives in src/output_tools
-HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(HERE, "..", "output_tools"))
-from output_tools import COLORS, INK, MUTED, print_table_header, pyplot, save_plot, style, write_csv
 
 # Output folders next to this file, so the results land in the same place from any working directory
 CSV_DIR = os.path.join(HERE, "csvs")
 IMAGE_DIR = os.path.join(HERE, "images")
 
 # Every run that can be tested: the code (None for no correction) and the error it corrects. A code's color in the
-# plot follows its place here. To add a code, add it here
+# plots follows its place here (see code_color). To add a code, add it here
 CODES = {
     "no correction": (None, None),
     "bit-flip, Toffoli": (bit_flip_toffoli, "X"),
@@ -49,6 +49,12 @@ CODES = {
     "phase-flip, if blocks": (phase_flip_encoded, "Z"),
 }
 DEFAULT_CODES = ("no correction", "bit-flip, Toffoli", "phase-flip, Toffoli")   # run() runs these unless told otherwise
+
+
+def code_color(name):
+    # A code's color follows its place in CODES, in this file's plot and in noise_sweep.py's
+    return COLORS[list(CODES).index(name) % len(COLORS)]
+
 
 # Each kind of run: the formula as printed, and the formula itself
 FORMULAS = {
@@ -177,7 +183,7 @@ def plot(rows, path):
     plt = pyplot()
     errors = list(dict.fromkeys(r["error"] for r in rows))
     codes = list(dict.fromkeys(r["code"] for r in rows))
-    colors = {name: COLORS[list(CODES).index(name) % len(COLORS)] if name in CODES else MUTED for name in codes}
+    colors = {name: code_color(name) for name in codes}
     p_max = max(r["p"] for r in rows)
     fine = [p_max * i / 200 for i in range(201)]
 

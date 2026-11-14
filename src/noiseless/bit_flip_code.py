@@ -58,10 +58,11 @@ def bit_flip_code(state_prep, error_qubits=None):
 SYNDROME_TO_QUBIT = {"00": None, "01": 0, "11": 1, "10": 2}
 
 
-def print_correction(syndrome):
-    # syndrome is the measured "a_1 a_0" string, e.g. "01"
+def print_correction(syndrome, gate="X"):
+    # syndrome is the measured "a_1 a_0" string, e.g. "01". gate is the gate that undoes the error: X here.
+    # phase_flip_code.py uses this too, with Z: its syndrome points to a qubit the same way
     qbit = SYNDROME_TO_QUBIT[syndrome]
     if qbit is None:
         print(f"  syndrome is {syndrome} so no correction is needed")
     else:
-        print(f"  syndrome is {syndrome} so apply X gate to qubit q{qbit} to correct error")
+        print(f"  syndrome is {syndrome} so apply {gate} gate to qubit q{qbit} to correct error")

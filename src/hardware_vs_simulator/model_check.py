@@ -9,7 +9,7 @@ import statistics
 from qiskit_aer.noise.device import basic_device_readout_errors
 from qiskit_ibm_runtime.fake_provider import FakeFez
 
-from noise_common import CSV_DIR, FAIL_COLOR, IMAGE_DIR, load_calibration, ratio
+from noise_common import CSV_DIR, DEFAULT_CALIBRATION_FILE, FAIL_COLOR, IMAGE_DIR, load_calibration, ratio
 from output_tools import COLORS, INK, MUTED, print_wrapped, pyplot, save_plot, style, write_csv, write_text
 
 # Output folder for good_qubits.md, next to this file
@@ -389,8 +389,8 @@ def run(qubits=None, calibration_file=None, model_csv_file=None, cz_csv_file=Non
 if __name__ == "__main__":
     # ---- Settings: change these to run a different comparison ----
     QUBITS = None              # list of Fez qubits to check, e.g. [0, 1, 2]; None checks all 156
-    # Real calibration file downloaded from IBM Quantum
-    CALIBRATION_FILE = os.path.join(CSV_DIR, "ibm_fez_calibrations_2026-10-24T18_48_15Z.csv")
+    # Real calibration file downloaded from IBM Quantum. The default is set in noise_common.py, for every script here
+    CALIBRATION_FILE = DEFAULT_CALIBRATION_FILE
     # Output files; None skips any of them
     MODEL_CSV_FILE = os.path.join(CSV_DIR, "model_check.csv")          # simulator vs real, per qubit
     CZ_CSV_FILE = os.path.join(CSV_DIR, "model_check_cz.csv")          # simulator vs real, per CZ connection

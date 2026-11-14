@@ -1,7 +1,8 @@
 # noise_common.py
-# Shared code for comparing the Fez noise simulator (FakeFez) with the real ibm_fez: output folders, the Y gate
-# circuit, and reading a calibration file downloaded from IBM Quantum. The code for printing, CSV files and plots is
-# in src/output_tools, which importing this file also makes available to the scripts below.
+# Shared code for comparing the Fez noise simulator (FakeFez) with the real ibm_fez: output folders, which calibration
+# file to compare with, the Y gate circuit, and reading a calibration file downloaded from IBM Quantum. The code for
+# printing, CSV files and plots is in src/output_tools, which importing this file also makes available to the scripts
+# below.
 # The scripts that use it:
 #   model_check.py              every number the simulator's noise is built from vs the real calibration, per qubit
 #   y_gate_test.py              a Y gate circuit on every qubit: runs the three below and compares them
@@ -24,6 +25,10 @@ from output_tools import COLORS, read_csv
 # Output folders next to this file, so the results land in the same place from any working directory
 CSV_DIR = os.path.join(HERE, "csvs")
 IMAGE_DIR = os.path.join(HERE, "images")
+# The real ibm_fez calibration file every script here compares with unless its settings name another: downloaded
+# from IBM Quantum, with the time it was downloaded in its name. To compare with a newer one, save it in csvs/ and
+# change the name here
+DEFAULT_CALIBRATION_FILE = os.path.join(CSV_DIR, "ibm_fez_calibrations_2026-10-24T18_48_15Z.csv")
 
 FAIL_COLOR = COLORS[7]   # points that don't agree or are far off
 

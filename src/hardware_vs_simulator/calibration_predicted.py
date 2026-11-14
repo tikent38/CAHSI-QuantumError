@@ -10,7 +10,7 @@ from qiskit.quantum_info import SuperOp, average_gate_fidelity
 from qiskit_aer.noise import depolarizing_error, thermal_relaxation_error
 from qiskit_ibm_runtime.fake_provider import FakeFez
 
-from noise_common import CSV_DIR, fez_ops, ideal_result, load_calibration
+from noise_common import DEFAULT_CALIBRATION_FILE, fez_ops, ideal_result, load_calibration
 from simulator_predicted import aer_noise, predicted_error
 
 
@@ -29,7 +29,7 @@ def calibration_predicted(calibration_file, qubits, num_gates, start_bit):
 def gate_channel(t1_us, t2_us, gate_ns, gate_error):
     # The single-qubit gate noise built from a qubit's T1, T2, gate length and gate error, the same way Aer builds
     # the simulator's: T1/T2 relaxation for the length of the gate, plus depolarizing noise for whatever part of the
-    # gate error T1/T2 don't explain (none if T1/T2 alone are already worse). T2 is capped at 2 * T1 
+    # gate error T1/T2 don't explain (none if T1/T2 alone are already worse). T2 is capped at 2 * T1
     t1, t2, time = t1_us * 1e-6, min(t2_us, 2 * t1_us) * 1e-6, gate_ns * 1e-9
     relax = thermal_relaxation_error(t1, t2, time)
     relax_fid = average_gate_fidelity(relax)
@@ -69,8 +69,8 @@ if __name__ == "__main__":
     QUBITS = None              # list of Fez qubits, e.g. [0, 1, 2]; None uses all 156
     NUM_GATES = 150            # how many Y gates in a row on each qubit
     START_BIT = 0              # start each qubit in |0> or |1>
-    # Real calibration file downloaded from IBM Quantum
-    CALIBRATION_FILE = os.path.join(CSV_DIR, "ibm_fez_calibrations_2026-10-24T18_48_15Z.csv")
+    # Real calibration file downloaded from IBM Quantum. The default is set in noise_common.py, for every script here
+    CALIBRATION_FILE = DEFAULT_CALIBRATION_FILE
 
     backend = FakeFez()
     qubits = QUBITS if QUBITS is not None else list(range(backend.num_qubits))

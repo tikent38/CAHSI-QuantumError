@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 import qiskit
 import qiskit_aer
 import qiskit_ibm_runtime
-from qiskit.transpiler import Target, generate_preset_pass_manager
+from qiskit.transpiler import generate_preset_pass_manager
 from qiskit_aer import AerSimulator
 from qiskit_ibm_runtime import QiskitRuntimeService
 from qiskit_ibm_runtime.executor_sampler import Sampler
@@ -21,7 +21,7 @@ from qiskit_ibm_runtime.executor_sampler import Sampler
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "noisy"))
 sys.path.insert(0, os.path.join(HERE, "..", "output_tools"))
-from fez_common import DEFAULT_DATA_QUBITS, physical_qubits, prob_one, y_circuit
+from fez_common import DEFAULT_DATA_QUBITS, physical_qubits, prob_one, working_target, y_circuit
 from output_tools import (COLORS, GRID, INK, MUTED, label_above, print_table_header, pyplot, read_csv, save_plot, style,
                           write_csv, write_text)
 
@@ -34,7 +34,9 @@ def build_jobs(code_name, code, num_gates, backend, seed, layout, start_states=(
     # The transpiled circuits to run (no correction, then the code, for each starting state), in order,
     # with what is needed to read their results.
     # layout = starting qubits for q_0, q_1, q_2; None uses fez_common.py's DEFAULT_DATA_QUBITS, so the
-    # hardware runs on the same qubits as the simulations in compare_fez.py
+    # hardware runs on the same qubits as the simulations in compare_fez.py.
+    # The transpiler settings are the simulations' too (see compare_backends.py's on_backend), with the same target:
+    # fez_common.py's working_target, the machine's target without its broken connections
     options = dict(optimization_level=0, routing_method="sabre", seed_transpiler=seed, target=working_target(backend))
     if layout is None:
         layout = list(DEFAULT_DATA_QUBITS)
@@ -98,26 +100,6 @@ def get_backend(backend_name, account):
 
 
 # ---- Helpers: the circuits and the job ----
-
-def working_target(backend, max_error=0.5):
-    # The machine's target (its gates, connections and error rates) without connections whose error is max_error
-    # or more. Real machines already leave out faulty qubits and connections, but fake backends list broken
-    # connections with an error of 1.0
-    target = backend.target
-    kept = Target(num_qubits=target.num_qubits, dt=target.dt, granularity=target.granularity,
-                  min_length=target.min_length, pulse_alignment=target.pulse_alignment,
-                  acquire_alignment=target.acquire_alignment, qubit_properties=target.qubit_properties,
-                  concurrent_measurements=target.concurrent_measurements)
-    for name in target.operation_names:
-        props = target[name]
-        if props is None or list(props) == [None]:
-            props = None   # available on every qubit (e.g. if_else, barrier)
-        else:
-            props = {qargs: p for qargs, p in props.items()
-                     if len(qargs) < 2 or p is None or p.error is None or p.error < max_error}
-        kept.add_instruction(target.operation_from_name(name), props, name=name)
-    return kept
-
 
 def to_isa(circuit, options, **extra):
     # The circuit in the machine's own gates and connections (an "ISA" circuit), ready to run on it

@@ -17,7 +17,7 @@ from qiskit_ibm_runtime.fake_provider import FakeFez
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "noisy"))
 sys.path.insert(0, os.path.join(HERE, "..", "output_tools"))
-from fez_common import prob_one, y_circuit
+from fez_common import FEZ_BASIS_GATES, prob_one, y_circuit
 from output_tools import (COLORS, INK, MUTED, label_above, print_table_header, pyplot, qubit_axis, save_plot, style,
                           write_csv)
 
@@ -28,7 +28,6 @@ IMAGE_DIR = os.path.join(HERE, "images", "y_gate_noise_sources")
 # On Fez a Y gate becomes RZ + X. RZ is done in software (it only changes how later pulses are timed), so it takes
 # no time and has no error: X is the only gate in these circuits that picks up noise
 NOISY_GATE = "x"
-BASIS_GATES = ["cz", "id", "rz", "sx", "x"]
 
 
 # ---- One noise model per noise source ----
@@ -45,7 +44,7 @@ def all_sources_noise(backend, qubits):
 def readout_noise(backend, qubits):
     # Readout error: the measurement reports the wrong bit. It happens once, at the end, so it doesn't grow with the
     # number of gates. Fez lists one error rate per qubit, used for both 0 -> 1 and 1 -> 0
-    noise = NoiseModel(basis_gates=BASIS_GATES)
+    noise = NoiseModel(basis_gates=FEZ_BASIS_GATES)
     for q in qubits:
         p = backend.target["measure"][(q,)].error
         noise.add_readout_error(ReadoutError([[1 - p, p], [p, 1 - p]]), [q])
@@ -55,7 +54,7 @@ def readout_noise(backend, qubits):
 def gate_noise(backend, qubits):
     # Depolarizing gate error: after each X gate the qubit gets a random X, Y or Z error. Stands in for every gate
     # imperfection that isn't T1/T2. X and Y errors flip the result; Z doesn't
-    noise = NoiseModel(basis_gates=BASIS_GATES)
+    noise = NoiseModel(basis_gates=FEZ_BASIS_GATES)
     for q in qubits:
         p = depolarizing_param(backend.target, q)
         if p > 0:
@@ -65,7 +64,7 @@ def gate_noise(backend, qubits):
 
 def t1_noise(backend, qubits):
     # T1 (energy decay): during each X gate the qubit can fall from |1> to |0>. Only matters while the qubit is in |1>
-    noise = NoiseModel(basis_gates=BASIS_GATES)
+    noise = NoiseModel(basis_gates=FEZ_BASIS_GATES)
     for q in qubits:
         noise.add_quantum_error(amplitude_damping_error(t1_decay_chance(backend.target, q)), NOISY_GATE, [q])
     return noise
@@ -74,7 +73,7 @@ def t1_noise(backend, qubits):
 def t2_noise(backend, qubits):
     # T2 (dephasing): during each X gate the qubit loses phase information. Y gates only move the qubit between |0>
     # and |1>, which have no phase to lose, so this should do (almost) nothing here
-    noise = NoiseModel(basis_gates=BASIS_GATES)
+    noise = NoiseModel(basis_gates=FEZ_BASIS_GATES)
     for q in qubits:
         p = t2_dephasing_param(backend.target, q)
         if p > 0:

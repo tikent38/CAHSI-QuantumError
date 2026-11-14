@@ -2,7 +2,9 @@
 # The code pay_off.py and pay_off_h.py share: counting up through numbers of gates until each error-correction code
 # pays off (starts having a smaller error than no correction IN_A_ROW times in a row), printing the results, plotting
 # them, writing them to CSV files, and doing all of that on one backend after another. Those two files only say which
-# experiments to run (see Experiment), with which codes, and hold the settings
+# experiments to run (see Experiment), with which codes, and hold the settings.
+# pay_off_parallel.py runs pay_off.py's experiments through run() here, one process each, and pay_off_report.py reads
+# the CSV files this writes (see backend_folder for where they go)
 import os
 import sys
 from typing import Callable, NamedTuple

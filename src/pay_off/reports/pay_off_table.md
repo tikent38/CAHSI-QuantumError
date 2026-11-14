@@ -2,10 +2,10 @@
 
 - Pays off: the first number of gates where a code beats no correction 5 times in a row, measured on the same qubit
 - Pay-off cells: `even / odd` numbers of logical gates (the test circuit's gates, before encoding). `>N` means it still hadn't paid off when the sweep stopped at N.
-- Transpiled gates and depth: the code's whole circuit at that pay-off point, after transpiling to the backend, counted the way `print_sizes` in `src/noisy/compare_backends.py` does. Gates include `rz` and measurements, and leave out barriers. `—` means there was no pay-off to measure
+- Transpiled gates and depth: the code's whole circuit at that pay-off point, after transpiling to the backend, counted the way `print_sizes` in `src/noisy/compare_fez.py` does. Gates include `rz` and measurements, and leave out barriers. `—` means there was no pay-off to measure
 - Noise: ×10⁻³, written as `bit flip per X gate / phase flip per X gate / readout error` for each qubit. `2q` is the 2-qubit gate error on q0–q1, then q0–q2
 - Qubits: the codes are the Toffoli versions, so bit-flip and phase-flip use only the 3 qubits listed. The result and the no-correction run are both measured on q2
-- Source: `src/pay_off/parallel_runs/csvs/` (`pay_off_parallel.py`, 1500 gates at most, 5000 shots, seed 3). Noise is from `noise_levels` in `src/noisy/compare_backends.py`, on the fake backends in qiskit_ibm_runtime 0.50.0
+- Source: `src/pay_off/parallel_runs/csvs/` (`pay_off_parallel.py`, 1500 gates at most, 5000 shots, seed 3), put together by `src/pay_off/pay_off_report.py`. Noise is from `noise_levels` in `src/noisy/compare_backends.py`, on the fake backends in qiskit_ibm_runtime 0.50.0
 - Left out: runs with only Z gates, runs with H gates, and the Shor code. Backends are sorted roughly from earliest pay-off to latest
 
 | Backend | Qubits q0, q1, q2 with noise | Gate sequence | Code | Pays off at, logical gates (even / odd) | Transpiled gates (even / odd) | Transpiled depth (even / odd) |

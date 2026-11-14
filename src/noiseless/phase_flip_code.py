@@ -4,6 +4,9 @@
 # See notes/error_codes.md for the theory and syndrome table.
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 
+# The syndrome points to a qubit the same way as in the bit-flip code, so reuse its table and its printing
+from bit_flip_code import print_correction as print_bit_flip_correction
+
 
 def phase_flip_code(state_prep, error_qubits=None):
     # The phase-flip code protecting the 1-qubit state that state_prep makes, with a Z error on each qubit in
@@ -61,14 +64,8 @@ def phase_flip_code(state_prep, error_qubits=None):
     return qc
 
 
-# Which data qubit each syndrome (a_1 a_0) says flipped
-SYNDROME_TO_QUBIT = {"00": None, "01": 0, "11": 1, "10": 2}
-
-
 def print_correction(syndrome):
-    # syndrome is the measured "a_1 a_0" string, e.g. "01"
-    qbit = SYNDROME_TO_QUBIT[syndrome]
-    if qbit is None:
-        print(f"  syndrome is {syndrome} so no correction is needed")
-    else:
-        print(f"  syndrome is {syndrome} so apply Z gate to qubit q{qbit} to correct error")
+    # syndrome is the measured "a_1 a_0" string, e.g. "01". It says which data qubit had its sign flipped the same way
+    # the bit-flip code's says which one flipped (SYNDROME_TO_QUBIT in bit_flip_code.py), and the gate that undoes it
+    # is Z instead of X
+    print_bit_flip_correction(syndrome, gate="Z")

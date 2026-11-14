@@ -12,7 +12,7 @@ import statistics
 from qiskit_ibm_runtime.fake_provider import FakeFez
 
 from calibration_predicted import calibration_predicted, check_gate_channel
-from noise_common import CSV_DIR, FAIL_COLOR, IMAGE_DIR, ideal_result, ratio
+from noise_common import CSV_DIR, DEFAULT_CALIBRATION_FILE, FAIL_COLOR, IMAGE_DIR, ideal_result, ratio
 from output_tools import COLORS, INK, MUTED, pyplot, qubit_axis, save_plot, style, write_csv
 from simulator_measured import simulator_measured
 from simulator_predicted import simulator_predicted
@@ -113,8 +113,8 @@ if __name__ == "__main__":
     START_BIT = 0              # start each qubit in |0> or |1>
     SHOTS = 10000              # shots per qubit
     SEED = 3                   # sets the simulator's randomness (same SEED = same results)
-    # Real calibration file downloaded from IBM Quantum
-    CALIBRATION_FILE = os.path.join(CSV_DIR, "ibm_fez_calibrations_2026-10-24T18_48_15Z.csv")
+    # Real calibration file downloaded from IBM Quantum. The default is set in noise_common.py, for every script here
+    CALIBRATION_FILE = DEFAULT_CALIBRATION_FILE
     # Output files; None skips any of them
     CSV_FILE = os.path.join(CSV_DIR, f"y_gate_test_{NUM_GATES}.csv")
     PLOT_FILE = os.path.join(IMAGE_DIR, f"y_gate_test_{NUM_GATES}.png")
