@@ -74,10 +74,13 @@ CAHSI-QuantumError/
     │   ├── images/
     │   ├── parallel_runs/            # pay_off_parallel.py results: csvs/, images/, logs/, jobs/
     │   └── reports/                  # pay_off_table.md: pay-off points, gate counts and depth by backend
-    ├── qubit_mapping/                # Fez simulator only: which qubits a circuit runs on, against which code it uses
+    ├── qubit_mapping/                # which qubits a circuit runs on, against which code it uses
+    │   ├── mapping_common.py         # shared by the four scripts below: circuits, the simulator, text, CSV rows, plots
     │   ├── mapping_sweep.py          # no correction on every Fez qubit, the Toffoli codes on every placement
     │   ├── mapping_pay_off.py        # each option's best and worst mappings, and pay-off points between them
-    │   ├── csvs/
+    │   ├── mapping_hardware.py       # the best and worst mappings on the real ibm_fez, ranked from a calibration file
+    │   ├── mapping_hardware_pay_off.py # mapping_pay_off.py's plots for the ibm_fez run, simulator against machine
+    │   ├── csvs/                     # results, and the ibm_fez calibration file mapping_hardware.py ranks from
     │   ├── images/
     │   └── reports/                  # mapping_sweep_<gate set>_<gates>.md and mapping_pay_off_<gate set>_<gates>.md
     ├── output_tools/                 # shared by every script that writes files
@@ -113,7 +116,7 @@ What each directory is for:
 - **`src/noisy/`**: The codes built to protect any 1-qubit circuit, run on a noise simulator next to the same circuit with no correction.
 - **`src/theory_validation/`**: Runs the codes under noise whose strength is set by hand, instead of a backend's fixed noise. Checks their failure rates against the theory formulas, and sweeps the strength of X, Z, depolarizing and measurement noise to see when a code helps.
 - **`src/pay_off/`**: Runs `compare_backends.py` at many numbers of gates for the chosen backends and gate sets, and plots the error with no correction next to the Toffoli bit-flip and phase-flip codes, to show where each code starts paying off.
-- **`src/qubit_mapping/`**: Simulator only: runs one test circuit with no correction on every Fez qubit, and with the Toffoli bit-flip and phase-flip codes on every way of placing their 3 qubits on connected Fez qubits. Shows how much of the difference in logical error comes from the mapping, and how much from the choice of code. Then lists each option's best and worst mappings, and finds when the codes pay off on good or bad qubits against no correction on good or bad qubits.
+- **`src/qubit_mapping/`**: Runs one test circuit on the simulator with no correction on every Fez qubit, and with the Toffoli bit-flip and phase-flip codes on every way of placing their 3 qubits on connected Fez qubits. Shows how much of the difference in logical error comes from the mapping, and how much from the choice of code. Then lists each option's best and worst mappings, and finds when the codes pay off on good or bad qubits against no correction on good or bad qubits. Finally it runs the best and worst mappings on the real ibm_fez, ranked from a calibration file, to see whether the mapping matters as much there.
 - **`src/output_tools/`**: Shared code every script uses for printing tables, writing CSV and text files, and drawing and saving plots, so they all look the same.
 - **`src/real_hardware_runs/`**: Runs the bit-flip and phase-flip codes on the real ibm_fez through IBM Quantum, next to the same circuits on the simulator. Saves every result and job ID.
 - **`src/simulator_noise_sources/`**: Simulator only: splits each Fez qubit's error into its sources (readout, gate, T1, T2) to show which ones matter most.
@@ -305,6 +308,61 @@ SEED = 3            # the transpiler seed: must be the one the sweep was run wit
 - Results: `csvs/mapping_pay_off_<gate set>_<gates>_ranks.csv` (the lists), `_points.csv` (every pay-off point, from each starting state), `_curves.csv` (every error at every number of gates, from each starting state), `reports/mapping_pay_off_<gate set>_<gates>.md`, and `images/mapping_pay_off_<gate set>_<gates>_start_0.png` and `_start_1.png`.
 
 The results for 500 Y gates are in [`src/qubit_mapping/reports/mapping_pay_off_y_500.md`](src/qubit_mapping/reports/mapping_pay_off_y_500.md).
+
+### The best and worst mappings on the real ibm_fez
+
+```bash
+python src/qubit_mapping/mapping_hardware.py
+```
+
+`mapping_pay_off.py` on the real machine, at 200 Y gates. It ranks every mapping by the error the simulator predicts for it from a real ibm_fez calibration file. Then it runs the best and worst mappings of each option on ibm_fez in one job, and compares what the machine measures with what the simulator predicted. The report answers two questions: do the mappings matter as much on the machine as on the simulator, and which matters more there, picking good qubits or using a code? It connects to IBM Quantum like the scripts in `src/real_hardware_runs/` (see "Real hardware runs" below).
+
+```python
+CALIBRATION_FILE = os.path.join(CSV_DIR, "ibm_fez_calibrations_2026-11-13T16_27_59Z.csv")   # what the ranking uses
+GATE_SET = "y"            # the test circuit
+NUM_GATES = 200           # gates in the test circuit
+START_STATES = [0, 1]     # every mapping runs once from each; its error is the average over them
+TOP = 10                  # how many best and worst mappings of each option the report lists
+COMPARE = 3               # how many of each list run on the machine, as in mapping_pay_off.py's match-ups (1 to 4)
+HEAD_TO_HEAD = True       # also run no correction on the Fez qubit each code placement is read out on
+SHOTS = 2000              # shots per circuit
+BACKEND_NAME = "ibm_fez"  # "fake_fez" tries the whole script on your own machine, with no account or QPU time
+RESUME = False            # True gets the results of the job this script submitted last, instead of submitting a new one
+```
+
+- **The ranking.** This is `mapping_sweep.py`'s own sweep, run on FakeFez with every noise number replaced by the calibration file's: T1, T2, gate errors and lengths, CZ errors and lengths, and the two readout errors (0 read as 1, and 1 read as 0). FakeFez's own numbers are from February 2025. Qubits with numbers missing from the file (72, 148 and 149 in the 2026-11-13 file) are left out, as are connections with no CZ error. The ranking takes a few minutes, before anything is submitted.
+- **What runs.** The top 3 of each option's best and worst lists run on the machine. With `HEAD_TO_HEAD`, no correction also runs on the qubit each of those code placements is read out on. Each mapping runs once from `|0>` and once from `|1>`, which makes about 50 circuits in one job. Every run records the Fez qubits its circuit used and the one it was read out on, in the printed plan, the CSV file and the report.
+- **Submitting.** The script submits the job as soon as the ranking is done: there is no QPU-time estimate, no prompt and no time cap. The first job, 44 circuits of 2000 shots, used 26 s of QPU time; the Open plan gives 10 minutes per 28-day rolling window. The report records the time IBM charged.
+- **Running it again.** Every run submits a new job. The earlier job's `csvs/` files are kept, renamed with its job ID; its report and plot are replaced. The job ID is saved in `csvs/<name>_job.json` as soon as the job is submitted, so if you stop waiting for the results (Ctrl+C), set `RESUME = True` and run the script again to get them. Once the results are saved, `RESUME = True` remakes the report and plot without contacting IBM.
+- **A fresh calibration file.** IBM recalibrates the machine every day and its qubits drift, so the ranking is best with a calibration file downloaded just before submitting. Download it from ibm_fez's page on IBM Quantum, save it in `src/qubit_mapping/csvs/`, and point `CALIBRATION_FILE` at it.
+- **Results**, with `<name>` standing for `mapping_hardware_ibm_fez_y_200`:
+  - `csvs/<name>.csv`: every circuit, with its qubits, counts, and measured and predicted error
+  - `csvs/<name>_job.json`: the job and its plan
+  - `csvs/<name>_predicted.csv`: every mapping's predicted error
+  - `csvs/<name>_ranks.csv`: the lists
+  - `reports/<name>.md`: the report
+  - `images/<name>.png`: the plot
+
+### Plots of the ibm_fez run, as in mapping_pay_off.py
+
+```bash
+python src/qubit_mapping/mapping_hardware_pay_off.py
+```
+
+Draws `mapping_pay_off.py`'s plots for the job `mapping_hardware.py` ran: one plot per starting state, with a panel for each match-up, on the mappings that ran. In each panel, the lines are the simulator's error at every number of gates, with the noise of the calibration file the job was ranked from. Beside them, each mapping is shown at 200 gates: the simulator's error (hollow dot) and what ibm_fez measured (filled dot, with one standard deviation of shot noise). The machine ran at 200 gates only, so it gives one point per mapping and no pay-off points.
+
+It reads only the job's saved files and its calibration file, so it never contacts IBM and uses no QPU time. It takes under a minute. Before plotting, it rebuilds the job's calibrated simulator and checks that it gives every circuit that ran the error the job predicted for it.
+
+```python
+GATE_SET = "y"            # which mapping_hardware.py job to plot: the same three settings as there
+NUM_GATES = 200
+BACKEND_NAME = "ibm_fez"
+MAX_GATES = 400           # where the simulator's lines end
+```
+
+- Results: `csvs/mapping_hardware_pay_off_ibm_fez_y_200_curves.csv` (the simulator's error at every number of gates, from each starting state), `reports/mapping_hardware_pay_off_ibm_fez_y_200.md`, and `images/mapping_hardware_pay_off_ibm_fez_y_200_start_0.png` and `_start_1.png`.
+
+The plots for job `dbu8rr8vv3fc73c0vg6g` are in [`src/qubit_mapping/reports/mapping_hardware_pay_off_ibm_fez_y_200.md`](src/qubit_mapping/reports/mapping_hardware_pay_off_ibm_fez_y_200.md).
 
 ## Real hardware runs
 
