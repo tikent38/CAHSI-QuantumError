@@ -21,31 +21,21 @@
 #     good and bad qubits is the point here
 #   - the errors are exact, as in mapping_sweep.py (the exact chance of reading 1, with the readout error added), so
 #     there is no shot noise, and the pay-off point is found for each of the sweep's starting states
-#
-# Why the errors at every number of gates are quick to get: the test gates each act on one qubit, so the transpiler
-# routes a circuit the same way however many there are, and n of them on one Fez qubit act as that qubit's noisy
-# channel for one gate (the gate followed by its Fez error, the way Aer applies it) n times over. So each mapping is
-# transpiled once with one round of the gate set's gates, and for each number of gates that section of the circuit is
-# swapped for its channel to the matching power, which Aer runs along with the rest of the circuit and its noise.
-# Checked against running the full circuits on Aer (the same to 1e-14), and the script checks its own errors at the
-# sweep's number of gates against the sweep's CSV file before using them
 import os
-import sys
 
 import numpy as np
 from qiskit.quantum_info import Kraus, Operator, Statevector, SuperOp
-from qiskit_aer import AerSimulator
-from qiskit_aer.noise.device import basic_device_gate_errors, basic_device_readout_errors
+from qiskit_aer.noise.device import basic_device_gate_errors
 from qiskit_ibm_runtime.fake_provider import FakeFez
 
-# The sweep's code (and through it the codes and Fez helpers in src/noisy and the output code in src/output_tools),
-# and the pay-off rules in src/pay_off
-HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(HERE, "..", "pay_off"))
-from mapping_sweep import (CHUNK, CODES, CSV_DIR, IMAGE_DIR, OPTION_COLORS, OPTIONS, REPORT_DIR, log_axis,
-                           mapping_text, md_table, run_batch, short_name, states_text, test_versions)
-from compare_fez import GATE_SETS, on_fez, test_circuit
-from output_tools import INK, MUTED, pyplot, read_csv, save_plot, style, write_csv, write_text
+# The code the mapping scripts share (importing it also puts src/noisy, src/output_tools and src/pay_off on the import
+# path), and the name of the sweep's files
+from mapping_common import (CODES, CSV_DIR, IMAGE_DIR, OPTION_COLORS, OPTIONS, REPORT_DIR, heading, log_axis,
+                            log_limits, mapping_cells, mapping_circuits, mapping_text, md_table, noise_simulator,
+                            run_batch, save_report, short_name, states_text)
+from mapping_sweep import sweep_name
+from compare_fez import GATE_SETS, test_circuit
+from output_tools import INK, MUTED, pyplot, read_csv, save_plot, style, write_csv
 from pay_off import STEPS
 from pay_off_common import IN_A_ROW
 
@@ -56,25 +46,46 @@ MATCHUPS = [
     ("best no correction vs best codes", "best", "best"),
     ("worst no correction vs worst codes", "worst", "worst"),
 ]
-# In the plot, each option keeps its color, and its 1st, 2nd, ... mapping in a match-up gets these line styles
+KINDS = ("best", "worst")   # the two lists of each option's mappings (see lists)
+# In the plots, each option keeps its color, and its 1st, 2nd, ... mapping in a match-up gets these line styles
 LINE_STYLES = ["-", "--", ":", "-."]
+RANKS = ("1st", "2nd", "3rd", "4th")
 RANK_COLUMNS = ["option", "list", "rank", "q0", "q1", "q2", "error"]
 POINT_COLUMNS = ["matchup", "start", "code", "q0", "q1", "q2", "code_error", "no_correction_qubit",
                  "no_correction_error", "pays_off_at_gates"]
 CURVE_COLUMNS = ["option", "q0", "q1", "q2", "start", "gates", "error"]
 
 
-# ---- The sweep's results ----
+# ---- The settings ----
 
-def sweep_path(gate_set, num_gates, csv_dir):
-    return os.path.join(csv_dir, f"mapping_sweep_{gate_set}_{num_gates}.csv")
+def gate_counts(gate_set, max_gates):
+    # The numbers of gates the errors are worked out at, 0 to max_gates in steps of pay_off.py's STEPS for the gate
+    # set, and the step. curves gets them by repeating one round of the gate set's gates, so the gate set must repeat
+    # and the step must be a whole number of rounds
+    kind, gates = GATE_SETS[gate_set]
+    if kind != "repeating":
+        raise ValueError(f"gate set '{gate_set}' is random, so its gates can't be counted up by repeating one round; "
+                         "use a repeating one (x, y, z, id, repeat)")
+    step = STEPS.get(gate_set, 20)
+    if step % len(gates):
+        raise ValueError(f"the step ({step}) must be a whole number of rounds of {len(gates)} gates")
+    return list(range(0, max_gates + 1, step)), step
 
+
+def check_compare(compare, top):
+    # compare, how many of each list go into the match-ups, must be from 1 to top, and the plots' line styles can only
+    # tell 4 apart
+    if not 1 <= compare <= min(top, len(LINE_STYLES)):
+        raise ValueError(f"compare must be from 1 to {min(top, len(LINE_STYLES))}, got {compare}")
+
+
+# ---- The sweep's results, and the lists ----
 
 def load_sweep(gate_set, num_gates, csv_dir):
     # Each mapping's error in the sweep, averaged over the starting states: {option: {mapping: error}}, with mapping
     # (q,) for no correction and (q_0, q_1, q_2) for the codes. Also the starting states, and each mapping's error from
     # each of them: {start: {option: {mapping: error}}}
-    path = sweep_path(gate_set, num_gates, csv_dir)
+    path = os.path.join(csv_dir, f"{sweep_name(gate_set, num_gates)}.csv")
     if not os.path.exists(path):
         raise FileNotFoundError(f"{path} doesn't exist: run mapping_sweep.py with GATE_SET = \"{gate_set}\" and "
                                 f"NUM_GATES = {num_gates} first")
@@ -82,10 +93,15 @@ def load_sweep(gate_set, num_gates, csv_dir):
     for r in read_csv(path):
         mapping = tuple(int(r[k]) for k in ("q0", "q1", "q2") if r[k] != "")
         by_state.setdefault(int(r["start"]), {}).setdefault(r["option"], {})[mapping] = float(r["error"])
-    start_states = tuple(sorted(by_state))
-    average = {name: {m: float(np.mean([by_state[bit][name][m] for bit in start_states]))
-                      for m in by_state[start_states[0]][name]} for name in OPTIONS}
-    return average, start_states, by_state
+    return average_states(by_state), tuple(sorted(by_state)), by_state
+
+
+def average_states(by_state):
+    # Each mapping's error averaged over the starting states, {option: {mapping: error}}, from its error from each of
+    # them, {start: {option: {mapping: error}}}
+    states = sorted(by_state)
+    return {name: {m: float(np.mean([by_state[bit][name][m] for bit in states])) for m in by_state[states[0]][name]}
+            for name in OPTIONS}
 
 
 def ranked(errors):
@@ -96,6 +112,16 @@ def ranked(errors):
 def lists(ranks, n):
     # Each option's n best (lowest error first) and n worst (highest error first): {option: {"best"/"worst": [...]}}
     return {name: {"best": mine[:n], "worst": mine[::-1][:n]} for name, mine in ranks.items()}
+
+
+def top_of(picked, compare):
+    # The top compare of each list, the mappings in the match-ups: {option: {"best"/"worst": [(mapping, error)]}}
+    return {name: {kind: mine[:compare] for kind, mine in by_kind.items()} for name, by_kind in picked.items()}
+
+
+def in_matchups(compared):
+    # Every mapping in the match-ups once, as [(option, mapping)]: each option's best, then its worst
+    return list(dict.fromkeys((name, m) for name in OPTIONS for kind in KINDS for m, _ in compared[name][kind]))
 
 
 # ---- Errors at every number of gates ----
@@ -155,26 +181,20 @@ def curves(mappings, gate_set, start_states, seed, ns, backend, sim, readout):
     # of errors}}. mappings: [(option, mapping)]
     period = len(GATE_SETS[gate_set][1])
     gate_errors = {(name, tuple(q)): e for name, q, e in basic_device_gate_errors(target=backend.target)}
-    versions = test_versions(gate_set, period, seed, start_states)   # one round of gates
     exact = {bit: exact_answers(gate_set, period, seed, bit, ns[-1] // period) for bit in start_states}
     batch = []
-    for option, mapping in mappings:
-        for bit, (_, plain, encoded) in versions.items():
-            coded = option in CODES
-            circuits, _ = on_fez(plain, {option: encoded[option]} if coded else {}, backend,
-                                 {"bit/phase-flip": list(mapping)}, seed)
-            circuit = circuits[option] if coded else next(iter(circuits.values()))
-            first, stop, gates = gate_section(circuit, coded, bit)
-            one = {q: gate_channel(insts, q, gate_errors) for q, insts in gates.items()}
-            for n in ns:
-                channels = {q: np.linalg.matrix_power(c, n // period) for q, c in one.items()}
-                # num_gates, not gates: run_batch adds the circuit's size as "gates"
-                batch.append((dict(option=option, mapping=mapping, num_gates=n, start=bit,
-                                   exact_p1=exact[bit][n // period]), with_channels(circuit, first, stop, channels)))
+    # Each circuit has one round of gates (period of them)
+    for option, mapping, bit, _, circuit in mapping_circuits(mappings, gate_set, period, seed, start_states, backend):
+        first, stop, gates = gate_section(circuit, option in CODES, bit)
+        one = {q: gate_channel(insts, q, gate_errors) for q, insts in gates.items()}
+        for n in ns:
+            channels = {q: np.linalg.matrix_power(c, n // period) for q, c in one.items()}
+            # num_gates, not gates: run_batch adds the circuit's size as "gates"
+            row = dict(option=option, mapping=mapping, num_gates=n, start=bit, exact_p1=exact[bit][n // period])
+            batch.append((row, with_channels(circuit, first, stop, channels)))
     errors = {bit: {} for bit in start_states}
-    for i in range(0, len(batch), CHUNK):
-        for r in run_batch(batch[i:i + CHUNK], sim, readout):
-            errors[r["start"]].setdefault((r["option"], r["mapping"]), {})[r["num_gates"]] = r["error"]
+    for r in run_batch(batch, sim, readout):
+        errors[r["start"]].setdefault((r["option"], r["mapping"]), {})[r["num_gates"]] = r["error"]
     return {bit: {key: np.array([by_n[n] for n in ns]) for key, by_n in mine.items()} for bit, mine in errors.items()}
 
 
@@ -226,7 +246,7 @@ def matchups(picked, by_state, ns):
 # ---- CSV files and the report ----
 
 def rank_rows(picked):
-    return [[name, kind, i, *mapping, *[""] * (3 - len(mapping)), round(error, 6)]
+    return [[name, kind, i, *mapping_cells(mapping), round(error, 6)]
             for name, by_kind in picked.items() for kind, mine in by_kind.items()
             for i, (mapping, error) in enumerate(mine, 1)]
 
@@ -236,9 +256,11 @@ def point_rows(points):
              round(p["plain_error"], 6), "" if p["pays_off_at"] is None else p["pays_off_at"]] for p in points]
 
 
-def curve_rows(by_state, ns):
-    return [[option, *mapping, *[""] * (3 - len(mapping)), bit, n, round(float(e), 6)]
-            for bit, found in by_state.items() for (option, mapping), errors in found.items() for n, e in zip(ns, errors)]
+def write_curves(path, by_state, ns):
+    # Every mapping's error at every number of gates, from each starting state, as a CSV file
+    write_csv(path, CURVE_COLUMNS, [[option, *mapping_cells(mapping), bit, n, round(float(e), 6)]
+                                    for bit, found in by_state.items() for (option, mapping), errors in found.items()
+                                    for n, e in zip(ns, errors)])
 
 
 def pay_off_text(n, max_gates):
@@ -250,22 +272,28 @@ def range_text(numbers):
     return f"{min(numbers)}" if min(numbers) == max(numbers) else f"{min(numbers)} to {max(numbers)}"
 
 
+def lists_table(picked, kind, value="error", ran=0):
+    # One kind of list ("best" or "worst") of every option side by side, as a Markdown table: each mapping and its
+    # error, in a column named value. The first ran mappings of each list get "(ran)" after them
+    top = min(len(picked[name][kind]) for name in OPTIONS)
+    rows = [[i + 1] + [cell for name in OPTIONS for cell in
+                       (mapping_text(picked[name][kind][i][0]) + (" (ran)" if i < ran else ""),
+                        f"{picked[name][kind][i][1]:.4f}")] for i in range(top)]
+    return md_table(["rank"] + [h for name in OPTIONS for h in (short_name(name), value)], rows,
+                    ">" + "<>" * len(OPTIONS))
+
+
 def report(picked, compared, points, gate_set, num_gates, start_states, top, max_gates, step, plot_paths):
     # The lists (picked) and the pay-off points of the mappings in the match-ups (compared, the top of each list) as
     # Markdown. plot_paths: {start: that starting state's plot's path from the report's folder}
     compare = len(compared[OPTIONS[0]]["best"])
     states = states_text(start_states)
     out = [f"# Best and worst mappings on Fez, and when the codes pay off: {gate_set} gate set", "",
-           f"From `csvs/mapping_sweep_{gate_set}_{num_gates}.csv` (mapping_sweep.py): the exact error at {num_gates} "
+           f"From `csvs/{sweep_name(gate_set, num_gates)}.csv` (mapping_sweep.py): the exact error at {num_gates} "
            f"gates on the Fez noise simulator, averaged over starting in {states}. The codes' placements are q_0, q_1, "
            "q_2 on 3 connected Fez qubits.", ""]
-    for kind in ("best", "worst"):
-        out += [f"## The {top} {kind} mappings of each option", ""]
-        header = ["rank"] + [h for name in OPTIONS for h in (short_name(name), "error")]
-        rows = [[i + 1] + [cell for name in OPTIONS for cell in
-                           (mapping_text(picked[name][kind][i][0]), f"{picked[name][kind][i][1]:.4f}")]
-                for i in range(top)]
-        out += md_table(header, rows, ">" + "<>" * len(OPTIONS)) + [""]
+    for kind in KINDS:
+        out += [f"## The {top} {kind} mappings of each option", ""] + lists_table(picked, kind) + [""]
 
     out += ["## When the codes pay off", "",
             f"Each match-up pairs every one of the {compare} code placements with every one of the {compare} no-correction "
@@ -282,7 +310,7 @@ def report(picked, compared, points, gate_set, num_gates, start_states, top, max
     for matchup, plain_list, code_list in MATCHUPS:
         mine = [p for p in points if p["matchup"] == matchup]
         qubits = list(dict.fromkeys((p["qubit"], p["plain_error"]) for p in mine))
-        out += [f"### {matchup[0].upper() + matchup[1:]}", ""]
+        out += [f"### {heading(matchup)}", ""]
         rows = []
         for code in CODES:
             for placement, code_error in compared[code][code_list]:
@@ -305,7 +333,55 @@ def report(picked, compared, points, gate_set, num_gates, start_states, top, max
     return "\n".join(out)
 
 
-# ---- The plot ----
+# ---- The plots ----
+
+def matchup_lines(compared, plain_list, code_list):
+    # The mappings in one match-up's panel, in the order they are drawn: each option's from its list in the match-up
+    # (no correction's from plain_list, the codes' from code_list). Yields (option, its place on that list from 0, how
+    # many of the option's mappings there are, mapping, its line style)
+    for name in OPTIONS:
+        mine = compared[name][plain_list if name == OPTIONS[0] else code_list]
+        for i, ((mapping, _), ls) in enumerate(zip(mine, LINE_STYLES)):
+            yield name, i, len(mine), mapping, ls
+
+
+def error_panel(ax, matchup, ns, limits, legend_title, row, column, legend_x=0.5):
+    # The rest of one match-up's panel, once its lines are drawn: the log scale every panel shares, the match-up as its
+    # title, and its legend underneath, one column per option, centred at legend_x (in the panel's widths). The x axis
+    # is labelled on the bottom row of panels and the y axis on the left column
+    ax.set_yscale("log")
+    ax.set_ylim(*limits)
+    ax.set_xlim(ns[0], ns[-1])
+    log_axis(ax.yaxis)
+    ax.set_title(heading(matchup), color=INK, fontsize=11, loc="left")
+    ax.legend(ncol=len(OPTIONS), frameon=False, fontsize=8, loc="upper center", bbox_to_anchor=(legend_x, -0.1),
+              title=legend_title, title_fontsize=8)
+    style(ax)
+    if row == 1:
+        ax.set_xlabel("number of gates", color=MUTED)
+    if column == 0:
+        ax.set_ylabel("logical error", color=MUTED)
+
+
+def matchup_legend(fig, title, shown, extra, y):
+    # The figure's title, and the legend above the panels at height y: each option's color, the line style of each of
+    # the first shown places on a list, then extra [(handle, label)]
+    from matplotlib.lines import Line2D
+    handles = [Line2D([], [], color=OPTION_COLORS[name], lw=2) for name in OPTIONS]
+    handles += [Line2D([], [], ls=ls, color=INK, lw=2) for ls in LINE_STYLES[:shown]]
+    labels = list(OPTIONS) + [f"{rank} on its list" for rank in RANKS[:shown]]
+    handles += [handle for handle, _ in extra]
+    labels += [label for _, label in extra]
+    fig.suptitle(title, color=INK)
+    fig.legend(handles, labels, loc="upper center", ncol=len(labels), frameon=False, fontsize=9,
+               bbox_to_anchor=(0.5, y))
+
+
+def state_plots(name, start_states, image_dir, report_dir):
+    # One plot per starting state: {start: its path}, and {start: its path from the report's folder}
+    images = {bit: os.path.join(image_dir, f"{name}_start_{bit}.png") for bit in start_states}
+    return images, {bit: os.path.relpath(path, report_dir) for bit, path in images.items()}
+
 
 def clusters(marks, ax, reach=14):
     # Groups marks [(gates, error, ...)] that sit within reach pixels of each other on ax, so each group gets one label
@@ -367,7 +443,7 @@ def label_pay_offs(ax, marks):
             boxes.append(best[2])
 
 
-def plot(picked, found, state_errors, points, ns, gate_set, num_gates, bit, start_states, limits, path):
+def plot(compared, found, state_errors, points, ns, gate_set, num_gates, bit, start_states, limits, path):
     # One panel per match-up: the error of each mapping in it against the number of gates, starting in |bit>, with a
     # marker where each code pays off against each no-correction qubit. found: {(option, mapping): errors} from that
     # state; state_errors: {option: {mapping: error}}, the sweep's errors from it at num_gates; points: the pay-off
@@ -376,37 +452,19 @@ def plot(picked, found, state_errors, points, ns, gate_set, num_gates, bit, star
     from matplotlib.lines import Line2D
     plt = pyplot()
     fig, axes = plt.subplots(2, 2, figsize=(15, 12), sharex=True, sharey=True)
-    for ax, (matchup, plain_list, code_list) in zip(axes.flat, MATCHUPS):
-        for name in OPTIONS:
-            kind = plain_list if name == OPTIONS[0] else code_list
-            for (mapping, _), ls in zip(picked[name][kind], LINE_STYLES):
-                ax.plot(ns, found[name, mapping], ls, color=OPTION_COLORS[name], lw=2,
-                        label=f"{mapping_text(mapping)} ({state_errors[name][mapping]:.3f})")
-        ax.set_yscale("log")
-        ax.set_ylim(*limits)
-        ax.set_xlim(ns[0], ns[-1])
-        log_axis(ax.yaxis)
-        ax.set_title(matchup[0].upper() + matchup[1:], color=INK, fontsize=11, loc="left")
-        # One legend column per option, in the order of OPTIONS
-        ax.legend(ncol=len(OPTIONS), frameon=False, fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.1),
-                  title=f"mapping (error at {num_gates} gates from |{bit}>)", title_fontsize=8)
-        style(ax)
-    for ax in axes[1]:
-        ax.set_xlabel("number of gates", color=MUTED)
-    for ax in axes[:, 0]:
-        ax.set_ylabel("logical error", color=MUTED)
+    for n, (ax, (matchup, plain_list, code_list)) in enumerate(zip(axes.flat, MATCHUPS)):
+        for name, _, _, mapping, ls in matchup_lines(compared, plain_list, code_list):
+            ax.plot(ns, found[name, mapping], ls, color=OPTION_COLORS[name], lw=2,
+                    label=f"{mapping_text(mapping)} ({state_errors[name][mapping]:.3f})")
+        error_panel(ax, matchup, ns, limits, f"mapping (error at {num_gates} gates from |{bit}>)", *divmod(n, 2))
     for ax in axes[0]:
         ax.tick_params(labelbottom=True)
-    handles = [Line2D([], [], color=OPTION_COLORS[name], lw=2) for name in OPTIONS]
-    handles += [Line2D([], [], ls=ls, color=INK, lw=2) for ls in LINE_STYLES[:len(picked[OPTIONS[0]]["best"])]]
-    handles.append(Line2D([], [], ls="", marker="o", ms=7, color=MUTED, mec="white", mew=1.2))
-    labels = list(OPTIONS) + [f"{i} on its list" for i in ("1st", "2nd", "3rd", "4th")[:len(handles) - len(OPTIONS) - 1]]
-    labels.append(f"code pays off ({IN_A_ROW} wins in a row), at the gates written")
-    fig.suptitle(f"Fez, {gate_set} gate set, starting in |{bit}>: error vs number of gates for the best and worst "
-                 f"mappings of each option\n(exact errors from the Fez noise simulator; the lists are ranked by the "
-                 f"average over {states_text(start_states)} at {num_gates} gates)", color=INK)
-    fig.legend(handles, labels, loc="upper center", ncol=len(labels), frameon=False, fontsize=9,
-               bbox_to_anchor=(0.5, 0.945))
+    title = (f"Fez, {gate_set} gate set, starting in |{bit}>: error vs number of gates for the best and worst mappings "
+             f"of each option\n(exact errors from the Fez noise simulator; the lists are ranked by the average over "
+             f"{states_text(start_states)} at {num_gates} gates)")
+    marker = Line2D([], [], ls="", marker="o", ms=7, color=MUTED, mec="white", mew=1.2)
+    matchup_legend(fig, title, len(compared[OPTIONS[0]]["best"]),
+                   [(marker, f"code pays off ({IN_A_ROW} wins in a row), at the gates written")], 0.945)
     # The markers and their labels go on once the panels are in their final places, so labels can be kept apart
     rect = (0, 0, 1, 0.93)
     fig.tight_layout(rect=rect)
@@ -430,15 +488,8 @@ def run(gate_set="y", num_gates=500, top=10, compare=3, max_gates=1000, seed=3, 
     # gate_set and num_gates pick the sweep (it must have been run with the same seed). top: how many best and worst
     # mappings to list. compare: how many of each list go into the match-ups (1 to 4). max_gates: where to stop
     # counting when a code hasn't paid off, and where the plots end
-    kind, gates = GATE_SETS[gate_set]
-    if kind != "repeating":
-        raise ValueError(f"gate set '{gate_set}' is random, so its gates can't be counted up by repeating one round; "
-                         "use a repeating one (x, y, z, id, repeat)")
-    step = STEPS.get(gate_set, 20)
-    if step % len(gates):
-        raise ValueError(f"the step ({step}) must be a whole number of rounds of {len(gates)} gates")
-    if not 1 <= compare <= min(top, len(LINE_STYLES)):
-        raise ValueError(f"compare must be from 1 to {min(top, len(LINE_STYLES))}, got {compare}")
+    ns, step = gate_counts(gate_set, max_gates)
+    check_compare(compare, top)
     errors, start_states, sweep_by_state = load_sweep(gate_set, num_gates, csv_dir)
     picked = lists(ranked(errors), top)
     for name in OPTIONS:
@@ -446,31 +497,25 @@ def run(gate_set="y", num_gates=500, top=10, compare=3, max_gates=1000, seed=3, 
             print(f"Note: {name} has only {len(errors[name])} mappings, so its best and worst lists overlap")
 
     backend = FakeFez()
-    sim = AerSimulator.from_backend(backend, method="density_matrix", max_parallel_experiments=0)
-    readout = {qargs[0]: err.probabilities for qargs, err in basic_device_readout_errors(target=backend.target)}
-    ns = list(range(0, max_gates + 1, step))
-    mappings = list(dict.fromkeys((name, m) for name in OPTIONS for by_kind in ("best", "worst")
-                                  for m, _ in picked[name][by_kind][:compare]))
+    sim, readout = noise_simulator(backend)
+    compared = top_of(picked, compare)
+    mappings = in_matchups(compared)
     print(f"{gate_set} gate set: errors of {len(mappings)} mappings at 0 to {max_gates} gates in steps of {step}, "
           f"starting in {states_text(start_states)}\n")
     by_state = curves(mappings, gate_set, start_states, seed, ns, backend, sim, readout)
     found = {key: np.mean([by_state[bit][key] for bit in start_states], axis=0) for key in by_state[start_states[0]]}
     check_against_sweep(found, errors, ns, num_gates)
 
-    compared = {name: {k: mine[:compare] for k, mine in by_kind.items()} for name, by_kind in picked.items()}
     points = matchups(compared, by_state, ns)
     name = f"mapping_pay_off_{gate_set}_{num_gates}"
-    images = {bit: os.path.join(image_dir, f"{name}_start_{bit}.png") for bit in start_states}
+    images, links = state_plots(name, start_states, image_dir, report_dir)
     write_csv(os.path.join(csv_dir, f"{name}_ranks.csv"), RANK_COLUMNS, rank_rows(picked))
     write_csv(os.path.join(csv_dir, f"{name}_points.csv"), POINT_COLUMNS, point_rows(points))
-    write_csv(os.path.join(csv_dir, f"{name}_curves.csv"), CURVE_COLUMNS, curve_rows(by_state, ns))
-    text = report(picked, compared, points, gate_set, num_gates, start_states, top, max_gates, step,
-                  {bit: os.path.relpath(path, report_dir) for bit, path in images.items()})
-    print("\n" + text)
-    write_text(os.path.join(report_dir, f"{name}.md"), text)
+    write_curves(os.path.join(csv_dir, f"{name}_curves.csv"), by_state, ns)
+    save_report(os.path.join(report_dir, f"{name}.md"),
+                report(picked, compared, points, gate_set, num_gates, start_states, top, max_gates, step, links))
     # Both plots share one scale, so they can be compared
-    every = np.concatenate([e for mine in by_state.values() for e in mine.values()])
-    limits = (max(every[every > 0].min() / 1.3, 1e-4), min(every.max() * 1.3, 1))
+    limits = log_limits(np.concatenate([e for mine in by_state.values() for e in mine.values()]))
     for bit, path in images.items():
         plot(compared, by_state[bit], sweep_by_state[bit], [p for p in points if p["start"] == bit], ns, gate_set,
              num_gates, bit, start_states, limits, path)

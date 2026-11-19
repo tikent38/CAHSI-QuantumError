@@ -1,34 +1,19 @@
 # mapping_sweep.py
 import os
-import sys
 import time
 from itertools import combinations, permutations
 
 import numpy as np
-from qiskit import QuantumCircuit
-from qiskit.quantum_info import Statevector
-from qiskit_aer import AerSimulator
-from qiskit_aer.noise.device import basic_device_readout_errors
 from qiskit_ibm_runtime.fake_provider import FakeFez
 from scipy.stats import spearmanr
 
-# The codes and the Fez helpers live in src/noisy, and the code for printing, CSV files and plots in src/output_tools
-HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(HERE, "..", "noisy"))
-sys.path.insert(0, os.path.join(HERE, "..", "output_tools"))
-from compare_fez import GATE_SETS, encode_all, on_fez, test_circuit
-from fez_common import DEFAULT_DATA_QUBITS, physical_qubits, working_coupling_map
-from output_tools import COLORS, INK, MUTED, pyplot, save_plot, style, write_csv, write_text
+# The code the mapping scripts share (importing it also puts src/noisy and src/output_tools on the import path)
+from mapping_common import (CHUNK, CODES, CSV_DIR, IMAGE_DIR, OPTION_COLORS, OPTIONS, REPORT_DIR, check_test, log_axis,
+                            log_limits, mapping_cells, mapping_text, md_table, noise_simulator, placed, run_batch,
+                            save_report, short_name, states_text, test_versions)
+from fez_common import DEFAULT_DATA_QUBITS, working_coupling_map
+from output_tools import INK, MUTED, pyplot, save_plot, style, write_csv
 
-# Output folders next to this file, so the results land in the same place from any working directory
-CSV_DIR = os.path.join(HERE, "csvs")
-IMAGE_DIR = os.path.join(HERE, "images")
-REPORT_DIR = os.path.join(HERE, "reports")
-
-# The options compared, and their colors in the plot: the same as in theory_validation.py and the pay-off plots
-OPTIONS = ("no correction", "bit-flip, Toffoli", "phase-flip, Toffoli")
-CODES = OPTIONS[1:]   # keys of compare_fez.py's CODES
-OPTION_COLORS = dict(zip(OPTIONS, COLORS))
 # The 4 parts the spread of the errors is split into (see spread_parts): a short name and the label
 PARTS = [
     ("qubits", "which 3 Fez qubits"),
@@ -37,7 +22,6 @@ PARTS = [
     ("rest", "the option gap changing by placement"),
 ]
 MAPPING_PARTS = ("qubits", "roles")
-CHUNK = 300   # circuits sent to the simulator at once: enough to keep every core busy, few enough to fit in memory
 RUN_COLUMNS = ["gate_set", "num_gates", "start", "option", "q0", "q1", "q2", "line", "q0_in_middle", "measured_on",
                "qubits_used", "gates", "two_qubit_gates", "depth", "exact_p1", "p_read_1", "error",
                "no_correction_error", "beats_no_correction"]
@@ -62,63 +46,12 @@ def placements(line):
     return list(permutations(line))
 
 
+def sweep_name(gate_set, num_gates):
+    # The sweep's files are named after it (mapping_pay_off.py reads its runs CSV file)
+    return f"mapping_sweep_{gate_set}_{num_gates}"
+
+
 # ---- Running ----
-
-def test_versions(gate_set, num_gates, seed, start_states):
-    # For each starting state, {state: (the exact chance of 1, the circuit with no correction, {code: its circuit})}.
-    # The state is prepared on q_0 before encoding (an X for |1>), so both codes pay the same for it
-    circuit = test_circuit(gate_set, num_gates, seed, False)
-    encoded, _ = encode_all(circuit, CODES)
-    versions = {}
-    for bit in start_states:
-        state = QuantumCircuit(1)
-        if bit:
-            state.x(0)
-        logical = state.compose(circuit)
-        plain = logical.copy()
-        plain.measure_all()   # the codes add their own measurement
-        versions[bit] = (Statevector(logical).probabilities()[1],   # the exact answer: no shots or noise
-                         plain, {name: qc.compose(state, qubits=[0], front=True) for name, qc in encoded.items()})
-    return versions
-
-
-def measured_qubit(circuit):
-    # The Fez qubit a transpiled circuit's result is measured on. The measurement is the circuit's last instruction,
-    # since every circuit here ends with a barrier and then the measurement
-    last = circuit.data[-1]
-    if last.operation.name != "measure":
-        raise ValueError(f"expected the circuit to end with its measurement, not '{last.operation.name}'")
-    return circuit.find_bit(last.qubits[0]).index
-
-
-def exact_version(circuit):
-    # The circuit with its measurement swapped for saving the exact chance that the measured qubit is 1, and that qubit
-    qubit = measured_qubit(circuit)
-    exact = circuit.copy()
-    del exact.data[-1]
-    exact.save_probabilities([qubit])
-    return exact, qubit
-
-
-def read_one(p1, readout):
-    # The chance of reading 1 when the qubit is 1 with chance p1. readout[i][j] is the chance of reading j when the
-    # qubit is i, the numbers AerSimulator.from_backend puts on that qubit's measurement
-    return p1 * readout[1][1] + (1 - p1) * readout[0][1]
-
-
-def run_batch(batch, sim, readout):
-    # Runs every (row, circuit) of batch on the simulator in one go, and returns the rows with each run's result added.
-    # Each row already has its exact answer, exact_p1
-    exact = [exact_version(qc) for _, qc in batch]
-    result = sim.run([qc for qc, _ in exact]).result()
-    rows = []
-    for i, ((row, qc), (_, qubit)) in enumerate(zip(batch, exact)):
-        p_read_1 = read_one(result.data(i)["probabilities"][1], readout[qubit])
-        rows.append(row | dict(measured_on=qubit, qubits_used=len(physical_qubits(qc)[0]), gates=qc.size(),
-                               two_qubit_gates=qc.num_nonlocal_gates(), depth=qc.depth(), p_read_1=p_read_1,
-                               error=abs(p_read_1 - row["exact_p1"])))
-    return rows
-
 
 def sweep(gate_set, num_gates, seed, start_states, max_lines, backend, sim, readout):
     # No correction on every Fez qubit, then both codes on every placement, from every starting state. Returns one row
@@ -128,10 +61,8 @@ def sweep(gate_set, num_gates, seed, start_states, max_lines, backend, sim, read
     start = time.time()
     batch = []
     for q in range(backend.num_qubits):
-        for bit, (exact_p1, plain, _) in versions.items():
-            # With no codes, on_fez puts the circuit with no correction on q_0's Fez qubit
-            circuits, _ = on_fez(plain, {}, backend, {"bit/phase-flip": [q]}, seed)
-            (qc,) = circuits.values()
+        for bit, (exact_p1, plain, encoded) in versions.items():
+            qc = placed([OPTIONS[0]], (q,), plain, encoded, backend, seed)[OPTIONS[0]]
             batch.append((test | dict(start=bit, option=OPTIONS[0], line=None, placement=(q,), exact_p1=exact_p1), qc))
     plain_rows = run_batch(batch, sim, readout)
     print(f"No correction on all {backend.num_qubits} Fez qubits: {len(plain_rows)} runs done "
@@ -145,7 +76,7 @@ def sweep(gate_set, num_gates, seed, start_states, max_lines, backend, sim, read
         batch = []
         for line, placement in todo[i:i + per_chunk]:
             for bit, (exact_p1, plain, encoded) in versions.items():
-                circuits, _ = on_fez(plain, encoded, backend, {"bit/phase-flip": list(placement)}, seed)
+                circuits = placed(CODES, placement, plain, encoded, backend, seed)
                 batch += [(test | dict(start=bit, option=name, line=line, placement=placement, exact_p1=exact_p1),
                            circuits[name]) for name in CODES]
         rows += run_batch(batch, sim, readout)
@@ -248,29 +179,15 @@ def summarize(rows, gate_set, num_gates, start_states):
 
 # ---- CSV files and the report ----
 
-def short_name(name):
-    # "bit-flip, Toffoli" -> "bit-flip"
-    return name.split(",")[0]
-
-
-def mapping_text(mapping):
-    # A mapping as the report writes it: "Fez 86" for no correction, "(87, 88, 86)" for a code's q_0, q_1, q_2
-    return f"Fez {mapping[0]}" if len(mapping) == 1 else str(tuple(mapping))
-
-
 def line_text(line):
     # A line's qubits in wiring order, end-middle-end
     return f"{line[1]}-{line[0]}-{line[2]}"
 
 
-def states_text(start_states):
-    return " and ".join(f"|{bit}>" for bit in start_states)
-
-
 def run_row(r):
     # One run as a line of the runs CSV file
     coded = r["option"] in CODES
-    return [r["gate_set"], r["num_gates"], r["start"], r["option"], *r["placement"], *[""] * (3 - len(r["placement"])),
+    return [r["gate_set"], r["num_gates"], r["start"], r["option"], *mapping_cells(r["placement"]),
             line_text(r["line"]) if coded else "", r["placement"][0] == r["line"][0] if coded else "",
             r["measured_on"], r["qubits_used"], r["gates"], r["two_qubit_gates"], r["depth"], round(r["exact_p1"], 6),
             round(r["p_read_1"], 6), round(r["error"], 6), round(r["no_correction_error"], 6) if coded else "",
@@ -283,16 +200,6 @@ def placement_rows(s):
     return [[line_text(line), *p, p[0] == line[0], "/".join(map(str, sorted(qubits))),
              *(round(float(e), 6) for e in errors), OPTIONS[int(errors.argmin())]]
             for (line, p), qubits, errors in zip(s["placed"], s["measured"], s["errors"].reshape(-1, len(OPTIONS)))]
-
-
-def md_table(header, rows, align):
-    # A Markdown table with its columns padded to line up, so it also reads well printed in a terminal. align has one
-    # "<" (left) or ">" (right) per column
-    cells = [[str(c) for c in row] for row in [header, *rows]]
-    widths = [max(len(row[i]) for row in cells) for i in range(len(header))]
-    line = "| " + " | ".join(f"{{:{a}{w}}}" for a, w in zip(align, widths)) + " |"
-    rule = "|" + "|".join("-" * (w + 1) + ":" if a == ">" else "-" * (w + 2) for a, w in zip(align, widths)) + "|"
-    return [line.format(*cells[0]), rule] + [line.format(*row) for row in cells[1:]]
 
 
 def report(s, plot_path):
@@ -360,14 +267,6 @@ def report(s, plot_path):
 
 # ---- The plot ----
 
-def log_axis(axis):
-    # Ticks at 1, 2 and 5 times each power of 10, written as plain numbers
-    from matplotlib.ticker import FuncFormatter, LogLocator, NullFormatter
-    axis.set_major_locator(LogLocator(base=10, subs=(1, 2, 5)))
-    axis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}"))
-    axis.set_minor_formatter(NullFormatter())
-
-
 def strip_panel(ax, s, limits):
     # Every mapping's error, one row per option and one dot per mapping (a Fez qubit for no correction, a placement for
     # the codes), spread up and down a little so they don't hide each other. Rows wider than the gaps between them mean
@@ -412,9 +311,7 @@ def plot(s, path):
     from matplotlib.lines import Line2D
     plt = pyplot()
     fig, ax = plt.subplots(figsize=(11, 6.5))
-    errors = np.concatenate([o["errors"] for o in s["options"].values()])
-    limits = (max(errors.min() / 1.3, 1e-4), min(errors.max() * 1.3, 1))
-    strip_panel(ax, s, limits)
+    strip_panel(ax, s, log_limits(np.concatenate([o["errors"] for o in s["options"].values()])))
     handles = [Line2D([], [], ls="", marker="o", ms=7, color=OPTION_COLORS[name]) for name in OPTIONS]
     handles += [Line2D([], [], ls="", marker="|", ms=12, mew=2, color=INK),
                 Line2D([], [], ls="", marker="o", ms=9, mfc="none", mec=INK, mew=1.6)]
@@ -429,14 +326,9 @@ def plot(s, path):
 
 def run(gate_set="y", num_gates=500, start_states=(0, 1), seed=3, max_lines=None, csv_dir=CSV_DIR,
         image_dir=IMAGE_DIR, report_dir=REPORT_DIR):
-    if gate_set not in GATE_SETS:
-        raise ValueError(f"unknown gate set '{gate_set}'; use any of {list(GATE_SETS)}")
-    start_states = tuple(start_states)
-    if not start_states or set(start_states) - {0, 1}:
-        raise ValueError(f"start_states must be 0, 1 or both, got {start_states}")
+    start_states = check_test(gate_set, start_states)
     backend = FakeFez()
-    sim = AerSimulator.from_backend(backend, method="density_matrix", max_parallel_experiments=0)
-    readout = {qargs[0]: err.probabilities for qargs, err in basic_device_readout_errors(target=backend.target)}
+    sim, readout = noise_simulator(backend)
     found = lines(backend, max_lines)
     print(f"{gate_set} gate set, {num_gates} gates, starting in {states_text(start_states)}: no correction on all "
           f"{backend.num_qubits} Fez qubits, and both Toffoli codes on {6 * len(found)} placements ({len(found)} lines "
@@ -446,13 +338,11 @@ def run(gate_set="y", num_gates=500, start_states=(0, 1), seed=3, max_lines=None
     rows = sweep(gate_set, num_gates, seed, start_states, max_lines, backend, sim, readout)
     print(f"All {len(rows)} runs done in {(time.time() - start) / 60:.1f} min\n")
     summary = summarize(rows, gate_set, num_gates, start_states)
-    name = f"mapping_sweep_{gate_set}_{num_gates}"
+    name = sweep_name(gate_set, num_gates)
     image = os.path.join(image_dir, f"{name}.png")
     write_csv(os.path.join(csv_dir, f"{name}.csv"), RUN_COLUMNS, [run_row(r) for r in rows])
     write_csv(os.path.join(csv_dir, f"{name}_placements.csv"), PLACEMENT_COLUMNS, placement_rows(summary))
-    text = report(summary, os.path.relpath(image, report_dir))
-    print("\n" + text)
-    write_text(os.path.join(report_dir, f"{name}.md"), text)
+    save_report(os.path.join(report_dir, f"{name}.md"), report(summary, os.path.relpath(image, report_dir)))
     plot(summary, image)
 
 

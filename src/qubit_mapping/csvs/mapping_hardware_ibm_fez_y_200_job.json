@@ -1,0 +1,1540 @@
+{
+  "job_id": "dbu8rr8vv3fc73c0vg6g",
+  "backend": "ibm_fez",
+  "submitted": "2026-11-17T17:25:01+00:00",
+  "gate_set": "y",
+  "num_gates": 200,
+  "start_states": [
+    0,
+    1
+  ],
+  "shots": 2000,
+  "seed": 3,
+  "top": 10,
+  "compare": 3,
+  "head_to_head": true,
+  "calibration_file": "ibm_fez_calibrations_2026-11-13T16_27_59Z.csv",
+  "calibration_taken": "2026-11-13 16:27 UTC",
+  "calibration_age": "4.0 days",
+  "left_out": [
+    72,
+    148,
+    149
+  ],
+  "estimate_seconds": 32.8,
+  "quick_seconds": 32.8,
+  "detailed_seconds": 24.789727999999993,
+  "cap": 90,
+  "free_before": {
+    "used": 316,
+    "limit": 600,
+    "left": 284,
+    "reached": false
+  },
+  "lists": {
+    "no correction": {
+      "best": [
+        [
+          [
+            9
+          ],
+          0.017657003865510904
+        ],
+        [
+          [
+            46
+          ],
+          0.02007285049173905
+        ],
+        [
+          [
+            85
+          ],
+          0.021766228086955528
+        ],
+        [
+          [
+            109
+          ],
+          0.022313508709129716
+        ],
+        [
+          [
+            146
+          ],
+          0.02256428672915703
+        ],
+        [
+          [
+            42
+          ],
+          0.029099405804469944
+        ],
+        [
+          [
+            150
+          ],
+          0.02912476211233076
+        ],
+        [
+          [
+            91
+          ],
+          0.02956018354643546
+        ],
+        [
+          [
+            122
+          ],
+          0.031186618636146808
+        ],
+        [
+          [
+            98
+          ],
+          0.03322510485952813
+        ]
+      ],
+      "worst": [
+        [
+          [
+            155
+          ],
+          0.49671209200953054
+        ],
+        [
+          [
+            27
+          ],
+          0.4137039180008838
+        ],
+        [
+          [
+            102
+          ],
+          0.30358966889654143
+        ],
+        [
+          [
+            11
+          ],
+          0.2634518650469996
+        ],
+        [
+          [
+            100
+          ],
+          0.24989380788960036
+        ],
+        [
+          [
+            0
+          ],
+          0.2336847848322295
+        ],
+        [
+          [
+            70
+          ],
+          0.2037429738461791
+        ],
+        [
+          [
+            126
+          ],
+          0.19492411142264413
+        ],
+        [
+          [
+            19
+          ],
+          0.17626830555025821
+        ],
+        [
+          [
+            24
+          ],
+          0.17567950709529528
+        ]
+      ]
+    },
+    "bit-flip, Toffoli": {
+      "best": [
+        [
+          [
+            115,
+            99,
+            114
+          ],
+          0.018688078720496958
+        ],
+        [
+          [
+            145,
+            146,
+            144
+          ],
+          0.019413530097174655
+        ],
+        [
+          [
+            3,
+            4,
+            2
+          ],
+          0.02032978513971424
+        ],
+        [
+          [
+            98,
+            91,
+            111
+          ],
+          0.020563832085982142
+        ],
+        [
+          [
+            131,
+            130,
+            132
+          ],
+          0.02065772393700074
+        ],
+        [
+          [
+            9,
+            10,
+            8
+          ],
+          0.02103269450063522
+        ],
+        [
+          [
+            122,
+            123,
+            121
+          ],
+          0.021180702992305275
+        ],
+        [
+          [
+            123,
+            124,
+            122
+          ],
+          0.021222277920971953
+        ],
+        [
+          [
+            3,
+            16,
+            2
+          ],
+          0.021398985750051558
+        ],
+        [
+          [
+            125,
+            117,
+            124
+          ],
+          0.02152053130226204
+        ]
+      ],
+      "worst": [
+        [
+          [
+            135,
+            139,
+            155
+          ],
+          0.4967737098264821
+        ],
+        [
+          [
+            155,
+            135,
+            139
+          ],
+          0.4967649766664675
+        ],
+        [
+          [
+            153,
+            154,
+            155
+          ],
+          0.4967518171668954
+        ],
+        [
+          [
+            155,
+            153,
+            154
+          ],
+          0.4967422674994226
+        ],
+        [
+          [
+            139,
+            135,
+            155
+          ],
+          0.49672643457031657
+        ],
+        [
+          [
+            154,
+            153,
+            155
+          ],
+          0.4967113032884344
+        ],
+        [
+          [
+            28,
+            26,
+            27
+          ],
+          0.43260454962712225
+        ],
+        [
+          [
+            28,
+            17,
+            27
+          ],
+          0.4309930180824283
+        ],
+        [
+          [
+            27,
+            29,
+            28
+          ],
+          0.4141568929716512
+        ],
+        [
+          [
+            28,
+            27,
+            26
+          ],
+          0.4109522618165385
+        ]
+      ]
+    },
+    "phase-flip, Toffoli": {
+      "best": [
+        [
+          [
+            3,
+            4,
+            2
+          ],
+          0.020957132772203155
+        ],
+        [
+          [
+            131,
+            130,
+            132
+          ],
+          0.020959792882564693
+        ],
+        [
+          [
+            3,
+            16,
+            2
+          ],
+          0.02217842511601483
+        ],
+        [
+          [
+            3,
+            2,
+            4
+          ],
+          0.022713143296305263
+        ],
+        [
+          [
+            115,
+            99,
+            114
+          ],
+          0.022990340213684637
+        ],
+        [
+          [
+            141,
+            140,
+            142
+          ],
+          0.023358682588745655
+        ],
+        [
+          [
+            132,
+            130,
+            131
+          ],
+          0.023631030945439536
+        ],
+        [
+          [
+            136,
+            123,
+            143
+          ],
+          0.024086578039183487
+        ],
+        [
+          [
+            16,
+            3,
+            23
+          ],
+          0.02414730056837751
+        ],
+        [
+          [
+            22,
+            21,
+            23
+          ],
+          0.024241130605429588
+        ]
+      ],
+      "worst": [
+        [
+          [
+            135,
+            139,
+            155
+          ],
+          0.4968850220372243
+        ],
+        [
+          [
+            155,
+            135,
+            139
+          ],
+          0.4968741455971382
+        ],
+        [
+          [
+            153,
+            154,
+            155
+          ],
+          0.4968717487574225
+        ],
+        [
+          [
+            155,
+            153,
+            154
+          ],
+          0.4968611671370109
+        ],
+        [
+          [
+            139,
+            135,
+            155
+          ],
+          0.49683660971568444
+        ],
+        [
+          [
+            154,
+            153,
+            155
+          ],
+          0.4968313126256627
+        ],
+        [
+          [
+            28,
+            26,
+            27
+          ],
+          0.43302408765477035
+        ],
+        [
+          [
+            28,
+            17,
+            27
+          ],
+          0.4311604999093811
+        ],
+        [
+          [
+            27,
+            29,
+            28
+          ],
+          0.416445738192322
+        ],
+        [
+          [
+            28,
+            27,
+            26
+          ],
+          0.41195682661324
+        ]
+      ]
+    }
+  },
+  "ibm_estimate_seconds": null,
+  "qpu_seconds_used": 26.0,
+  "free_after": {
+    "used": 342,
+    "limit": 600,
+    "left": 258,
+    "reached": false
+  },
+  "runs": [
+    {
+      "option": "no correction",
+      "mapping": [
+        9
+      ],
+      "why": [
+        "best 1"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "meas",
+      "qubits_used": [
+        9
+      ],
+      "measured_on": 9,
+      "gates": 401,
+      "two_qubit_gates": 0,
+      "depth": 401,
+      "predicted": 0.01565489956828439,
+      "duration_us": 6.46
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        9
+      ],
+      "why": [
+        "best 1"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "meas",
+      "qubits_used": [
+        9
+      ],
+      "measured_on": 9,
+      "gates": 402,
+      "two_qubit_gates": 0,
+      "depth": 402,
+      "predicted": 0.019659108162737415,
+      "duration_us": 6.484
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        46
+      ],
+      "why": [
+        "best 2"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "meas",
+      "qubits_used": [
+        46
+      ],
+      "measured_on": 46,
+      "gates": 401,
+      "two_qubit_gates": 0,
+      "depth": 401,
+      "predicted": 0.016586592669128614,
+      "duration_us": 6.46
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        46
+      ],
+      "why": [
+        "best 2"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "meas",
+      "qubits_used": [
+        46
+      ],
+      "measured_on": 46,
+      "gates": 402,
+      "two_qubit_gates": 0,
+      "depth": 402,
+      "predicted": 0.023559108314349486,
+      "duration_us": 6.484
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        85
+      ],
+      "why": [
+        "best 3"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "meas",
+      "qubits_used": [
+        85
+      ],
+      "measured_on": 85,
+      "gates": 401,
+      "two_qubit_gates": 0,
+      "depth": 401,
+      "predicted": 0.01730303930278316,
+      "duration_us": 6.46
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        85
+      ],
+      "why": [
+        "best 3"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "meas",
+      "qubits_used": [
+        85
+      ],
+      "measured_on": 85,
+      "gates": 402,
+      "two_qubit_gates": 0,
+      "depth": 402,
+      "predicted": 0.026229416871127897,
+      "duration_us": 6.484
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        155
+      ],
+      "why": [
+        "worst 1",
+        "same qubit as bit-flip (135, 139, 155)",
+        "same qubit as bit-flip (155, 135, 139)",
+        "same qubit as bit-flip (153, 154, 155)",
+        "same qubit as phase-flip (135, 139, 155)",
+        "same qubit as phase-flip (155, 135, 139)",
+        "same qubit as phase-flip (153, 154, 155)"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "meas",
+      "qubits_used": [
+        155
+      ],
+      "measured_on": 155,
+      "gates": 401,
+      "two_qubit_gates": 0,
+      "depth": 401,
+      "predicted": 0.9825512886099235,
+      "duration_us": 6.46
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        155
+      ],
+      "why": [
+        "worst 1",
+        "same qubit as bit-flip (135, 139, 155)",
+        "same qubit as bit-flip (155, 135, 139)",
+        "same qubit as bit-flip (153, 154, 155)",
+        "same qubit as phase-flip (135, 139, 155)",
+        "same qubit as phase-flip (155, 135, 139)",
+        "same qubit as phase-flip (153, 154, 155)"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "meas",
+      "qubits_used": [
+        155
+      ],
+      "measured_on": 155,
+      "gates": 402,
+      "two_qubit_gates": 0,
+      "depth": 402,
+      "predicted": 0.010872895409137606,
+      "duration_us": 6.484
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        27
+      ],
+      "why": [
+        "worst 2"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "meas",
+      "qubits_used": [
+        27
+      ],
+      "measured_on": 27,
+      "gates": 401,
+      "two_qubit_gates": 0,
+      "depth": 401,
+      "predicted": 0.4084007883519836,
+      "duration_us": 6.46
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        27
+      ],
+      "why": [
+        "worst 2"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "meas",
+      "qubits_used": [
+        27
+      ],
+      "measured_on": 27,
+      "gates": 402,
+      "two_qubit_gates": 0,
+      "depth": 402,
+      "predicted": 0.419007047649784,
+      "duration_us": 6.484
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        102
+      ],
+      "why": [
+        "worst 3"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "meas",
+      "qubits_used": [
+        102
+      ],
+      "measured_on": 102,
+      "gates": 401,
+      "two_qubit_gates": 0,
+      "depth": 401,
+      "predicted": 0.2684820822148902,
+      "duration_us": 6.46
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        102
+      ],
+      "why": [
+        "worst 3"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "meas",
+      "qubits_used": [
+        102
+      ],
+      "measured_on": 102,
+      "gates": 402,
+      "two_qubit_gates": 0,
+      "depth": 402,
+      "predicted": 0.33869725557819264,
+      "duration_us": 6.484
+    },
+    {
+      "option": "bit-flip, Toffoli",
+      "mapping": [
+        115,
+        99,
+        114
+      ],
+      "why": [
+        "best 1"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "out",
+      "qubits_used": [
+        99,
+        114,
+        115
+      ],
+      "measured_on": 114,
+      "gates": 1293,
+      "two_qubit_gates": 13,
+      "depth": 470,
+      "predicted": 0.015420133526515872,
+      "duration_us": 7.8
+    },
+    {
+      "option": "bit-flip, Toffoli",
+      "mapping": [
+        115,
+        99,
+        114
+      ],
+      "why": [
+        "best 1"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "out",
+      "qubits_used": [
+        99,
+        114,
+        115
+      ],
+      "measured_on": 114,
+      "gates": 1294,
+      "two_qubit_gates": 13,
+      "depth": 470,
+      "predicted": 0.02195602391447804,
+      "duration_us": 7.8
+    },
+    {
+      "option": "bit-flip, Toffoli",
+      "mapping": [
+        145,
+        146,
+        144
+      ],
+      "why": [
+        "best 2"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "out",
+      "qubits_used": [
+        144,
+        145,
+        146
+      ],
+      "measured_on": 144,
+      "gates": 1293,
+      "two_qubit_gates": 13,
+      "depth": 470,
+      "predicted": 0.012251504665753175,
+      "duration_us": 7.8
+    },
+    {
+      "option": "bit-flip, Toffoli",
+      "mapping": [
+        145,
+        146,
+        144
+      ],
+      "why": [
+        "best 2"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "out",
+      "qubits_used": [
+        144,
+        145,
+        146
+      ],
+      "measured_on": 144,
+      "gates": 1294,
+      "two_qubit_gates": 13,
+      "depth": 470,
+      "predicted": 0.02657555552859614,
+      "duration_us": 7.8
+    },
+    {
+      "option": "bit-flip, Toffoli",
+      "mapping": [
+        3,
+        4,
+        2
+      ],
+      "why": [
+        "best 3"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "out",
+      "qubits_used": [
+        2,
+        3,
+        4
+      ],
+      "measured_on": 2,
+      "gates": 1293,
+      "two_qubit_gates": 13,
+      "depth": 470,
+      "predicted": 0.01750823326592934,
+      "duration_us": 7.8
+    },
+    {
+      "option": "bit-flip, Toffoli",
+      "mapping": [
+        3,
+        4,
+        2
+      ],
+      "why": [
+        "best 3"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "out",
+      "qubits_used": [
+        2,
+        3,
+        4
+      ],
+      "measured_on": 2,
+      "gates": 1294,
+      "two_qubit_gates": 13,
+      "depth": 470,
+      "predicted": 0.02315133701349914,
+      "duration_us": 7.8
+    },
+    {
+      "option": "bit-flip, Toffoli",
+      "mapping": [
+        135,
+        139,
+        155
+      ],
+      "why": [
+        "worst 1"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "out",
+      "qubits_used": [
+        135,
+        139,
+        155
+      ],
+      "measured_on": 155,
+      "gates": 1302,
+      "two_qubit_gates": 16,
+      "depth": 479,
+      "predicted": 0.9825873607526018,
+      "duration_us": 8.1
+    },
+    {
+      "option": "bit-flip, Toffoli",
+      "mapping": [
+        135,
+        139,
+        155
+      ],
+      "why": [
+        "worst 1"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "out",
+      "qubits_used": [
+        135,
+        139,
+        155
+      ],
+      "measured_on": 155,
+      "gates": 1303,
+      "two_qubit_gates": 16,
+      "depth": 479,
+      "predicted": 0.010960058900362446,
+      "duration_us": 8.1
+    },
+    {
+      "option": "bit-flip, Toffoli",
+      "mapping": [
+        155,
+        135,
+        139
+      ],
+      "why": [
+        "worst 2"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "out",
+      "qubits_used": [
+        135,
+        139,
+        155
+      ],
+      "measured_on": 155,
+      "gates": 1302,
+      "two_qubit_gates": 16,
+      "depth": 475,
+      "predicted": 0.9825785307791298,
+      "duration_us": 8.052
+    },
+    {
+      "option": "bit-flip, Toffoli",
+      "mapping": [
+        155,
+        135,
+        139
+      ],
+      "why": [
+        "worst 2"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "out",
+      "qubits_used": [
+        135,
+        139,
+        155
+      ],
+      "measured_on": 155,
+      "gates": 1303,
+      "two_qubit_gates": 16,
+      "depth": 476,
+      "predicted": 0.010951422553805212,
+      "duration_us": 8.076
+    },
+    {
+      "option": "bit-flip, Toffoli",
+      "mapping": [
+        153,
+        154,
+        155
+      ],
+      "why": [
+        "worst 3"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "out",
+      "qubits_used": [
+        153,
+        154,
+        155
+      ],
+      "measured_on": 155,
+      "gates": 1302,
+      "two_qubit_gates": 16,
+      "depth": 479,
+      "predicted": 0.9825768312638086,
+      "duration_us": 8.1
+    },
+    {
+      "option": "bit-flip, Toffoli",
+      "mapping": [
+        153,
+        154,
+        155
+      ],
+      "why": [
+        "worst 3"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "out",
+      "qubits_used": [
+        153,
+        154,
+        155
+      ],
+      "measured_on": 155,
+      "gates": 1303,
+      "two_qubit_gates": 16,
+      "depth": 479,
+      "predicted": 0.010926803069982283,
+      "duration_us": 8.1
+    },
+    {
+      "option": "phase-flip, Toffoli",
+      "mapping": [
+        3,
+        4,
+        2
+      ],
+      "why": [
+        "best 1"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "out",
+      "qubits_used": [
+        2,
+        3,
+        4
+      ],
+      "measured_on": 2,
+      "gates": 1311,
+      "two_qubit_gates": 13,
+      "depth": 476,
+      "predicted": 0.018121049668904883,
+      "duration_us": 7.848
+    },
+    {
+      "option": "phase-flip, Toffoli",
+      "mapping": [
+        3,
+        4,
+        2
+      ],
+      "why": [
+        "best 1"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "out",
+      "qubits_used": [
+        2,
+        3,
+        4
+      ],
+      "measured_on": 2,
+      "gates": 1312,
+      "two_qubit_gates": 13,
+      "depth": 476,
+      "predicted": 0.023793215875501428,
+      "duration_us": 7.848
+    },
+    {
+      "option": "phase-flip, Toffoli",
+      "mapping": [
+        131,
+        130,
+        132
+      ],
+      "why": [
+        "best 2"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "out",
+      "qubits_used": [
+        130,
+        131,
+        132
+      ],
+      "measured_on": 132,
+      "gates": 1311,
+      "two_qubit_gates": 13,
+      "depth": 476,
+      "predicted": 0.016648077725644746,
+      "duration_us": 7.848
+    },
+    {
+      "option": "phase-flip, Toffoli",
+      "mapping": [
+        131,
+        130,
+        132
+      ],
+      "why": [
+        "best 2"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "out",
+      "qubits_used": [
+        130,
+        131,
+        132
+      ],
+      "measured_on": 132,
+      "gates": 1312,
+      "two_qubit_gates": 13,
+      "depth": 476,
+      "predicted": 0.025271508039484636,
+      "duration_us": 7.848
+    },
+    {
+      "option": "phase-flip, Toffoli",
+      "mapping": [
+        3,
+        16,
+        2
+      ],
+      "why": [
+        "best 3"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "out",
+      "qubits_used": [
+        2,
+        3,
+        16
+      ],
+      "measured_on": 2,
+      "gates": 1311,
+      "two_qubit_gates": 13,
+      "depth": 476,
+      "predicted": 0.01934218799413794,
+      "duration_us": 7.848
+    },
+    {
+      "option": "phase-flip, Toffoli",
+      "mapping": [
+        3,
+        16,
+        2
+      ],
+      "why": [
+        "best 3"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "out",
+      "qubits_used": [
+        2,
+        3,
+        16
+      ],
+      "measured_on": 2,
+      "gates": 1312,
+      "two_qubit_gates": 13,
+      "depth": 476,
+      "predicted": 0.025014662237891727,
+      "duration_us": 7.848
+    },
+    {
+      "option": "phase-flip, Toffoli",
+      "mapping": [
+        135,
+        139,
+        155
+      ],
+      "why": [
+        "worst 1"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "out",
+      "qubits_used": [
+        135,
+        139,
+        155
+      ],
+      "measured_on": 155,
+      "gates": 1320,
+      "two_qubit_gates": 16,
+      "depth": 488,
+      "predicted": 0.9826999950060366,
+      "duration_us": 8.172
+    },
+    {
+      "option": "phase-flip, Toffoli",
+      "mapping": [
+        135,
+        139,
+        155
+      ],
+      "why": [
+        "worst 1"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "out",
+      "qubits_used": [
+        135,
+        139,
+        155
+      ],
+      "measured_on": 155,
+      "gates": 1321,
+      "two_qubit_gates": 16,
+      "depth": 488,
+      "predicted": 0.011070049068412025,
+      "duration_us": 8.172
+    },
+    {
+      "option": "phase-flip, Toffoli",
+      "mapping": [
+        155,
+        135,
+        139
+      ],
+      "why": [
+        "worst 2"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "out",
+      "qubits_used": [
+        135,
+        139,
+        155
+      ],
+      "measured_on": 155,
+      "gates": 1320,
+      "two_qubit_gates": 16,
+      "depth": 481,
+      "predicted": 0.9826886840420868,
+      "duration_us": 8.1
+    },
+    {
+      "option": "phase-flip, Toffoli",
+      "mapping": [
+        155,
+        135,
+        139
+      ],
+      "why": [
+        "worst 2"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "out",
+      "qubits_used": [
+        135,
+        139,
+        155
+      ],
+      "measured_on": 155,
+      "gates": 1321,
+      "two_qubit_gates": 16,
+      "depth": 482,
+      "predicted": 0.011059607152189677,
+      "duration_us": 8.124
+    },
+    {
+      "option": "phase-flip, Toffoli",
+      "mapping": [
+        153,
+        154,
+        155
+      ],
+      "why": [
+        "worst 3"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "out",
+      "qubits_used": [
+        153,
+        154,
+        155
+      ],
+      "measured_on": 155,
+      "gates": 1320,
+      "two_qubit_gates": 16,
+      "depth": 488,
+      "predicted": 0.9826972662853408,
+      "duration_us": 8.172
+    },
+    {
+      "option": "phase-flip, Toffoli",
+      "mapping": [
+        153,
+        154,
+        155
+      ],
+      "why": [
+        "worst 3"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "out",
+      "qubits_used": [
+        153,
+        154,
+        155
+      ],
+      "measured_on": 155,
+      "gates": 1321,
+      "two_qubit_gates": 16,
+      "depth": 488,
+      "predicted": 0.011046231229504211,
+      "duration_us": 8.172
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        114
+      ],
+      "why": [
+        "same qubit as bit-flip (115, 99, 114)"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "meas",
+      "qubits_used": [
+        114
+      ],
+      "measured_on": 114,
+      "gates": 401,
+      "two_qubit_gates": 0,
+      "depth": 401,
+      "predicted": 0.05693512015309304,
+      "duration_us": 6.46
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        114
+      ],
+      "why": [
+        "same qubit as bit-flip (115, 99, 114)"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "meas",
+      "qubits_used": [
+        114
+      ],
+      "measured_on": 114,
+      "gates": 402,
+      "two_qubit_gates": 0,
+      "depth": 402,
+      "predicted": 0.05928533762606991,
+      "duration_us": 6.484
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        144
+      ],
+      "why": [
+        "same qubit as bit-flip (145, 146, 144)"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "meas",
+      "qubits_used": [
+        144
+      ],
+      "measured_on": 144,
+      "gates": 401,
+      "two_qubit_gates": 0,
+      "depth": 401,
+      "predicted": 0.0547952950397048,
+      "duration_us": 6.46
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        144
+      ],
+      "why": [
+        "same qubit as bit-flip (145, 146, 144)"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "meas",
+      "qubits_used": [
+        144
+      ],
+      "measured_on": 144,
+      "gates": 402,
+      "two_qubit_gates": 0,
+      "depth": 402,
+      "predicted": 0.06489122847782658,
+      "duration_us": 6.484
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        2
+      ],
+      "why": [
+        "same qubit as bit-flip (3, 4, 2)",
+        "same qubit as phase-flip (3, 4, 2)",
+        "same qubit as phase-flip (3, 16, 2)"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "meas",
+      "qubits_used": [
+        2
+      ],
+      "measured_on": 2,
+      "gates": 401,
+      "two_qubit_gates": 0,
+      "depth": 401,
+      "predicted": 0.03414091246296023,
+      "duration_us": 6.46
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        2
+      ],
+      "why": [
+        "same qubit as bit-flip (3, 4, 2)",
+        "same qubit as phase-flip (3, 4, 2)",
+        "same qubit as phase-flip (3, 16, 2)"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "meas",
+      "qubits_used": [
+        2
+      ],
+      "measured_on": 2,
+      "gates": 402,
+      "two_qubit_gates": 0,
+      "depth": 402,
+      "predicted": 0.036316460626164226,
+      "duration_us": 6.484
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        132
+      ],
+      "why": [
+        "same qubit as phase-flip (131, 130, 132)"
+      ],
+      "start": 0,
+      "exact_p1": 0.0,
+      "register": "meas",
+      "qubits_used": [
+        132
+      ],
+      "measured_on": 132,
+      "gates": 401,
+      "two_qubit_gates": 0,
+      "depth": 401,
+      "predicted": 0.03668509703621345,
+      "duration_us": 6.46
+    },
+    {
+      "option": "no correction",
+      "mapping": [
+        132
+      ],
+      "why": [
+        "same qubit as phase-flip (131, 130, 132)"
+      ],
+      "start": 1,
+      "exact_p1": 1.0,
+      "register": "meas",
+      "qubits_used": [
+        132
+      ],
+      "measured_on": 132,
+      "gates": 402,
+      "two_qubit_gates": 0,
+      "depth": 402,
+      "predicted": 0.04184180083173705,
+      "duration_us": 6.484
+    }
+  ]
+}
